@@ -1,0 +1,4169 @@
+openapi: 3.0.3
+info:
+  contact:
+    email: developers@affixapi.com
+  description: |
+    The affixapi.com API documentation.
+
+    # Introduction
+    Affix API is an OAuth 2.1 application that allows developers to access
+    customer data, without developers needing to manage or maintain
+    integrations; or collect login credentials or API keys from users for these
+    third party systems.
+
+    # OAuth 2.1
+    Affix API follows the [OAuth 2.1 spec](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-08).
+
+    As an OAuth application, Affix API handles not only both the collection of
+    sensitive user credentials or API keys, but also builds and maintains the
+    integrations with the providers, so you don't have to.
+
+    # How to obtain an access token
+    in order to get started, you must:
+      - register a `client_id`
+      - direct your user to the sign in flow  (`https://connect.affixapi.com`
+        [with the appropriate query
+        parameters](https://github.com/affixapi/starter-kit/tree/master/connect))
+      - capture `authorization_code` we will send to your redirect URI after
+        the sign in flow is complete and exchange that `authorization_code` for
+        a Bearer token
+
+    # Sandbox keys (developer mode)
+    ### dev
+    ```
+    eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6ImQ1OTZhMmYzLWYzNzktNGE1ZC1hMmRhLTk4OWJmYWViYTg1ZCIsImlhdCI6MTcwMjkyMDkwMywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5kZXYuZW5naW5lZXJpbmcuYWZmaXhhcGkuY29tIiwic3ViIjoiZGV2ZWxvcGVyIiwiYXVkIjoiM0ZEQUVERjktMURDQTRGNTQtODc5NDlGNkEtNDEwMjc2NDMifQ.VLWYjCQvBS0C3ZA6_J3-U-idZj5EYI2IlDdTjAWBxSIHGufp6cqaVodKsF2BeIqcIeB3P0lW-KL9mY3xGd7ckQ
+    ```
+
+    #### `employees` endpoint sample:
+    ```
+    curl --fail \
+      -X GET \
+      -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6ImQ1OTZhMmYzLWYzNzktNGE1ZC1hMmRhLTk4OWJmYWViYTg1ZCIsImlhdCI6MTcwMjkyMDkwMywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5kZXYuZW5naW5lZXJpbmcuYWZmaXhhcGkuY29tIiwic3ViIjoiZGV2ZWxvcGVyIiwiYXVkIjoiM0ZEQUVERjktMURDQTRGNTQtODc5NDlGNkEtNDEwMjc2NDMifQ.VLWYjCQvBS0C3ZA6_J3-U-idZj5EYI2IlDdTjAWBxSIHGufp6cqaVodKsF2BeIqcIeB3P0lW-KL9mY3xGd7ckQ' \
+      'https://dev.api.affixapi.com/2023-03-01/developer/employees'
+    ```
+
+    ### prod
+    ```
+    eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6IjI5YjFjYTg4LWNlNjktNDgyZC1iNGZjLTkzMWMzZmJkYWM4ZSIsImlhdCI6MTcwMjkyMTA4MywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5wcm9kLmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6ImRldmVsb3BlciIsImF1ZCI6IjA4QkIwODFFLUQ5QUI0RDE0LThERjk5MjMzLTY2NjE1Q0U5In0.2zdpFAmiyYiYk6MOcbXNUwwR4M1Fextnaac340x54AidiWXCyw-u9KeavbqfYF6q8a9kcDLrxhJ8Wc_3tIzuVw
+    ```
+
+    #### `employees` endpoint sample:
+    ```
+    curl --fail \
+      -X GET \
+      -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6IjI5YjFjYTg4LWNlNjktNDgyZC1iNGZjLTkzMWMzZmJkYWM4ZSIsImlhdCI6MTcwMjkyMTA4MywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5wcm9kLmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6ImRldmVsb3BlciIsImF1ZCI6IjA4QkIwODFFLUQ5QUI0RDE0LThERjk5MjMzLTY2NjE1Q0U5In0.2zdpFAmiyYiYk6MOcbXNUwwR4M1Fextnaac340x54AidiWXCyw-u9KeavbqfYF6q8a9kcDLrxhJ8Wc_3tIzuVw' \
+      'https://api.affixapi.com/2023-03-01/developer/employees'
+    ```
+
+    # Webhooks
+    An exciting feature for HR/Payroll modes are webhooks.
+
+    If enabled, your `webhook_uri` is set on your `client_id` for the
+    respective environment: `dev | prod`
+
+    Webhooks are configured to make live requests to the underlying integration
+    1x/hr, and if a difference is detected since the last request, we will send a
+    request to your `webhook_uri` with this shape:
+
+    ```
+    {
+
+      added: <api.v20230301.Employees>[
+        <api.v20230301.Employee>{
+          ...,
+          date_of_birth: '2010-08-06',
+          display_full_name: 'Daija Rogahn',
+          employee_number: '57993',
+          employment_status: 'pending',
+          employment_type: 'other',
+          employments: [
+            {
+              currency: 'eur',
+              effective_date: '2022-02-25',
+              employment_type: 'other',
+              job_title: 'Dynamic Implementation Manager',
+              pay_frequency: 'semimonthly',
+              pay_period: 'YEAR',
+              pay_rate: 96000,
+            },
+          ],
+          first_name: 'Daija',
+          ...
+        }
+      ],
+      removed: [],
+      updated: [
+        <api.v20230301.Employee>{
+          ...,
+          date_of_birth: '2009-11-09',
+          display_full_name: 'Lourdes Stiedemann',
+          employee_number: '63189',
+          employment_status: 'leave',
+          employment_type: 'full_time',
+          employments: [
+            {
+              currency: 'gbp',
+              effective_date: '2023-01-16',
+              employment_type: 'full_time',
+              job_title: 'Forward Brand Planner',
+              pay_frequency: 'semimonthly',
+              pay_period: 'YEAR',
+              pay_rate: 86000,
+            },
+          ],
+          first_name: 'Lourdes',
+        }
+      ]
+    }
+    ```
+
+    the following headers will be sent with webhook requests:
+
+    ```
+    x-affix-api-signature: ab8474e609db95d5df3adc39ea3add7a7544bd215c5c520a30a650ae93a2fba7
+
+    x-affix-api-origin:  webhooks-employees-webhook
+
+    user-agent:  affixapi.com
+    ```
+
+    Before trusting the payload, you should sign the payload and verify the
+    signature matches the signature sent by the `affixapi.com` service.
+
+    This secures that the data sent to your `webhook_uri` is from the
+    `affixapi.com` server.
+
+    The signature is created by combining the signing secret (your
+    `client_secret`) with the body of the request sent using a standard
+    HMAC-SHA256 keyed hash.
+
+    The signature can be created via:
+      - create an `HMAC` with your `client_secret`
+      - update the `HMAC` with the payload
+      - get the hex digest -> this is the signature
+
+    Sample `typescript` code that follows this recipe:
+
+    ```
+    import { createHmac } from 'crypto';
+
+    export const computeSignature = ({
+      str,
+      signingSecret,
+    }: {
+      signingSecret: string;
+      str: string;
+    }): string => {
+      const hmac = createHmac('sha256', signingSecret);
+      hmac.update(str);
+      const signature = hmac.digest('hex');
+
+      return signature;
+    };
+    ```
+
+    ## Rate limits
+    Open endpoints (not gated by an API key) (applied at endpoint level):
+      - 15 requests every 1 minute (by IP address)
+      - 25 requests every 5 minutes (by IP address)
+
+    Gated endpoints (require an API key) (applied at endpoint level):
+      - 40 requests every 1 minute (by IP address)
+      - 40 requests every 5 minutes (by `client_id`)
+
+    Things to keep in mind:
+      - Open endpoints (not gated by an API key) will likely be called by your
+        users, not you, so rate limits generally would not apply to you.
+      - As a developer, rate limits are applied at the endpoint granularity.
+        - For example, say the rate limits below are 10 requests per minute by ip.
+          from that same ip, within 1 minute, you get:
+          - 10 requests per minute on `/orders`,
+          - another 10 requests per minute on `/items`,
+          - and another 10 requests per minute on `/identity`,
+          - for a total of 30 requests per minute.
+  termsOfService: https://affixapi.com/terms-and-conditions
+  title: Affix API
+  version: 2023-03-01
+  x-logo:
+    uri: https://media.licdn.com/dms/image/D4E0BAQG0eRUQzmxDjQ/company-logo_100_100/0/1680762091788?e=1698883200&v=beta&t=ITsfWc2YmsMBFBtNdSNMB0kdBTKt-eGHjYeWhxDM6qg
+    altText: Affix API logo
+servers:
+- description: Production server (EU)
+  url: https://api.affixapi.com
+- description: Development server (EU)
+  url: https://dev.api.affixapi.com
+tags:
+- description: |
+    Operations related to obtaining core information about the Affix API
+    platform
+  name: Core
+- description: |
+    Operations related to obtaining, getting information on, or
+    disconnecting, an access token
+  name: Management
+- description: |
+    Operations related to retrieving end customer data via customer's API key
+  name: Official
+- description: |
+    Operations related to retrieving end customer data from a customer's
+    credentials login
+  name: Developer
+paths:
+  /providers:
+    get:
+      description: |
+        Retrieve the api modes (official, developer) and providers for the respective modes
+      operationId: providers
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProvidersResponse'
+          description: Success
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+      summary: Providers
+      tags:
+      - Core
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-accepts: application/json
+  /2023-03-01/management/client:
+    get:
+      description: |
+        View client attributes
+      operationId: client
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClientResponse'
+          description: Success
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+      security:
+      - basic: []
+      summary: Client
+      tags:
+      - Management
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-accepts: application/json
+    post:
+      description: |
+        Update attributes of the client.  Update the `name`, `client_secret`, or
+        `webhook_uri` of the client
+      operationId: updateClient
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClientRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClientResponse'
+          description: Success
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_409'
+          description: Not Found
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+      security:
+      - basic: []
+      summary: Update client
+      tags:
+      - Management
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-contentType: application/json
+      x-accepts: application/json
+  /2023-03-01/management/tokens:
+    get:
+      description: |
+        View tokens and token status for respective client
+      operationId: tokens
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokensResponse'
+          description: Success
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IdAndMessageResponse'
+          description: Not Found
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_409'
+          description: Not Found
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+      security:
+      - basic: []
+      summary: Tokens
+      tags:
+      - Management
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-accepts: application/json
+  /2023-03-01/management/token:
+    post:
+      description: |
+        Exchange an `authorization_code` for an `access_token` after receiving on from the `redirect_uri` you specifiy after a successful user connection
+      operationId: token
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenRequest'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenResponse'
+          description: Success
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IdAndMessageResponse'
+          description: Not Found
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_409'
+          description: Not Found
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+      summary: Create token
+      tags:
+      - Management
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-contentType: application/json
+      x-accepts: application/json
+  /2023-03-01/management/introspect:
+    get:
+      description: |
+        Retrieve data about the token, such as `scopes`, `mode`, `provider`, and if it is active
+      operationId: introspect
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IntrospectResponse'
+          description: Success
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IdAndMessageResponse'
+          description: Not Found
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+      security:
+      - access-token: []
+      summary: Inspect token
+      tags:
+      - Management
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-accepts: application/json
+  /2023-03-01/management/disconnect:
+    post:
+      description: |
+        Disconnect the token. A disconnected token will no longer return data. Data requests with a disconnected token will return a 403 Forbidden
+      operationId: disconnect
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DisconnectResponse'
+          description: Success
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Forbidden
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+      security:
+      - access-token: []
+      summary: Disconnect token
+      tags:
+      - Management
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-accepts: application/json
+  /2023-03-01/official/company:
+    get:
+      description: |
+        Retrieve company information
+      operationId: officialCompanies20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Companies20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Company
+      tags:
+      - Official
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-accepts: application/json
+  /2023-03-01/official/employee:
+    post:
+      description: |
+        Creates a new Employee
+      operationId: officialCreateEmployee20230301
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateEmployeeRequest'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeResponse'
+          description: Success
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Create Employee
+      tags:
+      - Official
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-contentType: application/json
+      x-accepts: application/json
+  /2023-03-01/official/employees:
+    get:
+      description: |
+        List the individuals (employees, contractors, accountants, and others)
+        listed in the HRIS/Payroll software
+      operationId: officialEmployees20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employees20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Employees
+      tags:
+      - Official
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-accepts: application/json
+  /2023-03-01/official/groups:
+    get:
+      description: |
+        The Group object is used to represent any subset of employees, such as
+        PayGroup, Team, or Department. Employees can be in multiple Groups.
+      operationId: officialGroups20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Groups20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Groups
+      tags:
+      - Official
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-accepts: application/json
+  /2023-03-01/official/identity:
+    get:
+      description: |
+        List information of the user for the respective account
+      operationId: officialdentity20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IdentityResponse'
+          description: Success
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+      security:
+      - access-token: []
+      summary: Identity
+      tags:
+      - Official
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-accepts: application/json
+  /2023-03-01/official/time-off-entries:
+    get:
+      description: |
+        Retrieve time off / absence entries
+      operationId: officialTimeOffEntries20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeOffEntries20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Time off entries
+      tags:
+      - Official
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-accepts: application/json
+  /2023-03-01/official/timesheets:
+    get:
+      description: |
+        Retrieve Timesheets
+      operationId: officialTimesheets20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Timesheets20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Timesheets
+      tags:
+      - Official
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-accepts: application/json
+  /2023-03-01/official/time-off-balances:
+    get:
+      description: |
+        Retrieve all time off balances.
+      operationId: officialTimeOffBalances20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeOffBalances20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Time off balances
+      tags:
+      - Official
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-accepts: application/json
+  /2023-03-01/official/work-locations:
+    get:
+      description: |
+        The Location object is used to represent an address that can be associated
+        with an employee
+      operationId: officialWorkLocations20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkLocations20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Work locations
+      tags:
+      - Official
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-accepts: application/json
+  /2023-03-01/developer/company:
+    get:
+      description: |
+        Retrieve company information
+      operationId: developerCompanies20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Companies20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Company
+      tags:
+      - Developer
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-accepts: application/json
+  /2023-03-01/developer/employee:
+    post:
+      description: |
+        Creates a new Employee
+      operationId: developerCreateEmployee20230301
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateEmployeeRequest'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeResponse'
+          description: Success
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Create employee
+      tags:
+      - Developer
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-contentType: application/json
+      x-accepts: application/json
+  /2023-03-01/developer/employees:
+    get:
+      description: |
+        List the individuals (employees, contractors, accountants, and others)
+        listed in the HRIS/Payroll software
+      operationId: developerEmployees20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employees20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Employees
+      tags:
+      - Developer
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-accepts: application/json
+  /2023-03-01/developer/groups:
+    get:
+      description: |
+        The Group object is used to represent any subset of employees, such as
+        PayGroup, Team, or Department. Employees can be in multiple Groups.
+      operationId: developerGroups20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Groups20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Groups
+      tags:
+      - Developer
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-accepts: application/json
+  /2023-03-01/developer/identity:
+    get:
+      description: |
+        List information of the user for the respective account
+      operationId: developerIdentity20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IdentityResponse'
+          description: Success
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+      security:
+      - access-token: []
+      summary: Identity
+      tags:
+      - Developer
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-accepts: application/json
+  /2023-03-01/developer/payruns:
+    get:
+      description: |
+        List all the pay runs that occurred during the respective period.
+
+        Supported integrations:
+          - sageone
+          - simplepay.ie
+          - brightpay connect
+      operationId: developerPayruns20230301
+      parameters:
+      - description: The start date of the search period
+        explode: true
+        in: query
+        name: start_date
+        required: true
+        schema:
+          $ref: '#/components/schemas/StartDate'
+        style: form
+      - description: The end date of the search period
+        explode: true
+        in: query
+        name: end_date
+        required: true
+        schema:
+          $ref: '#/components/schemas/EndDate'
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Payruns20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Payruns
+      tags:
+      - Developer
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-accepts: application/json
+  /2023-03-01/developer/payruns/{payrun_id}:
+    get:
+      description: |
+        Retrieves payslips from a specific payrun.
+
+        Supported integrations:
+          - sageone
+          - simplepay.ie
+          - brightpay connect
+      operationId: developerPayslips20230301
+      parameters:
+      - description: The id of the payrun.
+        explode: false
+        in: path
+        name: payrun_id
+        required: true
+        schema:
+          $ref: '#/components/schemas/string'
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Payslips20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Payslips
+      tags:
+      - Developer
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-accepts: application/json
+  /2023-03-01/developer/timesheets:
+    get:
+      description: |
+        Retrieve Timesheets
+      operationId: developerTimesheets20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Timesheets20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Timesheets
+      tags:
+      - Developer
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-accepts: application/json
+  /2023-03-01/developer/time-off-entries:
+    get:
+      description: |
+        Retrieve time off / absence entries
+      operationId: developerTimeOffEntries20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeOffEntries20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Time off entries
+      tags:
+      - Developer
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-accepts: application/json
+  /2023-03-01/developer/time-off-balances:
+    get:
+      description: |
+        Retrieve all time off balances.
+      operationId: developerTimeOffBalances20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeOffBalances20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Time off balances
+      tags:
+      - Developer
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-accepts: application/json
+  /2023-03-01/developer/work-locations:
+    get:
+      description: |
+        The Location object is used to represent an address that can be associated
+        with an employee
+      operationId: developerWorkLocations20230301
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkLocations20230301Response'
+          description: Success
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Accepted + pending (async job started)
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Authentication Error
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Rate Limited / Too Many Requests
+          headers:
+            Retry-After:
+              description: Retry your call after the specified amount of seconds
+              explode: false
+              schema:
+                type: integer
+              style: simple
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Server Error
+        "501":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+          description: Not Implemented
+      security:
+      - access-token: []
+      summary: Work locations
+      tags:
+      - Developer
+      - 2023-03-01
+      x-public: true
+      x-amazon-apigateway-integration:
+        type: mock
+      x-accepts: application/json
+components:
+  responses:
+    BadRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/inline_response_400'
+      description: Bad Request
+    TooManyRequests:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/MessageResponse'
+      description: Rate Limited / Too Many Requests
+      headers:
+        Retry-After:
+          description: Retry your call after the specified amount of seconds
+          explode: false
+          schema:
+            type: integer
+          style: simple
+    InternalServerError:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/MessageResponse'
+      description: Server Error
+    ServiceUnavailable:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/MessageResponse'
+      description: Service Unavailable (retry your request after a short period)
+      headers:
+        Retry-After:
+          description: Retry your call after the specified amount of seconds
+          explode: false
+          schema:
+            type: integer
+          style: simple
+    AuthenticationError:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/inline_response_401'
+      description: Authentication Error
+    Conflict:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/inline_response_409'
+      description: Not Found
+    NotImplemented:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/MessageResponse'
+      description: Not Implemented
+    NotFound:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/IdAndMessageResponse'
+      description: Not Found
+    Forbidden:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/MessageResponse'
+      description: Forbidden
+    Accepted:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/MessageResponse'
+      description: Accepted + pending (async job started)
+      headers:
+        Retry-After:
+          description: Retry your call after the specified amount of seconds
+          explode: false
+          schema:
+            type: integer
+          style: simple
+  schemas:
+    StartDate:
+      example: 2021-01-01
+      format: date
+      type: string
+    EndDate:
+      example: 2021-12-31
+      format: date
+      type: string
+    string:
+      type: string
+    ScopesRequest:
+      enum:
+      - /2023-03-01/official/company
+      - /2023-03-01/official/employee
+      - /2023-03-01/official/employees
+      - /2023-03-01/official/groups
+      - /2023-03-01/official/identity
+      - /2023-03-01/official/time-off-balances
+      - /2023-03-01/official/time-off-entries
+      - /2023-03-01/official/timesheets
+      - /2023-03-01/official/work-locations
+      - /2023-03-01/developer/company
+      - /2023-03-01/developer/employee
+      - /2023-03-01/developer/employees
+      - /2023-03-01/developer/groups
+      - /2023-03-01/developer/identity
+      - /2023-03-01/developer/payruns
+      - /2023-03-01/developer/payruns/:payrun_id
+      - /2023-03-01/developer/time-off-balances
+      - /2023-03-01/developer/time-off-entries
+      - /2023-03-01/developer/timesheets
+      - /2023-03-01/developer/work-locations
+      type: string
+    ModeRequest:
+      enum:
+      - official
+      - developer
+      type: string
+    MessageResponse:
+      properties:
+        message:
+          type: string
+      required:
+      - message
+      type: object
+    ProviderRequest:
+      enum:
+      - sandbox
+      - bamboohr
+      - breathe
+      - cezanne
+      - charliehr
+      - deel
+      - deputy
+      - hailyhr
+      - hibob
+      - humaans
+      - iris cascade
+      - moorepay
+      - nmbrs
+      - parolla.ie
+      - payfit
+      - personio.de
+      - planday
+      - quickbooks uk
+      - sagehr
+      - saplinghr
+      - staffology
+      - xero uk
+      - brain payroll
+      - brightpay connect
+      - employment hero
+      - factorialhr
+      - fourthhr
+      - itrent
+      - oysterhr
+      - paycircle
+      - pento.io
+      - peoplehr
+      - remote.com
+      - sageone
+      - simplepay.ie
+      type: string
+    ModeResponse:
+      enum:
+      - official
+      - developer
+      type: string
+    ProviderResponse:
+      enum:
+      - sandbox
+      - bamboohr
+      - breathe
+      - cezanne
+      - charliehr
+      - deel
+      - deputy
+      - hailyhr
+      - hibob
+      - humaans
+      - iris cascade
+      - moorepay
+      - nmbrs
+      - parolla.ie
+      - payfit
+      - personio.de
+      - planday
+      - quickbooks uk
+      - sagehr
+      - saplinghr
+      - staffology
+      - xero uk
+      - brain payroll
+      - brightpay connect
+      - employment hero
+      - factorialhr
+      - fourthhr
+      - itrent
+      - oysterhr
+      - paycircle
+      - pento.io
+      - peoplehr
+      - remote.com
+      - sageone
+      - simplepay.ie
+      type: string
+    ProvidersResponse:
+      example:
+      - mode: official
+        providers:
+        - bamboohr
+        - breathe
+        - cezanne
+        - charliehr
+        - deel
+        - deputy
+        - employment hero
+        - factorialhr
+        - hailyhr
+        - hibob
+        - humaans
+        - iris cascade
+        - moorepay
+        - nmbrs
+        - parolla.ie
+        - payfit
+        - peoplehr
+        - personio.de
+        - planday
+        - remote.com
+        - sagehr
+        - saplinghr
+        - simplepay.ie
+        - staffology
+      - mode: developer
+        providers:
+        - brain payroll
+        - brightpay connect
+        - deputy
+        - employment hero
+        - factorialhr
+        - fourthhr
+        - itrent
+        - moorepay
+        - oysterhr
+        - parolla.ie
+        - paycircle
+        - pento.io
+        - peoplehr
+        - quickbooks uk
+        - remote.com
+        - sageone
+        - simplepay.ie
+      items:
+        properties:
+          mode:
+            $ref: '#/components/schemas/ModeResponse'
+          providers:
+            items:
+              $ref: '#/components/schemas/ProviderResponse'
+            type: array
+        required:
+        - mode
+        - providers
+        type: object
+      type: array
+    ClientResponse:
+      example:
+        webhook_uri: https://webhooks.your-company.com/aaaaaaaa-aaaaaaaa-aaaaaaaa-aaaaaaaa
+        name: Your App
+        client_secret:
+        - ffffffff-ffffffff-ffffffff-ffffffff
+        - aaaaaaaa-aaaaaaaa-aaaaaaaa-aaaaaaaa
+        redirect_uris:
+        - https://app.your-company.com
+        - https://dev.app.your-company.com
+        client_id: 00000000-00000000-00000000-00000000
+      properties:
+        client_id:
+          description: The client ID you received when you first created the application
+          example: 00000000-00000000-00000000-00000000
+          readOnly: true
+          type: string
+        client_secret:
+          description: |
+            The client secret(s). It is an array datatype to allow for rotation
+            of secrets without downtime for your customers
+          example:
+          - ffffffff-ffffffff-ffffffff-ffffffff
+          - aaaaaaaa-aaaaaaaa-aaaaaaaa-aaaaaaaa
+          items:
+            type: string
+          type: array
+        redirect_uris:
+          description: |
+            Indicates the URI to return the user to after authorization is
+            complete, which is the endpoint on your server to receive the
+            authorization_code.
+
+            Must be identical to the redirect URI provided in the original link.
+
+            Please email me after signup and I will set both your client secret
+            and redirect_uri (required) when you reach out.
+          example:
+          - https://app.your-company.com
+          - https://dev.app.your-company.com
+          items:
+            type: string
+          type: array
+        name:
+          description: |
+            Name of your app that shows up in the Affix Connect application
+          example: Your App
+          type: string
+        webhook_uri:
+          description: |
+            If enabled, webhooks will be sent to this endpoint
+          example: https://webhooks.your-company.com/aaaaaaaa-aaaaaaaa-aaaaaaaa-aaaaaaaa
+          nullable: true
+          type: string
+      required:
+      - client_id
+      - client_secret
+      - name
+      - redirect_uris
+      type: object
+    ClientRequest:
+      example:
+        webhook_uri: https://webhooks.your-company.com/aaaaaaaa-aaaaaaaa-aaaaaaaa-aaaaaaaa
+        name: Your App
+        client_secret:
+        - ffffffff-ffffffff-ffffffff-ffffffff
+        - aaaaaaaa-aaaaaaaa-aaaaaaaa-aaaaaaaa
+        redirect_uris:
+        - https://app.your-company.com
+        - https://dev.app.your-company.com
+      properties:
+        client_secret:
+          description: |
+            The client secret(s). It is an array datatype to allow for rotation
+            of secrets without downtime for your customers
+          example:
+          - ffffffff-ffffffff-ffffffff-ffffffff
+          - aaaaaaaa-aaaaaaaa-aaaaaaaa-aaaaaaaa
+          items:
+            type: string
+          type: array
+        redirect_uris:
+          description: |
+            Indicates the URI to return the user to after authorization is
+            complete, which is the endpoint on your server to receive the
+            authorization_code.
+
+            Must be identical to the redirect URI provided in the original link.
+
+            Please email me after signup and I will set both your client secret
+            and redirect_uri (required) when you reach out.
+          example:
+          - https://app.your-company.com
+          - https://dev.app.your-company.com
+          items:
+            type: string
+          type: array
+        name:
+          description: |
+            Name of your app that shows up in the Affix Connect application
+          example: Your App
+          type: string
+        webhook_uri:
+          description: |
+            If enabled, webhooks will be sent to this endpoint
+          example: https://webhooks.your-company.com/aaaaaaaa-aaaaaaaa-aaaaaaaa-aaaaaaaa
+          nullable: true
+          type: string
+      required:
+      - client_secret
+      - name
+      - redirect_uris
+      type: object
+    ScopesResponse:
+      enum:
+      - /2023-03-01/official/company
+      - /2023-03-01/official/employee
+      - /2023-03-01/official/employees
+      - /2023-03-01/official/groups
+      - /2023-03-01/official/identity
+      - /2023-03-01/official/time-off-balances
+      - /2023-03-01/official/time-off-entries
+      - /2023-03-01/official/timesheets
+      - /2023-03-01/official/work-locations
+      - /2023-03-01/developer/company
+      - /2023-03-01/developer/employee
+      - /2023-03-01/developer/employees
+      - /2023-03-01/developer/groups
+      - /2023-03-01/developer/identity
+      - /2023-03-01/developer/payruns
+      - /2023-03-01/developer/payruns/:payrun_id
+      - /2023-03-01/developer/time-off-balances
+      - /2023-03-01/developer/time-off-entries
+      - /2023-03-01/developer/timesheets
+      - /2023-03-01/developer/work-locations
+      type: string
+    TokensResponse:
+      items:
+        properties:
+          token:
+            description: The client ID you received when you first created the application
+            example: 00000000-00000000-00000000-00000000
+            type: string
+          scopes:
+            description: |
+              One or more scope values indicating which parts of the user's account
+              you wish to access.
+
+              Note, slight deviation from the OAuth 2.1 spec in that the param is
+              scopes (plural) is used vs scope (singular)
+            example:
+            - /2023-03-01/payroll/employees
+            - /2023-03-01/payroll/identity
+            - /2023-03-01/payroll/payruns
+            - /2023-03-01/payroll/payruns/:payrun_id
+            items:
+              $ref: '#/components/schemas/ScopesResponse'
+            readOnly: true
+            type: array
+          created_at:
+            description: |
+              When the token was created (`/token` invocation)
+            example: 2023-08-09T08:09:40.724Z
+            format: date-time
+            type: string
+          mode:
+            $ref: '#/components/schemas/ModeResponse'
+          provider:
+            $ref: '#/components/schemas/ProviderResponse'
+          valid:
+            description: if the token is valid or not
+            example: true
+            type: boolean
+        required:
+        - mode
+        - provider
+        - scopes
+        - token
+        - valid
+        type: object
+      type: array
+    IdAndMessageResponse:
+      properties:
+        message:
+          description: A description of the error
+          type: string
+        id:
+          description: The id of the entity that the id applies. For example, the
+            transaction id
+          type: string
+      required:
+      - id
+      - message
+      type: object
+    TokenRequest:
+      example:
+        code: Y2xpZW50IzkzMTU4MGQwLWYwYjctNGJiOC1iYmZmLWI4MTNlYzMxNTVjYXxjb2RlIzE1MmIwYjk3LTg2ZWMtNDZlNC1hZDUyLWY5ZTAxNzE2MDIwNAo=
+        grant_type: authorization_code
+        client_secret: ffffffff-ffffffff-ffffffff-ffffffff
+        redirect_uri: https://example.com
+        client_id: 00000000-00000000-00000000-00000000
+      properties:
+        client_id:
+          description: The client ID you received when you first created the application
+          example: 00000000-00000000-00000000-00000000
+          type: string
+          writeOnly: true
+        client_secret:
+          description: |
+            The client secret. Since there can be multiple `client_secret`s
+            (to allow for rotation of secrets without downtime to your
+            customers), any current `client_secret` is valid
+
+            Please email me after signup and I will set both your client secret
+            and redirect_uri (required) when you reach out.
+          example: ffffffff-ffffffff-ffffffff-ffffffff
+          type: string
+          writeOnly: true
+        grant_type:
+          description: This is a hardcoded value required by the OAuth 2.1 spec
+          enum:
+          - authorization_code
+          example: authorization_code
+          type: string
+          writeOnly: true
+        code:
+          description: This is the code you received in the query string
+          example: Y2xpZW50IzkzMTU4MGQwLWYwYjctNGJiOC1iYmZmLWI4MTNlYzMxNTVjYXxjb2RlIzE1MmIwYjk3LTg2ZWMtNDZlNC1hZDUyLWY5ZTAxNzE2MDIwNAo=
+          type: string
+          writeOnly: true
+        redirect_uri:
+          description: |
+            Indicates the URI to return the user to after authorization is
+            complete, which is the endpoint on your server to receive the
+            authorization_code.
+
+            Must be identical to the redirect URI provided in the original link.
+
+            Please email me after signup and I will set both your client secret
+            and redirect_uri (required) when you reach out.
+          example: https://example.com
+          type: string
+          writeOnly: true
+      required:
+      - client_id
+      - client_secret
+      - code
+      - grant_type
+      - redirect_uri
+      type: object
+    TokenResponse:
+      example:
+        access_token: Y2xpZW50IzkzMTU4MGQwLWYwYjctNGJiOC1iYmZmLWI4MTNlYzMxNTVjYXx0b2tlbiM4ZDY5NzMwZi1kNzI1LTQ1ZjYtYTVlOC1mZmQ0NWE3ZjhkNDE=
+        scopes:
+        - identity
+        - census
+        token_type: Bearer
+      properties:
+        access_token:
+          description: The issued access_token
+          example: Y2xpZW50IzkzMTU4MGQwLWYwYjctNGJiOC1iYmZmLWI4MTNlYzMxNTVjYXx0b2tlbiM4ZDY5NzMwZi1kNzI1LTQ1ZjYtYTVlOC1mZmQ0NWE3ZjhkNDE=
+          readOnly: true
+          type: string
+        mode:
+          $ref: '#/components/schemas/ModeResponse'
+        provider:
+          $ref: '#/components/schemas/ProviderResponse'
+        scopes:
+          description: |
+            One or more scope values indicating which parts of the user's account
+            you wish to access.
+
+            Note, slight deviation from the OAuth 2.1 spec in that the param is
+            scopes (plural) is used vs scope (singular)
+          example:
+          - identity
+          - census
+          items:
+            $ref: '#/components/schemas/ScopesResponse'
+          readOnly: true
+          type: array
+        token_type:
+          description: The token type to pass in the `Authorization` header
+          enum:
+          - Bearer
+          example: Bearer
+          readOnly: true
+          type: string
+      required:
+      - access_token
+      - mode
+      - provider
+      - scopes
+      - token_type
+      type: object
+    IntrospectResponse:
+      example:
+        scopes:
+        - identity
+        - census
+        client_id: 00000000-00000000-00000000-00000000
+      properties:
+        client_id:
+          description: The client ID you received when you first created the application
+          example: 00000000-00000000-00000000-00000000
+          readOnly: true
+          type: string
+        mode:
+          $ref: '#/components/schemas/ModeResponse'
+        provider:
+          $ref: '#/components/schemas/ProviderResponse'
+        scopes:
+          description: |
+            One or more scope values indicating which parts of the user's account
+            you wish to access.
+
+            Note, slight deviation from the OAuth 2.1 spec in that the param is
+            scopes (plural) is used vs scope (singular)
+          example:
+          - identity
+          - census
+          items:
+            $ref: '#/components/schemas/ScopesResponse'
+          readOnly: true
+          type: array
+      required:
+      - client_id
+      - mode
+      - provider
+      - scopes
+      type: object
+    DisconnectResponse:
+      example:
+        disconnected: true
+      properties:
+        disconnected:
+          description: The access token has been disconnected and is no longer allowed
+            to be used by your application
+          enum:
+          - true
+          example: true
+          readOnly: true
+          type: boolean
+      required:
+      - disconnected
+      type: object
+    addressResponse:
+      example:
+        street_address: 221 S Main Street
+        country: IE
+        post_code: "30691"
+        locality: Yuma
+        administrative_area: AZ
+      nullable: true
+      properties:
+        street_address:
+          example: 221 S Main Street
+          nullable: true
+          type: string
+        locality:
+          example: Yuma
+          nullable: true
+          type: string
+        administrative_area:
+          description: |
+            The administrative area of the address. If US or CA, the two-letter
+            state or province abbreviation. Else, the province /
+            administrative area; such as, `Dublin 2` or `County Cork`
+          example: AZ
+          nullable: true
+          type: string
+        country:
+          description: |
+            The ISO-3166-2 two-letter abbreviation of the country.
+            Reference https://en.wikipedia.org/wiki/ISO_3166-2 for more details
+          enum:
+          - null
+          - AT
+          - AU
+          - BE
+          - CA
+          - CH
+          - CZ
+          - DE
+          - DK
+          - EE
+          - ES
+          - FR
+          - GB
+          - IE
+          - IT
+          - JP
+          - LT
+          - LV
+          - NL
+          - "NO"
+          - PL
+          - RO
+          - SE
+          - SG
+          - SK
+          - US
+          example: IE
+          nullable: true
+          type: string
+        post_code:
+          example: "30691"
+          nullable: true
+          type: string
+      required:
+      - administrative_area
+      - country
+      - locality
+      - post_code
+      - street_address
+      type: object
+    CompanyResponse:
+      example:
+        address:
+          street_address: 221 S Main Street
+          country: IE
+          post_code: "30691"
+          locality: Yuma
+          administrative_area: AZ
+        remote_id: "19202938"
+        id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+        legal_name: Affix
+        display_name: Affix API Limited
+        tax_id: 12-3456789
+      properties:
+        id:
+          description: The Affix-assigned id of the abscence
+          example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          type: string
+        remote_id:
+          description: the remote system-assigned id of the abscence
+          example: "19202938"
+          type: string
+        legal_name:
+          example: Affix
+          nullable: true
+          type: string
+        display_name:
+          example: Affix API Limited
+          nullable: true
+          type: string
+        tax_id:
+          example: 12-3456789
+          nullable: true
+          type: string
+        address:
+          $ref: '#/components/schemas/addressResponse'
+      required:
+      - address
+      - display_name
+      - id
+      - legal_name
+      - remote_id
+      - tax_id
+      type: object
+    Companies20230301Response:
+      items:
+        $ref: '#/components/schemas/CompanyResponse'
+      type: array
+    address-no-non-nullRequest:
+      example:
+        street_address: 221 S Main Street
+        country: IE
+        post_code: "30691"
+        locality: Yuma
+        administrative_area: AZ
+      nullable: true
+      properties:
+        street_address:
+          example: 221 S Main Street
+          nullable: true
+          type: string
+        locality:
+          example: Yuma
+          nullable: true
+          type: string
+        administrative_area:
+          description: |
+            The administrative area of the address. If US or CA, the two-letter
+            state or province abbreviation. Else, the province /
+            administrative area; such as, `Dublin 2` or `County Cork`
+          example: AZ
+          nullable: true
+          type: string
+        country:
+          description: |
+            The ISO-3166-2 two-letter abbreviation of the country.
+            Reference https://en.wikipedia.org/wiki/ISO_3166-2 for more details
+          enum:
+          - AT
+          - BE
+          - CA
+          - CH
+          - CZ
+          - DE
+          - DK
+          - EE
+          - ES
+          - FR
+          - GB
+          - IE
+          - IT
+          - JP
+          - LT
+          - LV
+          - NL
+          - "NO"
+          - PL
+          - RO
+          - SE
+          - SG
+          - SK
+          - US
+          example: IE
+          nullable: true
+          type: string
+        post_code:
+          example: "30691"
+          nullable: true
+          type: string
+      required:
+      - administrative_area
+      - country
+      - locality
+      - post_code
+      - street_address
+      type: object
+    location-no-non-nullRequest:
+      example:
+        address:
+          street_address: 221 S Main Street
+          country: IE
+          post_code: "30691"
+          locality: Yuma
+          administrative_area: AZ
+        remote_id: "19202938"
+        name: NYC Office
+        id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+        type: office
+      nullable: true
+      properties:
+        id:
+          description: The Affix-assigned id of the individual
+          example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          nullable: true
+          type: string
+        remote_id:
+          description: the remote system-assigned id of the individual
+          example: "19202938"
+          nullable: true
+          type: string
+        name:
+          description: System assigned description of the location
+          example: NYC Office
+          nullable: true
+          type: string
+        type:
+          description: |
+            The location's type. In cases where there is no clear mapping, the
+            original value passed through will be returned.
+          example: office
+          nullable: true
+          type: string
+        address:
+          $ref: '#/components/schemas/address-no-non-nullRequest'
+      required:
+      - address
+      - id
+      - name
+      - remote_id
+      - type
+      type: object
+    CurrencyRequest:
+      enum:
+      - usd
+      - gbp
+      - eur
+      type: string
+    employment-no-null-enumRequest:
+      example:
+        employment_type: full_time
+        effective_date: 2020-10-11T00:00:00.000+0000
+        pay_period: year
+        pay_frequency: semimonthly
+        job_title: Software Developer
+        pay_rate: 85000
+      properties:
+        job_title:
+          example: Software Developer
+          nullable: true
+          type: string
+        pay_rate:
+          example: 85000
+          nullable: true
+          type: number
+        pay_period:
+          example: year
+          nullable: true
+          type: string
+        pay_frequency:
+          enum:
+          - weekly
+          - biweekly
+          - semimonthly
+          - monthly
+          - other
+          example: semimonthly
+          nullable: true
+          type: string
+        employment_type:
+          enum:
+          - full_time
+          - part_time
+          - contractor
+          - other
+          example: full_time
+          nullable: true
+          type: string
+        currency:
+          $ref: '#/components/schemas/CurrencyRequest'
+        effective_date:
+          example: 2020-10-11
+          format: date
+          nullable: true
+          type: string
+      required:
+      - currency
+      - effective_date
+      - employment_type
+      - job_title
+      - pay_frequency
+      - pay_period
+      - pay_rate
+      type: object
+    group-no-null-enumRequest:
+      example:
+        id: 4B9bKBpX5tnwjiG93TAqF7ci
+        remote_id: df6c28e8
+        name: backend
+        type: team
+      properties:
+        id:
+          example: 4B9bKBpX5tnwjiG93TAqF7ci
+          nullable: true
+          type: string
+        remote_id:
+          example: "49"
+          nullable: true
+          type: string
+        name:
+          example: Customer Success
+          nullable: true
+          type: string
+        type:
+          enum:
+          - department
+          - team
+          - cost_centre
+          - pay_group
+          example: TEAM
+          nullable: true
+          type: string
+      required:
+      - id
+      - name
+      - remote_id
+      - type
+      type: object
+    groups-no-null-enumRequest:
+      example:
+      - id: 4B9bKBpX5tnwjiG93TAqF7ci
+        remote_id: df6c28e8
+        name: backend
+        type: team
+      - id: 132Xpnw2a38aaQG93TAqF7ci
+        remote_id: 355c65922637
+        name: engineering
+        type: department
+      items:
+        $ref: '#/components/schemas/group-no-null-enumRequest'
+      nullable: true
+      type: array
+    CreateEmployeeRequest:
+      example:
+        display_full_name: Hirsch
+        work_email: greg@affixapi.com
+        employment_type: full_time
+        gender: male
+        ethnicity: white
+        date_of_birth: 1990-11-10T00:00:00.000+0000
+        work_location:
+          address:
+            street_address: 221 S Main Street
+            country: IE
+            post_code: "30691"
+            locality: Yuma
+            administrative_area: AZ
+          remote_id: "19202938"
+          name: NYC Office
+          id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          type: office
+        home_location:
+          street_address: 221 S Main Street
+          country: IE
+          post_code: "30691"
+          locality: Yuma
+          administrative_area: AZ
+        employment_status: active
+        first_name: Greg
+        job_title: Software developer
+        start_date: 2020-10-11T00:00:00.000+0000
+        bank_account:
+          account_number: account_number
+          iban: iban
+          bank_name: bank_name
+          bic: bic
+          holder_name: holder_name
+        manager:
+          work_email: work_email
+          remote_id: remote_id
+          last_name: last_name
+          id: id
+          first_name: first_name
+        custom_fields:
+          t_shirt_size: medium
+        last_name: Hirsch
+        groups:
+        - id: 4B9bKBpX5tnwjiG93TAqF7ci
+          remote_id: df6c28e8
+          name: backend
+          type: team
+        - id: 132Xpnw2a38aaQG93TAqF7ci
+          remote_id: 355c65922637
+          name: engineering
+          type: department
+        avatar: http://alturl.com/h2h8m
+        employments:
+        - employment_type: full_time
+          effective_date: 2020-10-11T00:00:00.000+0000
+          pay_period: year
+          pay_frequency: semimonthly
+          job_title: Software Developer
+          pay_rate: 85000
+        - employment_type: full_time
+          effective_date: 2020-10-11T00:00:00.000+0000
+          pay_period: year
+          pay_frequency: semimonthly
+          job_title: Software Developer
+          pay_rate: 85000
+        tax_id: "1234567890"
+        mobile_phone_number: Hirsch
+        marital_status: single
+        nationality: Irish
+        termination_date: 2021-10-12T00:00:00.000+0000
+        employee_number: "2"
+        personal_email: greg@gmail.com
+      properties:
+        employee_number:
+          example: "2"
+          nullable: true
+          type: string
+        first_name:
+          description: the first name of the individual
+          example: Greg
+          type: string
+        last_name:
+          description: the last name of the individual
+          example: Hirsch
+          type: string
+        display_full_name:
+          example: Hirsch
+          nullable: true
+          type: string
+        nationality:
+          example: Irish
+          nullable: true
+          type: string
+        job_title:
+          example: Software developer
+          nullable: true
+          type: string
+        work_email:
+          description: the work email of the individual
+          example: greg@affixapi.com
+          nullable: true
+          type: string
+        personal_email:
+          description: the personal email of the individual
+          example: greg@gmail.com
+          nullable: true
+          type: string
+        mobile_phone_number:
+          description: +1234567890
+          example: Hirsch
+          nullable: true
+          type: string
+        tax_id:
+          example: "1234567890"
+          nullable: true
+          type: string
+        gender:
+          enum:
+          - male
+          - female
+          - not_specified
+          example: male
+          nullable: true
+          type: string
+        ethnicity:
+          enum:
+          - asian
+          - black
+          - hispanic
+          - mixed
+          - not_specified
+          - other
+          - white
+          example: white
+          nullable: true
+          type: string
+        marital_status:
+          enum:
+          - single
+          - married
+          - not_specified
+          example: single
+          nullable: true
+          type: string
+        date_of_birth:
+          example: 1990-11-10
+          format: date
+          nullable: true
+          type: string
+        employment_status:
+          enum:
+          - active
+          - inactive
+          - pending
+          - leave
+          example: active
+          nullable: true
+          type: string
+        employment_type:
+          enum:
+          - full_time
+          - part_time
+          - contractor
+          - other
+          example: full_time
+          nullable: true
+          type: string
+        start_date:
+          example: 2020-10-11
+          format: date
+          nullable: true
+          type: string
+        termination_date:
+          example: 2021-10-12
+          format: date
+          nullable: true
+          type: string
+        avatar:
+          example: http://alturl.com/h2h8m
+          nullable: true
+          type: string
+        home_location:
+          $ref: '#/components/schemas/address-no-non-nullRequest'
+        work_location:
+          $ref: '#/components/schemas/location-no-non-nullRequest'
+        manager:
+          $ref: '#/components/schemas/CreateEmployeeRequest_manager'
+        bank_account:
+          $ref: '#/components/schemas/CreateEmployeeRequest_bank_account'
+        employments:
+          items:
+            $ref: '#/components/schemas/employment-no-null-enumRequest'
+          nullable: true
+          type: array
+        custom_fields:
+          example:
+            t_shirt_size: medium
+          nullable: true
+          type: object
+        groups:
+          example:
+          - id: 4B9bKBpX5tnwjiG93TAqF7ci
+            remote_id: df6c28e8
+            name: backend
+            type: team
+          - id: 132Xpnw2a38aaQG93TAqF7ci
+            remote_id: 355c65922637
+            name: engineering
+            type: department
+          items:
+            $ref: '#/components/schemas/group-no-null-enumRequest'
+          nullable: true
+          type: array
+      required:
+      - first_name
+      - last_name
+      type: object
+    locationResponse:
+      example:
+        address:
+          street_address: 221 S Main Street
+          country: IE
+          post_code: "30691"
+          locality: Yuma
+          administrative_area: AZ
+        remote_id: "19202938"
+        name: NYC Office
+        id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+        type: office
+      nullable: true
+      properties:
+        id:
+          description: The Affix-assigned id of the individual
+          example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          nullable: true
+          type: string
+        remote_id:
+          description: the remote system-assigned id of the individual
+          example: "19202938"
+          nullable: true
+          type: string
+        name:
+          description: System assigned description of the location
+          example: NYC Office
+          nullable: true
+          type: string
+        type:
+          description: |
+            The location's type. In cases where there is no clear mapping, the
+            original value passed through will be returned.
+          example: office
+          nullable: true
+          type: string
+        address:
+          $ref: '#/components/schemas/addressResponse'
+      required:
+      - address
+      - id
+      - name
+      - remote_id
+      - type
+      type: object
+    CurrencyResponse:
+      enum:
+      - usd
+      - gbp
+      - eur
+      type: string
+    employmentResponse:
+      example:
+        employment_type: full_time
+        effective_date: 2020-10-11T00:00:00.000+0000
+        pay_period: year
+        pay_frequency: semimonthly
+        job_title: Software Developer
+        pay_rate: 85000
+      properties:
+        job_title:
+          example: Software Developer
+          nullable: true
+          type: string
+        pay_rate:
+          example: 85000
+          nullable: true
+          type: number
+        pay_period:
+          example: year
+          nullable: true
+          type: string
+        pay_frequency:
+          enum:
+          - weekly
+          - biweekly
+          - semimonthly
+          - monthly
+          - other
+          - null
+          example: semimonthly
+          nullable: true
+          type: string
+        employment_type:
+          enum:
+          - full_time
+          - part_time
+          - contractor
+          - other
+          - null
+          example: full_time
+          nullable: true
+          type: string
+        currency:
+          $ref: '#/components/schemas/CurrencyResponse'
+        effective_date:
+          example: 2020-10-11
+          format: date
+          nullable: true
+          type: string
+      required:
+      - currency
+      - effective_date
+      - employment_type
+      - job_title
+      - pay_frequency
+      - pay_period
+      - pay_rate
+      type: object
+    groupResponse:
+      example:
+        id: 4B9bKBpX5tnwjiG93TAqF7ci
+        remote_id: df6c28e8
+        name: backend
+        type: team
+      properties:
+        id:
+          example: 4B9bKBpX5tnwjiG93TAqF7ci
+          nullable: true
+          type: string
+        remote_id:
+          example: "49"
+          nullable: true
+          type: string
+        name:
+          example: Customer Success
+          nullable: true
+          type: string
+        type:
+          enum:
+          - null
+          - department
+          - team
+          - cost_centre
+          - pay_group
+          example: TEAM
+          nullable: true
+          type: string
+      required:
+      - id
+      - name
+      - remote_id
+      - type
+      type: object
+    Groups20230301Response:
+      example:
+      - id: 4B9bKBpX5tnwjiG93TAqF7ci
+        remote_id: df6c28e8
+        name: backend
+        type: team
+      - id: 132Xpnw2a38aaQG93TAqF7ci
+        remote_id: 355c65922637
+        name: engineering
+        type: department
+      items:
+        $ref: '#/components/schemas/groupResponse'
+      nullable: true
+      type: array
+    EmployeeResponse:
+      example:
+        display_full_name: Hirsch
+        work_email: greg@affixapi.com
+        employment_type: full_time
+        gender: male
+        ethnicity: white
+        date_of_birth: 1990-11-10T00:00:00.000+0000
+        work_location:
+          address:
+            street_address: 221 S Main Street
+            country: IE
+            post_code: "30691"
+            locality: Yuma
+            administrative_area: AZ
+          remote_id: "19202938"
+          name: NYC Office
+          id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          type: office
+        home_location:
+          street_address: 221 S Main Street
+          country: IE
+          post_code: "30691"
+          locality: Yuma
+          administrative_area: AZ
+        id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+        employment_status: active
+        first_name: Greg
+        job_title: Software developer
+        start_date: 2020-10-11T00:00:00.000+0000
+        bank_account:
+          account_number: account_number
+          iban: iban
+          bank_name: bank_name
+          bic: bic
+          holder_name: holder_name
+        manager:
+          work_email: work_email
+          remote_id: remote_id
+          last_name: last_name
+          id: id
+          first_name: first_name
+        custom_fields:
+          t_shirt_size: medium
+        remote_id: "19202938"
+        last_name: Hirsch
+        groups:
+        - id: 4B9bKBpX5tnwjiG93TAqF7ci
+          remote_id: df6c28e8
+          name: backend
+          type: team
+        - id: 132Xpnw2a38aaQG93TAqF7ci
+          remote_id: 355c65922637
+          name: engineering
+          type: department
+        avatar: http://alturl.com/h2h8m
+        employments:
+        - employment_type: full_time
+          effective_date: 2020-10-11T00:00:00.000+0000
+          pay_period: year
+          pay_frequency: semimonthly
+          job_title: Software Developer
+          pay_rate: 85000
+        - employment_type: full_time
+          effective_date: 2020-10-11T00:00:00.000+0000
+          pay_period: year
+          pay_frequency: semimonthly
+          job_title: Software Developer
+          pay_rate: 85000
+        tax_id: "1234567890"
+        mobile_phone_number: Hirsch
+        marital_status: single
+        nationality: Irish
+        termination_date: 2021-10-12T00:00:00.000+0000
+        employee_number: "2"
+        remote_created_at: 2020-10-11T00:00:00.000+0000
+        personal_email: greg@gmail.com
+      properties:
+        id:
+          description: The Affix-assigned id of the individual
+          example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          readOnly: true
+          type: string
+        remote_id:
+          description: the remote system-assigned id of the individual
+          example: "19202938"
+          readOnly: true
+          type: string
+        employee_number:
+          example: "2"
+          nullable: true
+          type: string
+        first_name:
+          description: the first name of the individual
+          example: Greg
+          type: string
+        last_name:
+          description: the last name of the individual
+          example: Hirsch
+          type: string
+        display_full_name:
+          example: Hirsch
+          nullable: true
+          type: string
+        nationality:
+          example: Irish
+          nullable: true
+          type: string
+        job_title:
+          example: Software developer
+          nullable: true
+          type: string
+        work_email:
+          description: the work email of the individual
+          example: greg@affixapi.com
+          nullable: true
+          type: string
+        personal_email:
+          description: the personal email of the individual
+          example: greg@gmail.com
+          nullable: true
+          type: string
+        mobile_phone_number:
+          description: +1234567890
+          example: Hirsch
+          nullable: true
+          type: string
+        tax_id:
+          example: "1234567890"
+          nullable: true
+          type: string
+        gender:
+          enum:
+          - male
+          - female
+          - not_specified
+          - null
+          example: male
+          nullable: true
+          type: string
+        ethnicity:
+          enum:
+          - null
+          - asian
+          - black
+          - hispanic
+          - mixed
+          - not_specified
+          - other
+          - white
+          example: white
+          nullable: true
+          type: string
+        marital_status:
+          enum:
+          - single
+          - married
+          - not_specified
+          - null
+          example: single
+          nullable: true
+          type: string
+        date_of_birth:
+          example: 1990-11-10
+          format: date
+          nullable: true
+          type: string
+        employment_status:
+          enum:
+          - null
+          - active
+          - inactive
+          - pending
+          - leave
+          example: active
+          nullable: true
+          type: string
+        employment_type:
+          enum:
+          - null
+          - full_time
+          - part_time
+          - contractor
+          - other
+          example: full_time
+          nullable: true
+          type: string
+        start_date:
+          example: 2020-10-11
+          format: date
+          nullable: true
+          type: string
+        remote_created_at:
+          example: 2020-10-11
+          format: date
+          nullable: true
+          readOnly: true
+          type: string
+        termination_date:
+          example: 2021-10-12
+          format: date
+          nullable: true
+          type: string
+        avatar:
+          example: http://alturl.com/h2h8m
+          nullable: true
+          type: string
+        home_location:
+          $ref: '#/components/schemas/addressResponse'
+        work_location:
+          $ref: '#/components/schemas/locationResponse'
+        manager:
+          $ref: '#/components/schemas/CreateEmployeeRequest_manager'
+        bank_account:
+          $ref: '#/components/schemas/CreateEmployeeRequest_bank_account'
+        employments:
+          items:
+            $ref: '#/components/schemas/employmentResponse'
+          nullable: true
+          type: array
+        custom_fields:
+          example:
+            t_shirt_size: medium
+          nullable: true
+          type: object
+        groups:
+          example:
+          - id: 4B9bKBpX5tnwjiG93TAqF7ci
+            remote_id: df6c28e8
+            name: backend
+            type: team
+          - id: 132Xpnw2a38aaQG93TAqF7ci
+            remote_id: 355c65922637
+            name: engineering
+            type: department
+          items:
+            $ref: '#/components/schemas/groupResponse'
+          nullable: true
+          type: array
+      required:
+      - avatar
+      - bank_account
+      - custom_fields
+      - date_of_birth
+      - display_full_name
+      - employee_number
+      - employment_status
+      - employment_type
+      - employments
+      - ethnicity
+      - first_name
+      - gender
+      - groups
+      - home_location
+      - id
+      - job_title
+      - last_name
+      - manager
+      - marital_status
+      - mobile_phone_number
+      - nationality
+      - personal_email
+      - remote_created_at
+      - remote_id
+      - start_date
+      - tax_id
+      - termination_date
+      - work_email
+      - work_location
+      type: object
+    Employees20230301Response:
+      items:
+        $ref: '#/components/schemas/EmployeeResponse'
+      type: array
+    IdentityResponse:
+      example:
+        name: Laurine Barton
+        phone_number: "14150000000"
+        email: laurine.barton@me.com
+      properties:
+        name:
+          description: The name of the individual for the respective account, if known
+          example: Laurine Barton
+          type: string
+        email:
+          description: The email of the individual for the respective account, if
+            known
+          example: laurine.barton@me.com
+          type: string
+        phone_number:
+          description: |
+            The phone number of the individual for the respective account, if known.
+            Nullable for tokens created prior to 2023-03-05
+          example: "14150000000"
+          nullable: true
+          type: string
+      required:
+      - email
+      - name
+      - phone_number
+      type: object
+    TimeOffEntryResponse:
+      example:
+        end_date: 2020-10-14T00:00:00.000+0000
+        amount: 3
+        unit: days
+        request_type: vacation
+        employee_note: Visiting my family
+        remote_id: "19202938"
+        employee_id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+        id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+        remote_created_at: 2020-10-11T00:00:00.000+0000
+        remote_modified_at: 2020-10-12T00:00:00.000+0000
+        start_date: 2020-10-11T00:00:00.000+0000
+        status: approved
+      properties:
+        id:
+          description: The Affix-assigned id of the time off entry
+          example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          type: string
+        remote_id:
+          description: the remote system-assigned id of the time off entry
+          example: "19202938"
+          type: string
+        employee_id:
+          description: the Affix-assigned id of the individual
+          example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          type: string
+        start_date:
+          example: 2020-10-11
+          format: date
+          nullable: true
+          type: string
+        end_date:
+          example: 2020-10-14
+          format: date
+          nullable: true
+          type: string
+        amount:
+          example: 3
+          multipleOf: 0.1
+          type: number
+        unit:
+          enum:
+          - null
+          - hours
+          - days
+          - months
+          example: days
+          type: string
+        status:
+          enum:
+          - null
+          - approved
+          - pending
+          - rejected
+          example: approved
+          nullable: true
+          type: string
+        employee_note:
+          example: Visiting my family
+          nullable: true
+          type: string
+        request_type:
+          example: vacation
+          nullable: true
+          type: string
+        remote_created_at:
+          example: 2020-10-11
+          format: date
+          nullable: true
+          type: string
+        remote_modified_at:
+          example: 2020-10-12
+          format: date
+          nullable: true
+          type: string
+      required:
+      - amount
+      - employee_id
+      - employee_note
+      - end_date
+      - id
+      - remote_created_at
+      - remote_id
+      - remote_modified_at
+      - request_type
+      - start_date
+      - status
+      - unit
+      type: object
+    TimeOffEntries20230301Response:
+      items:
+        $ref: '#/components/schemas/TimeOffEntryResponse'
+      type: array
+    TimesheetResponse:
+      example:
+        start_time: 2020-10-11T08:00:00Z
+        remote_id: "19202938"
+        employee_id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+        end_time: 2020-10-11T17:00:00Z
+        hours_worked: 8
+        id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+        remote_created_at: 2020-10-11T00:00:00.000+0000
+        remote_modified_at: 2020-10-12T00:00:00.000+0000
+      properties:
+        id:
+          description: The Affix-assigned id of the time off entry
+          example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          type: string
+        remote_id:
+          description: the remote system-assigned id of the time off entry
+          example: "19202938"
+          type: string
+        employee_id:
+          description: the Affix-assigned id of the individual
+          example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          type: string
+        start_time:
+          example: 2020-10-11T08:00:00Z
+          format: date-time
+          nullable: true
+          type: string
+        end_time:
+          example: 2020-10-11T17:00:00Z
+          format: date-time
+          nullable: true
+          type: string
+        hours_worked:
+          example: 8
+          multipleOf: 0.1
+          type: number
+        remote_created_at:
+          example: 2020-10-11
+          format: date
+          nullable: true
+          type: string
+        remote_modified_at:
+          example: 2020-10-12
+          format: date
+          nullable: true
+          type: string
+      required:
+      - employee_id
+      - end_time
+      - hours_worked
+      - id
+      - remote_created_at
+      - remote_id
+      - remote_modified_at
+      - start_time
+      type: object
+    Timesheets20230301Response:
+      items:
+        $ref: '#/components/schemas/TimesheetResponse'
+      type: array
+    TimeOffBalanceResponse:
+      example:
+        policy_type: vacation
+        balance: 24.5
+        employee_id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+        remote_id: "19202938"
+        policy_name: Comp/In Lieu Time
+        used: 12
+        remote_created_at: 2020-10-11T00:00:00.000+0000
+        remote_modified_at: 2020-10-11T00:00:00.000+0000
+      properties:
+        employee_id:
+          description: The Affix-assigned id of the individual
+          example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          type: string
+        remote_id:
+          description: the remote system-assigned id of the individual
+          example: "19202938"
+          type: string
+        balance:
+          example: 24.5
+          type: number
+        used:
+          example: 12
+          type: number
+        policy_name:
+          description: The name of the policy, as assigned by the remote system
+          example: Comp/In Lieu Time
+          nullable: true
+          type: string
+        policy_type:
+          enum:
+          - vacation
+          - sick
+          - personal
+          - jury_duty
+          - volunteer
+          - bereavement
+          nullable: true
+          type: string
+        remote_created_at:
+          example: 2020-10-11
+          format: date
+          nullable: true
+          type: string
+        remote_modified_at:
+          example: 2020-10-11
+          format: date
+          nullable: true
+          type: string
+      required:
+      - balance
+      - employee_id
+      - policy_name
+      - policy_type
+      - remote_created_at
+      - remote_id
+      - remote_modified_at
+      - used
+      type: object
+    TimeOffBalances20230301Response:
+      items:
+        $ref: '#/components/schemas/TimeOffBalanceResponse'
+      type: array
+    WorkLocations20230301Response:
+      description: Work locations
+      items:
+        $ref: '#/components/schemas/locationResponse'
+      type: array
+    PayrunResponse:
+      example:
+        end_date: 2020-01-31T00:00:00.000+0000
+        remote_id: "19202938"
+        run_state: paid
+        id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+        run_type: regular
+        payment_date: 2020-01-27T00:00:00.000+0000
+        start_date: 2020-01-01T00:00:00.000+0000
+      properties:
+        id:
+          description: The Affix-assigned id of the individual
+          example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          type: string
+        remote_id:
+          description: the remote system-assigned id of the payrun
+          example: "19202938"
+          type: string
+        run_state:
+          enum:
+          - paid
+          - pending
+          example: paid
+          type: string
+        run_type:
+          enum:
+          - regular
+          - null
+          example: regular
+          nullable: true
+          type: string
+        start_date:
+          description: Payrun period start date
+          example: 2020-01-01
+          format: date
+          nullable: true
+          type: string
+        end_date:
+          description: Payrun period end date
+          example: 2020-01-31
+          format: date
+          nullable: true
+          type: string
+        payment_date:
+          description: Payment date / check date
+          example: 2020-01-27
+          format: date
+          nullable: true
+          type: string
+      required:
+      - end_date
+      - id
+      - payment_date
+      - remote_id
+      - run_state
+      - run_type
+      - start_date
+      type: object
+    Payruns20230301Response:
+      items:
+        $ref: '#/components/schemas/PayrunResponse'
+      type: array
+    PayslipResponse:
+      example:
+        end_date: 2020-01-31T00:00:00.000+0000
+        remote_id: "19202938"
+        taxes:
+        - name: PRSI
+          amount: 725
+          employer_tax: false
+        - name: PSC (Class S)
+          amount: 125
+          employer_tax: false
+        - name: Income Tax
+          amount: 10025
+          employer_tax: false
+        - name: Payroll Tax
+          amount: 10025
+          employer_tax: true
+        gross_pay: 134267
+        deductions:
+        - name: Transportation allowance benefit
+          amount: 3454
+        - name: Private Health Insurance (Employee)
+          amount: 3454
+        net_pay: 86578
+        earnings:
+        - amount: 100234
+          name: SALARY
+          hours: 80
+        - amount: 834234
+          name: OVERTIME
+          hours: 8
+        contributions:
+        - name: Private Health Insurance (Employer)
+          amount: 13454
+        - name: Transportation allowance benefit (Employer)
+          amount: 3454
+        - name: Other (Employer)
+          amount: 3454
+        payrun_id: 35347df1-95e7-46e2-93cc-66f1191edca5
+        employee_id: d2f972d0-2526-434b-9409-4c3b468e08f0
+        currency: eur
+        id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+        payment_date: 2020-01-27T00:00:00.000+0000
+        start_date: 2020-01-01T00:00:00.000+0000
+      properties:
+        id:
+          description: The Affix-assigned id of the payslip
+          example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          type: string
+        remote_id:
+          description: the remote system-assigned id of the payrun
+          example: "19202938"
+          type: string
+        employee_id:
+          example: d2f972d0-2526-434b-9409-4c3b468e08f0
+          type: string
+        payrun_id:
+          example: 35347df1-95e7-46e2-93cc-66f1191edca5
+          type: string
+        currency:
+          enum:
+          - usd
+          - eur
+          - gbp
+          example: eur
+          type: string
+        gross_pay:
+          description: if USD/EUR/GBP, in cent
+          example: 134267
+          type: number
+        net_pay:
+          description: if USD/EUR/GBP, in cent
+          example: 86578
+          type: number
+        start_date:
+          example: 2020-01-01
+          format: date
+          type: string
+        end_date:
+          example: 2020-01-31
+          format: date
+          type: string
+        payment_date:
+          example: 2020-01-27
+          format: date
+          type: string
+        earnings:
+          example:
+          - amount: 100234
+            name: SALARY
+            hours: 80
+          - amount: 834234
+            name: OVERTIME
+            hours: 8
+          items:
+            $ref: '#/components/schemas/PayslipResponse_earnings'
+          type: array
+        contributions:
+          description: |
+            Items paid by the employer that are not included in gross pay,
+            such as employer-paid portion of private health insurance
+          example:
+          - name: Private Health Insurance (Employer)
+            amount: 13454
+          - name: Transportation allowance benefit (Employer)
+            amount: 3454
+          - name: Other (Employer)
+            amount: 3454
+          items:
+            $ref: '#/components/schemas/PayslipResponse_contributions'
+          nullable: true
+          type: array
+        deductions:
+          example:
+          - name: Transportation allowance benefit
+            amount: 3454
+          - name: Private Health Insurance (Employee)
+            amount: 3454
+          items:
+            $ref: '#/components/schemas/PayslipResponse_deductions'
+          type: array
+        taxes:
+          example:
+          - name: PRSI
+            amount: 725
+            employer_tax: false
+          - name: PSC (Class S)
+            amount: 125
+            employer_tax: false
+          - name: Income Tax
+            amount: 10025
+            employer_tax: false
+          - name: Payroll Tax
+            amount: 10025
+            employer_tax: true
+          items:
+            $ref: '#/components/schemas/PayslipResponse_taxes'
+          type: array
+      required:
+      - contributions
+      - currency
+      - deductions
+      - earnings
+      - employee_id
+      - end_date
+      - gross_pay
+      - id
+      - net_pay
+      - payment_date
+      - payrun_id
+      - remote_id
+      - start_date
+      - taxes
+      type: object
+    Payslips20230301Response:
+      items:
+        $ref: '#/components/schemas/PayslipResponse'
+      type: array
+    inline_response_400:
+      properties:
+        message:
+          type: string
+        validation_error:
+          type: string
+      type: object
+    inline_response_401:
+      properties:
+        error:
+          description: The type of error
+          enum:
+          - authentication_error
+          type: string
+        message:
+          description: |
+            A descriptive description of the error
+          example: Your password is incorrect
+          type: string
+        code:
+          enum:
+          - incorrect_username_or_password
+          - incorrect_mfa_or_otp
+          - reauthentication_required // cookies are now expired
+          - additional_account_setup_required // password reset, etc
+          - captcha_challenge // amazon type1 captcha challenge (currently unsovable)
+          - no_valid_accounts // not used currently but reserved for future use
+          - insufficient_permission // not enough privileges (ie not an admin, or
+            not enough provider scopes on a provider api token for the Affix scopes
+            requested)
+          type: string
+      required:
+      - code
+      - error
+      - message
+      type: object
+    inline_response_409:
+      properties:
+        code:
+          description: |
+            The authorization code insert that caused a conflict
+          type: string
+        token:
+          description: |
+            The access token insert that caused a conflict
+          type: string
+        error:
+          description: |
+            The description of the type of error, ie conflict of two requests of the the same authorization code
+          enum:
+          - conflict
+          type: string
+      required:
+      - error
+      type: object
+    CreateEmployeeRequest_manager:
+      example:
+        work_email: work_email
+        remote_id: remote_id
+        last_name: last_name
+        id: id
+        first_name: first_name
+      nullable: true
+      properties:
+        first_name:
+          nullable: true
+          type: string
+        last_name:
+          nullable: true
+          type: string
+        id:
+          type: string
+        work_email:
+          nullable: true
+          type: string
+        remote_id:
+          nullable: true
+          type: string
+      required:
+      - first_name
+      - id
+      - last_name
+      - remote_id
+      - work_email
+      type: object
+    CreateEmployeeRequest_bank_account:
+      example:
+        account_number: account_number
+        iban: iban
+        bank_name: bank_name
+        bic: bic
+        holder_name: holder_name
+      nullable: true
+      properties:
+        account_number:
+          nullable: true
+          type: string
+        bank_name:
+          nullable: true
+          type: string
+        bic:
+          nullable: true
+          type: string
+        holder_name:
+          nullable: true
+          type: string
+        iban:
+          nullable: true
+          type: string
+      required:
+      - account_number
+      - bank_name
+      - bic
+      - holder_name
+      - iban
+      type: object
+    PayslipResponse_earnings:
+      description: The breakdown of gross pay
+      properties:
+        name:
+          example: salary
+          type: string
+        amount:
+          description: if USD/EUR/GBP, in cent
+          example: 834234
+          type: number
+        hours:
+          description: hours, if applicable
+          example: 80
+          nullable: true
+          type: number
+      required:
+      - amount
+      - hours
+      - name
+      type: object
+    PayslipResponse_contributions:
+      properties:
+        name:
+          example: Private Health Insurance (Employer)
+          type: string
+        amount:
+          description: if USD/EUR/GBP, in cent
+          example: 3454
+          type: number
+      required:
+      - amount
+      - name
+      type: object
+    PayslipResponse_deductions:
+      properties:
+        name:
+          example: Private Insurance Premium (Employee)
+          type: string
+        amount:
+          description: if USD/EUR/GBP, in cent
+          example: 3454
+          type: number
+      required:
+      - amount
+      - name
+      type: object
+    PayslipResponse_taxes:
+      properties:
+        name:
+          example: Income Tax
+          type: string
+        amount:
+          description: if USD/EUR/GBP, in cent
+          example: 10025
+          type: number
+        employer_tax:
+          nullable: true
+          type: boolean
+      required:
+      - amount
+      - employer_tax
+      - name
+      type: object
+  securitySchemes:
+    access-token:
+      description: |
+        Token HTTP authentication. Allowed headers-- Authorization: Bearer
+        ```shell
+          Authorization: Bearer {TOKEN}
+        ```
+      in: header
+      name: Authorization
+      type: apiKey
+    basic:
+      description: |
+        Basic HTTP authentication. Base64 of `client_id:client_secret`. Since there can be many `client_secret` values, any current `client_secret` sufficies
+        Allowed headers-- Authorization: Basic
+        ```shell
+          Authorization: Basic ZGVtbzpwQDU1dzByZA==
+        ```
+      in: header
+      name: Authorization
+      type: apiKey
+

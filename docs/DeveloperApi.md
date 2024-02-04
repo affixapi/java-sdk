@@ -1,0 +1,800 @@
+# DeveloperApi
+
+All URIs are relative to *https://api.affixapi.com*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**developerCompanies20230301**](DeveloperApi.md#developerCompanies20230301) | **GET** /2023-03-01/developer/company | Company
+[**developerCreateEmployee20230301**](DeveloperApi.md#developerCreateEmployee20230301) | **POST** /2023-03-01/developer/employee | Create employee
+[**developerEmployees20230301**](DeveloperApi.md#developerEmployees20230301) | **GET** /2023-03-01/developer/employees | Employees
+[**developerGroups20230301**](DeveloperApi.md#developerGroups20230301) | **GET** /2023-03-01/developer/groups | Groups
+[**developerIdentity20230301**](DeveloperApi.md#developerIdentity20230301) | **GET** /2023-03-01/developer/identity | Identity
+[**developerPayruns20230301**](DeveloperApi.md#developerPayruns20230301) | **GET** /2023-03-01/developer/payruns | Payruns
+[**developerPayslips20230301**](DeveloperApi.md#developerPayslips20230301) | **GET** /2023-03-01/developer/payruns/{payrun_id} | Payslips
+[**developerTimeOffBalances20230301**](DeveloperApi.md#developerTimeOffBalances20230301) | **GET** /2023-03-01/developer/time-off-balances | Time off balances
+[**developerTimeOffEntries20230301**](DeveloperApi.md#developerTimeOffEntries20230301) | **GET** /2023-03-01/developer/time-off-entries | Time off entries
+[**developerTimesheets20230301**](DeveloperApi.md#developerTimesheets20230301) | **GET** /2023-03-01/developer/timesheets | Timesheets
+[**developerWorkLocations20230301**](DeveloperApi.md#developerWorkLocations20230301) | **GET** /2023-03-01/developer/work-locations | Work locations
+
+
+<a name="developerCompanies20230301"></a>
+# **developerCompanies20230301**
+> List&lt;CompanyResponse&gt; developerCompanies20230301()
+
+Company
+
+Retrieve company information 
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.DeveloperApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.affixapi.com");
+    
+    // Configure API key authorization: access-token
+    ApiKeyAuth access-token = (ApiKeyAuth) defaultClient.getAuthentication("access-token");
+    access-token.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //access-token.setApiKeyPrefix("Token");
+
+    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    try {
+      List<CompanyResponse> result = apiInstance.developerCompanies20230301();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DeveloperApi#developerCompanies20230301");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;CompanyResponse&gt;**](CompanyResponse.md)
+
+### Authorization
+
+[access-token](../README.md#access-token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**202** | Accepted + pending (async job started) |  * Retry-After - Retry your call after the specified amount of seconds <br>  |
+**401** | Authentication Error |  -  |
+**429** | Rate Limited / Too Many Requests |  * Retry-After - Retry your call after the specified amount of seconds <br>  |
+**500** | Server Error |  -  |
+**501** | Not Implemented |  -  |
+
+<a name="developerCreateEmployee20230301"></a>
+# **developerCreateEmployee20230301**
+> EmployeeResponse developerCreateEmployee20230301(createEmployeeRequest)
+
+Create employee
+
+Creates a new Employee 
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.DeveloperApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.affixapi.com");
+    
+    // Configure API key authorization: access-token
+    ApiKeyAuth access-token = (ApiKeyAuth) defaultClient.getAuthentication("access-token");
+    access-token.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //access-token.setApiKeyPrefix("Token");
+
+    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    CreateEmployeeRequest createEmployeeRequest = new CreateEmployeeRequest(); // CreateEmployeeRequest | 
+    try {
+      EmployeeResponse result = apiInstance.developerCreateEmployee20230301(createEmployeeRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DeveloperApi#developerCreateEmployee20230301");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createEmployeeRequest** | [**CreateEmployeeRequest**](CreateEmployeeRequest.md)|  |
+
+### Return type
+
+[**EmployeeResponse**](EmployeeResponse.md)
+
+### Authorization
+
+[access-token](../README.md#access-token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Success |  -  |
+**400** | Bad Request |  -  |
+**429** | Rate Limited / Too Many Requests |  * Retry-After - Retry your call after the specified amount of seconds <br>  |
+**500** | Server Error |  -  |
+**501** | Not Implemented |  -  |
+
+<a name="developerEmployees20230301"></a>
+# **developerEmployees20230301**
+> List&lt;EmployeeResponse&gt; developerEmployees20230301()
+
+Employees
+
+List the individuals (employees, contractors, accountants, and others) listed in the HRIS/Payroll software 
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.DeveloperApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.affixapi.com");
+    
+    // Configure API key authorization: access-token
+    ApiKeyAuth access-token = (ApiKeyAuth) defaultClient.getAuthentication("access-token");
+    access-token.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //access-token.setApiKeyPrefix("Token");
+
+    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    try {
+      List<EmployeeResponse> result = apiInstance.developerEmployees20230301();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DeveloperApi#developerEmployees20230301");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;EmployeeResponse&gt;**](EmployeeResponse.md)
+
+### Authorization
+
+[access-token](../README.md#access-token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**202** | Accepted + pending (async job started) |  * Retry-After - Retry your call after the specified amount of seconds <br>  |
+**401** | Authentication Error |  -  |
+**429** | Rate Limited / Too Many Requests |  * Retry-After - Retry your call after the specified amount of seconds <br>  |
+**500** | Server Error |  -  |
+**501** | Not Implemented |  -  |
+
+<a name="developerGroups20230301"></a>
+# **developerGroups20230301**
+> List&lt;GroupResponse&gt; developerGroups20230301()
+
+Groups
+
+The Group object is used to represent any subset of employees, such as PayGroup, Team, or Department. Employees can be in multiple Groups. 
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.DeveloperApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.affixapi.com");
+    
+    // Configure API key authorization: access-token
+    ApiKeyAuth access-token = (ApiKeyAuth) defaultClient.getAuthentication("access-token");
+    access-token.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //access-token.setApiKeyPrefix("Token");
+
+    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    try {
+      List<GroupResponse> result = apiInstance.developerGroups20230301();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DeveloperApi#developerGroups20230301");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;GroupResponse&gt;**](GroupResponse.md)
+
+### Authorization
+
+[access-token](../README.md#access-token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**202** | Accepted + pending (async job started) |  * Retry-After - Retry your call after the specified amount of seconds <br>  |
+**401** | Authentication Error |  -  |
+**429** | Rate Limited / Too Many Requests |  * Retry-After - Retry your call after the specified amount of seconds <br>  |
+**500** | Server Error |  -  |
+**501** | Not Implemented |  -  |
+
+<a name="developerIdentity20230301"></a>
+# **developerIdentity20230301**
+> IdentityResponse developerIdentity20230301()
+
+Identity
+
+List information of the user for the respective account 
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.DeveloperApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.affixapi.com");
+    
+    // Configure API key authorization: access-token
+    ApiKeyAuth access-token = (ApiKeyAuth) defaultClient.getAuthentication("access-token");
+    access-token.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //access-token.setApiKeyPrefix("Token");
+
+    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    try {
+      IdentityResponse result = apiInstance.developerIdentity20230301();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DeveloperApi#developerIdentity20230301");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**IdentityResponse**](IdentityResponse.md)
+
+### Authorization
+
+[access-token](../README.md#access-token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Authentication Error |  -  |
+**429** | Rate Limited / Too Many Requests |  * Retry-After - Retry your call after the specified amount of seconds <br>  |
+**500** | Server Error |  -  |
+
+<a name="developerPayruns20230301"></a>
+# **developerPayruns20230301**
+> List&lt;PayrunResponse&gt; developerPayruns20230301(startDate, endDate)
+
+Payruns
+
+List all the pay runs that occurred during the respective period.  Supported integrations:   - sageone   - simplepay.ie   - brightpay connect 
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.DeveloperApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.affixapi.com");
+    
+    // Configure API key authorization: access-token
+    ApiKeyAuth access-token = (ApiKeyAuth) defaultClient.getAuthentication("access-token");
+    access-token.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //access-token.setApiKeyPrefix("Token");
+
+    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    LocalDate startDate = new LocalDate(); // LocalDate | The start date of the search period
+    LocalDate endDate = new LocalDate(); // LocalDate | The end date of the search period
+    try {
+      List<PayrunResponse> result = apiInstance.developerPayruns20230301(startDate, endDate);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DeveloperApi#developerPayruns20230301");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **startDate** | **LocalDate**| The start date of the search period |
+ **endDate** | **LocalDate**| The end date of the search period |
+
+### Return type
+
+[**List&lt;PayrunResponse&gt;**](PayrunResponse.md)
+
+### Authorization
+
+[access-token](../README.md#access-token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**202** | Accepted + pending (async job started) |  * Retry-After - Retry your call after the specified amount of seconds <br>  |
+**401** | Authentication Error |  -  |
+**429** | Rate Limited / Too Many Requests |  * Retry-After - Retry your call after the specified amount of seconds <br>  |
+**500** | Server Error |  -  |
+**501** | Not Implemented |  -  |
+
+<a name="developerPayslips20230301"></a>
+# **developerPayslips20230301**
+> List&lt;PayslipResponse&gt; developerPayslips20230301(payrunId)
+
+Payslips
+
+Retrieves payslips from a specific payrun.  Supported integrations:   - sageone   - simplepay.ie   - brightpay connect 
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.DeveloperApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.affixapi.com");
+    
+    // Configure API key authorization: access-token
+    ApiKeyAuth access-token = (ApiKeyAuth) defaultClient.getAuthentication("access-token");
+    access-token.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //access-token.setApiKeyPrefix("Token");
+
+    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    String payrunId = "payrunId_example"; // String | The id of the payrun.
+    try {
+      List<PayslipResponse> result = apiInstance.developerPayslips20230301(payrunId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DeveloperApi#developerPayslips20230301");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payrunId** | **String**| The id of the payrun. |
+
+### Return type
+
+[**List&lt;PayslipResponse&gt;**](PayslipResponse.md)
+
+### Authorization
+
+[access-token](../README.md#access-token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**202** | Accepted + pending (async job started) |  * Retry-After - Retry your call after the specified amount of seconds <br>  |
+**401** | Authentication Error |  -  |
+**429** | Rate Limited / Too Many Requests |  * Retry-After - Retry your call after the specified amount of seconds <br>  |
+**500** | Server Error |  -  |
+**501** | Not Implemented |  -  |
+
+<a name="developerTimeOffBalances20230301"></a>
+# **developerTimeOffBalances20230301**
+> List&lt;TimeOffBalanceResponse&gt; developerTimeOffBalances20230301()
+
+Time off balances
+
+Retrieve all time off balances. 
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.DeveloperApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.affixapi.com");
+    
+    // Configure API key authorization: access-token
+    ApiKeyAuth access-token = (ApiKeyAuth) defaultClient.getAuthentication("access-token");
+    access-token.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //access-token.setApiKeyPrefix("Token");
+
+    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    try {
+      List<TimeOffBalanceResponse> result = apiInstance.developerTimeOffBalances20230301();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DeveloperApi#developerTimeOffBalances20230301");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;TimeOffBalanceResponse&gt;**](TimeOffBalanceResponse.md)
+
+### Authorization
+
+[access-token](../README.md#access-token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**202** | Accepted + pending (async job started) |  * Retry-After - Retry your call after the specified amount of seconds <br>  |
+**401** | Authentication Error |  -  |
+**429** | Rate Limited / Too Many Requests |  * Retry-After - Retry your call after the specified amount of seconds <br>  |
+**500** | Server Error |  -  |
+**501** | Not Implemented |  -  |
+
+<a name="developerTimeOffEntries20230301"></a>
+# **developerTimeOffEntries20230301**
+> List&lt;TimeOffEntryResponse&gt; developerTimeOffEntries20230301()
+
+Time off entries
+
+Retrieve time off / absence entries 
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.DeveloperApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.affixapi.com");
+    
+    // Configure API key authorization: access-token
+    ApiKeyAuth access-token = (ApiKeyAuth) defaultClient.getAuthentication("access-token");
+    access-token.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //access-token.setApiKeyPrefix("Token");
+
+    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    try {
+      List<TimeOffEntryResponse> result = apiInstance.developerTimeOffEntries20230301();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DeveloperApi#developerTimeOffEntries20230301");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;TimeOffEntryResponse&gt;**](TimeOffEntryResponse.md)
+
+### Authorization
+
+[access-token](../README.md#access-token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**202** | Accepted + pending (async job started) |  * Retry-After - Retry your call after the specified amount of seconds <br>  |
+**401** | Authentication Error |  -  |
+**429** | Rate Limited / Too Many Requests |  * Retry-After - Retry your call after the specified amount of seconds <br>  |
+**500** | Server Error |  -  |
+**501** | Not Implemented |  -  |
+
+<a name="developerTimesheets20230301"></a>
+# **developerTimesheets20230301**
+> List&lt;TimesheetResponse&gt; developerTimesheets20230301()
+
+Timesheets
+
+Retrieve Timesheets 
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.DeveloperApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.affixapi.com");
+    
+    // Configure API key authorization: access-token
+    ApiKeyAuth access-token = (ApiKeyAuth) defaultClient.getAuthentication("access-token");
+    access-token.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //access-token.setApiKeyPrefix("Token");
+
+    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    try {
+      List<TimesheetResponse> result = apiInstance.developerTimesheets20230301();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DeveloperApi#developerTimesheets20230301");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;TimesheetResponse&gt;**](TimesheetResponse.md)
+
+### Authorization
+
+[access-token](../README.md#access-token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**202** | Accepted + pending (async job started) |  * Retry-After - Retry your call after the specified amount of seconds <br>  |
+**401** | Authentication Error |  -  |
+**429** | Rate Limited / Too Many Requests |  * Retry-After - Retry your call after the specified amount of seconds <br>  |
+**500** | Server Error |  -  |
+**501** | Not Implemented |  -  |
+
+<a name="developerWorkLocations20230301"></a>
+# **developerWorkLocations20230301**
+> List&lt;LocationResponse&gt; developerWorkLocations20230301()
+
+Work locations
+
+The Location object is used to represent an address that can be associated with an employee 
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.DeveloperApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.affixapi.com");
+    
+    // Configure API key authorization: access-token
+    ApiKeyAuth access-token = (ApiKeyAuth) defaultClient.getAuthentication("access-token");
+    access-token.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //access-token.setApiKeyPrefix("Token");
+
+    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    try {
+      List<LocationResponse> result = apiInstance.developerWorkLocations20230301();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DeveloperApi#developerWorkLocations20230301");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;LocationResponse&gt;**](LocationResponse.md)
+
+### Authorization
+
+[access-token](../README.md#access-token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**202** | Accepted + pending (async job started) |  * Retry-After - Retry your call after the specified amount of seconds <br>  |
+**401** | Authentication Error |  -  |
+**429** | Rate Limited / Too Many Requests |  * Retry-After - Retry your call after the specified amount of seconds <br>  |
+**500** | Server Error |  -  |
+**501** | Not Implemented |  -  |
+
