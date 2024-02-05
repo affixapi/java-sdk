@@ -2,7 +2,7 @@
 
 Affix API
 - API version: 2023-03-01
-  - Build date: 2024-02-05T02:20:29.431443Z[Etc/UTC]
+  - Build date: 2024-02-05T02:37:52.674809Z[Etc/UTC]
 
 The affixapi.com API documentation.
 
