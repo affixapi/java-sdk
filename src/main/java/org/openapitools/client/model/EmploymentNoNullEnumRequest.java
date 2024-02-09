@@ -30,7 +30,7 @@ import org.threeten.bp.LocalDate;
 /**
  * EmploymentNoNullEnumRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-09T02:00:13.514732Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-09T03:52:23.840650Z[Etc/UTC]")
 public class EmploymentNoNullEnumRequest {
   public static final String SERIALIZED_NAME_JOB_TITLE = "job_title";
   @SerializedName(SERIALIZED_NAME_JOB_TITLE)
