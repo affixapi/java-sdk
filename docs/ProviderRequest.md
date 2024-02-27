@@ -59,7 +59,11 @@
 
 * `FOURTHHR` (value: `"fourthhr"`)
 
+* `GUSTO` (value: `"gusto"`)
+
 * `ITRENT` (value: `"itrent"`)
+
+* `JUSTWORKS` (value: `"justworks"`)
 
 * `OYSTERHR` (value: `"oysterhr"`)
 
@@ -71,7 +75,11 @@
 
 * `REMOTE_COM` (value: `"remote.com"`)
 
+* `RIPPLING` (value: `"rippling"`)
+
 * `SAGEONE` (value: `"sageone"`)
+
+* `SHAPE_PAYROLL` (value: `"shape payroll"`)
 
 * `SIMPLEPAY_IE` (value: `"simplepay.ie"`)
 

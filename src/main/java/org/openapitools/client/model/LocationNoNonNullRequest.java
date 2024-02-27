@@ -28,7 +28,7 @@ import org.openapitools.client.model.AddressNoNonNullRequest;
 /**
  * LocationNoNonNullRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-17T04:22:11.153280Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-27T16:02:29.587404Z[Etc/UTC]")
 public class LocationNoNonNullRequest {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

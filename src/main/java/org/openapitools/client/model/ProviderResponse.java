@@ -83,7 +83,11 @@ public enum ProviderResponse {
   
   FOURTHHR("fourthhr"),
   
+  GUSTO("gusto"),
+  
   ITRENT("itrent"),
+  
+  JUSTWORKS("justworks"),
   
   OYSTERHR("oysterhr"),
   
@@ -95,7 +99,11 @@ public enum ProviderResponse {
   
   REMOTE_COM("remote.com"),
   
+  RIPPLING("rippling"),
+  
   SAGEONE("sageone"),
+  
+  SHAPE_PAYROLL("shape payroll"),
   
   SIMPLEPAY_IE("simplepay.ie");
 

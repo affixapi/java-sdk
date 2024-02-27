@@ -2046,13 +2046,17 @@ components:
       - employment hero
       - factorialhr
       - fourthhr
+      - gusto
       - itrent
+      - justworks
       - oysterhr
       - paycircle
       - pento.io
       - peoplehr
       - remote.com
+      - rippling
       - sageone
+      - shape payroll
       - simplepay.ie
       type: string
     ModeResponse:
@@ -2089,13 +2093,17 @@ components:
       - employment hero
       - factorialhr
       - fourthhr
+      - gusto
       - itrent
+      - justworks
       - oysterhr
       - paycircle
       - pento.io
       - peoplehr
       - remote.com
+      - rippling
       - sageone
+      - shape payroll
       - simplepay.ie
       type: string
     ProvidersResponse:
@@ -2136,8 +2144,10 @@ components:
         - employment hero
         - factorialhr
         - fourthhr
+        - gusto
         - hibob
         - itrent
+        - justworks
         - moorepay
         - oysterhr
         - parolla.ie
@@ -2146,7 +2156,9 @@ components:
         - personio.de
         - quickbooks uk
         - remote.com
+        - rippling
         - sageone
+        - shape payroll
         - simplepay.ie
         - xero uk
       items:
