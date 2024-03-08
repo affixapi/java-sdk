@@ -55,6 +55,18 @@ info:
       'https://api.affixapi.com/2023-03-01/developer/employees'
     ```
 
+    # Compression
+    We support `brotli`, `gzip`, and `deflate` compression algorithms.
+
+    To enable, pass the `Accept-Encoding` header with one or all of the values:
+    `br`, `gzip`, `deflate`, or `identity` (no compression)
+
+    In the response, you will receive the `Content-Encoding` response header
+    indicating the compression algorithm used in the data payload to enable you
+    to decompress the result. If the `Accept-Encoding: identity` header was
+    passed, no `Content-Encoding` response header is sent back, as no
+    compression algorithm was used.
+
     # Webhooks
     An exciting feature for HR/Payroll modes are webhooks.
 
