@@ -1,8 +1,8 @@
-# affixapi
+# api
 
 Affix API
 - API version: 2023-03-01
-  - Build date: 2024-03-13T16:59:38.667751Z[Etc/UTC]
+  - Build date: 2024-03-16T22:25:09.912616Z[Etc/UTC]
 
 The affixapi.com API documentation.
 
@@ -228,9 +228,9 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-  <groupId>affixapi</groupId>
-  <artifactId>affixapi</artifactId>
-  <version>1.1.40</version>
+  <groupId>com.affixapi</groupId>
+  <artifactId>api</artifactId>
+  <version>1.1.41</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -240,7 +240,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "affixapi:affixapi:1.1.40"
+compile "com.affixapi:api:1.1.41"
 ```
 
 ### Others
@@ -253,7 +253,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/affixapi-1.1.40.jar`
+* `target/api-1.1.41.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
