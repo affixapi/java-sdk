@@ -5,7 +5,7 @@
     <artifactId>api</artifactId>
     <packaging>jar</packaging>
     <name>api</name>
-    <version>1.1.41</version>
+    <version>1.1.42</version>
     <url>https://github.com/openapitools/openapi-generator</url>
     <description>AffixApiSdk</description>
     <scm>
@@ -33,6 +33,38 @@
 
     <build>
         <plugins>
+<!-- this is not the full file; only part of it to add plugins to allow publishing to maven -->
+<plugin>
+  <groupId>org.sonatype.central</groupId>
+  <artifactId>central-publishing-maven-plugin</artifactId>
+  <version>0.4.0</version>
+  <extensions>true</extensions>
+  <configuration>
+    <publishingServerId>central</publishingServerId>
+    <tokenAuth>true</tokenAuth>
+    <autoPublish>true</autoPublish>
+    <waitUntil>published</waitUntil>
+  </configuration>
+</plugin>
+<plugin>
+  <artifactId>maven-gpg-plugin</artifactId>
+  <version>3.0.1</version>
+  <executions>
+    <execution>
+      <id>sign-artifacts</id>
+      <phase>verify</phase>
+      <goals>
+        <goal>sign</goal>
+      </goals>
+      <configuration>
+        <gpgArguments>
+          <arg>--pinentry-mode</arg>
+          <arg>loopback</arg>
+        </gpgArguments>
+      </configuration>
+    </execution>
+  </executions>
+</plugin>
            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

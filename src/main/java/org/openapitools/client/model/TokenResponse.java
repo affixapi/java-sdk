@@ -32,7 +32,7 @@ import org.openapitools.client.model.ScopesResponse;
 /**
  * TokenResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-16T22:25:09.912616Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-16T22:42:16.450519Z[Etc/UTC]")
 public class TokenResponse {
   public static final String SERIALIZED_NAME_ACCESS_TOKEN = "access_token";
   @SerializedName(SERIALIZED_NAME_ACCESS_TOKEN)
