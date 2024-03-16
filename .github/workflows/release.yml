@@ -25,7 +25,7 @@ jobs:
       - name: Set up Maven Central Repository
         uses: actions/setup-java@v3
         with:
-          java-version: '11'
+          java-version: '21'
           distribution: temurin # https://github.com/actions/setup-java#supported-distributions
           java-package: jdk
           cache: maven
