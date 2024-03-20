@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 
 Name | Value
 ---- | -----
+NULL | &quot;null&quot;
 VACATION | &quot;vacation&quot;
 SICK | &quot;sick&quot;
 PERSONAL | &quot;personal&quot;

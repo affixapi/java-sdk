@@ -17,7 +17,7 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 10 # build takes ~1 min, publish takes ~7 min. https://central.sonatype.com/publishing
+    timeout-minutes: 15 # build takes ~1 min, publish takes ~7 min; however can be "pending" for ~5 min. https://central.sonatype.com/publishing
     steps:
       - uses: actions/checkout@v4
 
