@@ -28,7 +28,7 @@ info:
         the sign in flow is complete and exchange that `authorization_code` for
         a Bearer token
 
-    # Sandbox keys (developer mode)
+    # Sandbox keys (xhr mode)
     ### dev
     ```
     eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6ImQ1OTZhMmYzLWYzNzktNGE1ZC1hMmRhLTk4OWJmYWViYTg1ZCIsImlhdCI6MTcwMjkyMDkwMywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5kZXYuZW5naW5lZXJpbmcuYWZmaXhhcGkuY29tIiwic3ViIjoiZGV2ZWxvcGVyIiwiYXVkIjoiM0ZEQUVERjktMURDQTRGNTQtODc5NDlGNkEtNDEwMjc2NDMifQ.VLWYjCQvBS0C3ZA6_J3-U-idZj5EYI2IlDdTjAWBxSIHGufp6cqaVodKsF2BeIqcIeB3P0lW-KL9mY3xGd7ckQ
@@ -39,7 +39,7 @@ info:
     curl --fail \
       -X GET \
       -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6ImQ1OTZhMmYzLWYzNzktNGE1ZC1hMmRhLTk4OWJmYWViYTg1ZCIsImlhdCI6MTcwMjkyMDkwMywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5kZXYuZW5naW5lZXJpbmcuYWZmaXhhcGkuY29tIiwic3ViIjoiZGV2ZWxvcGVyIiwiYXVkIjoiM0ZEQUVERjktMURDQTRGNTQtODc5NDlGNkEtNDEwMjc2NDMifQ.VLWYjCQvBS0C3ZA6_J3-U-idZj5EYI2IlDdTjAWBxSIHGufp6cqaVodKsF2BeIqcIeB3P0lW-KL9mY3xGd7ckQ' \
-      'https://dev.api.affixapi.com/2023-03-01/developer/employees'
+      'https://dev.api.affixapi.com/2023-03-01/xhr/employees'
     ```
 
     ### prod
@@ -52,7 +52,7 @@ info:
     curl --fail \
       -X GET \
       -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6IjI5YjFjYTg4LWNlNjktNDgyZC1iNGZjLTkzMWMzZmJkYWM4ZSIsImlhdCI6MTcwMjkyMTA4MywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5wcm9kLmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6ImRldmVsb3BlciIsImF1ZCI6IjA4QkIwODFFLUQ5QUI0RDE0LThERjk5MjMzLTY2NjE1Q0U5In0.2zdpFAmiyYiYk6MOcbXNUwwR4M1Fextnaac340x54AidiWXCyw-u9KeavbqfYF6q8a9kcDLrxhJ8Wc_3tIzuVw' \
-      'https://api.affixapi.com/2023-03-01/developer/employees'
+      'https://api.affixapi.com/2023-03-01/xhr/employees'
     ```
 
     # Compression
@@ -231,16 +231,17 @@ tags:
   name: Management
 - description: |
     Operations related to retrieving end customer data via customer's API key
+    (for continuous integrations only).
   name: Official
 - description: |
     Operations related to retrieving end customer data from a customer's
-    credentials login
-  name: Developer
+    credentials login, for data migrations, or continuous integrations.
+  name: XHR
 paths:
   /providers:
     get:
       description: |
-        Retrieve the api modes (official, developer) and providers for the respective modes
+        Retrieve the api modes (official, xhr) and providers for the respective modes
       operationId: providers
       responses:
         "200":
@@ -1176,11 +1177,11 @@ paths:
       x-amazon-apigateway-integration:
         type: mock
       x-accepts: application/json
-  /2023-03-01/developer/company:
+  /2023-03-01/xhr/company:
     get:
       description: |
         Retrieve company information
-      operationId: developerCompanies20230301
+      operationId: xhrCompanies20230301
       responses:
         "200":
           content:
@@ -1236,17 +1237,17 @@ paths:
       - access-token: []
       summary: Company
       tags:
-      - Developer
+      - XHR
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
         type: mock
       x-accepts: application/json
-  /2023-03-01/developer/employee:
+  /2023-03-01/xhr/employee:
     post:
       description: |
         Creates a new Employee
-      operationId: developerCreateEmployee20230301
+      operationId: xhrCreateEmployee20230301
       requestBody:
         content:
           application/json:
@@ -1295,19 +1296,19 @@ paths:
       - access-token: []
       summary: Create employee
       tags:
-      - Developer
+      - XHR
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
         type: mock
       x-contentType: application/json
       x-accepts: application/json
-  /2023-03-01/developer/employees:
+  /2023-03-01/xhr/employees:
     get:
       description: |
         List the individuals (employees, contractors, accountants, and others)
         listed in the HRIS/Payroll software
-      operationId: developerEmployees20230301
+      operationId: xhrEmployees20230301
       responses:
         "200":
           content:
@@ -1363,18 +1364,18 @@ paths:
       - access-token: []
       summary: Employees
       tags:
-      - Developer
+      - XHR
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
         type: mock
       x-accepts: application/json
-  /2023-03-01/developer/groups:
+  /2023-03-01/xhr/groups:
     get:
       description: |
         The Group object is used to represent any subset of employees, such as
         PayGroup, Team, or Department. Employees can be in multiple Groups.
-      operationId: developerGroups20230301
+      operationId: xhrGroups20230301
       responses:
         "200":
           content:
@@ -1430,17 +1431,17 @@ paths:
       - access-token: []
       summary: Groups
       tags:
-      - Developer
+      - XHR
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
         type: mock
       x-accepts: application/json
-  /2023-03-01/developer/identity:
+  /2023-03-01/xhr/identity:
     get:
       description: |
         List information of the user for the respective account
-      operationId: developerIdentity20230301
+      operationId: xhrIdentity20230301
       responses:
         "200":
           content:
@@ -1477,13 +1478,13 @@ paths:
       - access-token: []
       summary: Identity
       tags:
-      - Developer
+      - XHR
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
         type: mock
       x-accepts: application/json
-  /2023-03-01/developer/payruns:
+  /2023-03-01/xhr/payruns:
     get:
       description: |
         List all the pay runs that occurred during the respective period.
@@ -1492,7 +1493,7 @@ paths:
           - sageone
           - simplepay.ie
           - brightpay connect
-      operationId: developerPayruns20230301
+      operationId: xhrPayruns20230301
       parameters:
       - description: The start date of the search period
         explode: true
@@ -1565,13 +1566,13 @@ paths:
       - access-token: []
       summary: Payruns
       tags:
-      - Developer
+      - XHR
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
         type: mock
       x-accepts: application/json
-  /2023-03-01/developer/payruns/{payrun_id}:
+  /2023-03-01/xhr/payruns/{payrun_id}:
     get:
       description: |
         Retrieves payslips from a specific payrun.
@@ -1580,7 +1581,7 @@ paths:
           - sageone
           - simplepay.ie
           - brightpay connect
-      operationId: developerPayslips20230301
+      operationId: xhrPayslips20230301
       parameters:
       - description: The id of the payrun.
         explode: false
@@ -1645,17 +1646,17 @@ paths:
       - access-token: []
       summary: Payslips
       tags:
-      - Developer
+      - XHR
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
         type: mock
       x-accepts: application/json
-  /2023-03-01/developer/timesheets:
+  /2023-03-01/xhr/timesheets:
     get:
       description: |
         Retrieve Timesheets
-      operationId: developerTimesheets20230301
+      operationId: xhrTimesheets20230301
       responses:
         "200":
           content:
@@ -1711,17 +1712,17 @@ paths:
       - access-token: []
       summary: Timesheets
       tags:
-      - Developer
+      - XHR
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
         type: mock
       x-accepts: application/json
-  /2023-03-01/developer/time-off-entries:
+  /2023-03-01/xhr/time-off-entries:
     get:
       description: |
         Retrieve time off / absence entries
-      operationId: developerTimeOffEntries20230301
+      operationId: xhrTimeOffEntries20230301
       responses:
         "200":
           content:
@@ -1777,17 +1778,17 @@ paths:
       - access-token: []
       summary: Time off entries
       tags:
-      - Developer
+      - XHR
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
         type: mock
       x-accepts: application/json
-  /2023-03-01/developer/time-off-balances:
+  /2023-03-01/xhr/time-off-balances:
     get:
       description: |
         Retrieve all time off balances.
-      operationId: developerTimeOffBalances20230301
+      operationId: xhrTimeOffBalances20230301
       responses:
         "200":
           content:
@@ -1843,18 +1844,18 @@ paths:
       - access-token: []
       summary: Time off balances
       tags:
-      - Developer
+      - XHR
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
         type: mock
       x-accepts: application/json
-  /2023-03-01/developer/work-locations:
+  /2023-03-01/xhr/work-locations:
     get:
       description: |
         The Location object is used to represent an address that can be associated
         with an employee
-      operationId: developerWorkLocations20230301
+      operationId: xhrWorkLocations20230301
       responses:
         "200":
           content:
@@ -1910,7 +1911,7 @@ paths:
       - access-token: []
       summary: Work locations
       tags:
-      - Developer
+      - XHR
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
@@ -2021,22 +2022,22 @@ components:
       - /2023-03-01/official/time-off-entries
       - /2023-03-01/official/timesheets
       - /2023-03-01/official/work-locations
-      - /2023-03-01/developer/company
-      - /2023-03-01/developer/employee
-      - /2023-03-01/developer/employees
-      - /2023-03-01/developer/groups
-      - /2023-03-01/developer/identity
-      - /2023-03-01/developer/payruns
-      - /2023-03-01/developer/payruns/:payrun_id
-      - /2023-03-01/developer/time-off-balances
-      - /2023-03-01/developer/time-off-entries
-      - /2023-03-01/developer/timesheets
-      - /2023-03-01/developer/work-locations
+      - /2023-03-01/xhr/company
+      - /2023-03-01/xhr/employee
+      - /2023-03-01/xhr/employees
+      - /2023-03-01/xhr/groups
+      - /2023-03-01/xhr/identity
+      - /2023-03-01/xhr/payruns
+      - /2023-03-01/xhr/payruns/:payrun_id
+      - /2023-03-01/xhr/time-off-balances
+      - /2023-03-01/xhr/time-off-entries
+      - /2023-03-01/xhr/timesheets
+      - /2023-03-01/xhr/work-locations
       type: string
     ModeRequest:
       enum:
       - official
-      - developer
+      - xhr
       type: string
     MessageResponse:
       properties:
@@ -2090,7 +2091,7 @@ components:
     ModeResponse:
       enum:
       - official
-      - developer
+      - xhr
       type: string
     ProviderResponse:
       enum:
@@ -2163,7 +2164,7 @@ components:
         - simplepay.ie
         - staffology
         - xero uk
-      - mode: developer
+      - mode: xhr
         providers:
         - bamboohr
         - brightpay connect
@@ -2326,17 +2327,17 @@ components:
       - /2023-03-01/official/time-off-entries
       - /2023-03-01/official/timesheets
       - /2023-03-01/official/work-locations
-      - /2023-03-01/developer/company
-      - /2023-03-01/developer/employee
-      - /2023-03-01/developer/employees
-      - /2023-03-01/developer/groups
-      - /2023-03-01/developer/identity
-      - /2023-03-01/developer/payruns
-      - /2023-03-01/developer/payruns/:payrun_id
-      - /2023-03-01/developer/time-off-balances
-      - /2023-03-01/developer/time-off-entries
-      - /2023-03-01/developer/timesheets
-      - /2023-03-01/developer/work-locations
+      - /2023-03-01/xhr/company
+      - /2023-03-01/xhr/employee
+      - /2023-03-01/xhr/employees
+      - /2023-03-01/xhr/groups
+      - /2023-03-01/xhr/identity
+      - /2023-03-01/xhr/payruns
+      - /2023-03-01/xhr/payruns/:payrun_id
+      - /2023-03-01/xhr/time-off-balances
+      - /2023-03-01/xhr/time-off-entries
+      - /2023-03-01/xhr/timesheets
+      - /2023-03-01/xhr/work-locations
       type: string
     TokensResponse:
       items:

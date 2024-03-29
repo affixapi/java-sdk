@@ -7,7 +7,7 @@
 
 * `OFFICIAL` (value: `"official"`)
 
-* `DEVELOPER` (value: `"developer"`)
+* `XHR` (value: `"xhr"`)
 
 
 

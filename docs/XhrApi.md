@@ -1,25 +1,25 @@
-# DeveloperApi
+# XhrApi
 
 All URIs are relative to *https://api.affixapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**developerCompanies20230301**](DeveloperApi.md#developerCompanies20230301) | **GET** /2023-03-01/developer/company | Company
-[**developerCreateEmployee20230301**](DeveloperApi.md#developerCreateEmployee20230301) | **POST** /2023-03-01/developer/employee | Create employee
-[**developerEmployees20230301**](DeveloperApi.md#developerEmployees20230301) | **GET** /2023-03-01/developer/employees | Employees
-[**developerGroups20230301**](DeveloperApi.md#developerGroups20230301) | **GET** /2023-03-01/developer/groups | Groups
-[**developerIdentity20230301**](DeveloperApi.md#developerIdentity20230301) | **GET** /2023-03-01/developer/identity | Identity
-[**developerPayruns20230301**](DeveloperApi.md#developerPayruns20230301) | **GET** /2023-03-01/developer/payruns | Payruns
-[**developerPayslips20230301**](DeveloperApi.md#developerPayslips20230301) | **GET** /2023-03-01/developer/payruns/{payrun_id} | Payslips
-[**developerTimeOffBalances20230301**](DeveloperApi.md#developerTimeOffBalances20230301) | **GET** /2023-03-01/developer/time-off-balances | Time off balances
-[**developerTimeOffEntries20230301**](DeveloperApi.md#developerTimeOffEntries20230301) | **GET** /2023-03-01/developer/time-off-entries | Time off entries
-[**developerTimesheets20230301**](DeveloperApi.md#developerTimesheets20230301) | **GET** /2023-03-01/developer/timesheets | Timesheets
-[**developerWorkLocations20230301**](DeveloperApi.md#developerWorkLocations20230301) | **GET** /2023-03-01/developer/work-locations | Work locations
+[**xhrCompanies20230301**](XhrApi.md#xhrCompanies20230301) | **GET** /2023-03-01/xhr/company | Company
+[**xhrCreateEmployee20230301**](XhrApi.md#xhrCreateEmployee20230301) | **POST** /2023-03-01/xhr/employee | Create employee
+[**xhrEmployees20230301**](XhrApi.md#xhrEmployees20230301) | **GET** /2023-03-01/xhr/employees | Employees
+[**xhrGroups20230301**](XhrApi.md#xhrGroups20230301) | **GET** /2023-03-01/xhr/groups | Groups
+[**xhrIdentity20230301**](XhrApi.md#xhrIdentity20230301) | **GET** /2023-03-01/xhr/identity | Identity
+[**xhrPayruns20230301**](XhrApi.md#xhrPayruns20230301) | **GET** /2023-03-01/xhr/payruns | Payruns
+[**xhrPayslips20230301**](XhrApi.md#xhrPayslips20230301) | **GET** /2023-03-01/xhr/payruns/{payrun_id} | Payslips
+[**xhrTimeOffBalances20230301**](XhrApi.md#xhrTimeOffBalances20230301) | **GET** /2023-03-01/xhr/time-off-balances | Time off balances
+[**xhrTimeOffEntries20230301**](XhrApi.md#xhrTimeOffEntries20230301) | **GET** /2023-03-01/xhr/time-off-entries | Time off entries
+[**xhrTimesheets20230301**](XhrApi.md#xhrTimesheets20230301) | **GET** /2023-03-01/xhr/timesheets | Timesheets
+[**xhrWorkLocations20230301**](XhrApi.md#xhrWorkLocations20230301) | **GET** /2023-03-01/xhr/work-locations | Work locations
 
 
-<a name="developerCompanies20230301"></a>
-# **developerCompanies20230301**
-> List&lt;CompanyResponse&gt; developerCompanies20230301()
+<a name="xhrCompanies20230301"></a>
+# **xhrCompanies20230301**
+> List&lt;CompanyResponse&gt; xhrCompanies20230301()
 
 Company
 
@@ -33,7 +33,7 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.DeveloperApi;
+import org.openapitools.client.api.XhrApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -46,12 +46,12 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //access-token.setApiKeyPrefix("Token");
 
-    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    XhrApi apiInstance = new XhrApi(defaultClient);
     try {
-      List<CompanyResponse> result = apiInstance.developerCompanies20230301();
+      List<CompanyResponse> result = apiInstance.xhrCompanies20230301();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DeveloperApi#developerCompanies20230301");
+      System.err.println("Exception when calling XhrApi#xhrCompanies20230301");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -87,9 +87,9 @@ This endpoint does not need any parameter.
 **500** | Server Error |  -  |
 **501** | Not Implemented |  -  |
 
-<a name="developerCreateEmployee20230301"></a>
-# **developerCreateEmployee20230301**
-> EmployeeResponse developerCreateEmployee20230301(createEmployeeRequest)
+<a name="xhrCreateEmployee20230301"></a>
+# **xhrCreateEmployee20230301**
+> EmployeeResponse xhrCreateEmployee20230301(createEmployeeRequest)
 
 Create employee
 
@@ -103,7 +103,7 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.DeveloperApi;
+import org.openapitools.client.api.XhrApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -116,13 +116,13 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //access-token.setApiKeyPrefix("Token");
 
-    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    XhrApi apiInstance = new XhrApi(defaultClient);
     CreateEmployeeRequest createEmployeeRequest = new CreateEmployeeRequest(); // CreateEmployeeRequest | 
     try {
-      EmployeeResponse result = apiInstance.developerCreateEmployee20230301(createEmployeeRequest);
+      EmployeeResponse result = apiInstance.xhrCreateEmployee20230301(createEmployeeRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DeveloperApi#developerCreateEmployee20230301");
+      System.err.println("Exception when calling XhrApi#xhrCreateEmployee20230301");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -160,9 +160,9 @@ Name | Type | Description  | Notes
 **500** | Server Error |  -  |
 **501** | Not Implemented |  -  |
 
-<a name="developerEmployees20230301"></a>
-# **developerEmployees20230301**
-> List&lt;EmployeeResponse&gt; developerEmployees20230301()
+<a name="xhrEmployees20230301"></a>
+# **xhrEmployees20230301**
+> List&lt;EmployeeResponse&gt; xhrEmployees20230301()
 
 Employees
 
@@ -176,7 +176,7 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.DeveloperApi;
+import org.openapitools.client.api.XhrApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -189,12 +189,12 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //access-token.setApiKeyPrefix("Token");
 
-    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    XhrApi apiInstance = new XhrApi(defaultClient);
     try {
-      List<EmployeeResponse> result = apiInstance.developerEmployees20230301();
+      List<EmployeeResponse> result = apiInstance.xhrEmployees20230301();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DeveloperApi#developerEmployees20230301");
+      System.err.println("Exception when calling XhrApi#xhrEmployees20230301");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -230,9 +230,9 @@ This endpoint does not need any parameter.
 **500** | Server Error |  -  |
 **501** | Not Implemented |  -  |
 
-<a name="developerGroups20230301"></a>
-# **developerGroups20230301**
-> List&lt;GroupResponse&gt; developerGroups20230301()
+<a name="xhrGroups20230301"></a>
+# **xhrGroups20230301**
+> List&lt;GroupResponse&gt; xhrGroups20230301()
 
 Groups
 
@@ -246,7 +246,7 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.DeveloperApi;
+import org.openapitools.client.api.XhrApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -259,12 +259,12 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //access-token.setApiKeyPrefix("Token");
 
-    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    XhrApi apiInstance = new XhrApi(defaultClient);
     try {
-      List<GroupResponse> result = apiInstance.developerGroups20230301();
+      List<GroupResponse> result = apiInstance.xhrGroups20230301();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DeveloperApi#developerGroups20230301");
+      System.err.println("Exception when calling XhrApi#xhrGroups20230301");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -300,9 +300,9 @@ This endpoint does not need any parameter.
 **500** | Server Error |  -  |
 **501** | Not Implemented |  -  |
 
-<a name="developerIdentity20230301"></a>
-# **developerIdentity20230301**
-> IdentityResponse developerIdentity20230301()
+<a name="xhrIdentity20230301"></a>
+# **xhrIdentity20230301**
+> IdentityResponse xhrIdentity20230301()
 
 Identity
 
@@ -316,7 +316,7 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.DeveloperApi;
+import org.openapitools.client.api.XhrApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -329,12 +329,12 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //access-token.setApiKeyPrefix("Token");
 
-    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    XhrApi apiInstance = new XhrApi(defaultClient);
     try {
-      IdentityResponse result = apiInstance.developerIdentity20230301();
+      IdentityResponse result = apiInstance.xhrIdentity20230301();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DeveloperApi#developerIdentity20230301");
+      System.err.println("Exception when calling XhrApi#xhrIdentity20230301");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -368,9 +368,9 @@ This endpoint does not need any parameter.
 **429** | Rate Limited / Too Many Requests |  * Retry-After - Retry your call after the specified amount of seconds <br>  |
 **500** | Server Error |  -  |
 
-<a name="developerPayruns20230301"></a>
-# **developerPayruns20230301**
-> List&lt;PayrunResponse&gt; developerPayruns20230301(startDate, endDate)
+<a name="xhrPayruns20230301"></a>
+# **xhrPayruns20230301**
+> List&lt;PayrunResponse&gt; xhrPayruns20230301(startDate, endDate)
 
 Payruns
 
@@ -384,7 +384,7 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.DeveloperApi;
+import org.openapitools.client.api.XhrApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -397,14 +397,14 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //access-token.setApiKeyPrefix("Token");
 
-    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    XhrApi apiInstance = new XhrApi(defaultClient);
     LocalDate startDate = new LocalDate(); // LocalDate | The start date of the search period
     LocalDate endDate = new LocalDate(); // LocalDate | The end date of the search period
     try {
-      List<PayrunResponse> result = apiInstance.developerPayruns20230301(startDate, endDate);
+      List<PayrunResponse> result = apiInstance.xhrPayruns20230301(startDate, endDate);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DeveloperApi#developerPayruns20230301");
+      System.err.println("Exception when calling XhrApi#xhrPayruns20230301");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -444,9 +444,9 @@ Name | Type | Description  | Notes
 **500** | Server Error |  -  |
 **501** | Not Implemented |  -  |
 
-<a name="developerPayslips20230301"></a>
-# **developerPayslips20230301**
-> List&lt;PayslipResponse&gt; developerPayslips20230301(payrunId)
+<a name="xhrPayslips20230301"></a>
+# **xhrPayslips20230301**
+> List&lt;PayslipResponse&gt; xhrPayslips20230301(payrunId)
 
 Payslips
 
@@ -460,7 +460,7 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.DeveloperApi;
+import org.openapitools.client.api.XhrApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -473,13 +473,13 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //access-token.setApiKeyPrefix("Token");
 
-    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    XhrApi apiInstance = new XhrApi(defaultClient);
     String payrunId = "payrunId_example"; // String | The id of the payrun.
     try {
-      List<PayslipResponse> result = apiInstance.developerPayslips20230301(payrunId);
+      List<PayslipResponse> result = apiInstance.xhrPayslips20230301(payrunId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DeveloperApi#developerPayslips20230301");
+      System.err.println("Exception when calling XhrApi#xhrPayslips20230301");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -518,9 +518,9 @@ Name | Type | Description  | Notes
 **500** | Server Error |  -  |
 **501** | Not Implemented |  -  |
 
-<a name="developerTimeOffBalances20230301"></a>
-# **developerTimeOffBalances20230301**
-> List&lt;TimeOffBalanceResponse&gt; developerTimeOffBalances20230301()
+<a name="xhrTimeOffBalances20230301"></a>
+# **xhrTimeOffBalances20230301**
+> List&lt;TimeOffBalanceResponse&gt; xhrTimeOffBalances20230301()
 
 Time off balances
 
@@ -534,7 +534,7 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.DeveloperApi;
+import org.openapitools.client.api.XhrApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -547,12 +547,12 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //access-token.setApiKeyPrefix("Token");
 
-    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    XhrApi apiInstance = new XhrApi(defaultClient);
     try {
-      List<TimeOffBalanceResponse> result = apiInstance.developerTimeOffBalances20230301();
+      List<TimeOffBalanceResponse> result = apiInstance.xhrTimeOffBalances20230301();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DeveloperApi#developerTimeOffBalances20230301");
+      System.err.println("Exception when calling XhrApi#xhrTimeOffBalances20230301");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -588,9 +588,9 @@ This endpoint does not need any parameter.
 **500** | Server Error |  -  |
 **501** | Not Implemented |  -  |
 
-<a name="developerTimeOffEntries20230301"></a>
-# **developerTimeOffEntries20230301**
-> List&lt;TimeOffEntryResponse&gt; developerTimeOffEntries20230301()
+<a name="xhrTimeOffEntries20230301"></a>
+# **xhrTimeOffEntries20230301**
+> List&lt;TimeOffEntryResponse&gt; xhrTimeOffEntries20230301()
 
 Time off entries
 
@@ -604,7 +604,7 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.DeveloperApi;
+import org.openapitools.client.api.XhrApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -617,12 +617,12 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //access-token.setApiKeyPrefix("Token");
 
-    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    XhrApi apiInstance = new XhrApi(defaultClient);
     try {
-      List<TimeOffEntryResponse> result = apiInstance.developerTimeOffEntries20230301();
+      List<TimeOffEntryResponse> result = apiInstance.xhrTimeOffEntries20230301();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DeveloperApi#developerTimeOffEntries20230301");
+      System.err.println("Exception when calling XhrApi#xhrTimeOffEntries20230301");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -658,9 +658,9 @@ This endpoint does not need any parameter.
 **500** | Server Error |  -  |
 **501** | Not Implemented |  -  |
 
-<a name="developerTimesheets20230301"></a>
-# **developerTimesheets20230301**
-> List&lt;TimesheetResponse&gt; developerTimesheets20230301()
+<a name="xhrTimesheets20230301"></a>
+# **xhrTimesheets20230301**
+> List&lt;TimesheetResponse&gt; xhrTimesheets20230301()
 
 Timesheets
 
@@ -674,7 +674,7 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.DeveloperApi;
+import org.openapitools.client.api.XhrApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -687,12 +687,12 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //access-token.setApiKeyPrefix("Token");
 
-    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    XhrApi apiInstance = new XhrApi(defaultClient);
     try {
-      List<TimesheetResponse> result = apiInstance.developerTimesheets20230301();
+      List<TimesheetResponse> result = apiInstance.xhrTimesheets20230301();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DeveloperApi#developerTimesheets20230301");
+      System.err.println("Exception when calling XhrApi#xhrTimesheets20230301");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -728,9 +728,9 @@ This endpoint does not need any parameter.
 **500** | Server Error |  -  |
 **501** | Not Implemented |  -  |
 
-<a name="developerWorkLocations20230301"></a>
-# **developerWorkLocations20230301**
-> List&lt;LocationResponse&gt; developerWorkLocations20230301()
+<a name="xhrWorkLocations20230301"></a>
+# **xhrWorkLocations20230301**
+> List&lt;LocationResponse&gt; xhrWorkLocations20230301()
 
 Work locations
 
@@ -744,7 +744,7 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.DeveloperApi;
+import org.openapitools.client.api.XhrApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -757,12 +757,12 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //access-token.setApiKeyPrefix("Token");
 
-    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    XhrApi apiInstance = new XhrApi(defaultClient);
     try {
-      List<LocationResponse> result = apiInstance.developerWorkLocations20230301();
+      List<LocationResponse> result = apiInstance.xhrWorkLocations20230301();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DeveloperApi#developerWorkLocations20230301");
+      System.err.println("Exception when calling XhrApi#xhrWorkLocations20230301");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

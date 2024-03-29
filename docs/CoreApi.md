@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Providers
 
-Retrieve the api modes (official, developer) and providers for the respective modes 
+Retrieve the api modes (official, xhr) and providers for the respective modes 
 
 ### Example
 ```java

@@ -11,65 +11,208 @@
  */
 
 
-package org.openapitools.client.model;
+package org.openapitools.client.api;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import org.junit.Assert;
-import org.junit.Ignore;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.model.CompanyResponse;
+import org.openapitools.client.model.CreateEmployeeRequest;
+import org.openapitools.client.model.EmployeeResponse;
+import org.openapitools.client.model.GroupResponse;
+import org.openapitools.client.model.IdentityResponse;
+import org.openapitools.client.model.InlineResponse400;
+import org.openapitools.client.model.InlineResponse401;
+import org.threeten.bp.LocalDate;
+import org.openapitools.client.model.LocationResponse;
+import org.openapitools.client.model.MessageResponse;
+import org.openapitools.client.model.PayrunResponse;
+import org.openapitools.client.model.PayslipResponse;
+import org.openapitools.client.model.TimeOffBalanceResponse;
+import org.openapitools.client.model.TimeOffEntryResponse;
+import org.openapitools.client.model.TimesheetResponse;
 import org.junit.Test;
+import org.junit.Ignore;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
- * Model tests for GroupResponse
+ * API tests for XhrApi
  */
-public class GroupResponseTest {
-    private final GroupResponse model = new GroupResponse();
+@Ignore
+public class XhrApiTest {
 
+    private final XhrApi api = new XhrApi();
+
+    
     /**
-     * Model tests for GroupResponse
+     * Company
+     *
+     * Retrieve company information 
+     *
+     * @throws ApiException
+     *          if the Api call fails
      */
     @Test
-    public void testGroupResponse() {
-        // TODO: test GroupResponse
-    }
+    public void xhrCompanies20230301Test() throws ApiException {
+        List<CompanyResponse> response = api.xhrCompanies20230301();
 
+        // TODO: test validations
+    }
+    
     /**
-     * Test the property 'id'
+     * Create employee
+     *
+     * Creates a new Employee 
+     *
+     * @throws ApiException
+     *          if the Api call fails
      */
     @Test
-    public void idTest() {
-        // TODO: test id
-    }
+    public void xhrCreateEmployee20230301Test() throws ApiException {
+        CreateEmployeeRequest createEmployeeRequest = null;
+        EmployeeResponse response = api.xhrCreateEmployee20230301(createEmployeeRequest);
 
+        // TODO: test validations
+    }
+    
     /**
-     * Test the property 'remoteId'
+     * Employees
+     *
+     * List the individuals (employees, contractors, accountants, and others) listed in the HRIS/Payroll software 
+     *
+     * @throws ApiException
+     *          if the Api call fails
      */
     @Test
-    public void remoteIdTest() {
-        // TODO: test remoteId
-    }
+    public void xhrEmployees20230301Test() throws ApiException {
+        List<EmployeeResponse> response = api.xhrEmployees20230301();
 
+        // TODO: test validations
+    }
+    
     /**
-     * Test the property 'name'
+     * Groups
+     *
+     * The Group object is used to represent any subset of employees, such as PayGroup, Team, or Department. Employees can be in multiple Groups. 
+     *
+     * @throws ApiException
+     *          if the Api call fails
      */
     @Test
-    public void nameTest() {
-        // TODO: test name
-    }
+    public void xhrGroups20230301Test() throws ApiException {
+        List<GroupResponse> response = api.xhrGroups20230301();
 
+        // TODO: test validations
+    }
+    
     /**
-     * Test the property 'type'
+     * Identity
+     *
+     * List information of the user for the respective account 
+     *
+     * @throws ApiException
+     *          if the Api call fails
      */
     @Test
-    public void typeTest() {
-        // TODO: test type
-    }
+    public void xhrIdentity20230301Test() throws ApiException {
+        IdentityResponse response = api.xhrIdentity20230301();
 
+        // TODO: test validations
+    }
+    
+    /**
+     * Payruns
+     *
+     * List all the pay runs that occurred during the respective period.  Supported integrations:   - sageone   - simplepay.ie   - brightpay connect 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void xhrPayruns20230301Test() throws ApiException {
+        LocalDate startDate = null;
+        LocalDate endDate = null;
+        List<PayrunResponse> response = api.xhrPayruns20230301(startDate, endDate);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Payslips
+     *
+     * Retrieves payslips from a specific payrun.  Supported integrations:   - sageone   - simplepay.ie   - brightpay connect 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void xhrPayslips20230301Test() throws ApiException {
+        String payrunId = null;
+        List<PayslipResponse> response = api.xhrPayslips20230301(payrunId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Time off balances
+     *
+     * Retrieve all time off balances. 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void xhrTimeOffBalances20230301Test() throws ApiException {
+        List<TimeOffBalanceResponse> response = api.xhrTimeOffBalances20230301();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Time off entries
+     *
+     * Retrieve time off / absence entries 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void xhrTimeOffEntries20230301Test() throws ApiException {
+        List<TimeOffEntryResponse> response = api.xhrTimeOffEntries20230301();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Timesheets
+     *
+     * Retrieve Timesheets 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void xhrTimesheets20230301Test() throws ApiException {
+        List<TimesheetResponse> response = api.xhrTimesheets20230301();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Work locations
+     *
+     * The Location object is used to represent an address that can be associated with an employee 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void xhrWorkLocations20230301Test() throws ApiException {
+        List<LocationResponse> response = api.xhrWorkLocations20230301();
+
+        // TODO: test validations
+    }
+    
 }

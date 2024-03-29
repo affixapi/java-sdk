@@ -17,7 +17,6 @@ docs/CreateEmployeeRequestBankAccount.md
 docs/CreateEmployeeRequestManager.md
 docs/CurrencyRequest.md
 docs/CurrencyResponse.md
-docs/DeveloperApi.md
 docs/DisconnectResponse.md
 docs/EmployeeResponse.md
 docs/EmploymentNoNullEnumRequest.md
@@ -52,6 +51,7 @@ docs/TimeOffEntryResponse.md
 docs/TimesheetResponse.md
 docs/TokenRequest.md
 docs/TokenResponse.md
+docs/XhrApi.md
 git_push.sh
 gradle.properties
 gradle/wrapper/gradle-wrapper.jar
@@ -76,9 +76,9 @@ src/main/java/org/openapitools/client/ServerVariable.java
 src/main/java/org/openapitools/client/StringUtil.java
 src/main/java/org/openapitools/client/api/Class20230301Api.java
 src/main/java/org/openapitools/client/api/CoreApi.java
-src/main/java/org/openapitools/client/api/DeveloperApi.java
 src/main/java/org/openapitools/client/api/ManagementApi.java
 src/main/java/org/openapitools/client/api/OfficialApi.java
+src/main/java/org/openapitools/client/api/XhrApi.java
 src/main/java/org/openapitools/client/auth/ApiKeyAuth.java
 src/main/java/org/openapitools/client/auth/Authentication.java
 src/main/java/org/openapitools/client/auth/HttpBasicAuth.java
@@ -127,9 +127,9 @@ src/main/java/org/openapitools/client/model/TokenRequest.java
 src/main/java/org/openapitools/client/model/TokenResponse.java
 src/test/java/org/openapitools/client/api/Class20230301ApiTest.java
 src/test/java/org/openapitools/client/api/CoreApiTest.java
-src/test/java/org/openapitools/client/api/DeveloperApiTest.java
 src/test/java/org/openapitools/client/api/ManagementApiTest.java
 src/test/java/org/openapitools/client/api/OfficialApiTest.java
+src/test/java/org/openapitools/client/api/XhrApiTest.java
 src/test/java/org/openapitools/client/model/AddressNoNonNullRequestTest.java
 src/test/java/org/openapitools/client/model/AddressResponseTest.java
 src/test/java/org/openapitools/client/model/ClientRequestTest.java

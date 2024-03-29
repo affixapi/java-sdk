@@ -23,27 +23,27 @@
 
 * `OFFICIAL_WORK_LOCATIONS` (value: `"/2023-03-01/official/work-locations"`)
 
-* `DEVELOPER_COMPANY` (value: `"/2023-03-01/developer/company"`)
+* `XHR_COMPANY` (value: `"/2023-03-01/xhr/company"`)
 
-* `DEVELOPER_EMPLOYEE` (value: `"/2023-03-01/developer/employee"`)
+* `XHR_EMPLOYEE` (value: `"/2023-03-01/xhr/employee"`)
 
-* `DEVELOPER_EMPLOYEES` (value: `"/2023-03-01/developer/employees"`)
+* `XHR_EMPLOYEES` (value: `"/2023-03-01/xhr/employees"`)
 
-* `DEVELOPER_GROUPS` (value: `"/2023-03-01/developer/groups"`)
+* `XHR_GROUPS` (value: `"/2023-03-01/xhr/groups"`)
 
-* `DEVELOPER_IDENTITY` (value: `"/2023-03-01/developer/identity"`)
+* `XHR_IDENTITY` (value: `"/2023-03-01/xhr/identity"`)
 
-* `DEVELOPER_PAYRUNS` (value: `"/2023-03-01/developer/payruns"`)
+* `XHR_PAYRUNS` (value: `"/2023-03-01/xhr/payruns"`)
 
-* `DEVELOPER_PAYRUNS_PAYRUN_ID` (value: `"/2023-03-01/developer/payruns/:payrun_id"`)
+* `XHR_PAYRUNS_PAYRUN_ID` (value: `"/2023-03-01/xhr/payruns/:payrun_id"`)
 
-* `DEVELOPER_TIME_OFF_BALANCES` (value: `"/2023-03-01/developer/time-off-balances"`)
+* `XHR_TIME_OFF_BALANCES` (value: `"/2023-03-01/xhr/time-off-balances"`)
 
-* `DEVELOPER_TIME_OFF_ENTRIES` (value: `"/2023-03-01/developer/time-off-entries"`)
+* `XHR_TIME_OFF_ENTRIES` (value: `"/2023-03-01/xhr/time-off-entries"`)
 
-* `DEVELOPER_TIMESHEETS` (value: `"/2023-03-01/developer/timesheets"`)
+* `XHR_TIMESHEETS` (value: `"/2023-03-01/xhr/timesheets"`)
 
-* `DEVELOPER_WORK_LOCATIONS` (value: `"/2023-03-01/developer/work-locations"`)
+* `XHR_WORK_LOCATIONS` (value: `"/2023-03-01/xhr/work-locations"`)
 
 
 
