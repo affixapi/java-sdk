@@ -1,20 +1,20 @@
-# XhrApi
+# XhrVerticallyIntegratedApi
 
 All URIs are relative to *https://api.affixapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**xhrCompanies20230301**](XhrApi.md#xhrCompanies20230301) | **GET** /2023-03-01/xhr/company | Company
-[**xhrCreateEmployee20230301**](XhrApi.md#xhrCreateEmployee20230301) | **POST** /2023-03-01/xhr/employee | Create employee
-[**xhrEmployees20230301**](XhrApi.md#xhrEmployees20230301) | **GET** /2023-03-01/xhr/employees | Employees
-[**xhrGroups20230301**](XhrApi.md#xhrGroups20230301) | **GET** /2023-03-01/xhr/groups | Groups
-[**xhrIdentity20230301**](XhrApi.md#xhrIdentity20230301) | **GET** /2023-03-01/xhr/identity | Identity
-[**xhrPayruns20230301**](XhrApi.md#xhrPayruns20230301) | **GET** /2023-03-01/xhr/payruns | Payruns
-[**xhrPayslips20230301**](XhrApi.md#xhrPayslips20230301) | **GET** /2023-03-01/xhr/payruns/{payrun_id} | Payslips
-[**xhrTimeOffBalances20230301**](XhrApi.md#xhrTimeOffBalances20230301) | **GET** /2023-03-01/xhr/time-off-balances | Time off balances
-[**xhrTimeOffEntries20230301**](XhrApi.md#xhrTimeOffEntries20230301) | **GET** /2023-03-01/xhr/time-off-entries | Time off entries
-[**xhrTimesheets20230301**](XhrApi.md#xhrTimesheets20230301) | **GET** /2023-03-01/xhr/timesheets | Timesheets
-[**xhrWorkLocations20230301**](XhrApi.md#xhrWorkLocations20230301) | **GET** /2023-03-01/xhr/work-locations | Work locations
+[**xhrCompanies20230301**](XhrVerticallyIntegratedApi.md#xhrCompanies20230301) | **GET** /2023-03-01/xhr/company | Company
+[**xhrCreateEmployee20230301**](XhrVerticallyIntegratedApi.md#xhrCreateEmployee20230301) | **POST** /2023-03-01/xhr/employee | Create employee
+[**xhrEmployees20230301**](XhrVerticallyIntegratedApi.md#xhrEmployees20230301) | **GET** /2023-03-01/xhr/employees | Employees
+[**xhrGroups20230301**](XhrVerticallyIntegratedApi.md#xhrGroups20230301) | **GET** /2023-03-01/xhr/groups | Groups
+[**xhrIdentity20230301**](XhrVerticallyIntegratedApi.md#xhrIdentity20230301) | **GET** /2023-03-01/xhr/identity | Identity
+[**xhrPayruns20230301**](XhrVerticallyIntegratedApi.md#xhrPayruns20230301) | **GET** /2023-03-01/xhr/payruns | Payruns
+[**xhrPayslips20230301**](XhrVerticallyIntegratedApi.md#xhrPayslips20230301) | **GET** /2023-03-01/xhr/payruns/{payrun_id} | Payslips
+[**xhrTimeOffBalances20230301**](XhrVerticallyIntegratedApi.md#xhrTimeOffBalances20230301) | **GET** /2023-03-01/xhr/time-off-balances | Time off balances
+[**xhrTimeOffEntries20230301**](XhrVerticallyIntegratedApi.md#xhrTimeOffEntries20230301) | **GET** /2023-03-01/xhr/time-off-entries | Time off entries
+[**xhrTimesheets20230301**](XhrVerticallyIntegratedApi.md#xhrTimesheets20230301) | **GET** /2023-03-01/xhr/timesheets | Timesheets
+[**xhrWorkLocations20230301**](XhrVerticallyIntegratedApi.md#xhrWorkLocations20230301) | **GET** /2023-03-01/xhr/work-locations | Work locations
 
 
 <a name="xhrCompanies20230301"></a>
@@ -33,7 +33,7 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.XhrApi;
+import org.openapitools.client.api.XhrVerticallyIntegratedApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -46,12 +46,12 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //access-token.setApiKeyPrefix("Token");
 
-    XhrApi apiInstance = new XhrApi(defaultClient);
+    XhrVerticallyIntegratedApi apiInstance = new XhrVerticallyIntegratedApi(defaultClient);
     try {
       List<CompanyResponse> result = apiInstance.xhrCompanies20230301();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling XhrApi#xhrCompanies20230301");
+      System.err.println("Exception when calling XhrVerticallyIntegratedApi#xhrCompanies20230301");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -103,7 +103,7 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.XhrApi;
+import org.openapitools.client.api.XhrVerticallyIntegratedApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -116,13 +116,13 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //access-token.setApiKeyPrefix("Token");
 
-    XhrApi apiInstance = new XhrApi(defaultClient);
+    XhrVerticallyIntegratedApi apiInstance = new XhrVerticallyIntegratedApi(defaultClient);
     CreateEmployeeRequest createEmployeeRequest = new CreateEmployeeRequest(); // CreateEmployeeRequest | 
     try {
       EmployeeResponse result = apiInstance.xhrCreateEmployee20230301(createEmployeeRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling XhrApi#xhrCreateEmployee20230301");
+      System.err.println("Exception when calling XhrVerticallyIntegratedApi#xhrCreateEmployee20230301");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -176,7 +176,7 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.XhrApi;
+import org.openapitools.client.api.XhrVerticallyIntegratedApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -189,12 +189,12 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //access-token.setApiKeyPrefix("Token");
 
-    XhrApi apiInstance = new XhrApi(defaultClient);
+    XhrVerticallyIntegratedApi apiInstance = new XhrVerticallyIntegratedApi(defaultClient);
     try {
       List<EmployeeResponse> result = apiInstance.xhrEmployees20230301();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling XhrApi#xhrEmployees20230301");
+      System.err.println("Exception when calling XhrVerticallyIntegratedApi#xhrEmployees20230301");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -246,7 +246,7 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.XhrApi;
+import org.openapitools.client.api.XhrVerticallyIntegratedApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -259,12 +259,12 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //access-token.setApiKeyPrefix("Token");
 
-    XhrApi apiInstance = new XhrApi(defaultClient);
+    XhrVerticallyIntegratedApi apiInstance = new XhrVerticallyIntegratedApi(defaultClient);
     try {
       List<GroupResponse> result = apiInstance.xhrGroups20230301();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling XhrApi#xhrGroups20230301");
+      System.err.println("Exception when calling XhrVerticallyIntegratedApi#xhrGroups20230301");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -316,7 +316,7 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.XhrApi;
+import org.openapitools.client.api.XhrVerticallyIntegratedApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -329,12 +329,12 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //access-token.setApiKeyPrefix("Token");
 
-    XhrApi apiInstance = new XhrApi(defaultClient);
+    XhrVerticallyIntegratedApi apiInstance = new XhrVerticallyIntegratedApi(defaultClient);
     try {
       IdentityResponse result = apiInstance.xhrIdentity20230301();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling XhrApi#xhrIdentity20230301");
+      System.err.println("Exception when calling XhrVerticallyIntegratedApi#xhrIdentity20230301");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -384,7 +384,7 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.XhrApi;
+import org.openapitools.client.api.XhrVerticallyIntegratedApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -397,14 +397,14 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //access-token.setApiKeyPrefix("Token");
 
-    XhrApi apiInstance = new XhrApi(defaultClient);
+    XhrVerticallyIntegratedApi apiInstance = new XhrVerticallyIntegratedApi(defaultClient);
     LocalDate startDate = new LocalDate(); // LocalDate | The start date of the search period
     LocalDate endDate = new LocalDate(); // LocalDate | The end date of the search period
     try {
       List<PayrunResponse> result = apiInstance.xhrPayruns20230301(startDate, endDate);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling XhrApi#xhrPayruns20230301");
+      System.err.println("Exception when calling XhrVerticallyIntegratedApi#xhrPayruns20230301");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -460,7 +460,7 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.XhrApi;
+import org.openapitools.client.api.XhrVerticallyIntegratedApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -473,13 +473,13 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //access-token.setApiKeyPrefix("Token");
 
-    XhrApi apiInstance = new XhrApi(defaultClient);
+    XhrVerticallyIntegratedApi apiInstance = new XhrVerticallyIntegratedApi(defaultClient);
     String payrunId = "payrunId_example"; // String | The id of the payrun.
     try {
       List<PayslipResponse> result = apiInstance.xhrPayslips20230301(payrunId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling XhrApi#xhrPayslips20230301");
+      System.err.println("Exception when calling XhrVerticallyIntegratedApi#xhrPayslips20230301");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -534,7 +534,7 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.XhrApi;
+import org.openapitools.client.api.XhrVerticallyIntegratedApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -547,12 +547,12 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //access-token.setApiKeyPrefix("Token");
 
-    XhrApi apiInstance = new XhrApi(defaultClient);
+    XhrVerticallyIntegratedApi apiInstance = new XhrVerticallyIntegratedApi(defaultClient);
     try {
       List<TimeOffBalanceResponse> result = apiInstance.xhrTimeOffBalances20230301();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling XhrApi#xhrTimeOffBalances20230301");
+      System.err.println("Exception when calling XhrVerticallyIntegratedApi#xhrTimeOffBalances20230301");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -604,7 +604,7 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.XhrApi;
+import org.openapitools.client.api.XhrVerticallyIntegratedApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -617,12 +617,12 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //access-token.setApiKeyPrefix("Token");
 
-    XhrApi apiInstance = new XhrApi(defaultClient);
+    XhrVerticallyIntegratedApi apiInstance = new XhrVerticallyIntegratedApi(defaultClient);
     try {
       List<TimeOffEntryResponse> result = apiInstance.xhrTimeOffEntries20230301();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling XhrApi#xhrTimeOffEntries20230301");
+      System.err.println("Exception when calling XhrVerticallyIntegratedApi#xhrTimeOffEntries20230301");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -674,7 +674,7 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.XhrApi;
+import org.openapitools.client.api.XhrVerticallyIntegratedApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -687,12 +687,12 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //access-token.setApiKeyPrefix("Token");
 
-    XhrApi apiInstance = new XhrApi(defaultClient);
+    XhrVerticallyIntegratedApi apiInstance = new XhrVerticallyIntegratedApi(defaultClient);
     try {
       List<TimesheetResponse> result = apiInstance.xhrTimesheets20230301();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling XhrApi#xhrTimesheets20230301");
+      System.err.println("Exception when calling XhrVerticallyIntegratedApi#xhrTimesheets20230301");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -744,7 +744,7 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
-import org.openapitools.client.api.XhrApi;
+import org.openapitools.client.api.XhrVerticallyIntegratedApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -757,12 +757,12 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //access-token.setApiKeyPrefix("Token");
 
-    XhrApi apiInstance = new XhrApi(defaultClient);
+    XhrVerticallyIntegratedApi apiInstance = new XhrVerticallyIntegratedApi(defaultClient);
     try {
       List<LocationResponse> result = apiInstance.xhrWorkLocations20230301();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling XhrApi#xhrWorkLocations20230301");
+      System.err.println("Exception when calling XhrVerticallyIntegratedApi#xhrWorkLocations20230301");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

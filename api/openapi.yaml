@@ -31,27 +31,27 @@ info:
     # Sandbox keys (xhr mode)
     ### dev
     ```
-    eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6ImQ1OTZhMmYzLWYzNzktNGE1ZC1hMmRhLTk4OWJmYWViYTg1ZCIsImlhdCI6MTcwMjkyMDkwMywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5kZXYuZW5naW5lZXJpbmcuYWZmaXhhcGkuY29tIiwic3ViIjoiZGV2ZWxvcGVyIiwiYXVkIjoiM0ZEQUVERjktMURDQTRGNTQtODc5NDlGNkEtNDEwMjc2NDMifQ.VLWYjCQvBS0C3ZA6_J3-U-idZj5EYI2IlDdTjAWBxSIHGufp6cqaVodKsF2BeIqcIeB3P0lW-KL9mY3xGd7ckQ
+    eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEveGhyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS94aHIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS94aHIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEveGhyL2dyb3VwcyIsIi8yMDIzLTAzLTAxL3hoci9pZGVudGl0eSIsIi8yMDIzLTAzLTAxL3hoci9wYXlydW5zIiwiLzIwMjMtMDMtMDEveGhyL3BheXJ1bnMvOnBheXJ1bl9pZCIsIi8yMDIzLTAzLTAxL3hoci90aW1lLW9mZi1iYWxhbmNlcyIsIi8yMDIzLTAzLTAxL3hoci90aW1lLW9mZi1lbnRyaWVzIiwiLzIwMjMtMDMtMDEveGhyL3RpbWVzaGVldHMiLCIvMjAyMy0wMy0wMS94aHIvd29yay1sb2NhdGlvbnMiXSwidG9rZW4iOiIzODIzNTNlMi05N2ZiLTRmMWEtOTYxYy0zZDI5OTViNzYxMTUiLCJpYXQiOjE3MTE4MTA3MTQsImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUuZGV2LmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6InhociIsImF1ZCI6IjNGREFFREY5LTFEQ0E0RjU0LTg3OTQ5RjZBLTQxMDI3NjQzIn0.zUJPaT6IxcIdr8b9iO6u-Rr5I-ohTHPYTrQGrgOFghbEbovItiwr9Wk479GnJVJc3WR8bxAwUMAE4Ul6Okdk6Q
     ```
 
     #### `employees` endpoint sample:
     ```
     curl --fail \
       -X GET \
-      -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6ImQ1OTZhMmYzLWYzNzktNGE1ZC1hMmRhLTk4OWJmYWViYTg1ZCIsImlhdCI6MTcwMjkyMDkwMywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5kZXYuZW5naW5lZXJpbmcuYWZmaXhhcGkuY29tIiwic3ViIjoiZGV2ZWxvcGVyIiwiYXVkIjoiM0ZEQUVERjktMURDQTRGNTQtODc5NDlGNkEtNDEwMjc2NDMifQ.VLWYjCQvBS0C3ZA6_J3-U-idZj5EYI2IlDdTjAWBxSIHGufp6cqaVodKsF2BeIqcIeB3P0lW-KL9mY3xGd7ckQ' \
+      -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEveGhyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS94aHIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS94aHIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEveGhyL2dyb3VwcyIsIi8yMDIzLTAzLTAxL3hoci9pZGVudGl0eSIsIi8yMDIzLTAzLTAxL3hoci9wYXlydW5zIiwiLzIwMjMtMDMtMDEveGhyL3BheXJ1bnMvOnBheXJ1bl9pZCIsIi8yMDIzLTAzLTAxL3hoci90aW1lLW9mZi1iYWxhbmNlcyIsIi8yMDIzLTAzLTAxL3hoci90aW1lLW9mZi1lbnRyaWVzIiwiLzIwMjMtMDMtMDEveGhyL3RpbWVzaGVldHMiLCIvMjAyMy0wMy0wMS94aHIvd29yay1sb2NhdGlvbnMiXSwidG9rZW4iOiIzODIzNTNlMi05N2ZiLTRmMWEtOTYxYy0zZDI5OTViNzYxMTUiLCJpYXQiOjE3MTE4MTA3MTQsImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUuZGV2LmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6InhociIsImF1ZCI6IjNGREFFREY5LTFEQ0E0RjU0LTg3OTQ5RjZBLTQxMDI3NjQzIn0.zUJPaT6IxcIdr8b9iO6u-Rr5I-ohTHPYTrQGrgOFghbEbovItiwr9Wk479GnJVJc3WR8bxAwUMAE4Ul6Okdk6Q' \
       'https://dev.api.affixapi.com/2023-03-01/xhr/employees'
     ```
 
     ### prod
     ```
-    eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6IjI5YjFjYTg4LWNlNjktNDgyZC1iNGZjLTkzMWMzZmJkYWM4ZSIsImlhdCI6MTcwMjkyMTA4MywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5wcm9kLmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6ImRldmVsb3BlciIsImF1ZCI6IjA4QkIwODFFLUQ5QUI0RDE0LThERjk5MjMzLTY2NjE1Q0U5In0.2zdpFAmiyYiYk6MOcbXNUwwR4M1Fextnaac340x54AidiWXCyw-u9KeavbqfYF6q8a9kcDLrxhJ8Wc_3tIzuVw
+    eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEveGhyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS94aHIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS94aHIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEveGhyL2dyb3VwcyIsIi8yMDIzLTAzLTAxL3hoci9pZGVudGl0eSIsIi8yMDIzLTAzLTAxL3hoci9wYXlydW5zIiwiLzIwMjMtMDMtMDEveGhyL3BheXJ1bnMvOnBheXJ1bl9pZCIsIi8yMDIzLTAzLTAxL3hoci90aW1lLW9mZi1iYWxhbmNlcyIsIi8yMDIzLTAzLTAxL3hoci90aW1lLW9mZi1lbnRyaWVzIiwiLzIwMjMtMDMtMDEveGhyL3RpbWVzaGVldHMiLCIvMjAyMy0wMy0wMS94aHIvd29yay1sb2NhdGlvbnMiXSwidG9rZW4iOiIzYjg4MDc2NC1kMGFmLTQ5ZDAtOGM5OS00YzIwYjE2MTJjOTMiLCJpYXQiOjE3MTE4MTA4NTgsImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUucHJvZC5lbmdpbmVlcmluZy5hZmZpeGFwaS5jb20iLCJzdWIiOiJ4aHIiLCJhdWQiOiIwOEJCMDgxRS1EOUFCNEQxNC04REY5OTIzMy02NjYxNUNFOSJ9.n3pJmmfegU21Tko_TyUyCHi4ITvfd75T8NFFTHmf1r8AI8yCUYTWdfNjyZZWcZD6z50I3Wsk2rAd8GDWXn4vlg
     ```
 
     #### `employees` endpoint sample:
     ```
     curl --fail \
       -X GET \
-      -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL2lkZW50aXR5IiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3BheXJ1bnMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvcGF5cnVucy86cGF5cnVuX2lkIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWJhbGFuY2VzIiwiLzIwMjMtMDMtMDEvZGV2ZWxvcGVyL3RpbWUtb2ZmLWVudHJpZXMiLCIvMjAyMy0wMy0wMS9kZXZlbG9wZXIvdGltZXNoZWV0cyJdLCJ0b2tlbiI6IjI5YjFjYTg4LWNlNjktNDgyZC1iNGZjLTkzMWMzZmJkYWM4ZSIsImlhdCI6MTcwMjkyMTA4MywiaXNzIjoicHVibGljYXBpLWludGVybWVkaWF0ZS5wcm9kLmVuZ2luZWVyaW5nLmFmZml4YXBpLmNvbSIsInN1YiI6ImRldmVsb3BlciIsImF1ZCI6IjA4QkIwODFFLUQ5QUI0RDE0LThERjk5MjMzLTY2NjE1Q0U5In0.2zdpFAmiyYiYk6MOcbXNUwwR4M1Fextnaac340x54AidiWXCyw-u9KeavbqfYF6q8a9kcDLrxhJ8Wc_3tIzuVw' \
+      -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6Ims5RmxwSFR1YklmZWNsUU5QRVZzeFcxazFZZ0Zfbk1BWllOSGVuOFQxdGciLCJ0eXAiOiJKV1MifQ.eyJwcm92aWRlciI6InNhbmRib3giLCJzY29wZXMiOlsiLzIwMjMtMDMtMDEveGhyL2NvbXBhbnkiLCIvMjAyMy0wMy0wMS94aHIvZW1wbG95ZWUiLCIvMjAyMy0wMy0wMS94aHIvZW1wbG95ZWVzIiwiLzIwMjMtMDMtMDEveGhyL2dyb3VwcyIsIi8yMDIzLTAzLTAxL3hoci9pZGVudGl0eSIsIi8yMDIzLTAzLTAxL3hoci9wYXlydW5zIiwiLzIwMjMtMDMtMDEveGhyL3BheXJ1bnMvOnBheXJ1bl9pZCIsIi8yMDIzLTAzLTAxL3hoci90aW1lLW9mZi1iYWxhbmNlcyIsIi8yMDIzLTAzLTAxL3hoci90aW1lLW9mZi1lbnRyaWVzIiwiLzIwMjMtMDMtMDEveGhyL3RpbWVzaGVldHMiLCIvMjAyMy0wMy0wMS94aHIvd29yay1sb2NhdGlvbnMiXSwidG9rZW4iOiIzYjg4MDc2NC1kMGFmLTQ5ZDAtOGM5OS00YzIwYjE2MTJjOTMiLCJpYXQiOjE3MTE4MTA4NTgsImlzcyI6InB1YmxpY2FwaS1pbnRlcm1lZGlhdGUucHJvZC5lbmdpbmVlcmluZy5hZmZpeGFwaS5jb20iLCJzdWIiOiJ4aHIiLCJhdWQiOiIwOEJCMDgxRS1EOUFCNEQxNC04REY5OTIzMy02NjYxNUNFOSJ9.n3pJmmfegU21Tko_TyUyCHi4ITvfd75T8NFFTHmf1r8AI8yCUYTWdfNjyZZWcZD6z50I3Wsk2rAd8GDWXn4vlg' \
       'https://api.affixapi.com/2023-03-01/xhr/employees'
     ```
 
@@ -230,13 +230,9 @@ tags:
     disconnecting, an access token
   name: Management
 - description: |
-    Operations related to retrieving end customer data via customer's API key
-    (for continuous integrations only).
-  name: Official
-- description: |
     Operations related to retrieving end customer data from a customer's
     credentials login, for data migrations, or continuous integrations.
-  name: XHR
+  name: XHR (Vertically-integrated)
 paths:
   /providers:
     get:
@@ -605,578 +601,6 @@ paths:
       x-amazon-apigateway-integration:
         type: mock
       x-accepts: application/json
-  /2023-03-01/official/company:
-    get:
-      description: |
-        Retrieve company information
-      operationId: officialCompanies20230301
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Companies20230301Response'
-          description: Success
-        "202":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Accepted + pending (async job started)
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_401'
-          description: Authentication Error
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Rate Limited / Too Many Requests
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Server Error
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Not Implemented
-      security:
-      - access-token: []
-      summary: Company
-      tags:
-      - Official
-      - 2023-03-01
-      x-public: true
-      x-amazon-apigateway-integration:
-        type: mock
-      x-accepts: application/json
-  /2023-03-01/official/employee:
-    post:
-      description: |
-        Creates a new Employee
-      operationId: officialCreateEmployee20230301
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CreateEmployeeRequest'
-        required: true
-      responses:
-        "201":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/EmployeeResponse'
-          description: Success
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_400'
-          description: Bad Request
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Rate Limited / Too Many Requests
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Server Error
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Not Implemented
-      security:
-      - access-token: []
-      summary: Create Employee
-      tags:
-      - Official
-      - 2023-03-01
-      x-public: true
-      x-amazon-apigateway-integration:
-        type: mock
-      x-contentType: application/json
-      x-accepts: application/json
-  /2023-03-01/official/employees:
-    get:
-      description: |
-        List the individuals (employees, contractors, accountants, and others)
-        listed in the HRIS/Payroll software
-      operationId: officialEmployees20230301
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Employees20230301Response'
-          description: Success
-        "202":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Accepted + pending (async job started)
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_401'
-          description: Authentication Error
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Rate Limited / Too Many Requests
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Server Error
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Not Implemented
-      security:
-      - access-token: []
-      summary: Employees
-      tags:
-      - Official
-      - 2023-03-01
-      x-public: true
-      x-amazon-apigateway-integration:
-        type: mock
-      x-accepts: application/json
-  /2023-03-01/official/groups:
-    get:
-      description: |
-        The Group object is used to represent any subset of employees, such as
-        PayGroup, Team, or Department. Employees can be in multiple Groups.
-      operationId: officialGroups20230301
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Groups20230301Response'
-          description: Success
-        "202":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Accepted + pending (async job started)
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_401'
-          description: Authentication Error
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Rate Limited / Too Many Requests
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Server Error
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Not Implemented
-      security:
-      - access-token: []
-      summary: Groups
-      tags:
-      - Official
-      - 2023-03-01
-      x-public: true
-      x-amazon-apigateway-integration:
-        type: mock
-      x-accepts: application/json
-  /2023-03-01/official/identity:
-    get:
-      description: |
-        List information of the user for the respective account
-      operationId: officialdentity20230301
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/IdentityResponse'
-          description: Success
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_401'
-          description: Authentication Error
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Rate Limited / Too Many Requests
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Server Error
-      security:
-      - access-token: []
-      summary: Identity
-      tags:
-      - Official
-      - 2023-03-01
-      x-public: true
-      x-amazon-apigateway-integration:
-        type: mock
-      x-accepts: application/json
-  /2023-03-01/official/time-off-entries:
-    get:
-      description: |
-        Retrieve time off / absence entries
-      operationId: officialTimeOffEntries20230301
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/TimeOffEntries20230301Response'
-          description: Success
-        "202":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Accepted + pending (async job started)
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_401'
-          description: Authentication Error
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Rate Limited / Too Many Requests
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Server Error
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Not Implemented
-      security:
-      - access-token: []
-      summary: Time off entries
-      tags:
-      - Official
-      - 2023-03-01
-      x-public: true
-      x-amazon-apigateway-integration:
-        type: mock
-      x-accepts: application/json
-  /2023-03-01/official/timesheets:
-    get:
-      description: |
-        Retrieve Timesheets
-      operationId: officialTimesheets20230301
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Timesheets20230301Response'
-          description: Success
-        "202":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Accepted + pending (async job started)
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_401'
-          description: Authentication Error
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Rate Limited / Too Many Requests
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Server Error
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Not Implemented
-      security:
-      - access-token: []
-      summary: Timesheets
-      tags:
-      - Official
-      - 2023-03-01
-      x-public: true
-      x-amazon-apigateway-integration:
-        type: mock
-      x-accepts: application/json
-  /2023-03-01/official/time-off-balances:
-    get:
-      description: |
-        Retrieve all time off balances.
-      operationId: officialTimeOffBalances20230301
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/TimeOffBalances20230301Response'
-          description: Success
-        "202":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Accepted + pending (async job started)
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_401'
-          description: Authentication Error
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Rate Limited / Too Many Requests
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Server Error
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Not Implemented
-      security:
-      - access-token: []
-      summary: Time off balances
-      tags:
-      - Official
-      - 2023-03-01
-      x-public: true
-      x-amazon-apigateway-integration:
-        type: mock
-      x-accepts: application/json
-  /2023-03-01/official/work-locations:
-    get:
-      description: |
-        The Location object is used to represent an address that can be associated
-        with an employee
-      operationId: officialWorkLocations20230301
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/WorkLocations20230301Response'
-          description: Success
-        "202":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Accepted + pending (async job started)
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_401'
-          description: Authentication Error
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Rate Limited / Too Many Requests
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Server Error
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Not Implemented
-      security:
-      - access-token: []
-      summary: Work locations
-      tags:
-      - Official
-      - 2023-03-01
-      x-public: true
-      x-amazon-apigateway-integration:
-        type: mock
-      x-accepts: application/json
   /2023-03-01/xhr/company:
     get:
       description: |
@@ -1237,7 +661,7 @@ paths:
       - access-token: []
       summary: Company
       tags:
-      - XHR
+      - XHR (Vertically-integrated)
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
@@ -1296,7 +720,7 @@ paths:
       - access-token: []
       summary: Create employee
       tags:
-      - XHR
+      - XHR (Vertically-integrated)
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
@@ -1364,7 +788,7 @@ paths:
       - access-token: []
       summary: Employees
       tags:
-      - XHR
+      - XHR (Vertically-integrated)
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
@@ -1431,7 +855,7 @@ paths:
       - access-token: []
       summary: Groups
       tags:
-      - XHR
+      - XHR (Vertically-integrated)
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
@@ -1478,7 +902,7 @@ paths:
       - access-token: []
       summary: Identity
       tags:
-      - XHR
+      - XHR (Vertically-integrated)
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
@@ -1566,7 +990,7 @@ paths:
       - access-token: []
       summary: Payruns
       tags:
-      - XHR
+      - XHR (Vertically-integrated)
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
@@ -1646,7 +1070,7 @@ paths:
       - access-token: []
       summary: Payslips
       tags:
-      - XHR
+      - XHR (Vertically-integrated)
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
@@ -1712,7 +1136,7 @@ paths:
       - access-token: []
       summary: Timesheets
       tags:
-      - XHR
+      - XHR (Vertically-integrated)
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
@@ -1778,7 +1202,7 @@ paths:
       - access-token: []
       summary: Time off entries
       tags:
-      - XHR
+      - XHR (Vertically-integrated)
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
@@ -1844,7 +1268,7 @@ paths:
       - access-token: []
       summary: Time off balances
       tags:
-      - XHR
+      - XHR (Vertically-integrated)
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:
@@ -1911,7 +1335,7 @@ paths:
       - access-token: []
       summary: Work locations
       tags:
-      - XHR
+      - XHR (Vertically-integrated)
       - 2023-03-01
       x-public: true
       x-amazon-apigateway-integration:

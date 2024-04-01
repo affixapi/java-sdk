@@ -11,368 +11,208 @@
  */
 
 
-package org.openapitools.client.model;
+package org.openapitools.client.api;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import java.math.BigDecimal;
-import org.openapitools.client.model.CurrencyRequest;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.model.CompanyResponse;
+import org.openapitools.client.model.CreateEmployeeRequest;
+import org.openapitools.client.model.EmployeeResponse;
+import org.openapitools.client.model.GroupResponse;
+import org.openapitools.client.model.IdentityResponse;
+import org.openapitools.client.model.InlineResponse400;
+import org.openapitools.client.model.InlineResponse401;
 import org.threeten.bp.LocalDate;
+import org.openapitools.client.model.LocationResponse;
+import org.openapitools.client.model.MessageResponse;
+import org.openapitools.client.model.PayrunResponse;
+import org.openapitools.client.model.PayslipResponse;
+import org.openapitools.client.model.TimeOffBalanceResponse;
+import org.openapitools.client.model.TimeOffEntryResponse;
+import org.openapitools.client.model.TimesheetResponse;
+import org.junit.Test;
+import org.junit.Ignore;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
- * EmploymentNoNullEnumRequest
+ * API tests for XhrVerticallyIntegratedApi
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-01T22:37:09.120983Z[Etc/UTC]")
-public class EmploymentNoNullEnumRequest {
-  public static final String SERIALIZED_NAME_JOB_TITLE = "job_title";
-  @SerializedName(SERIALIZED_NAME_JOB_TITLE)
-  private String jobTitle;
+@Ignore
+public class XhrVerticallyIntegratedApiTest {
 
-  public static final String SERIALIZED_NAME_PAY_RATE = "pay_rate";
-  @SerializedName(SERIALIZED_NAME_PAY_RATE)
-  private BigDecimal payRate;
+    private final XhrVerticallyIntegratedApi api = new XhrVerticallyIntegratedApi();
 
-  public static final String SERIALIZED_NAME_PAY_PERIOD = "pay_period";
-  @SerializedName(SERIALIZED_NAME_PAY_PERIOD)
-  private String payPeriod;
-
-  /**
-   * Gets or Sets payFrequency
-   */
-  @JsonAdapter(PayFrequencyEnum.Adapter.class)
-  public enum PayFrequencyEnum {
-    WEEKLY("weekly"),
     
-    BIWEEKLY("biweekly"),
-    
-    SEMIMONTHLY("semimonthly"),
-    
-    MONTHLY("monthly"),
-    
-    OTHER("other");
+    /**
+     * Company
+     *
+     * Retrieve company information 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void xhrCompanies20230301Test() throws ApiException {
+        List<CompanyResponse> response = api.xhrCompanies20230301();
 
-    private String value;
-
-    PayFrequencyEnum(String value) {
-      this.value = value;
+        // TODO: test validations
     }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static PayFrequencyEnum fromValue(String value) {
-      for (PayFrequencyEnum b : PayFrequencyEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<PayFrequencyEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final PayFrequencyEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public PayFrequencyEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return PayFrequencyEnum.fromValue(value);
-      }
-    }
-  }
-
-  public static final String SERIALIZED_NAME_PAY_FREQUENCY = "pay_frequency";
-  @SerializedName(SERIALIZED_NAME_PAY_FREQUENCY)
-  private PayFrequencyEnum payFrequency;
-
-  /**
-   * Gets or Sets employmentType
-   */
-  @JsonAdapter(EmploymentTypeEnum.Adapter.class)
-  public enum EmploymentTypeEnum {
-    FULL_TIME("full_time"),
     
-    PART_TIME("part_time"),
-    
-    CONTRACTOR("contractor"),
-    
-    OTHER("other");
+    /**
+     * Create employee
+     *
+     * Creates a new Employee 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void xhrCreateEmployee20230301Test() throws ApiException {
+        CreateEmployeeRequest createEmployeeRequest = null;
+        EmployeeResponse response = api.xhrCreateEmployee20230301(createEmployeeRequest);
 
-    private String value;
-
-    EmploymentTypeEnum(String value) {
-      this.value = value;
+        // TODO: test validations
     }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static EmploymentTypeEnum fromValue(String value) {
-      for (EmploymentTypeEnum b : EmploymentTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<EmploymentTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final EmploymentTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public EmploymentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return EmploymentTypeEnum.fromValue(value);
-      }
-    }
-  }
-
-  public static final String SERIALIZED_NAME_EMPLOYMENT_TYPE = "employment_type";
-  @SerializedName(SERIALIZED_NAME_EMPLOYMENT_TYPE)
-  private EmploymentTypeEnum employmentType;
-
-  public static final String SERIALIZED_NAME_CURRENCY = "currency";
-  @SerializedName(SERIALIZED_NAME_CURRENCY)
-  private CurrencyRequest currency;
-
-  public static final String SERIALIZED_NAME_EFFECTIVE_DATE = "effective_date";
-  @SerializedName(SERIALIZED_NAME_EFFECTIVE_DATE)
-  private LocalDate effectiveDate;
-
-
-  public EmploymentNoNullEnumRequest jobTitle(String jobTitle) {
     
-    this.jobTitle = jobTitle;
-    return this;
-  }
+    /**
+     * Employees
+     *
+     * List the individuals (employees, contractors, accountants, and others) listed in the HRIS/Payroll software 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void xhrEmployees20230301Test() throws ApiException {
+        List<EmployeeResponse> response = api.xhrEmployees20230301();
 
-   /**
-   * Get jobTitle
-   * @return jobTitle
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "Software Developer", required = true, value = "")
-
-  public String getJobTitle() {
-    return jobTitle;
-  }
-
-
-  public void setJobTitle(String jobTitle) {
-    this.jobTitle = jobTitle;
-  }
-
-
-  public EmploymentNoNullEnumRequest payRate(BigDecimal payRate) {
-    
-    this.payRate = payRate;
-    return this;
-  }
-
-   /**
-   * Get payRate
-   * @return payRate
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "85000", required = true, value = "")
-
-  public BigDecimal getPayRate() {
-    return payRate;
-  }
-
-
-  public void setPayRate(BigDecimal payRate) {
-    this.payRate = payRate;
-  }
-
-
-  public EmploymentNoNullEnumRequest payPeriod(String payPeriod) {
-    
-    this.payPeriod = payPeriod;
-    return this;
-  }
-
-   /**
-   * Get payPeriod
-   * @return payPeriod
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "year", required = true, value = "")
-
-  public String getPayPeriod() {
-    return payPeriod;
-  }
-
-
-  public void setPayPeriod(String payPeriod) {
-    this.payPeriod = payPeriod;
-  }
-
-
-  public EmploymentNoNullEnumRequest payFrequency(PayFrequencyEnum payFrequency) {
-    
-    this.payFrequency = payFrequency;
-    return this;
-  }
-
-   /**
-   * Get payFrequency
-   * @return payFrequency
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "semimonthly", required = true, value = "")
-
-  public PayFrequencyEnum getPayFrequency() {
-    return payFrequency;
-  }
-
-
-  public void setPayFrequency(PayFrequencyEnum payFrequency) {
-    this.payFrequency = payFrequency;
-  }
-
-
-  public EmploymentNoNullEnumRequest employmentType(EmploymentTypeEnum employmentType) {
-    
-    this.employmentType = employmentType;
-    return this;
-  }
-
-   /**
-   * Get employmentType
-   * @return employmentType
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "full_time", required = true, value = "")
-
-  public EmploymentTypeEnum getEmploymentType() {
-    return employmentType;
-  }
-
-
-  public void setEmploymentType(EmploymentTypeEnum employmentType) {
-    this.employmentType = employmentType;
-  }
-
-
-  public EmploymentNoNullEnumRequest currency(CurrencyRequest currency) {
-    
-    this.currency = currency;
-    return this;
-  }
-
-   /**
-   * Get currency
-   * @return currency
-  **/
-  @ApiModelProperty(required = true, value = "")
-
-  public CurrencyRequest getCurrency() {
-    return currency;
-  }
-
-
-  public void setCurrency(CurrencyRequest currency) {
-    this.currency = currency;
-  }
-
-
-  public EmploymentNoNullEnumRequest effectiveDate(LocalDate effectiveDate) {
-    
-    this.effectiveDate = effectiveDate;
-    return this;
-  }
-
-   /**
-   * Get effectiveDate
-   * @return effectiveDate
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "Sun Oct 11 00:00:00 UTC 2020", required = true, value = "")
-
-  public LocalDate getEffectiveDate() {
-    return effectiveDate;
-  }
-
-
-  public void setEffectiveDate(LocalDate effectiveDate) {
-    this.effectiveDate = effectiveDate;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+        // TODO: test validations
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+    
+    /**
+     * Groups
+     *
+     * The Group object is used to represent any subset of employees, such as PayGroup, Team, or Department. Employees can be in multiple Groups. 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void xhrGroups20230301Test() throws ApiException {
+        List<GroupResponse> response = api.xhrGroups20230301();
+
+        // TODO: test validations
     }
-    EmploymentNoNullEnumRequest employmentNoNullEnumRequest = (EmploymentNoNullEnumRequest) o;
-    return Objects.equals(this.jobTitle, employmentNoNullEnumRequest.jobTitle) &&
-        Objects.equals(this.payRate, employmentNoNullEnumRequest.payRate) &&
-        Objects.equals(this.payPeriod, employmentNoNullEnumRequest.payPeriod) &&
-        Objects.equals(this.payFrequency, employmentNoNullEnumRequest.payFrequency) &&
-        Objects.equals(this.employmentType, employmentNoNullEnumRequest.employmentType) &&
-        Objects.equals(this.currency, employmentNoNullEnumRequest.currency) &&
-        Objects.equals(this.effectiveDate, employmentNoNullEnumRequest.effectiveDate);
-  }
+    
+    /**
+     * Identity
+     *
+     * List information of the user for the respective account 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void xhrIdentity20230301Test() throws ApiException {
+        IdentityResponse response = api.xhrIdentity20230301();
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(jobTitle, payRate, payPeriod, payFrequency, employmentType, currency, effectiveDate);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class EmploymentNoNullEnumRequest {\n");
-    sb.append("    jobTitle: ").append(toIndentedString(jobTitle)).append("\n");
-    sb.append("    payRate: ").append(toIndentedString(payRate)).append("\n");
-    sb.append("    payPeriod: ").append(toIndentedString(payPeriod)).append("\n");
-    sb.append("    payFrequency: ").append(toIndentedString(payFrequency)).append("\n");
-    sb.append("    employmentType: ").append(toIndentedString(employmentType)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    effectiveDate: ").append(toIndentedString(effectiveDate)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+        // TODO: test validations
     }
-    return o.toString().replace("\n", "\n    ");
-  }
+    
+    /**
+     * Payruns
+     *
+     * List all the pay runs that occurred during the respective period.  Supported integrations:   - sageone   - simplepay.ie   - brightpay connect 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void xhrPayruns20230301Test() throws ApiException {
+        LocalDate startDate = null;
+        LocalDate endDate = null;
+        List<PayrunResponse> response = api.xhrPayruns20230301(startDate, endDate);
 
+        // TODO: test validations
+    }
+    
+    /**
+     * Payslips
+     *
+     * Retrieves payslips from a specific payrun.  Supported integrations:   - sageone   - simplepay.ie   - brightpay connect 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void xhrPayslips20230301Test() throws ApiException {
+        String payrunId = null;
+        List<PayslipResponse> response = api.xhrPayslips20230301(payrunId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Time off balances
+     *
+     * Retrieve all time off balances. 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void xhrTimeOffBalances20230301Test() throws ApiException {
+        List<TimeOffBalanceResponse> response = api.xhrTimeOffBalances20230301();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Time off entries
+     *
+     * Retrieve time off / absence entries 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void xhrTimeOffEntries20230301Test() throws ApiException {
+        List<TimeOffEntryResponse> response = api.xhrTimeOffEntries20230301();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Timesheets
+     *
+     * Retrieve Timesheets 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void xhrTimesheets20230301Test() throws ApiException {
+        List<TimesheetResponse> response = api.xhrTimesheets20230301();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Work locations
+     *
+     * The Location object is used to represent an address that can be associated with an employee 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void xhrWorkLocations20230301Test() throws ApiException {
+        List<LocationResponse> response = api.xhrWorkLocations20230301();
+
+        // TODO: test validations
+    }
+    
 }
-
