@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ClientResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-01T22:37:09.120983Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-01T22:42:49.427726Z[Etc/UTC]")
 public class ClientResponse {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)

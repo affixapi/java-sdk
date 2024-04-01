@@ -2,7 +2,7 @@
 
 Affix API
 - API version: 2023-03-01
-  - Build date: 2024-04-01T22:37:09.120983Z[Etc/UTC]
+  - Build date: 2024-04-01T22:42:49.427726Z[Etc/UTC]
 
 The affixapi.com API documentation.
 
@@ -246,7 +246,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.affixapi</groupId>
   <artifactId>api</artifactId>
-  <version>1.1.47</version>
+  <version>1.1.48</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -256,7 +256,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.affixapi:api:1.1.47"
+compile "com.affixapi:api:1.1.48"
 ```
 
 ### Others
@@ -269,7 +269,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-1.1.47.jar`
+* `target/api-1.1.48.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -320,7 +320,6 @@ All URIs are relative to *https://api.affixapi.com*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *Class20230301Api* | [**xhrCompanies20230301**](docs/Class20230301Api.md#xhrCompanies20230301) | **GET** /2023-03-01/xhr/company | Company
-*Class20230301Api* | [**xhrCreateEmployee20230301**](docs/Class20230301Api.md#xhrCreateEmployee20230301) | **POST** /2023-03-01/xhr/employee | Create employee
 *Class20230301Api* | [**xhrEmployees20230301**](docs/Class20230301Api.md#xhrEmployees20230301) | **GET** /2023-03-01/xhr/employees | Employees
 *Class20230301Api* | [**xhrGroups20230301**](docs/Class20230301Api.md#xhrGroups20230301) | **GET** /2023-03-01/xhr/groups | Groups
 *Class20230301Api* | [**xhrIdentity20230301**](docs/Class20230301Api.md#xhrIdentity20230301) | **GET** /2023-03-01/xhr/identity | Identity
@@ -338,7 +337,6 @@ Class | Method | HTTP request | Description
 *ManagementApi* | [**tokens**](docs/ManagementApi.md#tokens) | **GET** /2023-03-01/management/tokens | Tokens
 *ManagementApi* | [**updateClient**](docs/ManagementApi.md#updateClient) | **POST** /2023-03-01/management/client | Update client
 *XhrVerticallyIntegratedApi* | [**xhrCompanies20230301**](docs/XhrVerticallyIntegratedApi.md#xhrCompanies20230301) | **GET** /2023-03-01/xhr/company | Company
-*XhrVerticallyIntegratedApi* | [**xhrCreateEmployee20230301**](docs/XhrVerticallyIntegratedApi.md#xhrCreateEmployee20230301) | **POST** /2023-03-01/xhr/employee | Create employee
 *XhrVerticallyIntegratedApi* | [**xhrEmployees20230301**](docs/XhrVerticallyIntegratedApi.md#xhrEmployees20230301) | **GET** /2023-03-01/xhr/employees | Employees
 *XhrVerticallyIntegratedApi* | [**xhrGroups20230301**](docs/XhrVerticallyIntegratedApi.md#xhrGroups20230301) | **GET** /2023-03-01/xhr/groups | Groups
 *XhrVerticallyIntegratedApi* | [**xhrIdentity20230301**](docs/XhrVerticallyIntegratedApi.md#xhrIdentity20230301) | **GET** /2023-03-01/xhr/identity | Identity

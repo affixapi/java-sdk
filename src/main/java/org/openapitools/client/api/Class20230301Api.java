@@ -28,11 +28,9 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.CompanyResponse;
-import org.openapitools.client.model.CreateEmployeeRequest;
 import org.openapitools.client.model.EmployeeResponse;
 import org.openapitools.client.model.GroupResponse;
 import org.openapitools.client.model.IdentityResponse;
-import org.openapitools.client.model.InlineResponse400;
 import org.openapitools.client.model.InlineResponse401;
 import org.threeten.bp.LocalDate;
 import org.openapitools.client.model.LocationResponse;
@@ -187,133 +185,6 @@ public class Class20230301Api {
 
         okhttp3.Call localVarCall = xhrCompanies20230301ValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<List<CompanyResponse>>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for xhrCreateEmployee20230301
-     * @param createEmployeeRequest  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Success </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Rate Limited / Too Many Requests </td><td>  * Retry-After - Retry your call after the specified amount of seconds <br>  </td></tr>
-        <tr><td> 500 </td><td> Server Error </td><td>  -  </td></tr>
-        <tr><td> 501 </td><td> Not Implemented </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call xhrCreateEmployee20230301Call(CreateEmployeeRequest createEmployeeRequest, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = createEmployeeRequest;
-
-        // create path and map variables
-        String localVarPath = "/2023-03-01/xhr/employee";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "access-token" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call xhrCreateEmployee20230301ValidateBeforeCall(CreateEmployeeRequest createEmployeeRequest, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'createEmployeeRequest' is set
-        if (createEmployeeRequest == null) {
-            throw new ApiException("Missing the required parameter 'createEmployeeRequest' when calling xhrCreateEmployee20230301(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = xhrCreateEmployee20230301Call(createEmployeeRequest, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * Create employee
-     * Creates a new Employee 
-     * @param createEmployeeRequest  (required)
-     * @return EmployeeResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Success </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Rate Limited / Too Many Requests </td><td>  * Retry-After - Retry your call after the specified amount of seconds <br>  </td></tr>
-        <tr><td> 500 </td><td> Server Error </td><td>  -  </td></tr>
-        <tr><td> 501 </td><td> Not Implemented </td><td>  -  </td></tr>
-     </table>
-     */
-    public EmployeeResponse xhrCreateEmployee20230301(CreateEmployeeRequest createEmployeeRequest) throws ApiException {
-        ApiResponse<EmployeeResponse> localVarResp = xhrCreateEmployee20230301WithHttpInfo(createEmployeeRequest);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Create employee
-     * Creates a new Employee 
-     * @param createEmployeeRequest  (required)
-     * @return ApiResponse&lt;EmployeeResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Success </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Rate Limited / Too Many Requests </td><td>  * Retry-After - Retry your call after the specified amount of seconds <br>  </td></tr>
-        <tr><td> 500 </td><td> Server Error </td><td>  -  </td></tr>
-        <tr><td> 501 </td><td> Not Implemented </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<EmployeeResponse> xhrCreateEmployee20230301WithHttpInfo(CreateEmployeeRequest createEmployeeRequest) throws ApiException {
-        okhttp3.Call localVarCall = xhrCreateEmployee20230301ValidateBeforeCall(createEmployeeRequest, null);
-        Type localVarReturnType = new TypeToken<EmployeeResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Create employee (asynchronously)
-     * Creates a new Employee 
-     * @param createEmployeeRequest  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Success </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Rate Limited / Too Many Requests </td><td>  * Retry-After - Retry your call after the specified amount of seconds <br>  </td></tr>
-        <tr><td> 500 </td><td> Server Error </td><td>  -  </td></tr>
-        <tr><td> 501 </td><td> Not Implemented </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call xhrCreateEmployee20230301Async(CreateEmployeeRequest createEmployeeRequest, final ApiCallback<EmployeeResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = xhrCreateEmployee20230301ValidateBeforeCall(createEmployeeRequest, _callback);
-        Type localVarReturnType = new TypeToken<EmployeeResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

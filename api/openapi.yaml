@@ -667,66 +667,6 @@ paths:
       x-amazon-apigateway-integration:
         type: mock
       x-accepts: application/json
-  /2023-03-01/xhr/employee:
-    post:
-      description: |
-        Creates a new Employee
-      operationId: xhrCreateEmployee20230301
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CreateEmployeeRequest'
-        required: true
-      responses:
-        "201":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/EmployeeResponse'
-          description: Success
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_400'
-          description: Bad Request
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Rate Limited / Too Many Requests
-          headers:
-            Retry-After:
-              description: Retry your call after the specified amount of seconds
-              explode: false
-              schema:
-                type: integer
-              style: simple
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Server Error
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-          description: Not Implemented
-      security:
-      - access-token: []
-      summary: Create employee
-      tags:
-      - XHR (Vertically-integrated)
-      - 2023-03-01
-      x-public: true
-      x-amazon-apigateway-integration:
-        type: mock
-      x-contentType: application/json
-      x-accepts: application/json
   /2023-03-01/xhr/employees:
     get:
       description: |
@@ -2092,12 +2032,6 @@ components:
         $ref: '#/components/schemas/CompanyResponse'
       type: array
     address-no-non-nullRequest:
-      example:
-        street_address: 221 S Main Street
-        country: IE
-        post_code: "30691"
-        locality: Yuma
-        administrative_area: AZ
       nullable: true
       properties:
         street_address:
@@ -2160,17 +2094,6 @@ components:
       - street_address
       type: object
     location-no-non-nullRequest:
-      example:
-        address:
-          street_address: 221 S Main Street
-          country: IE
-          post_code: "30691"
-          locality: Yuma
-          administrative_area: AZ
-        remote_id: "19202938"
-        name: NYC Office
-        id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
-        type: office
       nullable: true
       properties:
         id:
@@ -2211,13 +2134,6 @@ components:
       - eur
       type: string
     employment-no-null-enumRequest:
-      example:
-        employment_type: full_time
-        effective_date: 2020-10-11T00:00:00.000+0000
-        pay_period: year
-        pay_frequency: semimonthly
-        job_title: Software Developer
-        pay_rate: 85000
       properties:
         job_title:
           example: Software Developer
@@ -2315,79 +2231,6 @@ components:
       nullable: true
       type: array
     CreateEmployeeRequest:
-      example:
-        display_full_name: Hirsch
-        work_email: greg@affixapi.com
-        employment_type: full_time
-        gender: male
-        ethnicity: white
-        date_of_birth: 1990-11-10T00:00:00.000+0000
-        work_location:
-          address:
-            street_address: 221 S Main Street
-            country: IE
-            post_code: "30691"
-            locality: Yuma
-            administrative_area: AZ
-          remote_id: "19202938"
-          name: NYC Office
-          id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
-          type: office
-        home_location:
-          street_address: 221 S Main Street
-          country: IE
-          post_code: "30691"
-          locality: Yuma
-          administrative_area: AZ
-        employment_status: active
-        first_name: Greg
-        job_title: Software developer
-        start_date: 2020-10-11T00:00:00.000+0000
-        bank_account:
-          account_number: account_number
-          iban: iban
-          bank_name: bank_name
-          bic: bic
-          holder_name: holder_name
-        manager:
-          work_email: work_email
-          remote_id: remote_id
-          last_name: last_name
-          id: id
-          first_name: first_name
-        custom_fields:
-          t_shirt_size: medium
-        last_name: Hirsch
-        groups:
-        - id: 4B9bKBpX5tnwjiG93TAqF7ci
-          remote_id: df6c28e8
-          name: backend
-          type: team
-        - id: 132Xpnw2a38aaQG93TAqF7ci
-          remote_id: 355c65922637
-          name: engineering
-          type: department
-        avatar: http://alturl.com/h2h8m
-        employments:
-        - employment_type: full_time
-          effective_date: 2020-10-11T00:00:00.000+0000
-          pay_period: year
-          pay_frequency: semimonthly
-          job_title: Software Developer
-          pay_rate: 85000
-        - employment_type: full_time
-          effective_date: 2020-10-11T00:00:00.000+0000
-          pay_period: year
-          pay_frequency: semimonthly
-          job_title: Software Developer
-          pay_rate: 85000
-        tax_id: "1234567890"
-        mobile_phone_number: Hirsch
-        marital_status: single
-        nationality: Irish
-        termination_date: 2021-10-12T00:00:00.000+0000
-        employee_number: "2"
-        personal_email: greg@gmail.com
       properties:
         employee_number:
           example: "2"

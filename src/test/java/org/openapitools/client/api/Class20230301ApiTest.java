@@ -15,11 +15,9 @@ package org.openapitools.client.api;
 
 import org.openapitools.client.ApiException;
 import org.openapitools.client.model.CompanyResponse;
-import org.openapitools.client.model.CreateEmployeeRequest;
 import org.openapitools.client.model.EmployeeResponse;
 import org.openapitools.client.model.GroupResponse;
 import org.openapitools.client.model.IdentityResponse;
-import org.openapitools.client.model.InlineResponse400;
 import org.openapitools.client.model.InlineResponse401;
 import org.threeten.bp.LocalDate;
 import org.openapitools.client.model.LocationResponse;
@@ -57,22 +55,6 @@ public class Class20230301ApiTest {
     @Test
     public void xhrCompanies20230301Test() throws ApiException {
         List<CompanyResponse> response = api.xhrCompanies20230301();
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Create employee
-     *
-     * Creates a new Employee 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void xhrCreateEmployee20230301Test() throws ApiException {
-        CreateEmployeeRequest createEmployeeRequest = null;
-        EmployeeResponse response = api.xhrCreateEmployee20230301(createEmployeeRequest);
 
         // TODO: test validations
     }
