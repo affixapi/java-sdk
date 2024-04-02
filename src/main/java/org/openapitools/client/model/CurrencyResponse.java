@@ -29,6 +29,8 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(CurrencyResponse.Adapter.class)
 public enum CurrencyResponse {
   
+  NULL("null"),
+  
   USD("usd"),
   
   GBP("gbp"),
@@ -56,7 +58,7 @@ public enum CurrencyResponse {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return null;
   }
 
   public static class Adapter extends TypeAdapter<CurrencyResponse> {

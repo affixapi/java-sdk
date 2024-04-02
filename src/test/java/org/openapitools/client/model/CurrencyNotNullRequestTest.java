@@ -20,15 +20,15 @@ import org.junit.Test;
 
 
 /**
- * Model tests for CurrencyRequest
+ * Model tests for CurrencyNotNullRequest
  */
-public class CurrencyRequestTest {
+public class CurrencyNotNullRequestTest {
     /**
-     * Model tests for CurrencyRequest
+     * Model tests for CurrencyNotNullRequest
      */
     @Test
-    public void testCurrencyRequest() {
-        // TODO: test CurrencyRequest
+    public void testCurrencyNotNullRequest() {
+        // TODO: test CurrencyNotNullRequest
     }
 
 }

@@ -5,6 +5,8 @@
 ## Enum
 
 
+* `NULL` (value: `"null"`)
+
 * `USD` (value: `"usd"`)
 
 * `GBP` (value: `"gbp"`)

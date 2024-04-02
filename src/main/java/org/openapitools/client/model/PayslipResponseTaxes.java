@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * PayslipResponseTaxes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-01T22:42:49.427726Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-02T17:20:59.071720Z[Etc/UTC]")
 public class PayslipResponseTaxes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

@@ -24,13 +24,13 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
-import org.openapitools.client.model.CurrencyRequest;
+import org.openapitools.client.model.CurrencyNotNullRequest;
 import org.threeten.bp.LocalDate;
 
 /**
  * EmploymentNoNullEnumRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-01T22:42:49.427726Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-02T17:20:59.071720Z[Etc/UTC]")
 public class EmploymentNoNullEnumRequest {
   public static final String SERIALIZED_NAME_JOB_TITLE = "job_title";
   @SerializedName(SERIALIZED_NAME_JOB_TITLE)
@@ -158,7 +158,7 @@ public class EmploymentNoNullEnumRequest {
 
   public static final String SERIALIZED_NAME_CURRENCY = "currency";
   @SerializedName(SERIALIZED_NAME_CURRENCY)
-  private CurrencyRequest currency;
+  private CurrencyNotNullRequest currency;
 
   public static final String SERIALIZED_NAME_EFFECTIVE_DATE = "effective_date";
   @SerializedName(SERIALIZED_NAME_EFFECTIVE_DATE)
@@ -280,7 +280,7 @@ public class EmploymentNoNullEnumRequest {
   }
 
 
-  public EmploymentNoNullEnumRequest currency(CurrencyRequest currency) {
+  public EmploymentNoNullEnumRequest currency(CurrencyNotNullRequest currency) {
     
     this.currency = currency;
     return this;
@@ -292,12 +292,12 @@ public class EmploymentNoNullEnumRequest {
   **/
   @ApiModelProperty(required = true, value = "")
 
-  public CurrencyRequest getCurrency() {
+  public CurrencyNotNullRequest getCurrency() {
     return currency;
   }
 
 
-  public void setCurrency(CurrencyRequest currency) {
+  public void setCurrency(CurrencyNotNullRequest currency) {
     this.currency = currency;
   }
 

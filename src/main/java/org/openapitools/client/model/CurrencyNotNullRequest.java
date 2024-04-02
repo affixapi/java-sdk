@@ -24,10 +24,10 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Gets or Sets CurrencyRequest
+ * Gets or Sets currency-not-nullRequest
  */
-@JsonAdapter(CurrencyRequest.Adapter.class)
-public enum CurrencyRequest {
+@JsonAdapter(CurrencyNotNullRequest.Adapter.class)
+public enum CurrencyNotNullRequest {
   
   USD("usd"),
   
@@ -37,7 +37,7 @@ public enum CurrencyRequest {
 
   private String value;
 
-  CurrencyRequest(String value) {
+  CurrencyNotNullRequest(String value) {
     this.value = value;
   }
 
@@ -50,8 +50,8 @@ public enum CurrencyRequest {
     return String.valueOf(value);
   }
 
-  public static CurrencyRequest fromValue(String value) {
-    for (CurrencyRequest b : CurrencyRequest.values()) {
+  public static CurrencyNotNullRequest fromValue(String value) {
+    for (CurrencyNotNullRequest b : CurrencyNotNullRequest.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -59,16 +59,16 @@ public enum CurrencyRequest {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<CurrencyRequest> {
+  public static class Adapter extends TypeAdapter<CurrencyNotNullRequest> {
     @Override
-    public void write(final JsonWriter jsonWriter, final CurrencyRequest enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final CurrencyNotNullRequest enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public CurrencyRequest read(final JsonReader jsonReader) throws IOException {
+    public CurrencyNotNullRequest read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return CurrencyRequest.fromValue(value);
+      return CurrencyNotNullRequest.fromValue(value);
     }
   }
 }
