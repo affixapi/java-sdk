@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * AddressResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-02T17:20:59.071720Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-07T15:43:00.566172Z[Etc/UTC]")
 public class AddressResponse {
   public static final String SERIALIZED_NAME_STREET_ADDRESS = "street_address";
   @SerializedName(SERIALIZED_NAME_STREET_ADDRESS)
@@ -58,6 +58,8 @@ public class AddressResponse {
     
     CH("CH"),
     
+    CN("CN"),
+    
     CZ("CZ"),
     
     DE("DE"),
@@ -71,6 +73,8 @@ public class AddressResponse {
     FR("FR"),
     
     GB("GB"),
+    
+    HK("HK"),
     
     IE("IE"),
     
@@ -86,6 +90,8 @@ public class AddressResponse {
     
     NO("NO"),
     
+    PH("PH"),
+    
     PL("PL"),
     
     RO("RO"),
@@ -95,6 +101,8 @@ public class AddressResponse {
     SG("SG"),
     
     SK("SK"),
+    
+    TW("TW"),
     
     US("US");
 
