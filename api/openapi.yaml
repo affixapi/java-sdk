@@ -2060,9 +2060,11 @@ components:
             Reference https://en.wikipedia.org/wiki/ISO_3166-2 for more details
           enum:
           - AT
+          - AU
           - BE
           - CA
           - CH
+          - CN
           - CZ
           - DE
           - DK
@@ -2070,6 +2072,7 @@ components:
           - ES
           - FR
           - GB
+          - HK
           - IE
           - IT
           - JP
@@ -2077,11 +2080,13 @@ components:
           - LV
           - NL
           - "NO"
+          - PH
           - PL
           - RO
           - SE
           - SG
           - SK
+          - TW
           - US
           example: IE
           nullable: true
@@ -2136,6 +2141,7 @@ components:
       - usd
       - gbp
       - eur
+      nullable: true
       type: string
     employment-no-null-enumRequest:
       properties:
@@ -2752,7 +2758,7 @@ components:
         work_location:
           $ref: '#/components/schemas/locationResponse'
         manager:
-          $ref: '#/components/schemas/CreateEmployeeRequest_manager'
+          $ref: '#/components/schemas/EmployeeResponse_manager'
         bank_account:
           $ref: '#/components/schemas/CreateEmployeeRequest_bank_account'
         employments:
@@ -3341,12 +3347,6 @@ components:
       - error
       type: object
     CreateEmployeeRequest_manager:
-      example:
-        work_email: work_email
-        remote_id: remote_id
-        last_name: last_name
-        id: id
-        first_name: first_name
       nullable: true
       properties:
         first_name:
@@ -3400,6 +3400,40 @@ components:
       - bic
       - holder_name
       - iban
+      type: object
+    EmployeeResponse_manager:
+      example:
+        work_email: work_email
+        remote_id: remote_id
+        last_name: last_name
+        id: id
+        first_name: first_name
+      nullable: true
+      properties:
+        first_name:
+          nullable: true
+          type: string
+        last_name:
+          nullable: true
+          type: string
+        id:
+          description: |
+            the Affix-assigned ID of the individual. Nullable if the
+            system only reports the name of the manager; not their ID
+          nullable: true
+          type: string
+        work_email:
+          nullable: true
+          type: string
+        remote_id:
+          nullable: true
+          type: string
+      required:
+      - first_name
+      - id
+      - last_name
+      - remote_id
+      - work_email
       type: object
     PayslipResponse_earnings:
       description: The breakdown of gross pay

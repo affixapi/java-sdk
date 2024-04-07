@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.AddressResponse;
 import org.openapitools.client.model.CreateEmployeeRequestBankAccount;
-import org.openapitools.client.model.CreateEmployeeRequestManager;
+import org.openapitools.client.model.EmployeeResponseManager;
 import org.openapitools.client.model.EmploymentResponse;
 import org.openapitools.client.model.GroupResponse;
 import org.openapitools.client.model.LocationResponse;

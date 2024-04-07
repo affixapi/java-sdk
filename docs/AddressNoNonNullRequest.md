@@ -20,9 +20,11 @@ Name | Type | Description | Notes
 Name | Value
 ---- | -----
 AT | &quot;AT&quot;
+AU | &quot;AU&quot;
 BE | &quot;BE&quot;
 CA | &quot;CA&quot;
 CH | &quot;CH&quot;
+CN | &quot;CN&quot;
 CZ | &quot;CZ&quot;
 DE | &quot;DE&quot;
 DK | &quot;DK&quot;
@@ -30,6 +32,7 @@ EE | &quot;EE&quot;
 ES | &quot;ES&quot;
 FR | &quot;FR&quot;
 GB | &quot;GB&quot;
+HK | &quot;HK&quot;
 IE | &quot;IE&quot;
 IT | &quot;IT&quot;
 JP | &quot;JP&quot;
@@ -37,11 +40,13 @@ LT | &quot;LT&quot;
 LV | &quot;LV&quot;
 NL | &quot;NL&quot;
 NO | &quot;NO&quot;
+PH | &quot;PH&quot;
 PL | &quot;PL&quot;
 RO | &quot;RO&quot;
 SE | &quot;SE&quot;
 SG | &quot;SG&quot;
 SK | &quot;SK&quot;
+TW | &quot;TW&quot;
 US | &quot;US&quot;
 
 

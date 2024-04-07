@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **avatar** | **String** |  | 
 **homeLocation** | [**AddressResponse**](AddressResponse.md) |  | 
 **workLocation** | [**LocationResponse**](LocationResponse.md) |  | 
-**manager** | [**CreateEmployeeRequestManager**](CreateEmployeeRequestManager.md) |  | 
+**manager** | [**EmployeeResponseManager**](EmployeeResponseManager.md) |  | 
 **bankAccount** | [**CreateEmployeeRequestBankAccount**](CreateEmployeeRequestBankAccount.md) |  | 
 **employments** | [**List&lt;EmploymentResponse&gt;**](EmploymentResponse.md) |  | 
 **customFields** | **Object** |  | 

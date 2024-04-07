@@ -25,92 +25,89 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * GroupResponse
+ * EmployeeResponseManager
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-07T22:31:41.870954Z[Etc/UTC]")
-public class GroupResponse {
+public class EmployeeResponseManager {
+  public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
+  @SerializedName(SERIALIZED_NAME_FIRST_NAME)
+  private String firstName;
+
+  public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
+  @SerializedName(SERIALIZED_NAME_LAST_NAME)
+  private String lastName;
+
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
+
+  public static final String SERIALIZED_NAME_WORK_EMAIL = "work_email";
+  @SerializedName(SERIALIZED_NAME_WORK_EMAIL)
+  private String workEmail;
 
   public static final String SERIALIZED_NAME_REMOTE_ID = "remote_id";
   @SerializedName(SERIALIZED_NAME_REMOTE_ID)
   private String remoteId;
 
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
 
-  /**
-   * Gets or Sets type
-   */
-  @JsonAdapter(TypeEnum.Adapter.class)
-  public enum TypeEnum {
-    NULL("null"),
+  public EmployeeResponseManager firstName(String firstName) {
     
-    DEPARTMENT("department"),
-    
-    TEAM("team"),
-    
-    COST_CENTRE("cost_centre"),
-    
-    PAY_GROUP("pay_group");
-
-    private String value;
-
-    TypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static TypeEnum fromValue(String value) {
-      for (TypeEnum b : TypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<TypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return TypeEnum.fromValue(value);
-      }
-    }
+    this.firstName = firstName;
+    return this;
   }
 
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  private TypeEnum type;
+   /**
+   * Get firstName
+   * @return firstName
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(required = true, value = "")
+
+  public String getFirstName() {
+    return firstName;
+  }
 
 
-  public GroupResponse id(String id) {
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
+
+  public EmployeeResponseManager lastName(String lastName) {
+    
+    this.lastName = lastName;
+    return this;
+  }
+
+   /**
+   * Get lastName
+   * @return lastName
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(required = true, value = "")
+
+  public String getLastName() {
+    return lastName;
+  }
+
+
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
+
+
+  public EmployeeResponseManager id(String id) {
     
     this.id = id;
     return this;
   }
 
    /**
-   * Get id
+   * the Affix-assigned ID of the individual. Nullable if the system only reports the name of the manager; not their ID 
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "4B9bKBpX5tnwjiG93TAqF7ci", required = true, value = "")
+  @ApiModelProperty(required = true, value = "the Affix-assigned ID of the individual. Nullable if the system only reports the name of the manager; not their ID ")
 
   public String getId() {
     return id;
@@ -122,7 +119,30 @@ public class GroupResponse {
   }
 
 
-  public GroupResponse remoteId(String remoteId) {
+  public EmployeeResponseManager workEmail(String workEmail) {
+    
+    this.workEmail = workEmail;
+    return this;
+  }
+
+   /**
+   * Get workEmail
+   * @return workEmail
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(required = true, value = "")
+
+  public String getWorkEmail() {
+    return workEmail;
+  }
+
+
+  public void setWorkEmail(String workEmail) {
+    this.workEmail = workEmail;
+  }
+
+
+  public EmployeeResponseManager remoteId(String remoteId) {
     
     this.remoteId = remoteId;
     return this;
@@ -133,7 +153,7 @@ public class GroupResponse {
    * @return remoteId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "49", required = true, value = "")
+  @ApiModelProperty(required = true, value = "")
 
   public String getRemoteId() {
     return remoteId;
@@ -145,52 +165,6 @@ public class GroupResponse {
   }
 
 
-  public GroupResponse name(String name) {
-    
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Get name
-   * @return name
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "Customer Success", required = true, value = "")
-
-  public String getName() {
-    return name;
-  }
-
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
-  public GroupResponse type(TypeEnum type) {
-    
-    this.type = type;
-    return this;
-  }
-
-   /**
-   * Get type
-   * @return type
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "TEAM", required = true, value = "")
-
-  public TypeEnum getType() {
-    return type;
-  }
-
-
-  public void setType(TypeEnum type) {
-    this.type = type;
-  }
-
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -199,26 +173,28 @@ public class GroupResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GroupResponse groupResponse = (GroupResponse) o;
-    return Objects.equals(this.id, groupResponse.id) &&
-        Objects.equals(this.remoteId, groupResponse.remoteId) &&
-        Objects.equals(this.name, groupResponse.name) &&
-        Objects.equals(this.type, groupResponse.type);
+    EmployeeResponseManager employeeResponseManager = (EmployeeResponseManager) o;
+    return Objects.equals(this.firstName, employeeResponseManager.firstName) &&
+        Objects.equals(this.lastName, employeeResponseManager.lastName) &&
+        Objects.equals(this.id, employeeResponseManager.id) &&
+        Objects.equals(this.workEmail, employeeResponseManager.workEmail) &&
+        Objects.equals(this.remoteId, employeeResponseManager.remoteId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, remoteId, name, type);
+    return Objects.hash(firstName, lastName, id, workEmail, remoteId);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GroupResponse {\n");
+    sb.append("class EmployeeResponseManager {\n");
+    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
+    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    workEmail: ").append(toIndentedString(workEmail)).append("\n");
     sb.append("    remoteId: ").append(toIndentedString(remoteId)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }

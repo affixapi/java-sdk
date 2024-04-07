@@ -13,8 +13,6 @@
 
 package org.openapitools.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,216 +21,63 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
+
 
 /**
- * GroupResponse
+ * Model tests for EmployeeResponseManager
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-07T22:31:41.870954Z[Etc/UTC]")
-public class GroupResponse {
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
-  private String id;
+public class EmployeeResponseManagerTest {
+    private final EmployeeResponseManager model = new EmployeeResponseManager();
 
-  public static final String SERIALIZED_NAME_REMOTE_ID = "remote_id";
-  @SerializedName(SERIALIZED_NAME_REMOTE_ID)
-  private String remoteId;
-
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
-
-  /**
-   * Gets or Sets type
-   */
-  @JsonAdapter(TypeEnum.Adapter.class)
-  public enum TypeEnum {
-    NULL("null"),
-    
-    DEPARTMENT("department"),
-    
-    TEAM("team"),
-    
-    COST_CENTRE("cost_centre"),
-    
-    PAY_GROUP("pay_group");
-
-    private String value;
-
-    TypeEnum(String value) {
-      this.value = value;
+    /**
+     * Model tests for EmployeeResponseManager
+     */
+    @Test
+    public void testEmployeeResponseManager() {
+        // TODO: test EmployeeResponseManager
     }
 
-    public String getValue() {
-      return value;
+    /**
+     * Test the property 'firstName'
+     */
+    @Test
+    public void firstNameTest() {
+        // TODO: test firstName
     }
 
-    @Override
-    public String toString() {
-      return String.valueOf(value);
+    /**
+     * Test the property 'lastName'
+     */
+    @Test
+    public void lastNameTest() {
+        // TODO: test lastName
     }
 
-    public static TypeEnum fromValue(String value) {
-      for (TypeEnum b : TypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      return null;
+    /**
+     * Test the property 'id'
+     */
+    @Test
+    public void idTest() {
+        // TODO: test id
     }
 
-    public static class Adapter extends TypeAdapter<TypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return TypeEnum.fromValue(value);
-      }
+    /**
+     * Test the property 'workEmail'
+     */
+    @Test
+    public void workEmailTest() {
+        // TODO: test workEmail
     }
-  }
 
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  private TypeEnum type;
-
-
-  public GroupResponse id(String id) {
-    
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Get id
-   * @return id
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "4B9bKBpX5tnwjiG93TAqF7ci", required = true, value = "")
-
-  public String getId() {
-    return id;
-  }
-
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
-
-  public GroupResponse remoteId(String remoteId) {
-    
-    this.remoteId = remoteId;
-    return this;
-  }
-
-   /**
-   * Get remoteId
-   * @return remoteId
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "49", required = true, value = "")
-
-  public String getRemoteId() {
-    return remoteId;
-  }
-
-
-  public void setRemoteId(String remoteId) {
-    this.remoteId = remoteId;
-  }
-
-
-  public GroupResponse name(String name) {
-    
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Get name
-   * @return name
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "Customer Success", required = true, value = "")
-
-  public String getName() {
-    return name;
-  }
-
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
-  public GroupResponse type(TypeEnum type) {
-    
-    this.type = type;
-    return this;
-  }
-
-   /**
-   * Get type
-   * @return type
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "TEAM", required = true, value = "")
-
-  public TypeEnum getType() {
-    return type;
-  }
-
-
-  public void setType(TypeEnum type) {
-    this.type = type;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+    /**
+     * Test the property 'remoteId'
+     */
+    @Test
+    public void remoteIdTest() {
+        // TODO: test remoteId
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    GroupResponse groupResponse = (GroupResponse) o;
-    return Objects.equals(this.id, groupResponse.id) &&
-        Objects.equals(this.remoteId, groupResponse.remoteId) &&
-        Objects.equals(this.name, groupResponse.name) &&
-        Objects.equals(this.type, groupResponse.type);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(id, remoteId, name, type);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class GroupResponse {\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    remoteId: ").append(toIndentedString(remoteId)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
 
 }
-

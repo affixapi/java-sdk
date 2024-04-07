@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.AddressResponse;
 import org.openapitools.client.model.CreateEmployeeRequestBankAccount;
-import org.openapitools.client.model.CreateEmployeeRequestManager;
+import org.openapitools.client.model.EmployeeResponseManager;
 import org.openapitools.client.model.EmploymentResponse;
 import org.openapitools.client.model.GroupResponse;
 import org.openapitools.client.model.LocationResponse;
@@ -36,7 +36,7 @@ import org.threeten.bp.LocalDate;
 /**
  * EmployeeResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-07T15:43:00.566172Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-07T22:31:41.870954Z[Etc/UTC]")
 public class EmployeeResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -403,7 +403,7 @@ public class EmployeeResponse {
 
   public static final String SERIALIZED_NAME_MANAGER = "manager";
   @SerializedName(SERIALIZED_NAME_MANAGER)
-  private CreateEmployeeRequestManager manager;
+  private EmployeeResponseManager manager;
 
   public static final String SERIALIZED_NAME_BANK_ACCOUNT = "bank_account";
   @SerializedName(SERIALIZED_NAME_BANK_ACCOUNT)
@@ -943,7 +943,7 @@ public class EmployeeResponse {
   }
 
 
-  public EmployeeResponse manager(CreateEmployeeRequestManager manager) {
+  public EmployeeResponse manager(EmployeeResponseManager manager) {
     
     this.manager = manager;
     return this;
@@ -956,12 +956,12 @@ public class EmployeeResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(required = true, value = "")
 
-  public CreateEmployeeRequestManager getManager() {
+  public EmployeeResponseManager getManager() {
     return manager;
   }
 
 
-  public void setManager(CreateEmployeeRequestManager manager) {
+  public void setManager(EmployeeResponseManager manager) {
     this.manager = manager;
   }
 

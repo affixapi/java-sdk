@@ -19,6 +19,7 @@ docs/CurrencyNotNullRequest.md
 docs/CurrencyResponse.md
 docs/DisconnectResponse.md
 docs/EmployeeResponse.md
+docs/EmployeeResponseManager.md
 docs/EmploymentNoNullEnumRequest.md
 docs/EmploymentResponse.md
 docs/GroupNoNullEnumRequest.md
@@ -93,6 +94,7 @@ src/main/java/org/openapitools/client/model/CurrencyNotNullRequest.java
 src/main/java/org/openapitools/client/model/CurrencyResponse.java
 src/main/java/org/openapitools/client/model/DisconnectResponse.java
 src/main/java/org/openapitools/client/model/EmployeeResponse.java
+src/main/java/org/openapitools/client/model/EmployeeResponseManager.java
 src/main/java/org/openapitools/client/model/EmploymentNoNullEnumRequest.java
 src/main/java/org/openapitools/client/model/EmploymentResponse.java
 src/main/java/org/openapitools/client/model/GroupNoNullEnumRequest.java
@@ -138,6 +140,7 @@ src/test/java/org/openapitools/client/model/CreateEmployeeRequestTest.java
 src/test/java/org/openapitools/client/model/CurrencyNotNullRequestTest.java
 src/test/java/org/openapitools/client/model/CurrencyResponseTest.java
 src/test/java/org/openapitools/client/model/DisconnectResponseTest.java
+src/test/java/org/openapitools/client/model/EmployeeResponseManagerTest.java
 src/test/java/org/openapitools/client/model/EmployeeResponseTest.java
 src/test/java/org/openapitools/client/model/EmploymentNoNullEnumRequestTest.java
 src/test/java/org/openapitools/client/model/EmploymentResponseTest.java

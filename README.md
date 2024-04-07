@@ -2,7 +2,7 @@
 
 Affix API
 - API version: 2023-03-01
-  - Build date: 2024-04-07T15:43:00.566172Z[Etc/UTC]
+  - Build date: 2024-04-07T22:31:41.870954Z[Etc/UTC]
 
 The affixapi.com API documentation.
 
@@ -246,7 +246,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.affixapi</groupId>
   <artifactId>api</artifactId>
-  <version>1.1.50</version>
+  <version>1.1.51</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -256,7 +256,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.affixapi:api:1.1.50"
+compile "com.affixapi:api:1.1.51"
 ```
 
 ### Others
@@ -269,7 +269,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-1.1.50.jar`
+* `target/api-1.1.51.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -362,6 +362,7 @@ Class | Method | HTTP request | Description
  - [CurrencyResponse](docs/CurrencyResponse.md)
  - [DisconnectResponse](docs/DisconnectResponse.md)
  - [EmployeeResponse](docs/EmployeeResponse.md)
+ - [EmployeeResponseManager](docs/EmployeeResponseManager.md)
  - [EmploymentNoNullEnumRequest](docs/EmploymentNoNullEnumRequest.md)
  - [EmploymentResponse](docs/EmploymentResponse.md)
  - [GroupNoNullEnumRequest](docs/GroupNoNullEnumRequest.md)
