@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * AddressNoNonNullRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-07T22:31:41.870954Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-08T01:45:01.582916Z[Etc/UTC]")
 public class AddressNoNonNullRequest {
   public static final String SERIALIZED_NAME_STREET_ADDRESS = "street_address";
   @SerializedName(SERIALIZED_NAME_STREET_ADDRESS)
@@ -74,15 +74,25 @@ public class AddressNoNonNullRequest {
     
     HK("HK"),
     
+    ID("ID"),
+    
     IE("IE"),
+    
+    IN("IN"),
     
     IT("IT"),
     
     JP("JP"),
     
+    KR("KR"),
+    
     LT("LT"),
     
     LV("LV"),
+    
+    MO("MO"),
+    
+    MY("MY"),
     
     NL("NL"),
     
