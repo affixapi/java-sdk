@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * DisconnectResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-08T19:05:55.844569Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-09T11:28:40.907270Z[Etc/UTC]")
 public class DisconnectResponse {
   /**
    * The access token has been disconnected and is no longer allowed to be used by your application
