@@ -65,6 +65,8 @@
 
 * `JUSTWORKS` (value: `"justworks"`)
 
+* `ONPAY` (value: `"onpay"`)
+
 * `OYSTERHR` (value: `"oysterhr"`)
 
 * `PAYCIRCLE` (value: `"paycircle"`)

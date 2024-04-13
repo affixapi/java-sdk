@@ -1442,6 +1442,7 @@ components:
       - gusto
       - itrent
       - justworks
+      - onpay
       - oysterhr
       - paycircle
       - pento.io
@@ -1489,6 +1490,7 @@ components:
       - gusto
       - itrent
       - justworks
+      - onpay
       - oysterhr
       - paycircle
       - pento.io
@@ -1542,6 +1544,7 @@ components:
         - itrent
         - justworks
         - moorepay
+        - onpay
         - oysterhr
         - parolla.ie
         - pento.io

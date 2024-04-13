@@ -89,6 +89,8 @@ public enum ProviderRequest {
   
   JUSTWORKS("justworks"),
   
+  ONPAY("onpay"),
+  
   OYSTERHR("oysterhr"),
   
   PAYCIRCLE("paycircle"),

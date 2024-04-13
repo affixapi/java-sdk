@@ -89,6 +89,8 @@ public enum ProviderResponse {
   
   JUSTWORKS("justworks"),
   
+  ONPAY("onpay"),
+  
   OYSTERHR("oysterhr"),
   
   PAYCIRCLE("paycircle"),
