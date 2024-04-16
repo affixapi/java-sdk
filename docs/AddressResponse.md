@@ -20,30 +20,30 @@ Name | Type | Description | Notes
 Name | Value
 ---- | -----
 NULL | &quot;null&quot;
+CA | &quot;CA&quot;
+US | &quot;US&quot;
+MX | &quot;MX&quot;
 AT | &quot;AT&quot;
 AU | &quot;AU&quot;
 BE | &quot;BE&quot;
-CA | &quot;CA&quot;
 CH | &quot;CH&quot;
-CN | &quot;CN&quot;
 CZ | &quot;CZ&quot;
 DE | &quot;DE&quot;
 DK | &quot;DK&quot;
 EE | &quot;EE&quot;
 ES | &quot;ES&quot;
+FI | &quot;FI&quot;
 FR | &quot;FR&quot;
 GB | &quot;GB&quot;
-HK | &quot;HK&quot;
-ID | &quot;ID&quot;
 IE | &quot;IE&quot;
-IN | &quot;IN&quot;
+IM | &quot;IM&quot;
+IS | &quot;IS&quot;
 IT | &quot;IT&quot;
-KR | &quot;KR&quot;
-JP | &quot;JP&quot;
+LI | &quot;LI&quot;
+LT | &quot;LT&quot;
 LT | &quot;LT&quot;
 LV | &quot;LV&quot;
-MO | &quot;MO&quot;
-MY | &quot;MY&quot;
+LU | &quot;LU&quot;
 NL | &quot;NL&quot;
 NO | &quot;NO&quot;
 PH | &quot;PH&quot;
@@ -52,8 +52,16 @@ RO | &quot;RO&quot;
 SE | &quot;SE&quot;
 SG | &quot;SG&quot;
 SK | &quot;SK&quot;
+CN | &quot;CN&quot;
+ID | &quot;ID&quot;
+IN | &quot;IN&quot;
+JP | &quot;JP&quot;
+KR | &quot;KR&quot;
+MO | &quot;MO&quot;
+MY | &quot;MY&quot;
+SG | &quot;SG&quot;
+HK | &quot;HK&quot;
 TW | &quot;TW&quot;
-US | &quot;US&quot;
 
 
 

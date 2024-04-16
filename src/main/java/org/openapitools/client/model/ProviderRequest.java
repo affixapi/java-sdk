@@ -63,8 +63,6 @@ public enum ProviderRequest {
   
   PLANDAY("planday"),
   
-  QUICKBOOKS_UK("quickbooks uk"),
-  
   SAGEHR("sagehr"),
   
   SAPLINGHR("saplinghr"),
@@ -107,7 +105,11 @@ public enum ProviderRequest {
   
   SHAPE_PAYROLL("shape payroll"),
   
-  SIMPLEPAY_IE("simplepay.ie");
+  SIMPLEPAY_IE("simplepay.ie"),
+  
+  QUICKBOOKS_ONLINE("quickbooks online"),
+  
+  ZOHO("zoho");
 
   private String value;
 

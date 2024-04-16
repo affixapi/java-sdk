@@ -854,9 +854,26 @@ paths:
         List all the pay runs that occurred during the respective period.
 
         Supported integrations:
-          - sageone
-          - simplepay.ie
+          - brain payroll
           - brightpay connect
+          - deel
+          - gusto
+          - justworks
+          - moorepay
+          - onpay
+          - oyster
+          - parolla.ie
+          - paycircle
+          - payfit
+          - pento.io
+          - quickbooks online
+          - remote.com
+          - rippling
+          - sageone
+          - shape payroll
+          - simplepay.ie
+          - staffology
+          - xero uk
       operationId: xhrPayruns20230301
       parameters:
       - description: The start date of the search period
@@ -1429,7 +1446,6 @@ components:
       - payfit
       - personio.de
       - planday
-      - quickbooks uk
       - sagehr
       - saplinghr
       - staffology
@@ -1452,6 +1468,8 @@ components:
       - sageone
       - shape payroll
       - simplepay.ie
+      - quickbooks online
+      - zoho
       type: string
     ModeResponse:
       enum:
@@ -1477,7 +1495,6 @@ components:
       - payfit
       - personio.de
       - planday
-      - quickbooks uk
       - sagehr
       - saplinghr
       - staffology
@@ -1500,6 +1517,8 @@ components:
       - sageone
       - shape payroll
       - simplepay.ie
+      - quickbooks online
+      - zoho
       type: string
     ProvidersResponse:
       example:
@@ -1550,13 +1569,14 @@ components:
         - pento.io
         - peoplehr
         - personio.de
-        - quickbooks uk
+        - quickbooks online
         - remote.com
         - rippling
         - sageone
         - shape payroll
         - simplepay.ie
         - xero uk
+        - zoho
       items:
         properties:
           mode:
@@ -1947,30 +1967,30 @@ components:
             Reference https://en.wikipedia.org/wiki/ISO_3166-2 for more details
           enum:
           - null
+          - CA
+          - US
+          - MX
           - AT
           - AU
           - BE
-          - CA
           - CH
-          - CN
           - CZ
           - DE
           - DK
           - EE
           - ES
+          - FI
           - FR
           - GB
-          - HK
-          - ID
           - IE
-          - IN
+          - IM
+          - IS
           - IT
-          - KR
-          - JP
+          - LI
+          - LT
           - LT
           - LV
-          - MO
-          - MY
+          - LU
           - NL
           - "NO"
           - PH
@@ -1979,8 +1999,16 @@ components:
           - SE
           - SG
           - SK
+          - CN
+          - ID
+          - IN
+          - JP
+          - KR
+          - MO
+          - MY
+          - SG
+          - HK
           - TW
-          - US
           example: IE
           nullable: true
           type: string
@@ -2067,30 +2095,30 @@ components:
             The ISO-3166-2 two-letter abbreviation of the country.
             Reference https://en.wikipedia.org/wiki/ISO_3166-2 for more details
           enum:
+          - CA
+          - US
+          - MX
           - AT
           - AU
           - BE
-          - CA
           - CH
-          - CN
           - CZ
           - DE
           - DK
           - EE
           - ES
+          - FI
           - FR
           - GB
-          - HK
-          - ID
           - IE
-          - IN
+          - IM
+          - IS
           - IT
-          - JP
-          - KR
+          - LI
+          - LT
           - LT
           - LV
-          - MO
-          - MY
+          - LU
           - NL
           - "NO"
           - PH
@@ -2099,8 +2127,16 @@ components:
           - SE
           - SG
           - SK
+          - CN
+          - ID
+          - IN
+          - JP
+          - KR
+          - MO
+          - MY
+          - SG
+          - HK
           - TW
-          - US
           example: IE
           nullable: true
           type: string

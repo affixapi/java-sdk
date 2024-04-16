@@ -107,7 +107,7 @@ public class XhrVerticallyIntegratedApiTest {
     /**
      * Payruns
      *
-     * List all the pay runs that occurred during the respective period.  Supported integrations:   - sageone   - simplepay.ie   - brightpay connect 
+     * List all the pay runs that occurred during the respective period.  Supported integrations:   - brain payroll   - brightpay connect   - deel   - gusto   - justworks   - moorepay   - onpay   - oyster   - parolla.ie   - paycircle   - payfit   - pento.io   - quickbooks online   - remote.com   - rippling   - sageone   - shape payroll   - simplepay.ie   - staffology   - xero uk 
      *
      * @throws ApiException
      *          if the Api call fails

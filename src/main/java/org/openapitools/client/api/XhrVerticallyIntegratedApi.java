@@ -623,7 +623,7 @@ public class XhrVerticallyIntegratedApi {
 
     /**
      * Payruns
-     * List all the pay runs that occurred during the respective period.  Supported integrations:   - sageone   - simplepay.ie   - brightpay connect 
+     * List all the pay runs that occurred during the respective period.  Supported integrations:   - brain payroll   - brightpay connect   - deel   - gusto   - justworks   - moorepay   - onpay   - oyster   - parolla.ie   - paycircle   - payfit   - pento.io   - quickbooks online   - remote.com   - rippling   - sageone   - shape payroll   - simplepay.ie   - staffology   - xero uk 
      * @param startDate The start date of the search period (required)
      * @param endDate The end date of the search period (required)
      * @return List&lt;PayrunResponse&gt;
@@ -646,7 +646,7 @@ public class XhrVerticallyIntegratedApi {
 
     /**
      * Payruns
-     * List all the pay runs that occurred during the respective period.  Supported integrations:   - sageone   - simplepay.ie   - brightpay connect 
+     * List all the pay runs that occurred during the respective period.  Supported integrations:   - brain payroll   - brightpay connect   - deel   - gusto   - justworks   - moorepay   - onpay   - oyster   - parolla.ie   - paycircle   - payfit   - pento.io   - quickbooks online   - remote.com   - rippling   - sageone   - shape payroll   - simplepay.ie   - staffology   - xero uk 
      * @param startDate The start date of the search period (required)
      * @param endDate The end date of the search period (required)
      * @return ApiResponse&lt;List&lt;PayrunResponse&gt;&gt;
@@ -670,7 +670,7 @@ public class XhrVerticallyIntegratedApi {
 
     /**
      * Payruns (asynchronously)
-     * List all the pay runs that occurred during the respective period.  Supported integrations:   - sageone   - simplepay.ie   - brightpay connect 
+     * List all the pay runs that occurred during the respective period.  Supported integrations:   - brain payroll   - brightpay connect   - deel   - gusto   - justworks   - moorepay   - onpay   - oyster   - parolla.ie   - paycircle   - payfit   - pento.io   - quickbooks online   - remote.com   - rippling   - sageone   - shape payroll   - simplepay.ie   - staffology   - xero uk 
      * @param startDate The start date of the search period (required)
      * @param endDate The end date of the search period (required)
      * @param _callback The callback to be executed when the API call finishes
