@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * AddressNoNonNullRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-17T19:02:45.496790Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-17T21:48:06.238776Z[Etc/UTC]")
 public class AddressNoNonNullRequest {
   public static final String SERIALIZED_NAME_STREET_ADDRESS = "street_address";
   @SerializedName(SERIALIZED_NAME_STREET_ADDRESS)
@@ -88,11 +88,9 @@ public class AddressNoNonNullRequest {
     
     LT("LT"),
     
-    LT("LT"),
+    LU("LU"),
     
     LV("LV"),
-    
-    LU("LU"),
     
     NL("NL"),
     
@@ -106,11 +104,11 @@ public class AddressNoNonNullRequest {
     
     SE("SE"),
     
-    SG("SG"),
-    
     SK("SK"),
     
     CN("CN"),
+    
+    HK("HK"),
     
     ID("ID"),
     
@@ -125,8 +123,6 @@ public class AddressNoNonNullRequest {
     MY("MY"),
     
     SG("SG"),
-    
-    HK("HK"),
     
     TW("TW");
 
@@ -151,7 +147,7 @@ public class AddressNoNonNullRequest {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return null;
     }
 
     public static class Adapter extends TypeAdapter<CountryEnum> {
@@ -256,6 +252,7 @@ public class AddressNoNonNullRequest {
    * The ISO-3166-2 two-letter abbreviation of the country. Reference https://en.wikipedia.org/wiki/ISO_3166-2 for more details 
    * @return country
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(example = "IE", required = true, value = "The ISO-3166-2 two-letter abbreviation of the country. Reference https://en.wikipedia.org/wiki/ISO_3166-2 for more details ")
 
   public CountryEnum getCountry() {

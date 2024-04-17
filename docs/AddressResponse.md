@@ -41,18 +41,17 @@ IS | &quot;IS&quot;
 IT | &quot;IT&quot;
 LI | &quot;LI&quot;
 LT | &quot;LT&quot;
-LT | &quot;LT&quot;
-LV | &quot;LV&quot;
 LU | &quot;LU&quot;
+LV | &quot;LV&quot;
 NL | &quot;NL&quot;
 NO | &quot;NO&quot;
 PH | &quot;PH&quot;
 PL | &quot;PL&quot;
 RO | &quot;RO&quot;
 SE | &quot;SE&quot;
-SG | &quot;SG&quot;
 SK | &quot;SK&quot;
 CN | &quot;CN&quot;
+HK | &quot;HK&quot;
 ID | &quot;ID&quot;
 IN | &quot;IN&quot;
 JP | &quot;JP&quot;
@@ -60,7 +59,6 @@ KR | &quot;KR&quot;
 MO | &quot;MO&quot;
 MY | &quot;MY&quot;
 SG | &quot;SG&quot;
-HK | &quot;HK&quot;
 TW | &quot;TW&quot;
 
 
