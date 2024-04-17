@@ -2138,7 +2138,6 @@ components:
           - HK
           - TW
           example: IE
-          nullable: true
           type: string
         post_code:
           example: "30691"
