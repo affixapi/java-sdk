@@ -2745,10 +2745,14 @@ components:
           nullable: true
           type: string
         marital_status:
+          description: |
+            `other` option can include co-habitating, civil partnership,
+            separated, divorced, widowed, etc
           enum:
           - single
           - married
           - not_specified
+          - other
           - null
           example: single
           nullable: true

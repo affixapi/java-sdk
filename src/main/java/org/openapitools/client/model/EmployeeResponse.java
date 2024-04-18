@@ -36,7 +36,7 @@ import org.threeten.bp.LocalDate;
 /**
  * EmployeeResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-17T21:48:06.238776Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-18T01:28:54.921774Z[Etc/UTC]")
 public class EmployeeResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -205,7 +205,7 @@ public class EmployeeResponse {
   private EthnicityEnum ethnicity;
 
   /**
-   * Gets or Sets maritalStatus
+   * &#x60;other&#x60; option can include co-habitating, civil partnership, separated, divorced, widowed, etc 
    */
   @JsonAdapter(MaritalStatusEnum.Adapter.class)
   public enum MaritalStatusEnum {
@@ -214,6 +214,8 @@ public class EmployeeResponse {
     MARRIED("married"),
     
     NOT_SPECIFIED("not_specified"),
+    
+    OTHER("other"),
     
     NULL("null");
 
@@ -729,11 +731,11 @@ public class EmployeeResponse {
   }
 
    /**
-   * Get maritalStatus
+   * &#x60;other&#x60; option can include co-habitating, civil partnership, separated, divorced, widowed, etc 
    * @return maritalStatus
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "single", required = true, value = "")
+  @ApiModelProperty(example = "single", required = true, value = "`other` option can include co-habitating, civil partnership, separated, divorced, widowed, etc ")
 
   public MaritalStatusEnum getMaritalStatus() {
     return maritalStatus;
