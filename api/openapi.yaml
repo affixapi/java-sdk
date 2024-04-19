@@ -3071,9 +3071,11 @@ components:
           type: string
         balance:
           example: 24.5
+          nullable: true
           type: number
         used:
           example: 12
+          nullable: true
           type: number
         policy_name:
           description: The name of the policy, as assigned by the remote system

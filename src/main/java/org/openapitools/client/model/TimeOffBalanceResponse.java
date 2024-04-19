@@ -29,7 +29,7 @@ import org.threeten.bp.LocalDate;
 /**
  * TimeOffBalanceResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-18T01:28:54.921774Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-19T14:32:00.885320Z[Etc/UTC]")
 public class TimeOffBalanceResponse {
   public static final String SERIALIZED_NAME_EMPLOYEE_ID = "employee_id";
   @SerializedName(SERIALIZED_NAME_EMPLOYEE_ID)
@@ -175,6 +175,7 @@ public class TimeOffBalanceResponse {
    * Get balance
    * @return balance
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(example = "24.5", required = true, value = "")
 
   public BigDecimal getBalance() {
@@ -197,6 +198,7 @@ public class TimeOffBalanceResponse {
    * Get used
    * @return used
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(example = "12", required = true, value = "")
 
   public BigDecimal getUsed() {
