@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **ethnicity** | [**EthnicityEnum**](#EthnicityEnum) |  |  [optional]
 **maritalStatus** | [**MaritalStatusEnum**](#MaritalStatusEnum) |  |  [optional]
 **dateOfBirth** | **LocalDate** |  |  [optional]
-**employmentStatus** | [**EmploymentStatusEnum**](#EmploymentStatusEnum) |  |  [optional]
+**employmentStatus** | **EmploymentStatusNotNullRequest** |  |  [optional]
 **employmentType** | [**EmploymentTypeEnum**](#EmploymentTypeEnum) |  |  [optional]
 **startDate** | **LocalDate** |  |  [optional]
 **terminationDate** | **LocalDate** |  |  [optional]
@@ -33,6 +33,8 @@ Name | Type | Description | Notes
 **employments** | [**List&lt;EmploymentNoNullEnumRequest&gt;**](EmploymentNoNullEnumRequest.md) |  |  [optional]
 **customFields** | **Object** |  |  [optional]
 **groups** | [**List&lt;GroupNoNullEnumRequest&gt;**](GroupNoNullEnumRequest.md) |  |  [optional]
+**dependents** | [**List&lt;CreateEmployeeRequestDependents&gt;**](CreateEmployeeRequestDependents.md) |  |  [optional]
+**emergencyContacts** | [**List&lt;CreateEmployeeRequestEmergencyContacts&gt;**](CreateEmployeeRequestEmergencyContacts.md) |  |  [optional]
 
 
 
@@ -67,17 +69,6 @@ Name | Value
 SINGLE | &quot;single&quot;
 MARRIED | &quot;married&quot;
 NOT_SPECIFIED | &quot;not_specified&quot;
-
-
-
-## Enum: EmploymentStatusEnum
-
-Name | Value
----- | -----
-ACTIVE | &quot;active&quot;
-INACTIVE | &quot;inactive&quot;
-PENDING | &quot;pending&quot;
-LEAVE | &quot;leave&quot;
 
 
 

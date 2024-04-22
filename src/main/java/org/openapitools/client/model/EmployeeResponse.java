@@ -27,8 +27,11 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.AddressResponse;
 import org.openapitools.client.model.CreateEmployeeRequestBankAccount;
+import org.openapitools.client.model.CreateEmployeeRequestDependents;
+import org.openapitools.client.model.CreateEmployeeRequestEmergencyContacts;
 import org.openapitools.client.model.EmployeeResponseManager;
 import org.openapitools.client.model.EmploymentResponse;
+import org.openapitools.client.model.EmploymentStatusResponse;
 import org.openapitools.client.model.GroupResponse;
 import org.openapitools.client.model.LocationResponse;
 import org.threeten.bp.LocalDate;
@@ -36,7 +39,7 @@ import org.threeten.bp.LocalDate;
 /**
  * EmployeeResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-19T14:32:00.885320Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-22T21:54:04.832358Z[Etc/UTC]")
 public class EmployeeResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -265,62 +268,9 @@ public class EmployeeResponse {
   @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
   private LocalDate dateOfBirth;
 
-  /**
-   * Gets or Sets employmentStatus
-   */
-  @JsonAdapter(EmploymentStatusEnum.Adapter.class)
-  public enum EmploymentStatusEnum {
-    NULL("null"),
-    
-    ACTIVE("active"),
-    
-    INACTIVE("inactive"),
-    
-    PENDING("pending"),
-    
-    LEAVE("leave");
-
-    private String value;
-
-    EmploymentStatusEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static EmploymentStatusEnum fromValue(String value) {
-      for (EmploymentStatusEnum b : EmploymentStatusEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<EmploymentStatusEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final EmploymentStatusEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public EmploymentStatusEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return EmploymentStatusEnum.fromValue(value);
-      }
-    }
-  }
-
   public static final String SERIALIZED_NAME_EMPLOYMENT_STATUS = "employment_status";
   @SerializedName(SERIALIZED_NAME_EMPLOYMENT_STATUS)
-  private EmploymentStatusEnum employmentStatus;
+  private EmploymentStatusResponse employmentStatus;
 
   /**
    * Gets or Sets employmentType
@@ -422,6 +372,14 @@ public class EmployeeResponse {
   public static final String SERIALIZED_NAME_GROUPS = "groups";
   @SerializedName(SERIALIZED_NAME_GROUPS)
   private List<GroupResponse> groups = new ArrayList<GroupResponse>();
+
+  public static final String SERIALIZED_NAME_DEPENDENTS = "dependents";
+  @SerializedName(SERIALIZED_NAME_DEPENDENTS)
+  private List<CreateEmployeeRequestDependents> dependents = new ArrayList<CreateEmployeeRequestDependents>();
+
+  public static final String SERIALIZED_NAME_EMERGENCY_CONTACTS = "emergency_contacts";
+  @SerializedName(SERIALIZED_NAME_EMERGENCY_CONTACTS)
+  private List<CreateEmployeeRequestEmergencyContacts> emergencyContacts = new ArrayList<CreateEmployeeRequestEmergencyContacts>();
 
 
    /**
@@ -770,7 +728,7 @@ public class EmployeeResponse {
   }
 
 
-  public EmployeeResponse employmentStatus(EmploymentStatusEnum employmentStatus) {
+  public EmployeeResponse employmentStatus(EmploymentStatusResponse employmentStatus) {
     
     this.employmentStatus = employmentStatus;
     return this;
@@ -781,14 +739,14 @@ public class EmployeeResponse {
    * @return employmentStatus
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "active", required = true, value = "")
+  @ApiModelProperty(required = true, value = "")
 
-  public EmploymentStatusEnum getEmploymentStatus() {
+  public EmploymentStatusResponse getEmploymentStatus() {
     return employmentStatus;
   }
 
 
-  public void setEmploymentStatus(EmploymentStatusEnum employmentStatus) {
+  public void setEmploymentStatus(EmploymentStatusResponse employmentStatus) {
     this.employmentStatus = employmentStatus;
   }
 
@@ -1070,6 +1028,62 @@ public class EmployeeResponse {
   }
 
 
+  public EmployeeResponse dependents(List<CreateEmployeeRequestDependents> dependents) {
+    
+    this.dependents = dependents;
+    return this;
+  }
+
+  public EmployeeResponse addDependentsItem(CreateEmployeeRequestDependents dependentsItem) {
+    this.dependents.add(dependentsItem);
+    return this;
+  }
+
+   /**
+   * Get dependents
+   * @return dependents
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(required = true, value = "")
+
+  public List<CreateEmployeeRequestDependents> getDependents() {
+    return dependents;
+  }
+
+
+  public void setDependents(List<CreateEmployeeRequestDependents> dependents) {
+    this.dependents = dependents;
+  }
+
+
+  public EmployeeResponse emergencyContacts(List<CreateEmployeeRequestEmergencyContacts> emergencyContacts) {
+    
+    this.emergencyContacts = emergencyContacts;
+    return this;
+  }
+
+  public EmployeeResponse addEmergencyContactsItem(CreateEmployeeRequestEmergencyContacts emergencyContactsItem) {
+    this.emergencyContacts.add(emergencyContactsItem);
+    return this;
+  }
+
+   /**
+   * Get emergencyContacts
+   * @return emergencyContacts
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(required = true, value = "")
+
+  public List<CreateEmployeeRequestEmergencyContacts> getEmergencyContacts() {
+    return emergencyContacts;
+  }
+
+
+  public void setEmergencyContacts(List<CreateEmployeeRequestEmergencyContacts> emergencyContacts) {
+    this.emergencyContacts = emergencyContacts;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -1107,12 +1121,14 @@ public class EmployeeResponse {
         Objects.equals(this.bankAccount, employeeResponse.bankAccount) &&
         Objects.equals(this.employments, employeeResponse.employments) &&
         Objects.equals(this.customFields, employeeResponse.customFields) &&
-        Objects.equals(this.groups, employeeResponse.groups);
+        Objects.equals(this.groups, employeeResponse.groups) &&
+        Objects.equals(this.dependents, employeeResponse.dependents) &&
+        Objects.equals(this.emergencyContacts, employeeResponse.emergencyContacts);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, remoteId, employeeNumber, firstName, lastName, displayFullName, nationality, jobTitle, workEmail, personalEmail, mobilePhoneNumber, taxId, gender, ethnicity, maritalStatus, dateOfBirth, employmentStatus, employmentType, startDate, remoteCreatedAt, terminationDate, avatar, homeLocation, workLocation, manager, bankAccount, employments, customFields, groups);
+    return Objects.hash(id, remoteId, employeeNumber, firstName, lastName, displayFullName, nationality, jobTitle, workEmail, personalEmail, mobilePhoneNumber, taxId, gender, ethnicity, maritalStatus, dateOfBirth, employmentStatus, employmentType, startDate, remoteCreatedAt, terminationDate, avatar, homeLocation, workLocation, manager, bankAccount, employments, customFields, groups, dependents, emergencyContacts);
   }
 
   @Override
@@ -1148,6 +1164,8 @@ public class EmployeeResponse {
     sb.append("    employments: ").append(toIndentedString(employments)).append("\n");
     sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
+    sb.append("    dependents: ").append(toIndentedString(dependents)).append("\n");
+    sb.append("    emergencyContacts: ").append(toIndentedString(emergencyContacts)).append("\n");
     sb.append("}");
     return sb.toString();
   }

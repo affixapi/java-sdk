@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **ethnicity** | [**EthnicityEnum**](#EthnicityEnum) |  | 
 **maritalStatus** | [**MaritalStatusEnum**](#MaritalStatusEnum) | &#x60;other&#x60; option can include co-habitating, civil partnership, separated, divorced, widowed, etc  | 
 **dateOfBirth** | **LocalDate** |  | 
-**employmentStatus** | [**EmploymentStatusEnum**](#EmploymentStatusEnum) |  | 
+**employmentStatus** | **EmploymentStatusResponse** |  | 
 **employmentType** | [**EmploymentTypeEnum**](#EmploymentTypeEnum) |  | 
 **startDate** | **LocalDate** |  | 
 **remoteCreatedAt** | **LocalDate** |  |  [readonly]
@@ -36,6 +36,8 @@ Name | Type | Description | Notes
 **employments** | [**List&lt;EmploymentResponse&gt;**](EmploymentResponse.md) |  | 
 **customFields** | **Object** |  | 
 **groups** | [**List&lt;GroupResponse&gt;**](GroupResponse.md) |  | 
+**dependents** | [**List&lt;CreateEmployeeRequestDependents&gt;**](CreateEmployeeRequestDependents.md) |  | 
+**emergencyContacts** | [**List&lt;CreateEmployeeRequestEmergencyContacts&gt;**](CreateEmployeeRequestEmergencyContacts.md) |  | 
 
 
 
@@ -74,18 +76,6 @@ MARRIED | &quot;married&quot;
 NOT_SPECIFIED | &quot;not_specified&quot;
 OTHER | &quot;other&quot;
 NULL | &quot;null&quot;
-
-
-
-## Enum: EmploymentStatusEnum
-
-Name | Value
----- | -----
-NULL | &quot;null&quot;
-ACTIVE | &quot;active&quot;
-INACTIVE | &quot;inactive&quot;
-PENDING | &quot;pending&quot;
-LEAVE | &quot;leave&quot;
 
 
 

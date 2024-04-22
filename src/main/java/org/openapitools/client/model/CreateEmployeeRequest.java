@@ -27,8 +27,11 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.AddressNoNonNullRequest;
 import org.openapitools.client.model.CreateEmployeeRequestBankAccount;
+import org.openapitools.client.model.CreateEmployeeRequestDependents;
+import org.openapitools.client.model.CreateEmployeeRequestEmergencyContacts;
 import org.openapitools.client.model.CreateEmployeeRequestManager;
 import org.openapitools.client.model.EmploymentNoNullEnumRequest;
+import org.openapitools.client.model.EmploymentStatusNotNullRequest;
 import org.openapitools.client.model.GroupNoNullEnumRequest;
 import org.openapitools.client.model.LocationNoNonNullRequest;
 import org.threeten.bp.LocalDate;
@@ -36,7 +39,7 @@ import org.threeten.bp.LocalDate;
 /**
  * CreateEmployeeRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-19T14:32:00.885320Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-22T21:54:04.832358Z[Etc/UTC]")
 public class CreateEmployeeRequest {
   public static final String SERIALIZED_NAME_EMPLOYEE_NUMBER = "employee_number";
   @SerializedName(SERIALIZED_NAME_EMPLOYEE_NUMBER)
@@ -249,60 +252,9 @@ public class CreateEmployeeRequest {
   @SerializedName(SERIALIZED_NAME_DATE_OF_BIRTH)
   private LocalDate dateOfBirth;
 
-  /**
-   * Gets or Sets employmentStatus
-   */
-  @JsonAdapter(EmploymentStatusEnum.Adapter.class)
-  public enum EmploymentStatusEnum {
-    ACTIVE("active"),
-    
-    INACTIVE("inactive"),
-    
-    PENDING("pending"),
-    
-    LEAVE("leave");
-
-    private String value;
-
-    EmploymentStatusEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static EmploymentStatusEnum fromValue(String value) {
-      for (EmploymentStatusEnum b : EmploymentStatusEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<EmploymentStatusEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final EmploymentStatusEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public EmploymentStatusEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return EmploymentStatusEnum.fromValue(value);
-      }
-    }
-  }
-
   public static final String SERIALIZED_NAME_EMPLOYMENT_STATUS = "employment_status";
   @SerializedName(SERIALIZED_NAME_EMPLOYMENT_STATUS)
-  private EmploymentStatusEnum employmentStatus;
+  private EmploymentStatusNotNullRequest employmentStatus;
 
   /**
    * Gets or Sets employmentType
@@ -398,6 +350,14 @@ public class CreateEmployeeRequest {
   public static final String SERIALIZED_NAME_GROUPS = "groups";
   @SerializedName(SERIALIZED_NAME_GROUPS)
   private List<GroupNoNullEnumRequest> groups = null;
+
+  public static final String SERIALIZED_NAME_DEPENDENTS = "dependents";
+  @SerializedName(SERIALIZED_NAME_DEPENDENTS)
+  private List<CreateEmployeeRequestDependents> dependents = null;
+
+  public static final String SERIALIZED_NAME_EMERGENCY_CONTACTS = "emergency_contacts";
+  @SerializedName(SERIALIZED_NAME_EMERGENCY_CONTACTS)
+  private List<CreateEmployeeRequestEmergencyContacts> emergencyContacts = null;
 
 
   public CreateEmployeeRequest employeeNumber(String employeeNumber) {
@@ -720,7 +680,7 @@ public class CreateEmployeeRequest {
   }
 
 
-  public CreateEmployeeRequest employmentStatus(EmploymentStatusEnum employmentStatus) {
+  public CreateEmployeeRequest employmentStatus(EmploymentStatusNotNullRequest employmentStatus) {
     
     this.employmentStatus = employmentStatus;
     return this;
@@ -731,14 +691,14 @@ public class CreateEmployeeRequest {
    * @return employmentStatus
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "active", value = "")
+  @ApiModelProperty(value = "")
 
-  public EmploymentStatusEnum getEmploymentStatus() {
+  public EmploymentStatusNotNullRequest getEmploymentStatus() {
     return employmentStatus;
   }
 
 
-  public void setEmploymentStatus(EmploymentStatusEnum employmentStatus) {
+  public void setEmploymentStatus(EmploymentStatusNotNullRequest employmentStatus) {
     this.employmentStatus = employmentStatus;
   }
 
@@ -1012,6 +972,68 @@ public class CreateEmployeeRequest {
   }
 
 
+  public CreateEmployeeRequest dependents(List<CreateEmployeeRequestDependents> dependents) {
+    
+    this.dependents = dependents;
+    return this;
+  }
+
+  public CreateEmployeeRequest addDependentsItem(CreateEmployeeRequestDependents dependentsItem) {
+    if (this.dependents == null) {
+      this.dependents = new ArrayList<CreateEmployeeRequestDependents>();
+    }
+    this.dependents.add(dependentsItem);
+    return this;
+  }
+
+   /**
+   * Get dependents
+   * @return dependents
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<CreateEmployeeRequestDependents> getDependents() {
+    return dependents;
+  }
+
+
+  public void setDependents(List<CreateEmployeeRequestDependents> dependents) {
+    this.dependents = dependents;
+  }
+
+
+  public CreateEmployeeRequest emergencyContacts(List<CreateEmployeeRequestEmergencyContacts> emergencyContacts) {
+    
+    this.emergencyContacts = emergencyContacts;
+    return this;
+  }
+
+  public CreateEmployeeRequest addEmergencyContactsItem(CreateEmployeeRequestEmergencyContacts emergencyContactsItem) {
+    if (this.emergencyContacts == null) {
+      this.emergencyContacts = new ArrayList<CreateEmployeeRequestEmergencyContacts>();
+    }
+    this.emergencyContacts.add(emergencyContactsItem);
+    return this;
+  }
+
+   /**
+   * Get emergencyContacts
+   * @return emergencyContacts
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<CreateEmployeeRequestEmergencyContacts> getEmergencyContacts() {
+    return emergencyContacts;
+  }
+
+
+  public void setEmergencyContacts(List<CreateEmployeeRequestEmergencyContacts> emergencyContacts) {
+    this.emergencyContacts = emergencyContacts;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -1046,12 +1068,14 @@ public class CreateEmployeeRequest {
         Objects.equals(this.bankAccount, createEmployeeRequest.bankAccount) &&
         Objects.equals(this.employments, createEmployeeRequest.employments) &&
         Objects.equals(this.customFields, createEmployeeRequest.customFields) &&
-        Objects.equals(this.groups, createEmployeeRequest.groups);
+        Objects.equals(this.groups, createEmployeeRequest.groups) &&
+        Objects.equals(this.dependents, createEmployeeRequest.dependents) &&
+        Objects.equals(this.emergencyContacts, createEmployeeRequest.emergencyContacts);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(employeeNumber, firstName, lastName, displayFullName, nationality, jobTitle, workEmail, personalEmail, mobilePhoneNumber, taxId, gender, ethnicity, maritalStatus, dateOfBirth, employmentStatus, employmentType, startDate, terminationDate, avatar, homeLocation, workLocation, manager, bankAccount, employments, customFields, groups);
+    return Objects.hash(employeeNumber, firstName, lastName, displayFullName, nationality, jobTitle, workEmail, personalEmail, mobilePhoneNumber, taxId, gender, ethnicity, maritalStatus, dateOfBirth, employmentStatus, employmentType, startDate, terminationDate, avatar, homeLocation, workLocation, manager, bankAccount, employments, customFields, groups, dependents, emergencyContacts);
   }
 
   @Override
@@ -1084,6 +1108,8 @@ public class CreateEmployeeRequest {
     sb.append("    employments: ").append(toIndentedString(employments)).append("\n");
     sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
+    sb.append("    dependents: ").append(toIndentedString(dependents)).append("\n");
+    sb.append("    emergencyContacts: ").append(toIndentedString(emergencyContacts)).append("\n");
     sb.append("}");
     return sb.toString();
   }

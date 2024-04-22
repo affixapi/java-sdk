@@ -673,6 +673,19 @@ paths:
         List the individuals (employees, contractors, accountants, and others)
         listed in the HRIS/Payroll software
       operationId: xhrEmployees20230301
+      parameters:
+      - description: |
+          Enable server-side filtering of the `employment_status` attribute. Will
+          only include individuals with that attribute explicitly set (ie if an
+          individuals has a `null`, it will not be returned if this parameter is
+          set)
+        explode: true
+        in: query
+        name: employment_status
+        required: false
+        schema:
+          $ref: '#/components/schemas/employment-status-not-null'
+        style: form
       responses:
         "200":
           content:
@@ -1382,6 +1395,25 @@ components:
             type: integer
           style: simple
   schemas:
+    employment-status:
+      enum:
+      - null
+      - active
+      - inactive
+      - pending
+      - leave
+      example: active
+      nullable: true
+      type: string
+    employment-status-not-null:
+      enum:
+      - active
+      - inactive
+      - pending
+      - leave
+      example: active
+      nullable: true
+      type: string
     StartDate:
       example: 2021-01-01
       format: date
@@ -2069,6 +2101,15 @@ components:
       items:
         $ref: '#/components/schemas/CompanyResponse'
       type: array
+    employment-status-not-nullRequest:
+      enum:
+      - active
+      - inactive
+      - pending
+      - leave
+      example: active
+      nullable: true
+      type: string
     address-no-non-nullRequest:
       nullable: true
       properties:
@@ -2364,14 +2405,7 @@ components:
           nullable: true
           type: string
         employment_status:
-          enum:
-          - active
-          - inactive
-          - pending
-          - leave
-          example: active
-          nullable: true
-          type: string
+          $ref: '#/components/schemas/employment-status-not-nullRequest'
         employment_type:
           enum:
           - full_time
@@ -2427,10 +2461,30 @@ components:
             $ref: '#/components/schemas/group-no-null-enumRequest'
           nullable: true
           type: array
+        dependents:
+          items:
+            $ref: '#/components/schemas/CreateEmployeeRequest_dependents'
+          nullable: true
+          type: array
+        emergency_contacts:
+          items:
+            $ref: '#/components/schemas/CreateEmployeeRequest_emergency_contacts'
+          nullable: true
+          type: array
       required:
       - first_name
       - last_name
       type: object
+    employment-statusResponse:
+      enum:
+      - null
+      - active
+      - inactive
+      - pending
+      - leave
+      example: active
+      nullable: true
+      type: string
     locationResponse:
       example:
         address:
@@ -2627,6 +2681,17 @@ components:
           bank_name: bank_name
           bic: bic
           holder_name: holder_name
+        emergency_contacts:
+        - last_name: last_name
+          relationship: relationship
+          first_name: first_name
+          primary_contact: true
+          mobile_phone_number: mobile_phone_number
+        - last_name: last_name
+          relationship: relationship
+          first_name: first_name
+          primary_contact: true
+          mobile_phone_number: mobile_phone_number
         manager:
           work_email: work_email
           remote_id: remote_id
@@ -2666,6 +2731,11 @@ components:
         nationality: Irish
         termination_date: 2021-10-12T00:00:00.000+0000
         employee_number: "2"
+        dependents:
+        - name: name
+          relationship: relationship
+        - name: name
+          relationship: relationship
         remote_created_at: 2020-10-11T00:00:00.000+0000
         personal_email: greg@gmail.com
       properties:
@@ -2763,15 +2833,7 @@ components:
           nullable: true
           type: string
         employment_status:
-          enum:
-          - null
-          - active
-          - inactive
-          - pending
-          - leave
-          example: active
-          nullable: true
-          type: string
+          $ref: '#/components/schemas/employment-statusResponse'
         employment_type:
           enum:
           - null
@@ -2834,12 +2896,24 @@ components:
             $ref: '#/components/schemas/groupResponse'
           nullable: true
           type: array
+        dependents:
+          items:
+            $ref: '#/components/schemas/CreateEmployeeRequest_dependents'
+          nullable: true
+          type: array
+        emergency_contacts:
+          items:
+            $ref: '#/components/schemas/CreateEmployeeRequest_emergency_contacts'
+          nullable: true
+          type: array
       required:
       - avatar
       - bank_account
       - custom_fields
       - date_of_birth
+      - dependents
       - display_full_name
+      - emergency_contacts
       - employee_number
       - employment_status
       - employment_type
@@ -3451,6 +3525,51 @@ components:
       - bic
       - holder_name
       - iban
+      type: object
+    CreateEmployeeRequest_dependents:
+      example:
+        name: name
+        relationship: relationship
+      properties:
+        name:
+          nullable: true
+          type: string
+        relationship:
+          nullable: true
+          type: string
+      required:
+      - name
+      - relationship
+      type: object
+    CreateEmployeeRequest_emergency_contacts:
+      example:
+        last_name: last_name
+        relationship: relationship
+        first_name: first_name
+        primary_contact: true
+        mobile_phone_number: mobile_phone_number
+      properties:
+        first_name:
+          nullable: true
+          type: string
+        last_name:
+          nullable: true
+          type: string
+        relationship:
+          nullable: true
+          type: string
+        mobile_phone_number:
+          nullable: true
+          type: string
+        primary_contact:
+          nullable: true
+          type: boolean
+      required:
+      - first_name
+      - last_name
+      - mobile_phone_number
+      - primary_contact
+      - relationship
       type: object
     EmployeeResponse_manager:
       example:

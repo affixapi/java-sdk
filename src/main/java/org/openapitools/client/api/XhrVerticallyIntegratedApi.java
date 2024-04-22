@@ -29,6 +29,7 @@ import java.io.IOException;
 
 import org.openapitools.client.model.CompanyResponse;
 import org.openapitools.client.model.EmployeeResponse;
+import org.openapitools.client.model.EmploymentStatusNotNull;
 import org.openapitools.client.model.GroupResponse;
 import org.openapitools.client.model.IdentityResponse;
 import org.openapitools.client.model.InlineResponse401;
@@ -190,6 +191,7 @@ public class XhrVerticallyIntegratedApi {
     }
     /**
      * Build call for xhrEmployees20230301
+     * @param employmentStatus Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set)  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -204,7 +206,7 @@ public class XhrVerticallyIntegratedApi {
         <tr><td> 501 </td><td> Not Implemented </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call xhrEmployees20230301Call(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call xhrEmployees20230301Call(EmploymentStatusNotNull employmentStatus, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -215,6 +217,10 @@ public class XhrVerticallyIntegratedApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (employmentStatus != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("employment_status", employmentStatus));
+        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -235,10 +241,10 @@ public class XhrVerticallyIntegratedApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call xhrEmployees20230301ValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call xhrEmployees20230301ValidateBeforeCall(EmploymentStatusNotNull employmentStatus, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = xhrEmployees20230301Call(_callback);
+        okhttp3.Call localVarCall = xhrEmployees20230301Call(employmentStatus, _callback);
         return localVarCall;
 
     }
@@ -246,6 +252,7 @@ public class XhrVerticallyIntegratedApi {
     /**
      * Employees
      * List the individuals (employees, contractors, accountants, and others) listed in the HRIS/Payroll software 
+     * @param employmentStatus Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set)  (optional)
      * @return List&lt;EmployeeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -259,14 +266,15 @@ public class XhrVerticallyIntegratedApi {
         <tr><td> 501 </td><td> Not Implemented </td><td>  -  </td></tr>
      </table>
      */
-    public List<EmployeeResponse> xhrEmployees20230301() throws ApiException {
-        ApiResponse<List<EmployeeResponse>> localVarResp = xhrEmployees20230301WithHttpInfo();
+    public List<EmployeeResponse> xhrEmployees20230301(EmploymentStatusNotNull employmentStatus) throws ApiException {
+        ApiResponse<List<EmployeeResponse>> localVarResp = xhrEmployees20230301WithHttpInfo(employmentStatus);
         return localVarResp.getData();
     }
 
     /**
      * Employees
      * List the individuals (employees, contractors, accountants, and others) listed in the HRIS/Payroll software 
+     * @param employmentStatus Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set)  (optional)
      * @return ApiResponse&lt;List&lt;EmployeeResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -280,8 +288,8 @@ public class XhrVerticallyIntegratedApi {
         <tr><td> 501 </td><td> Not Implemented </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<EmployeeResponse>> xhrEmployees20230301WithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = xhrEmployees20230301ValidateBeforeCall(null);
+    public ApiResponse<List<EmployeeResponse>> xhrEmployees20230301WithHttpInfo(EmploymentStatusNotNull employmentStatus) throws ApiException {
+        okhttp3.Call localVarCall = xhrEmployees20230301ValidateBeforeCall(employmentStatus, null);
         Type localVarReturnType = new TypeToken<List<EmployeeResponse>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -289,6 +297,7 @@ public class XhrVerticallyIntegratedApi {
     /**
      * Employees (asynchronously)
      * List the individuals (employees, contractors, accountants, and others) listed in the HRIS/Payroll software 
+     * @param employmentStatus Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set)  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -303,9 +312,9 @@ public class XhrVerticallyIntegratedApi {
         <tr><td> 501 </td><td> Not Implemented </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call xhrEmployees20230301Async(final ApiCallback<List<EmployeeResponse>> _callback) throws ApiException {
+    public okhttp3.Call xhrEmployees20230301Async(EmploymentStatusNotNull employmentStatus, final ApiCallback<List<EmployeeResponse>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = xhrEmployees20230301ValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = xhrEmployees20230301ValidateBeforeCall(employmentStatus, _callback);
         Type localVarReturnType = new TypeToken<List<EmployeeResponse>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

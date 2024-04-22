@@ -25,8 +25,11 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.AddressNoNonNullRequest;
 import org.openapitools.client.model.CreateEmployeeRequestBankAccount;
+import org.openapitools.client.model.CreateEmployeeRequestDependents;
+import org.openapitools.client.model.CreateEmployeeRequestEmergencyContacts;
 import org.openapitools.client.model.CreateEmployeeRequestManager;
 import org.openapitools.client.model.EmploymentNoNullEnumRequest;
+import org.openapitools.client.model.EmploymentStatusNotNullRequest;
 import org.openapitools.client.model.GroupNoNullEnumRequest;
 import org.openapitools.client.model.LocationNoNonNullRequest;
 import org.threeten.bp.LocalDate;
@@ -255,6 +258,22 @@ public class CreateEmployeeRequestTest {
     @Test
     public void groupsTest() {
         // TODO: test groups
+    }
+
+    /**
+     * Test the property 'dependents'
+     */
+    @Test
+    public void dependentsTest() {
+        // TODO: test dependents
+    }
+
+    /**
+     * Test the property 'emergencyContacts'
+     */
+    @Test
+    public void emergencyContactsTest() {
+        // TODO: test emergencyContacts
     }
 
 }

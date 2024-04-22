@@ -14,6 +14,8 @@ docs/CompanyResponse.md
 docs/CoreApi.md
 docs/CreateEmployeeRequest.md
 docs/CreateEmployeeRequestBankAccount.md
+docs/CreateEmployeeRequestDependents.md
+docs/CreateEmployeeRequestEmergencyContacts.md
 docs/CreateEmployeeRequestManager.md
 docs/CurrencyNotNullRequest.md
 docs/CurrencyResponse.md
@@ -22,6 +24,10 @@ docs/EmployeeResponse.md
 docs/EmployeeResponseManager.md
 docs/EmploymentNoNullEnumRequest.md
 docs/EmploymentResponse.md
+docs/EmploymentStatus.md
+docs/EmploymentStatusNotNull.md
+docs/EmploymentStatusNotNullRequest.md
+docs/EmploymentStatusResponse.md
 docs/GroupNoNullEnumRequest.md
 docs/GroupResponse.md
 docs/IdAndMessageResponse.md
@@ -89,6 +95,8 @@ src/main/java/org/openapitools/client/model/ClientResponse.java
 src/main/java/org/openapitools/client/model/CompanyResponse.java
 src/main/java/org/openapitools/client/model/CreateEmployeeRequest.java
 src/main/java/org/openapitools/client/model/CreateEmployeeRequestBankAccount.java
+src/main/java/org/openapitools/client/model/CreateEmployeeRequestDependents.java
+src/main/java/org/openapitools/client/model/CreateEmployeeRequestEmergencyContacts.java
 src/main/java/org/openapitools/client/model/CreateEmployeeRequestManager.java
 src/main/java/org/openapitools/client/model/CurrencyNotNullRequest.java
 src/main/java/org/openapitools/client/model/CurrencyResponse.java
@@ -97,6 +105,10 @@ src/main/java/org/openapitools/client/model/EmployeeResponse.java
 src/main/java/org/openapitools/client/model/EmployeeResponseManager.java
 src/main/java/org/openapitools/client/model/EmploymentNoNullEnumRequest.java
 src/main/java/org/openapitools/client/model/EmploymentResponse.java
+src/main/java/org/openapitools/client/model/EmploymentStatus.java
+src/main/java/org/openapitools/client/model/EmploymentStatusNotNull.java
+src/main/java/org/openapitools/client/model/EmploymentStatusNotNullRequest.java
+src/main/java/org/openapitools/client/model/EmploymentStatusResponse.java
 src/main/java/org/openapitools/client/model/GroupNoNullEnumRequest.java
 src/main/java/org/openapitools/client/model/GroupResponse.java
 src/main/java/org/openapitools/client/model/IdAndMessageResponse.java
@@ -135,6 +147,8 @@ src/test/java/org/openapitools/client/model/ClientRequestTest.java
 src/test/java/org/openapitools/client/model/ClientResponseTest.java
 src/test/java/org/openapitools/client/model/CompanyResponseTest.java
 src/test/java/org/openapitools/client/model/CreateEmployeeRequestBankAccountTest.java
+src/test/java/org/openapitools/client/model/CreateEmployeeRequestDependentsTest.java
+src/test/java/org/openapitools/client/model/CreateEmployeeRequestEmergencyContactsTest.java
 src/test/java/org/openapitools/client/model/CreateEmployeeRequestManagerTest.java
 src/test/java/org/openapitools/client/model/CreateEmployeeRequestTest.java
 src/test/java/org/openapitools/client/model/CurrencyNotNullRequestTest.java
@@ -144,6 +158,10 @@ src/test/java/org/openapitools/client/model/EmployeeResponseManagerTest.java
 src/test/java/org/openapitools/client/model/EmployeeResponseTest.java
 src/test/java/org/openapitools/client/model/EmploymentNoNullEnumRequestTest.java
 src/test/java/org/openapitools/client/model/EmploymentResponseTest.java
+src/test/java/org/openapitools/client/model/EmploymentStatusNotNullRequestTest.java
+src/test/java/org/openapitools/client/model/EmploymentStatusNotNullTest.java
+src/test/java/org/openapitools/client/model/EmploymentStatusResponseTest.java
+src/test/java/org/openapitools/client/model/EmploymentStatusTest.java
 src/test/java/org/openapitools/client/model/GroupNoNullEnumRequestTest.java
 src/test/java/org/openapitools/client/model/GroupResponseTest.java
 src/test/java/org/openapitools/client/model/IdAndMessageResponseTest.java

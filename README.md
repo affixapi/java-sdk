@@ -2,7 +2,7 @@
 
 Affix API
 - API version: 2023-03-01
-  - Build date: 2024-04-19T14:32:00.885320Z[Etc/UTC]
+  - Build date: 2024-04-22T21:54:04.832358Z[Etc/UTC]
 
 The affixapi.com API documentation.
 
@@ -246,7 +246,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.affixapi</groupId>
   <artifactId>api</artifactId>
-  <version>1.1.60</version>
+  <version>1.1.62</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -256,7 +256,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.affixapi:api:1.1.60"
+compile "com.affixapi:api:1.1.62"
 ```
 
 ### Others
@@ -269,7 +269,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-1.1.60.jar`
+* `target/api-1.1.62.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -357,6 +357,8 @@ Class | Method | HTTP request | Description
  - [CompanyResponse](docs/CompanyResponse.md)
  - [CreateEmployeeRequest](docs/CreateEmployeeRequest.md)
  - [CreateEmployeeRequestBankAccount](docs/CreateEmployeeRequestBankAccount.md)
+ - [CreateEmployeeRequestDependents](docs/CreateEmployeeRequestDependents.md)
+ - [CreateEmployeeRequestEmergencyContacts](docs/CreateEmployeeRequestEmergencyContacts.md)
  - [CreateEmployeeRequestManager](docs/CreateEmployeeRequestManager.md)
  - [CurrencyNotNullRequest](docs/CurrencyNotNullRequest.md)
  - [CurrencyResponse](docs/CurrencyResponse.md)
@@ -365,6 +367,10 @@ Class | Method | HTTP request | Description
  - [EmployeeResponseManager](docs/EmployeeResponseManager.md)
  - [EmploymentNoNullEnumRequest](docs/EmploymentNoNullEnumRequest.md)
  - [EmploymentResponse](docs/EmploymentResponse.md)
+ - [EmploymentStatus](docs/EmploymentStatus.md)
+ - [EmploymentStatusNotNull](docs/EmploymentStatusNotNull.md)
+ - [EmploymentStatusNotNullRequest](docs/EmploymentStatusNotNullRequest.md)
+ - [EmploymentStatusResponse](docs/EmploymentStatusResponse.md)
  - [GroupNoNullEnumRequest](docs/GroupNoNullEnumRequest.md)
  - [GroupResponse](docs/GroupResponse.md)
  - [IdAndMessageResponse](docs/IdAndMessageResponse.md)
