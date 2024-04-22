@@ -29,7 +29,7 @@ import java.io.IOException;
 
 import org.openapitools.client.model.CompanyResponse;
 import org.openapitools.client.model.EmployeeResponse;
-import org.openapitools.client.model.EmploymentStatusNotNull;
+import org.openapitools.client.model.EmploymentStatusNotNullNotNullable;
 import org.openapitools.client.model.GroupResponse;
 import org.openapitools.client.model.IdentityResponse;
 import org.openapitools.client.model.InlineResponse401;
@@ -206,7 +206,7 @@ public class Class20230301Api {
         <tr><td> 501 </td><td> Not Implemented </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call xhrEmployees20230301Call(EmploymentStatusNotNull employmentStatus, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call xhrEmployees20230301Call(EmploymentStatusNotNullNotNullable employmentStatus, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -241,7 +241,7 @@ public class Class20230301Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call xhrEmployees20230301ValidateBeforeCall(EmploymentStatusNotNull employmentStatus, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call xhrEmployees20230301ValidateBeforeCall(EmploymentStatusNotNullNotNullable employmentStatus, final ApiCallback _callback) throws ApiException {
         
 
         okhttp3.Call localVarCall = xhrEmployees20230301Call(employmentStatus, _callback);
@@ -266,7 +266,7 @@ public class Class20230301Api {
         <tr><td> 501 </td><td> Not Implemented </td><td>  -  </td></tr>
      </table>
      */
-    public List<EmployeeResponse> xhrEmployees20230301(EmploymentStatusNotNull employmentStatus) throws ApiException {
+    public List<EmployeeResponse> xhrEmployees20230301(EmploymentStatusNotNullNotNullable employmentStatus) throws ApiException {
         ApiResponse<List<EmployeeResponse>> localVarResp = xhrEmployees20230301WithHttpInfo(employmentStatus);
         return localVarResp.getData();
     }
@@ -288,7 +288,7 @@ public class Class20230301Api {
         <tr><td> 501 </td><td> Not Implemented </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<EmployeeResponse>> xhrEmployees20230301WithHttpInfo(EmploymentStatusNotNull employmentStatus) throws ApiException {
+    public ApiResponse<List<EmployeeResponse>> xhrEmployees20230301WithHttpInfo(EmploymentStatusNotNullNotNullable employmentStatus) throws ApiException {
         okhttp3.Call localVarCall = xhrEmployees20230301ValidateBeforeCall(employmentStatus, null);
         Type localVarReturnType = new TypeToken<List<EmployeeResponse>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -312,7 +312,7 @@ public class Class20230301Api {
         <tr><td> 501 </td><td> Not Implemented </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call xhrEmployees20230301Async(EmploymentStatusNotNull employmentStatus, final ApiCallback<List<EmployeeResponse>> _callback) throws ApiException {
+    public okhttp3.Call xhrEmployees20230301Async(EmploymentStatusNotNullNotNullable employmentStatus, final ApiCallback<List<EmployeeResponse>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = xhrEmployees20230301ValidateBeforeCall(employmentStatus, _callback);
         Type localVarReturnType = new TypeToken<List<EmployeeResponse>>(){}.getType();

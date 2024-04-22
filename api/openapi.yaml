@@ -684,7 +684,7 @@ paths:
         name: employment_status
         required: false
         schema:
-          $ref: '#/components/schemas/employment-status-not-null'
+          $ref: '#/components/schemas/employment-status-not-null-not-nullable'
         style: form
       responses:
         "200":
@@ -1395,24 +1395,13 @@ components:
             type: integer
           style: simple
   schemas:
-    employment-status:
-      enum:
-      - null
-      - active
-      - inactive
-      - pending
-      - leave
-      example: active
-      nullable: true
-      type: string
-    employment-status-not-null:
+    employment-status-not-null-not-nullable:
       enum:
       - active
       - inactive
       - pending
       - leave
       example: active
-      nullable: true
       type: string
     StartDate:
       example: 2021-01-01

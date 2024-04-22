@@ -13,65 +13,22 @@
 
 package org.openapitools.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
 
-import java.io.IOException;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 
 /**
- * Gets or Sets employment-status-not-null
+ * Model tests for EmploymentStatusNotNullNotNullable
  */
-@JsonAdapter(EmploymentStatusNotNull.Adapter.class)
-public enum EmploymentStatusNotNull {
-  
-  ACTIVE("active"),
-  
-  INACTIVE("inactive"),
-  
-  PENDING("pending"),
-  
-  LEAVE("leave");
-
-  private String value;
-
-  EmploymentStatusNotNull(String value) {
-    this.value = value;
-  }
-
-  public String getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  public static EmploymentStatusNotNull fromValue(String value) {
-    for (EmploymentStatusNotNull b : EmploymentStatusNotNull.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    return null;
-  }
-
-  public static class Adapter extends TypeAdapter<EmploymentStatusNotNull> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final EmploymentStatusNotNull enumeration) throws IOException {
-      jsonWriter.value(enumeration.getValue());
+public class EmploymentStatusNotNullNotNullableTest {
+    /**
+     * Model tests for EmploymentStatusNotNullNotNullable
+     */
+    @Test
+    public void testEmploymentStatusNotNullNotNullable() {
+        // TODO: test EmploymentStatusNotNullNotNullable
     }
 
-    @Override
-    public EmploymentStatusNotNull read(final JsonReader jsonReader) throws IOException {
-      String value = jsonReader.nextString();
-      return EmploymentStatusNotNull.fromValue(value);
-    }
-  }
 }
-

@@ -24,8 +24,7 @@ docs/EmployeeResponse.md
 docs/EmployeeResponseManager.md
 docs/EmploymentNoNullEnumRequest.md
 docs/EmploymentResponse.md
-docs/EmploymentStatus.md
-docs/EmploymentStatusNotNull.md
+docs/EmploymentStatusNotNullNotNullable.md
 docs/EmploymentStatusNotNullRequest.md
 docs/EmploymentStatusResponse.md
 docs/GroupNoNullEnumRequest.md
@@ -105,8 +104,7 @@ src/main/java/org/openapitools/client/model/EmployeeResponse.java
 src/main/java/org/openapitools/client/model/EmployeeResponseManager.java
 src/main/java/org/openapitools/client/model/EmploymentNoNullEnumRequest.java
 src/main/java/org/openapitools/client/model/EmploymentResponse.java
-src/main/java/org/openapitools/client/model/EmploymentStatus.java
-src/main/java/org/openapitools/client/model/EmploymentStatusNotNull.java
+src/main/java/org/openapitools/client/model/EmploymentStatusNotNullNotNullable.java
 src/main/java/org/openapitools/client/model/EmploymentStatusNotNullRequest.java
 src/main/java/org/openapitools/client/model/EmploymentStatusResponse.java
 src/main/java/org/openapitools/client/model/GroupNoNullEnumRequest.java
@@ -158,10 +156,9 @@ src/test/java/org/openapitools/client/model/EmployeeResponseManagerTest.java
 src/test/java/org/openapitools/client/model/EmployeeResponseTest.java
 src/test/java/org/openapitools/client/model/EmploymentNoNullEnumRequestTest.java
 src/test/java/org/openapitools/client/model/EmploymentResponseTest.java
+src/test/java/org/openapitools/client/model/EmploymentStatusNotNullNotNullableTest.java
 src/test/java/org/openapitools/client/model/EmploymentStatusNotNullRequestTest.java
-src/test/java/org/openapitools/client/model/EmploymentStatusNotNullTest.java
 src/test/java/org/openapitools/client/model/EmploymentStatusResponseTest.java
-src/test/java/org/openapitools/client/model/EmploymentStatusTest.java
 src/test/java/org/openapitools/client/model/GroupNoNullEnumRequestTest.java
 src/test/java/org/openapitools/client/model/GroupResponseTest.java
 src/test/java/org/openapitools/client/model/IdAndMessageResponseTest.java

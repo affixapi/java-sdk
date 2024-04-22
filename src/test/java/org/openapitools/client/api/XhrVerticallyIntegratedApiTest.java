@@ -16,7 +16,7 @@ package org.openapitools.client.api;
 import org.openapitools.client.ApiException;
 import org.openapitools.client.model.CompanyResponse;
 import org.openapitools.client.model.EmployeeResponse;
-import org.openapitools.client.model.EmploymentStatusNotNull;
+import org.openapitools.client.model.EmploymentStatusNotNullNotNullable;
 import org.openapitools.client.model.GroupResponse;
 import org.openapitools.client.model.IdentityResponse;
 import org.openapitools.client.model.InlineResponse401;
@@ -70,7 +70,7 @@ public class XhrVerticallyIntegratedApiTest {
      */
     @Test
     public void xhrEmployees20230301Test() throws ApiException {
-        EmploymentStatusNotNull employmentStatus = null;
+        EmploymentStatusNotNullNotNullable employmentStatus = null;
         List<EmployeeResponse> response = api.xhrEmployees20230301(employmentStatus);
 
         // TODO: test validations

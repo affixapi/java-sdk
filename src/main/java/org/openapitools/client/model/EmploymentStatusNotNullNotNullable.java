@@ -13,22 +13,65 @@
 
 package org.openapitools.client.model;
 
+import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
 
+import java.io.IOException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 
 /**
- * Model tests for EmploymentStatusNotNull
+ * Gets or Sets employment-status-not-null-not-nullable
  */
-public class EmploymentStatusNotNullTest {
-    /**
-     * Model tests for EmploymentStatusNotNull
-     */
-    @Test
-    public void testEmploymentStatusNotNull() {
-        // TODO: test EmploymentStatusNotNull
+@JsonAdapter(EmploymentStatusNotNullNotNullable.Adapter.class)
+public enum EmploymentStatusNotNullNotNullable {
+  
+  ACTIVE("active"),
+  
+  INACTIVE("inactive"),
+  
+  PENDING("pending"),
+  
+  LEAVE("leave");
+
+  private String value;
+
+  EmploymentStatusNotNullNotNullable(String value) {
+    this.value = value;
+  }
+
+  public String getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static EmploymentStatusNotNullNotNullable fromValue(String value) {
+    for (EmploymentStatusNotNullNotNullable b : EmploymentStatusNotNullNotNullable.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<EmploymentStatusNotNullNotNullable> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final EmploymentStatusNotNullNotNullable enumeration) throws IOException {
+      jsonWriter.value(enumeration.getValue());
     }
 
+    @Override
+    public EmploymentStatusNotNullNotNullable read(final JsonReader jsonReader) throws IOException {
+      String value = jsonReader.nextString();
+      return EmploymentStatusNotNullNotNullable.fromValue(value);
+    }
+  }
 }
+
