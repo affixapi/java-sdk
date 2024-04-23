@@ -675,16 +675,16 @@ paths:
       operationId: xhrEmployees20230301
       parameters:
       - description: |
-          Enable server-side filtering of the `employment_status` attribute. Will
-          only include individuals with that attribute explicitly set (ie if an
-          individuals has a `null`, it will not be returned if this parameter is
-          set)
+          Optional query parameter. Use to enable server-side filtering of the
+          `employment_status` attribute. Will only include individuals with that
+          attribute explicitly set (ie if an individuals has a `null`, it will
+          not be returned if this parameter is set)
         explode: true
         in: query
         name: employment_status
         required: false
         schema:
-          $ref: '#/components/schemas/employment-status-not-null-not-nullable'
+          $ref: '#/components/schemas/EmploymentStatusNotNullNotNullable'
         style: form
       responses:
         "200":
@@ -1395,7 +1395,7 @@ components:
             type: integer
           style: simple
   schemas:
-    employment-status-not-null-not-nullable:
+    EmploymentStatusNotNullNotNullable:
       enum:
       - active
       - inactive

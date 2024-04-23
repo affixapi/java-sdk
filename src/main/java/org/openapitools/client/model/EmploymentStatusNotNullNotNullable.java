@@ -24,7 +24,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Gets or Sets employment-status-not-null-not-nullable
+ * Gets or Sets EmploymentStatusNotNullNotNullable
  */
 @JsonAdapter(EmploymentStatusNotNullNotNullable.Adapter.class)
 public enum EmploymentStatusNotNullNotNullable {

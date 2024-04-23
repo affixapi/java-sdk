@@ -191,7 +191,7 @@ public class XhrVerticallyIntegratedApi {
     }
     /**
      * Build call for xhrEmployees20230301
-     * @param employmentStatus Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set)  (optional)
+     * @param employmentStatus Optional query parameter. Use to enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set)  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -252,7 +252,7 @@ public class XhrVerticallyIntegratedApi {
     /**
      * Employees
      * List the individuals (employees, contractors, accountants, and others) listed in the HRIS/Payroll software 
-     * @param employmentStatus Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set)  (optional)
+     * @param employmentStatus Optional query parameter. Use to enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set)  (optional)
      * @return List&lt;EmployeeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -274,7 +274,7 @@ public class XhrVerticallyIntegratedApi {
     /**
      * Employees
      * List the individuals (employees, contractors, accountants, and others) listed in the HRIS/Payroll software 
-     * @param employmentStatus Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set)  (optional)
+     * @param employmentStatus Optional query parameter. Use to enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set)  (optional)
      * @return ApiResponse&lt;List&lt;EmployeeResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -297,7 +297,7 @@ public class XhrVerticallyIntegratedApi {
     /**
      * Employees (asynchronously)
      * List the individuals (employees, contractors, accountants, and others) listed in the HRIS/Payroll software 
-     * @param employmentStatus Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set)  (optional)
+     * @param employmentStatus Optional query parameter. Use to enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set)  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

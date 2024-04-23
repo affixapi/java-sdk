@@ -116,7 +116,7 @@ public class Example {
     //access-token.setApiKeyPrefix("Token");
 
     XhrVerticallyIntegratedApi apiInstance = new XhrVerticallyIntegratedApi(defaultClient);
-    EmploymentStatusNotNullNotNullable employmentStatus = EmploymentStatusNotNullNotNullable.fromValue("active"); // EmploymentStatusNotNullNotNullable | Enable server-side filtering of the `employment_status` attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a `null`, it will not be returned if this parameter is set) 
+    EmploymentStatusNotNullNotNullable employmentStatus = EmploymentStatusNotNullNotNullable.fromValue("active"); // EmploymentStatusNotNullNotNullable | Optional query parameter. Use to enable server-side filtering of the `employment_status` attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a `null`, it will not be returned if this parameter is set) 
     try {
       List<EmployeeResponse> result = apiInstance.xhrEmployees20230301(employmentStatus);
       System.out.println(result);
@@ -135,7 +135,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **employmentStatus** | [**EmploymentStatusNotNullNotNullable**](.md)| Enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set)  | [optional] [enum: active, inactive, pending, leave]
+ **employmentStatus** | [**EmploymentStatusNotNullNotNullable**](.md)| Optional query parameter. Use to enable server-side filtering of the &#x60;employment_status&#x60; attribute. Will only include individuals with that attribute explicitly set (ie if an individuals has a &#x60;null&#x60;, it will not be returned if this parameter is set)  | [optional] [enum: active, inactive, pending, leave]
 
 ### Return type
 
