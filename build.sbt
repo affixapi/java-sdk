@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
   settings(
     organization := "com.affixapi",
     name := "api",
-    version := "1.1.64",
+    version := "1.1.65",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),
     javacOptions in compile ++= Seq("-Xlint:deprecation"),

@@ -520,7 +520,7 @@ This endpoint does not need any parameter.
 
 <a name="xhrTimeOffEntries20230301"></a>
 # **xhrTimeOffEntries20230301**
-> List&lt;TimeOffEntryResponse&gt; xhrTimeOffEntries20230301()
+> List&lt;TimeOffEntryResponse&gt; xhrTimeOffEntries20230301(startDate, endDate)
 
 Time off entries
 
@@ -548,8 +548,10 @@ public class Example {
     //access-token.setApiKeyPrefix("Token");
 
     XhrVerticallyIntegratedApi apiInstance = new XhrVerticallyIntegratedApi(defaultClient);
+    LocalDate startDate = new LocalDate(); // LocalDate | The start date of the search period
+    LocalDate endDate = new LocalDate(); // LocalDate | The end date of the search period
     try {
-      List<TimeOffEntryResponse> result = apiInstance.xhrTimeOffEntries20230301();
+      List<TimeOffEntryResponse> result = apiInstance.xhrTimeOffEntries20230301(startDate, endDate);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling XhrVerticallyIntegratedApi#xhrTimeOffEntries20230301");
@@ -563,7 +565,11 @@ public class Example {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **startDate** | **LocalDate**| The start date of the search period |
+ **endDate** | **LocalDate**| The end date of the search period |
 
 ### Return type
 
@@ -590,7 +596,7 @@ This endpoint does not need any parameter.
 
 <a name="xhrTimesheets20230301"></a>
 # **xhrTimesheets20230301**
-> List&lt;TimesheetResponse&gt; xhrTimesheets20230301()
+> List&lt;TimesheetResponse&gt; xhrTimesheets20230301(startDate, endDate)
 
 Timesheets
 
@@ -618,8 +624,10 @@ public class Example {
     //access-token.setApiKeyPrefix("Token");
 
     XhrVerticallyIntegratedApi apiInstance = new XhrVerticallyIntegratedApi(defaultClient);
+    LocalDate startDate = new LocalDate(); // LocalDate | The start date of the search period
+    LocalDate endDate = new LocalDate(); // LocalDate | The end date of the search period
     try {
-      List<TimesheetResponse> result = apiInstance.xhrTimesheets20230301();
+      List<TimesheetResponse> result = apiInstance.xhrTimesheets20230301(startDate, endDate);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling XhrVerticallyIntegratedApi#xhrTimesheets20230301");
@@ -633,7 +641,11 @@ public class Example {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **startDate** | **LocalDate**| The start date of the search period |
+ **endDate** | **LocalDate**| The end date of the search period |
 
 ### Return type
 

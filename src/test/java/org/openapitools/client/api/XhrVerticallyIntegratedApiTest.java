@@ -164,7 +164,9 @@ public class XhrVerticallyIntegratedApiTest {
      */
     @Test
     public void xhrTimeOffEntries20230301Test() throws ApiException {
-        List<TimeOffEntryResponse> response = api.xhrTimeOffEntries20230301();
+        LocalDate startDate = null;
+        LocalDate endDate = null;
+        List<TimeOffEntryResponse> response = api.xhrTimeOffEntries20230301(startDate, endDate);
 
         // TODO: test validations
     }
@@ -179,7 +181,9 @@ public class XhrVerticallyIntegratedApiTest {
      */
     @Test
     public void xhrTimesheets20230301Test() throws ApiException {
-        List<TimesheetResponse> response = api.xhrTimesheets20230301();
+        LocalDate startDate = null;
+        LocalDate endDate = null;
+        List<TimesheetResponse> response = api.xhrTimesheets20230301(startDate, endDate);
 
         // TODO: test validations
     }

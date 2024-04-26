@@ -959,6 +959,8 @@ public class Class20230301Api {
     }
     /**
      * Build call for xhrTimeOffEntries20230301
+     * @param startDate The start date of the search period (required)
+     * @param endDate The end date of the search period (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -973,7 +975,7 @@ public class Class20230301Api {
         <tr><td> 501 </td><td> Not Implemented </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call xhrTimeOffEntries20230301Call(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call xhrTimeOffEntries20230301Call(LocalDate startDate, LocalDate endDate, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -984,6 +986,14 @@ public class Class20230301Api {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (startDate != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("start_date", startDate));
+        }
+
+        if (endDate != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("end_date", endDate));
+        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -1004,10 +1014,20 @@ public class Class20230301Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call xhrTimeOffEntries20230301ValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call xhrTimeOffEntries20230301ValidateBeforeCall(LocalDate startDate, LocalDate endDate, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'startDate' is set
+        if (startDate == null) {
+            throw new ApiException("Missing the required parameter 'startDate' when calling xhrTimeOffEntries20230301(Async)");
+        }
+        
+        // verify the required parameter 'endDate' is set
+        if (endDate == null) {
+            throw new ApiException("Missing the required parameter 'endDate' when calling xhrTimeOffEntries20230301(Async)");
+        }
         
 
-        okhttp3.Call localVarCall = xhrTimeOffEntries20230301Call(_callback);
+        okhttp3.Call localVarCall = xhrTimeOffEntries20230301Call(startDate, endDate, _callback);
         return localVarCall;
 
     }
@@ -1015,6 +1035,8 @@ public class Class20230301Api {
     /**
      * Time off entries
      * Retrieve time off / absence entries 
+     * @param startDate The start date of the search period (required)
+     * @param endDate The end date of the search period (required)
      * @return List&lt;TimeOffEntryResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1028,14 +1050,16 @@ public class Class20230301Api {
         <tr><td> 501 </td><td> Not Implemented </td><td>  -  </td></tr>
      </table>
      */
-    public List<TimeOffEntryResponse> xhrTimeOffEntries20230301() throws ApiException {
-        ApiResponse<List<TimeOffEntryResponse>> localVarResp = xhrTimeOffEntries20230301WithHttpInfo();
+    public List<TimeOffEntryResponse> xhrTimeOffEntries20230301(LocalDate startDate, LocalDate endDate) throws ApiException {
+        ApiResponse<List<TimeOffEntryResponse>> localVarResp = xhrTimeOffEntries20230301WithHttpInfo(startDate, endDate);
         return localVarResp.getData();
     }
 
     /**
      * Time off entries
      * Retrieve time off / absence entries 
+     * @param startDate The start date of the search period (required)
+     * @param endDate The end date of the search period (required)
      * @return ApiResponse&lt;List&lt;TimeOffEntryResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1049,8 +1073,8 @@ public class Class20230301Api {
         <tr><td> 501 </td><td> Not Implemented </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<TimeOffEntryResponse>> xhrTimeOffEntries20230301WithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = xhrTimeOffEntries20230301ValidateBeforeCall(null);
+    public ApiResponse<List<TimeOffEntryResponse>> xhrTimeOffEntries20230301WithHttpInfo(LocalDate startDate, LocalDate endDate) throws ApiException {
+        okhttp3.Call localVarCall = xhrTimeOffEntries20230301ValidateBeforeCall(startDate, endDate, null);
         Type localVarReturnType = new TypeToken<List<TimeOffEntryResponse>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1058,6 +1082,8 @@ public class Class20230301Api {
     /**
      * Time off entries (asynchronously)
      * Retrieve time off / absence entries 
+     * @param startDate The start date of the search period (required)
+     * @param endDate The end date of the search period (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1072,15 +1098,17 @@ public class Class20230301Api {
         <tr><td> 501 </td><td> Not Implemented </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call xhrTimeOffEntries20230301Async(final ApiCallback<List<TimeOffEntryResponse>> _callback) throws ApiException {
+    public okhttp3.Call xhrTimeOffEntries20230301Async(LocalDate startDate, LocalDate endDate, final ApiCallback<List<TimeOffEntryResponse>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = xhrTimeOffEntries20230301ValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = xhrTimeOffEntries20230301ValidateBeforeCall(startDate, endDate, _callback);
         Type localVarReturnType = new TypeToken<List<TimeOffEntryResponse>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for xhrTimesheets20230301
+     * @param startDate The start date of the search period (required)
+     * @param endDate The end date of the search period (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1095,7 +1123,7 @@ public class Class20230301Api {
         <tr><td> 501 </td><td> Not Implemented </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call xhrTimesheets20230301Call(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call xhrTimesheets20230301Call(LocalDate startDate, LocalDate endDate, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1106,6 +1134,14 @@ public class Class20230301Api {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (startDate != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("start_date", startDate));
+        }
+
+        if (endDate != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("end_date", endDate));
+        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -1126,10 +1162,20 @@ public class Class20230301Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call xhrTimesheets20230301ValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call xhrTimesheets20230301ValidateBeforeCall(LocalDate startDate, LocalDate endDate, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'startDate' is set
+        if (startDate == null) {
+            throw new ApiException("Missing the required parameter 'startDate' when calling xhrTimesheets20230301(Async)");
+        }
+        
+        // verify the required parameter 'endDate' is set
+        if (endDate == null) {
+            throw new ApiException("Missing the required parameter 'endDate' when calling xhrTimesheets20230301(Async)");
+        }
         
 
-        okhttp3.Call localVarCall = xhrTimesheets20230301Call(_callback);
+        okhttp3.Call localVarCall = xhrTimesheets20230301Call(startDate, endDate, _callback);
         return localVarCall;
 
     }
@@ -1137,6 +1183,8 @@ public class Class20230301Api {
     /**
      * Timesheets
      * Retrieve Timesheets 
+     * @param startDate The start date of the search period (required)
+     * @param endDate The end date of the search period (required)
      * @return List&lt;TimesheetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1150,14 +1198,16 @@ public class Class20230301Api {
         <tr><td> 501 </td><td> Not Implemented </td><td>  -  </td></tr>
      </table>
      */
-    public List<TimesheetResponse> xhrTimesheets20230301() throws ApiException {
-        ApiResponse<List<TimesheetResponse>> localVarResp = xhrTimesheets20230301WithHttpInfo();
+    public List<TimesheetResponse> xhrTimesheets20230301(LocalDate startDate, LocalDate endDate) throws ApiException {
+        ApiResponse<List<TimesheetResponse>> localVarResp = xhrTimesheets20230301WithHttpInfo(startDate, endDate);
         return localVarResp.getData();
     }
 
     /**
      * Timesheets
      * Retrieve Timesheets 
+     * @param startDate The start date of the search period (required)
+     * @param endDate The end date of the search period (required)
      * @return ApiResponse&lt;List&lt;TimesheetResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1171,8 +1221,8 @@ public class Class20230301Api {
         <tr><td> 501 </td><td> Not Implemented </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<TimesheetResponse>> xhrTimesheets20230301WithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = xhrTimesheets20230301ValidateBeforeCall(null);
+    public ApiResponse<List<TimesheetResponse>> xhrTimesheets20230301WithHttpInfo(LocalDate startDate, LocalDate endDate) throws ApiException {
+        okhttp3.Call localVarCall = xhrTimesheets20230301ValidateBeforeCall(startDate, endDate, null);
         Type localVarReturnType = new TypeToken<List<TimesheetResponse>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1180,6 +1230,8 @@ public class Class20230301Api {
     /**
      * Timesheets (asynchronously)
      * Retrieve Timesheets 
+     * @param startDate The start date of the search period (required)
+     * @param endDate The end date of the search period (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1194,9 +1246,9 @@ public class Class20230301Api {
         <tr><td> 501 </td><td> Not Implemented </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call xhrTimesheets20230301Async(final ApiCallback<List<TimesheetResponse>> _callback) throws ApiException {
+    public okhttp3.Call xhrTimesheets20230301Async(LocalDate startDate, LocalDate endDate, final ApiCallback<List<TimesheetResponse>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = xhrTimesheets20230301ValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = xhrTimesheets20230301ValidateBeforeCall(startDate, endDate, _callback);
         Type localVarReturnType = new TypeToken<List<TimesheetResponse>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
