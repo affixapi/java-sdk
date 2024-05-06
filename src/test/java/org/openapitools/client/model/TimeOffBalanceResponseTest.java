@@ -51,11 +51,11 @@ public class TimeOffBalanceResponseTest {
     }
 
     /**
-     * Test the property 'remoteId'
+     * Test the property 'remoteEmployeeId'
      */
     @Test
-    public void remoteIdTest() {
-        // TODO: test remoteId
+    public void remoteEmployeeIdTest() {
+        // TODO: test remoteEmployeeId
     }
 
     /**

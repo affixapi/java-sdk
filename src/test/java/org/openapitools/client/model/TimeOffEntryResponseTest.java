@@ -67,6 +67,14 @@ public class TimeOffEntryResponseTest {
     }
 
     /**
+     * Test the property 'remoteEmployeeId'
+     */
+    @Test
+    public void remoteEmployeeIdTest() {
+        // TODO: test remoteEmployeeId
+    }
+
+    /**
      * Test the property 'startDate'
      */
     @Test

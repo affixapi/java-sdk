@@ -30,7 +30,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * TimesheetResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-26T02:23:24.765566Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-06T22:15:18.097265Z[Etc/UTC]")
 public class TimesheetResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -43,6 +43,10 @@ public class TimesheetResponse {
   public static final String SERIALIZED_NAME_EMPLOYEE_ID = "employee_id";
   @SerializedName(SERIALIZED_NAME_EMPLOYEE_ID)
   private String employeeId;
+
+  public static final String SERIALIZED_NAME_REMOTE_EMPLOYEE_ID = "remote_employee_id";
+  @SerializedName(SERIALIZED_NAME_REMOTE_EMPLOYEE_ID)
+  private String remoteEmployeeId;
 
   public static final String SERIALIZED_NAME_START_TIME = "start_time";
   @SerializedName(SERIALIZED_NAME_START_TIME)
@@ -128,6 +132,28 @@ public class TimesheetResponse {
 
   public void setEmployeeId(String employeeId) {
     this.employeeId = employeeId;
+  }
+
+
+  public TimesheetResponse remoteEmployeeId(String remoteEmployeeId) {
+    
+    this.remoteEmployeeId = remoteEmployeeId;
+    return this;
+  }
+
+   /**
+   * the remote system-assigned id of the individual
+   * @return remoteEmployeeId
+  **/
+  @ApiModelProperty(example = "19202938", required = true, value = "the remote system-assigned id of the individual")
+
+  public String getRemoteEmployeeId() {
+    return remoteEmployeeId;
+  }
+
+
+  public void setRemoteEmployeeId(String remoteEmployeeId) {
+    this.remoteEmployeeId = remoteEmployeeId;
   }
 
 
@@ -257,6 +283,7 @@ public class TimesheetResponse {
     return Objects.equals(this.id, timesheetResponse.id) &&
         Objects.equals(this.remoteId, timesheetResponse.remoteId) &&
         Objects.equals(this.employeeId, timesheetResponse.employeeId) &&
+        Objects.equals(this.remoteEmployeeId, timesheetResponse.remoteEmployeeId) &&
         Objects.equals(this.startTime, timesheetResponse.startTime) &&
         Objects.equals(this.endTime, timesheetResponse.endTime) &&
         Objects.equals(this.hoursWorked, timesheetResponse.hoursWorked) &&
@@ -266,7 +293,7 @@ public class TimesheetResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, remoteId, employeeId, startTime, endTime, hoursWorked, remoteCreatedAt, remoteModifiedAt);
+    return Objects.hash(id, remoteId, employeeId, remoteEmployeeId, startTime, endTime, hoursWorked, remoteCreatedAt, remoteModifiedAt);
   }
 
   @Override
@@ -276,6 +303,7 @@ public class TimesheetResponse {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    remoteId: ").append(toIndentedString(remoteId)).append("\n");
     sb.append("    employeeId: ").append(toIndentedString(employeeId)).append("\n");
+    sb.append("    remoteEmployeeId: ").append(toIndentedString(remoteEmployeeId)).append("\n");
     sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
     sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
     sb.append("    hoursWorked: ").append(toIndentedString(hoursWorked)).append("\n");

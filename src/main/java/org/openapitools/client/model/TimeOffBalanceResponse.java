@@ -29,15 +29,15 @@ import org.threeten.bp.LocalDate;
 /**
  * TimeOffBalanceResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-26T02:23:24.765566Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-06T22:15:18.097265Z[Etc/UTC]")
 public class TimeOffBalanceResponse {
   public static final String SERIALIZED_NAME_EMPLOYEE_ID = "employee_id";
   @SerializedName(SERIALIZED_NAME_EMPLOYEE_ID)
   private String employeeId;
 
-  public static final String SERIALIZED_NAME_REMOTE_ID = "remote_id";
-  @SerializedName(SERIALIZED_NAME_REMOTE_ID)
-  private String remoteId;
+  public static final String SERIALIZED_NAME_REMOTE_EMPLOYEE_ID = "remote_employee_id";
+  @SerializedName(SERIALIZED_NAME_REMOTE_EMPLOYEE_ID)
+  private String remoteEmployeeId;
 
   public static final String SERIALIZED_NAME_BALANCE = "balance";
   @SerializedName(SERIALIZED_NAME_BALANCE)
@@ -143,25 +143,25 @@ public class TimeOffBalanceResponse {
   }
 
 
-  public TimeOffBalanceResponse remoteId(String remoteId) {
+  public TimeOffBalanceResponse remoteEmployeeId(String remoteEmployeeId) {
     
-    this.remoteId = remoteId;
+    this.remoteEmployeeId = remoteEmployeeId;
     return this;
   }
 
    /**
    * the remote system-assigned id of the individual
-   * @return remoteId
+   * @return remoteEmployeeId
   **/
   @ApiModelProperty(example = "19202938", required = true, value = "the remote system-assigned id of the individual")
 
-  public String getRemoteId() {
-    return remoteId;
+  public String getRemoteEmployeeId() {
+    return remoteEmployeeId;
   }
 
 
-  public void setRemoteId(String remoteId) {
-    this.remoteId = remoteId;
+  public void setRemoteEmployeeId(String remoteEmployeeId) {
+    this.remoteEmployeeId = remoteEmployeeId;
   }
 
 
@@ -313,7 +313,7 @@ public class TimeOffBalanceResponse {
     }
     TimeOffBalanceResponse timeOffBalanceResponse = (TimeOffBalanceResponse) o;
     return Objects.equals(this.employeeId, timeOffBalanceResponse.employeeId) &&
-        Objects.equals(this.remoteId, timeOffBalanceResponse.remoteId) &&
+        Objects.equals(this.remoteEmployeeId, timeOffBalanceResponse.remoteEmployeeId) &&
         Objects.equals(this.balance, timeOffBalanceResponse.balance) &&
         Objects.equals(this.used, timeOffBalanceResponse.used) &&
         Objects.equals(this.policyName, timeOffBalanceResponse.policyName) &&
@@ -324,7 +324,7 @@ public class TimeOffBalanceResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(employeeId, remoteId, balance, used, policyName, policyType, remoteCreatedAt, remoteModifiedAt);
+    return Objects.hash(employeeId, remoteEmployeeId, balance, used, policyName, policyType, remoteCreatedAt, remoteModifiedAt);
   }
 
   @Override
@@ -332,7 +332,7 @@ public class TimeOffBalanceResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class TimeOffBalanceResponse {\n");
     sb.append("    employeeId: ").append(toIndentedString(employeeId)).append("\n");
-    sb.append("    remoteId: ").append(toIndentedString(remoteId)).append("\n");
+    sb.append("    remoteEmployeeId: ").append(toIndentedString(remoteEmployeeId)).append("\n");
     sb.append("    balance: ").append(toIndentedString(balance)).append("\n");
     sb.append("    used: ").append(toIndentedString(used)).append("\n");
     sb.append("    policyName: ").append(toIndentedString(policyName)).append("\n");
