@@ -3039,6 +3039,7 @@ components:
       enum:
       - null
       - vacation
+      - holiday
       - sick
       - personal
       - jury_duty

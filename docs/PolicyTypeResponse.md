@@ -9,6 +9,8 @@
 
 * `VACATION` (value: `"vacation"`)
 
+* `HOLIDAY` (value: `"holiday"`)
+
 * `SICK` (value: `"sick"`)
 
 * `PERSONAL` (value: `"personal"`)

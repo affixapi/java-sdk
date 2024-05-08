@@ -33,6 +33,8 @@ public enum PolicyTypeResponse {
   
   VACATION("vacation"),
   
+  HOLIDAY("holiday"),
+  
   SICK("sick"),
   
   PERSONAL("personal"),
