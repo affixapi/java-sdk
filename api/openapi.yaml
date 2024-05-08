@@ -2022,13 +2022,23 @@ components:
             Reference https://en.wikipedia.org/wiki/ISO_3166-2 for more details
           enum:
           - null
+          - BZ
           - CA
-          - US
+          - CR
+          - GT
           - MX
+          - PA
+          - SV
+          - US
+          - AR
+          - BR
+          - CL
+          - PE
           - AT
           - AU
           - BE
           - CH
+          - CY
           - CZ
           - DE
           - DK
@@ -2037,6 +2047,7 @@ components:
           - FI
           - FR
           - GB
+          - GR
           - IE
           - IM
           - IS
@@ -2050,18 +2061,28 @@ components:
           - PH
           - PL
           - RO
+          - RU
           - SE
           - SK
           - CN
           - HK
           - ID
+          - IL
           - IN
           - JP
           - KR
           - MO
           - MY
+          - PH
+          - PS
           - SG
+          - TH
+          - TR
           - TW
+          - VN
+          - ZA
+          - AU
+          - NZ
           example: IE
           nullable: true
           type: string
@@ -2157,13 +2178,23 @@ components:
             The ISO-3166-2 two-letter abbreviation of the country.
             Reference https://en.wikipedia.org/wiki/ISO_3166-2 for more details
           enum:
+          - BZ
           - CA
-          - US
+          - CR
+          - GT
           - MX
+          - PA
+          - SV
+          - US
+          - AR
+          - BR
+          - CL
+          - PE
           - AT
           - AU
           - BE
           - CH
+          - CY
           - CZ
           - DE
           - DK
@@ -2172,6 +2203,7 @@ components:
           - FI
           - FR
           - GB
+          - GR
           - IE
           - IM
           - IS
@@ -2185,18 +2217,28 @@ components:
           - PH
           - PL
           - RO
+          - RU
           - SE
           - SK
           - CN
           - HK
           - ID
+          - IL
           - IN
           - JP
           - KR
           - MO
           - MY
+          - PH
+          - PS
           - SG
+          - TH
+          - TR
           - TW
+          - VN
+          - ZA
+          - AU
+          - NZ
           example: IE
           nullable: true
           type: string
@@ -2993,14 +3035,29 @@ components:
       - name
       - phone_number
       type: object
+    policy-typeResponse:
+      enum:
+      - null
+      - vacation
+      - sick
+      - personal
+      - jury_duty
+      - volunteer
+      - bereavement
+      example: vacation
+      nullable: true
+      type: string
     TimeOffEntryResponse:
       example:
-        remote_employee_id: "19202938"
         end_date: 2020-10-14T00:00:00.000+0000
+        employee_remote_id: "19202938"
         amount: 3
-        request_type: vacation
+        policy_id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+        policy_remote_id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
         remote_id: "19202938"
+        policy_name: Comp/In Lieu Time
         unit: days
+        policy_type: vacation
         employee_note: Visiting my family
         employee_id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
         id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
@@ -3021,7 +3078,7 @@ components:
           description: the Affix-assigned id of the individual
           example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
           type: string
-        remote_employee_id:
+        employee_remote_id:
           description: the remote system-assigned id of the individual
           example: "19202938"
           type: string
@@ -3060,10 +3117,23 @@ components:
           example: Visiting my family
           nullable: true
           type: string
-        request_type:
-          example: vacation
+        policy_id:
+          description: The Affix-assigned id of the policy
+          example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
           nullable: true
           type: string
+        policy_remote_id:
+          description: The remote system-assigned id of the policy
+          example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          nullable: true
+          type: string
+        policy_name:
+          description: The name of the policy, as assigned by the remote system
+          example: Comp/In Lieu Time
+          nullable: true
+          type: string
+        policy_type:
+          $ref: '#/components/schemas/policy-typeResponse'
         remote_created_at:
           example: 2020-10-11
           format: date
@@ -3078,13 +3148,16 @@ components:
       - amount
       - employee_id
       - employee_note
+      - employee_remote_id
       - end_date
       - id
+      - policy_id
+      - policy_name
+      - policy_remote_id
+      - policy_type
       - remote_created_at
-      - remote_employee_id
       - remote_id
       - remote_modified_at
-      - request_type
       - start_date
       - status
       - unit
@@ -3095,8 +3168,8 @@ components:
       type: array
     TimesheetResponse:
       example:
-        remote_employee_id: "19202938"
         start_time: 2020-10-11T08:00:00Z
+        employee_remote_id: "19202938"
         remote_id: "19202938"
         employee_id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
         end_time: 2020-10-11T17:00:00Z
@@ -3117,7 +3190,7 @@ components:
           description: the Affix-assigned id of the individual
           example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
           type: string
-        remote_employee_id:
+        employee_remote_id:
           description: the remote system-assigned id of the individual
           example: "19202938"
           type: string
@@ -3147,11 +3220,11 @@ components:
           type: string
       required:
       - employee_id
+      - employee_remote_id
       - end_time
       - hours_worked
       - id
       - remote_created_at
-      - remote_employee_id
       - remote_id
       - remote_modified_at
       - start_time
@@ -3162,8 +3235,11 @@ components:
       type: array
     TimeOffBalanceResponse:
       example:
-        remote_employee_id: "19202938"
+        employee_remote_id: "19202938"
+        policy_type: vacation
         balance: 24.5
+        policy_id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+        policy_remote_id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
         employee_id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
         policy_name: Comp/In Lieu Time
         used: 12
@@ -3174,7 +3250,7 @@ components:
           description: The Affix-assigned id of the individual
           example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
           type: string
-        remote_employee_id:
+        employee_remote_id:
           description: the remote system-assigned id of the individual
           example: "19202938"
           type: string
@@ -3186,22 +3262,23 @@ components:
           example: 12
           nullable: true
           type: number
+        policy_id:
+          description: The Affix-assigned id of the policy
+          example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          nullable: true
+          type: string
+        policy_remote_id:
+          description: The remote system-assigned id of the policy
+          example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          nullable: true
+          type: string
         policy_name:
           description: The name of the policy, as assigned by the remote system
           example: Comp/In Lieu Time
           nullable: true
           type: string
         policy_type:
-          enum:
-          - null
-          - vacation
-          - sick
-          - personal
-          - jury_duty
-          - volunteer
-          - bereavement
-          nullable: true
-          type: string
+          $ref: '#/components/schemas/policy-typeResponse'
         remote_created_at:
           example: 2020-10-11
           format: date
@@ -3215,10 +3292,12 @@ components:
       required:
       - balance
       - employee_id
+      - employee_remote_id
+      - policy_id
       - policy_name
+      - policy_remote_id
       - policy_type
       - remote_created_at
-      - remote_employee_id
       - remote_modified_at
       - used
       type: object

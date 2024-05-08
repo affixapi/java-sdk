@@ -13,202 +13,22 @@
 
 package org.openapitools.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
+
 
 /**
- * CreateEmployeeRequestBankAccount
+ * Model tests for PolicyTypeResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-08T23:01:26.980853Z[Etc/UTC]")
-public class CreateEmployeeRequestBankAccount {
-  public static final String SERIALIZED_NAME_ACCOUNT_NUMBER = "account_number";
-  @SerializedName(SERIALIZED_NAME_ACCOUNT_NUMBER)
-  private String accountNumber;
-
-  public static final String SERIALIZED_NAME_BANK_NAME = "bank_name";
-  @SerializedName(SERIALIZED_NAME_BANK_NAME)
-  private String bankName;
-
-  public static final String SERIALIZED_NAME_BIC = "bic";
-  @SerializedName(SERIALIZED_NAME_BIC)
-  private String bic;
-
-  public static final String SERIALIZED_NAME_HOLDER_NAME = "holder_name";
-  @SerializedName(SERIALIZED_NAME_HOLDER_NAME)
-  private String holderName;
-
-  public static final String SERIALIZED_NAME_IBAN = "iban";
-  @SerializedName(SERIALIZED_NAME_IBAN)
-  private String iban;
-
-
-  public CreateEmployeeRequestBankAccount accountNumber(String accountNumber) {
-    
-    this.accountNumber = accountNumber;
-    return this;
-  }
-
-   /**
-   * Get accountNumber
-   * @return accountNumber
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(required = true, value = "")
-
-  public String getAccountNumber() {
-    return accountNumber;
-  }
-
-
-  public void setAccountNumber(String accountNumber) {
-    this.accountNumber = accountNumber;
-  }
-
-
-  public CreateEmployeeRequestBankAccount bankName(String bankName) {
-    
-    this.bankName = bankName;
-    return this;
-  }
-
-   /**
-   * Get bankName
-   * @return bankName
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(required = true, value = "")
-
-  public String getBankName() {
-    return bankName;
-  }
-
-
-  public void setBankName(String bankName) {
-    this.bankName = bankName;
-  }
-
-
-  public CreateEmployeeRequestBankAccount bic(String bic) {
-    
-    this.bic = bic;
-    return this;
-  }
-
-   /**
-   * Get bic
-   * @return bic
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(required = true, value = "")
-
-  public String getBic() {
-    return bic;
-  }
-
-
-  public void setBic(String bic) {
-    this.bic = bic;
-  }
-
-
-  public CreateEmployeeRequestBankAccount holderName(String holderName) {
-    
-    this.holderName = holderName;
-    return this;
-  }
-
-   /**
-   * Get holderName
-   * @return holderName
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(required = true, value = "")
-
-  public String getHolderName() {
-    return holderName;
-  }
-
-
-  public void setHolderName(String holderName) {
-    this.holderName = holderName;
-  }
-
-
-  public CreateEmployeeRequestBankAccount iban(String iban) {
-    
-    this.iban = iban;
-    return this;
-  }
-
-   /**
-   * Get iban
-   * @return iban
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(required = true, value = "")
-
-  public String getIban() {
-    return iban;
-  }
-
-
-  public void setIban(String iban) {
-    this.iban = iban;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+public class PolicyTypeResponseTest {
+    /**
+     * Model tests for PolicyTypeResponse
+     */
+    @Test
+    public void testPolicyTypeResponse() {
+        // TODO: test PolicyTypeResponse
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    CreateEmployeeRequestBankAccount createEmployeeRequestBankAccount = (CreateEmployeeRequestBankAccount) o;
-    return Objects.equals(this.accountNumber, createEmployeeRequestBankAccount.accountNumber) &&
-        Objects.equals(this.bankName, createEmployeeRequestBankAccount.bankName) &&
-        Objects.equals(this.bic, createEmployeeRequestBankAccount.bic) &&
-        Objects.equals(this.holderName, createEmployeeRequestBankAccount.holderName) &&
-        Objects.equals(this.iban, createEmployeeRequestBankAccount.iban);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(accountNumber, bankName, bic, holderName, iban);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class CreateEmployeeRequestBankAccount {\n");
-    sb.append("    accountNumber: ").append(toIndentedString(accountNumber)).append("\n");
-    sb.append("    bankName: ").append(toIndentedString(bankName)).append("\n");
-    sb.append("    bic: ").append(toIndentedString(bic)).append("\n");
-    sb.append("    holderName: ").append(toIndentedString(holderName)).append("\n");
-    sb.append("    iban: ").append(toIndentedString(iban)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
 
 }
-

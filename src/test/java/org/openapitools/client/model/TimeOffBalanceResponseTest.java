@@ -22,6 +22,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
+import org.openapitools.client.model.PolicyTypeResponse;
 import org.threeten.bp.LocalDate;
 import org.junit.Assert;
 import org.junit.Ignore;
@@ -51,11 +52,11 @@ public class TimeOffBalanceResponseTest {
     }
 
     /**
-     * Test the property 'remoteEmployeeId'
+     * Test the property 'employeeRemoteId'
      */
     @Test
-    public void remoteEmployeeIdTest() {
-        // TODO: test remoteEmployeeId
+    public void employeeRemoteIdTest() {
+        // TODO: test employeeRemoteId
     }
 
     /**
@@ -72,6 +73,22 @@ public class TimeOffBalanceResponseTest {
     @Test
     public void usedTest() {
         // TODO: test used
+    }
+
+    /**
+     * Test the property 'policyId'
+     */
+    @Test
+    public void policyIdTest() {
+        // TODO: test policyId
+    }
+
+    /**
+     * Test the property 'policyRemoteId'
+     */
+    @Test
+    public void policyRemoteIdTest() {
+        // TODO: test policyRemoteId
     }
 
     /**

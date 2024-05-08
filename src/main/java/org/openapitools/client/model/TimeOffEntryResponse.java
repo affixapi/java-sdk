@@ -24,12 +24,13 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
+import org.openapitools.client.model.PolicyTypeResponse;
 import org.threeten.bp.LocalDate;
 
 /**
  * TimeOffEntryResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-06T22:15:18.097265Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-08T23:01:26.980853Z[Etc/UTC]")
 public class TimeOffEntryResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -43,9 +44,9 @@ public class TimeOffEntryResponse {
   @SerializedName(SERIALIZED_NAME_EMPLOYEE_ID)
   private String employeeId;
 
-  public static final String SERIALIZED_NAME_REMOTE_EMPLOYEE_ID = "remote_employee_id";
-  @SerializedName(SERIALIZED_NAME_REMOTE_EMPLOYEE_ID)
-  private String remoteEmployeeId;
+  public static final String SERIALIZED_NAME_EMPLOYEE_REMOTE_ID = "employee_remote_id";
+  @SerializedName(SERIALIZED_NAME_EMPLOYEE_REMOTE_ID)
+  private String employeeRemoteId;
 
   public static final String SERIALIZED_NAME_START_DATE = "start_date";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -173,9 +174,21 @@ public class TimeOffEntryResponse {
   @SerializedName(SERIALIZED_NAME_EMPLOYEE_NOTE)
   private String employeeNote;
 
-  public static final String SERIALIZED_NAME_REQUEST_TYPE = "request_type";
-  @SerializedName(SERIALIZED_NAME_REQUEST_TYPE)
-  private String requestType;
+  public static final String SERIALIZED_NAME_POLICY_ID = "policy_id";
+  @SerializedName(SERIALIZED_NAME_POLICY_ID)
+  private String policyId;
+
+  public static final String SERIALIZED_NAME_POLICY_REMOTE_ID = "policy_remote_id";
+  @SerializedName(SERIALIZED_NAME_POLICY_REMOTE_ID)
+  private String policyRemoteId;
+
+  public static final String SERIALIZED_NAME_POLICY_NAME = "policy_name";
+  @SerializedName(SERIALIZED_NAME_POLICY_NAME)
+  private String policyName;
+
+  public static final String SERIALIZED_NAME_POLICY_TYPE = "policy_type";
+  @SerializedName(SERIALIZED_NAME_POLICY_TYPE)
+  private PolicyTypeResponse policyType;
 
   public static final String SERIALIZED_NAME_REMOTE_CREATED_AT = "remote_created_at";
   @SerializedName(SERIALIZED_NAME_REMOTE_CREATED_AT)
@@ -252,25 +265,25 @@ public class TimeOffEntryResponse {
   }
 
 
-  public TimeOffEntryResponse remoteEmployeeId(String remoteEmployeeId) {
+  public TimeOffEntryResponse employeeRemoteId(String employeeRemoteId) {
     
-    this.remoteEmployeeId = remoteEmployeeId;
+    this.employeeRemoteId = employeeRemoteId;
     return this;
   }
 
    /**
    * the remote system-assigned id of the individual
-   * @return remoteEmployeeId
+   * @return employeeRemoteId
   **/
   @ApiModelProperty(example = "19202938", required = true, value = "the remote system-assigned id of the individual")
 
-  public String getRemoteEmployeeId() {
-    return remoteEmployeeId;
+  public String getEmployeeRemoteId() {
+    return employeeRemoteId;
   }
 
 
-  public void setRemoteEmployeeId(String remoteEmployeeId) {
-    this.remoteEmployeeId = remoteEmployeeId;
+  public void setEmployeeRemoteId(String employeeRemoteId) {
+    this.employeeRemoteId = employeeRemoteId;
   }
 
 
@@ -410,26 +423,95 @@ public class TimeOffEntryResponse {
   }
 
 
-  public TimeOffEntryResponse requestType(String requestType) {
+  public TimeOffEntryResponse policyId(String policyId) {
     
-    this.requestType = requestType;
+    this.policyId = policyId;
     return this;
   }
 
    /**
-   * Get requestType
-   * @return requestType
+   * The Affix-assigned id of the policy
+   * @return policyId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "vacation", required = true, value = "")
+  @ApiModelProperty(example = "cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw", required = true, value = "The Affix-assigned id of the policy")
 
-  public String getRequestType() {
-    return requestType;
+  public String getPolicyId() {
+    return policyId;
   }
 
 
-  public void setRequestType(String requestType) {
-    this.requestType = requestType;
+  public void setPolicyId(String policyId) {
+    this.policyId = policyId;
+  }
+
+
+  public TimeOffEntryResponse policyRemoteId(String policyRemoteId) {
+    
+    this.policyRemoteId = policyRemoteId;
+    return this;
+  }
+
+   /**
+   * The remote system-assigned id of the policy
+   * @return policyRemoteId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw", required = true, value = "The remote system-assigned id of the policy")
+
+  public String getPolicyRemoteId() {
+    return policyRemoteId;
+  }
+
+
+  public void setPolicyRemoteId(String policyRemoteId) {
+    this.policyRemoteId = policyRemoteId;
+  }
+
+
+  public TimeOffEntryResponse policyName(String policyName) {
+    
+    this.policyName = policyName;
+    return this;
+  }
+
+   /**
+   * The name of the policy, as assigned by the remote system
+   * @return policyName
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "Comp/In Lieu Time", required = true, value = "The name of the policy, as assigned by the remote system")
+
+  public String getPolicyName() {
+    return policyName;
+  }
+
+
+  public void setPolicyName(String policyName) {
+    this.policyName = policyName;
+  }
+
+
+  public TimeOffEntryResponse policyType(PolicyTypeResponse policyType) {
+    
+    this.policyType = policyType;
+    return this;
+  }
+
+   /**
+   * Get policyType
+   * @return policyType
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(required = true, value = "")
+
+  public PolicyTypeResponse getPolicyType() {
+    return policyType;
+  }
+
+
+  public void setPolicyType(PolicyTypeResponse policyType) {
+    this.policyType = policyType;
   }
 
 
@@ -491,21 +573,24 @@ public class TimeOffEntryResponse {
     return Objects.equals(this.id, timeOffEntryResponse.id) &&
         Objects.equals(this.remoteId, timeOffEntryResponse.remoteId) &&
         Objects.equals(this.employeeId, timeOffEntryResponse.employeeId) &&
-        Objects.equals(this.remoteEmployeeId, timeOffEntryResponse.remoteEmployeeId) &&
+        Objects.equals(this.employeeRemoteId, timeOffEntryResponse.employeeRemoteId) &&
         Objects.equals(this.startDate, timeOffEntryResponse.startDate) &&
         Objects.equals(this.endDate, timeOffEntryResponse.endDate) &&
         Objects.equals(this.amount, timeOffEntryResponse.amount) &&
         Objects.equals(this.unit, timeOffEntryResponse.unit) &&
         Objects.equals(this.status, timeOffEntryResponse.status) &&
         Objects.equals(this.employeeNote, timeOffEntryResponse.employeeNote) &&
-        Objects.equals(this.requestType, timeOffEntryResponse.requestType) &&
+        Objects.equals(this.policyId, timeOffEntryResponse.policyId) &&
+        Objects.equals(this.policyRemoteId, timeOffEntryResponse.policyRemoteId) &&
+        Objects.equals(this.policyName, timeOffEntryResponse.policyName) &&
+        Objects.equals(this.policyType, timeOffEntryResponse.policyType) &&
         Objects.equals(this.remoteCreatedAt, timeOffEntryResponse.remoteCreatedAt) &&
         Objects.equals(this.remoteModifiedAt, timeOffEntryResponse.remoteModifiedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, remoteId, employeeId, remoteEmployeeId, startDate, endDate, amount, unit, status, employeeNote, requestType, remoteCreatedAt, remoteModifiedAt);
+    return Objects.hash(id, remoteId, employeeId, employeeRemoteId, startDate, endDate, amount, unit, status, employeeNote, policyId, policyRemoteId, policyName, policyType, remoteCreatedAt, remoteModifiedAt);
   }
 
   @Override
@@ -515,14 +600,17 @@ public class TimeOffEntryResponse {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    remoteId: ").append(toIndentedString(remoteId)).append("\n");
     sb.append("    employeeId: ").append(toIndentedString(employeeId)).append("\n");
-    sb.append("    remoteEmployeeId: ").append(toIndentedString(remoteEmployeeId)).append("\n");
+    sb.append("    employeeRemoteId: ").append(toIndentedString(employeeRemoteId)).append("\n");
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    employeeNote: ").append(toIndentedString(employeeNote)).append("\n");
-    sb.append("    requestType: ").append(toIndentedString(requestType)).append("\n");
+    sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
+    sb.append("    policyRemoteId: ").append(toIndentedString(policyRemoteId)).append("\n");
+    sb.append("    policyName: ").append(toIndentedString(policyName)).append("\n");
+    sb.append("    policyType: ").append(toIndentedString(policyType)).append("\n");
     sb.append("    remoteCreatedAt: ").append(toIndentedString(remoteCreatedAt)).append("\n");
     sb.append("    remoteModifiedAt: ").append(toIndentedString(remoteModifiedAt)).append("\n");
     sb.append("}");

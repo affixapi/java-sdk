@@ -2,7 +2,7 @@
 
 Affix API
 - API version: 2023-03-01
-  - Build date: 2024-05-06T22:15:18.097265Z[Etc/UTC]
+  - Build date: 2024-05-08T23:01:26.980853Z[Etc/UTC]
 
 The affixapi.com API documentation.
 
@@ -246,7 +246,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.affixapi</groupId>
   <artifactId>api</artifactId>
-  <version>1.1.66</version>
+  <version>1.1.67</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -256,7 +256,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.affixapi:api:1.1.66"
+compile "com.affixapi:api:1.1.67"
 ```
 
 ### Others
@@ -269,7 +269,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-1.1.66.jar`
+* `target/api-1.1.67.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -389,6 +389,7 @@ Class | Method | HTTP request | Description
  - [PayslipResponseDeductions](docs/PayslipResponseDeductions.md)
  - [PayslipResponseEarnings](docs/PayslipResponseEarnings.md)
  - [PayslipResponseTaxes](docs/PayslipResponseTaxes.md)
+ - [PolicyTypeResponse](docs/PolicyTypeResponse.md)
  - [ProviderRequest](docs/ProviderRequest.md)
  - [ProviderResponse](docs/ProviderResponse.md)
  - [ScopesRequest](docs/ScopesRequest.md)

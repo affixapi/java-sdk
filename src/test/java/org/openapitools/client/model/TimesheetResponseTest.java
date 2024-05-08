@@ -68,11 +68,11 @@ public class TimesheetResponseTest {
     }
 
     /**
-     * Test the property 'remoteEmployeeId'
+     * Test the property 'employeeRemoteId'
      */
     @Test
-    public void remoteEmployeeIdTest() {
-        // TODO: test remoteEmployeeId
+    public void employeeRemoteIdTest() {
+        // TODO: test employeeRemoteId
     }
 
     /**

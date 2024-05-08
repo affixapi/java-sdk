@@ -15,200 +15,69 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.google.gson.annotations.SerializedName;
+
+import java.io.IOException;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
- * CreateEmployeeRequestBankAccount
+ * Gets or Sets policy-typeResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-08T23:01:26.980853Z[Etc/UTC]")
-public class CreateEmployeeRequestBankAccount {
-  public static final String SERIALIZED_NAME_ACCOUNT_NUMBER = "account_number";
-  @SerializedName(SERIALIZED_NAME_ACCOUNT_NUMBER)
-  private String accountNumber;
+@JsonAdapter(PolicyTypeResponse.Adapter.class)
+public enum PolicyTypeResponse {
+  
+  NULL("null"),
+  
+  VACATION("vacation"),
+  
+  SICK("sick"),
+  
+  PERSONAL("personal"),
+  
+  JURY_DUTY("jury_duty"),
+  
+  VOLUNTEER("volunteer"),
+  
+  BEREAVEMENT("bereavement");
 
-  public static final String SERIALIZED_NAME_BANK_NAME = "bank_name";
-  @SerializedName(SERIALIZED_NAME_BANK_NAME)
-  private String bankName;
+  private String value;
 
-  public static final String SERIALIZED_NAME_BIC = "bic";
-  @SerializedName(SERIALIZED_NAME_BIC)
-  private String bic;
-
-  public static final String SERIALIZED_NAME_HOLDER_NAME = "holder_name";
-  @SerializedName(SERIALIZED_NAME_HOLDER_NAME)
-  private String holderName;
-
-  public static final String SERIALIZED_NAME_IBAN = "iban";
-  @SerializedName(SERIALIZED_NAME_IBAN)
-  private String iban;
-
-
-  public CreateEmployeeRequestBankAccount accountNumber(String accountNumber) {
-    
-    this.accountNumber = accountNumber;
-    return this;
+  PolicyTypeResponse(String value) {
+    this.value = value;
   }
 
-   /**
-   * Get accountNumber
-   * @return accountNumber
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(required = true, value = "")
-
-  public String getAccountNumber() {
-    return accountNumber;
-  }
-
-
-  public void setAccountNumber(String accountNumber) {
-    this.accountNumber = accountNumber;
-  }
-
-
-  public CreateEmployeeRequestBankAccount bankName(String bankName) {
-    
-    this.bankName = bankName;
-    return this;
-  }
-
-   /**
-   * Get bankName
-   * @return bankName
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(required = true, value = "")
-
-  public String getBankName() {
-    return bankName;
-  }
-
-
-  public void setBankName(String bankName) {
-    this.bankName = bankName;
-  }
-
-
-  public CreateEmployeeRequestBankAccount bic(String bic) {
-    
-    this.bic = bic;
-    return this;
-  }
-
-   /**
-   * Get bic
-   * @return bic
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(required = true, value = "")
-
-  public String getBic() {
-    return bic;
-  }
-
-
-  public void setBic(String bic) {
-    this.bic = bic;
-  }
-
-
-  public CreateEmployeeRequestBankAccount holderName(String holderName) {
-    
-    this.holderName = holderName;
-    return this;
-  }
-
-   /**
-   * Get holderName
-   * @return holderName
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(required = true, value = "")
-
-  public String getHolderName() {
-    return holderName;
-  }
-
-
-  public void setHolderName(String holderName) {
-    this.holderName = holderName;
-  }
-
-
-  public CreateEmployeeRequestBankAccount iban(String iban) {
-    
-    this.iban = iban;
-    return this;
-  }
-
-   /**
-   * Get iban
-   * @return iban
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(required = true, value = "")
-
-  public String getIban() {
-    return iban;
-  }
-
-
-  public void setIban(String iban) {
-    this.iban = iban;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    CreateEmployeeRequestBankAccount createEmployeeRequestBankAccount = (CreateEmployeeRequestBankAccount) o;
-    return Objects.equals(this.accountNumber, createEmployeeRequestBankAccount.accountNumber) &&
-        Objects.equals(this.bankName, createEmployeeRequestBankAccount.bankName) &&
-        Objects.equals(this.bic, createEmployeeRequestBankAccount.bic) &&
-        Objects.equals(this.holderName, createEmployeeRequestBankAccount.holderName) &&
-        Objects.equals(this.iban, createEmployeeRequestBankAccount.iban);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(accountNumber, bankName, bic, holderName, iban);
+  public String getValue() {
+    return value;
   }
 
   @Override
   public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class CreateEmployeeRequestBankAccount {\n");
-    sb.append("    accountNumber: ").append(toIndentedString(accountNumber)).append("\n");
-    sb.append("    bankName: ").append(toIndentedString(bankName)).append("\n");
-    sb.append("    bic: ").append(toIndentedString(bic)).append("\n");
-    sb.append("    holderName: ").append(toIndentedString(holderName)).append("\n");
-    sb.append("    iban: ").append(toIndentedString(iban)).append("\n");
-    sb.append("}");
-    return sb.toString();
+    return String.valueOf(value);
   }
 
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+  public static PolicyTypeResponse fromValue(String value) {
+    for (PolicyTypeResponse b : PolicyTypeResponse.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
     }
-    return o.toString().replace("\n", "\n    ");
+    return null;
   }
 
+  public static class Adapter extends TypeAdapter<PolicyTypeResponse> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final PolicyTypeResponse enumeration) throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public PolicyTypeResponse read(final JsonReader jsonReader) throws IOException {
+      String value = jsonReader.nextString();
+      return PolicyTypeResponse.fromValue(value);
+    }
+  }
 }
 

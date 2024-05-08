@@ -47,6 +47,7 @@ docs/PayslipResponseContributions.md
 docs/PayslipResponseDeductions.md
 docs/PayslipResponseEarnings.md
 docs/PayslipResponseTaxes.md
+docs/PolicyTypeResponse.md
 docs/ProviderRequest.md
 docs/ProviderResponse.md
 docs/ScopesRequest.md
@@ -126,6 +127,7 @@ src/main/java/org/openapitools/client/model/PayslipResponseContributions.java
 src/main/java/org/openapitools/client/model/PayslipResponseDeductions.java
 src/main/java/org/openapitools/client/model/PayslipResponseEarnings.java
 src/main/java/org/openapitools/client/model/PayslipResponseTaxes.java
+src/main/java/org/openapitools/client/model/PolicyTypeResponse.java
 src/main/java/org/openapitools/client/model/ProviderRequest.java
 src/main/java/org/openapitools/client/model/ProviderResponse.java
 src/main/java/org/openapitools/client/model/ScopesRequest.java
@@ -178,6 +180,7 @@ src/test/java/org/openapitools/client/model/PayslipResponseDeductionsTest.java
 src/test/java/org/openapitools/client/model/PayslipResponseEarningsTest.java
 src/test/java/org/openapitools/client/model/PayslipResponseTaxesTest.java
 src/test/java/org/openapitools/client/model/PayslipResponseTest.java
+src/test/java/org/openapitools/client/model/PolicyTypeResponseTest.java
 src/test/java/org/openapitools/client/model/ProviderRequestTest.java
 src/test/java/org/openapitools/client/model/ProviderResponseTest.java
 src/test/java/org/openapitools/client/model/ScopesRequestTest.java
