@@ -55,7 +55,6 @@ LU | &quot;LU&quot;
 LV | &quot;LV&quot;
 NL | &quot;NL&quot;
 NO | &quot;NO&quot;
-PH | &quot;PH&quot;
 PL | &quot;PL&quot;
 RO | &quot;RO&quot;
 RU | &quot;RU&quot;

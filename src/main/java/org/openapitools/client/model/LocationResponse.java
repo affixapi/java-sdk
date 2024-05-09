@@ -28,7 +28,7 @@ import org.openapitools.client.model.AddressResponse;
 /**
  * LocationResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-09T02:19:40.234335Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-09T11:46:25.093658Z[Etc/UTC]")
 public class LocationResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
