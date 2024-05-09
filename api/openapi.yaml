@@ -2035,7 +2035,6 @@ components:
           - CL
           - PE
           - AT
-          - AU
           - BE
           - CH
           - CY
@@ -2191,7 +2190,6 @@ components:
           - CL
           - PE
           - AT
-          - AU
           - BE
           - CH
           - CY
@@ -3038,13 +3036,13 @@ components:
     policy-typeResponse:
       enum:
       - null
-      - vacation
-      - holiday
-      - sick
-      - personal
-      - jury_duty
-      - volunteer
       - bereavement
+      - holiday
+      - jury_duty
+      - personal
+      - sick
+      - vacation
+      - volunteer
       example: vacation
       nullable: true
       type: string

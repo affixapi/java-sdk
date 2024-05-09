@@ -31,19 +31,19 @@ public enum PolicyTypeResponse {
   
   NULL("null"),
   
-  VACATION("vacation"),
+  BEREAVEMENT("bereavement"),
   
   HOLIDAY("holiday"),
   
-  SICK("sick"),
+  JURY_DUTY("jury_duty"),
   
   PERSONAL("personal"),
   
-  JURY_DUTY("jury_duty"),
+  SICK("sick"),
   
-  VOLUNTEER("volunteer"),
+  VACATION("vacation"),
   
-  BEREAVEMENT("bereavement");
+  VOLUNTEER("volunteer");
 
   private String value;
 

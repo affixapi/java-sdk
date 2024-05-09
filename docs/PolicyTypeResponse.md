@@ -7,19 +7,19 @@
 
 * `NULL` (value: `"null"`)
 
-* `VACATION` (value: `"vacation"`)
+* `BEREAVEMENT` (value: `"bereavement"`)
 
 * `HOLIDAY` (value: `"holiday"`)
 
-* `SICK` (value: `"sick"`)
+* `JURY_DUTY` (value: `"jury_duty"`)
 
 * `PERSONAL` (value: `"personal"`)
 
-* `JURY_DUTY` (value: `"jury_duty"`)
+* `SICK` (value: `"sick"`)
+
+* `VACATION` (value: `"vacation"`)
 
 * `VOLUNTEER` (value: `"volunteer"`)
-
-* `BEREAVEMENT` (value: `"bereavement"`)
 
 
 

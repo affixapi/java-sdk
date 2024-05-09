@@ -32,7 +32,6 @@ BR | &quot;BR&quot;
 CL | &quot;CL&quot;
 PE | &quot;PE&quot;
 AT | &quot;AT&quot;
-AU | &quot;AU&quot;
 BE | &quot;BE&quot;
 CH | &quot;CH&quot;
 CY | &quot;CY&quot;
