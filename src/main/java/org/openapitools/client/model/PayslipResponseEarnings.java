@@ -29,7 +29,7 @@ import java.math.BigDecimal;
  * The breakdown of gross pay
  */
 @ApiModel(description = "The breakdown of gross pay")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-09T13:27:13.502684Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-09T14:30:58.132225Z[Etc/UTC]")
 public class PayslipResponseEarnings {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
