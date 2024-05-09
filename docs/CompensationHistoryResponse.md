@@ -1,13 +1,12 @@
 
 
-# EmploymentResponse
+# CompensationHistoryResponse
 
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**jobTitle** | **String** |  | 
 **payRate** | **BigDecimal** |  | 
 **payPeriod** | **String** |  | 
 **payFrequency** | [**PayFrequencyEnum**](#PayFrequencyEnum) |  | 

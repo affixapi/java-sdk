@@ -1,18 +1,17 @@
 
 
-# EmploymentNoNullEnumRequest
+# CompensationHistoryNoNonNullRequest
 
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**jobTitle** | **String** |  | 
 **payRate** | **BigDecimal** |  | 
 **payPeriod** | **String** |  | 
 **payFrequency** | [**PayFrequencyEnum**](#PayFrequencyEnum) |  | 
 **employmentType** | [**EmploymentTypeEnum**](#EmploymentTypeEnum) |  | 
-**currency** | **CurrencyNotNullRequest** |  | 
+**currency** | **CurrencyRequest** |  | 
 **effectiveDate** | **LocalDate** |  | 
 
 

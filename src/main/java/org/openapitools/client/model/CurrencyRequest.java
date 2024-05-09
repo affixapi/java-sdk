@@ -24,10 +24,12 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Gets or Sets currency-not-nullRequest
+ * Gets or Sets CurrencyRequest
  */
-@JsonAdapter(CurrencyNotNullRequest.Adapter.class)
-public enum CurrencyNotNullRequest {
+@JsonAdapter(CurrencyRequest.Adapter.class)
+public enum CurrencyRequest {
+  
+  NULL("null"),
   
   USD("usd"),
   
@@ -37,7 +39,7 @@ public enum CurrencyNotNullRequest {
 
   private String value;
 
-  CurrencyNotNullRequest(String value) {
+  CurrencyRequest(String value) {
     this.value = value;
   }
 
@@ -50,8 +52,8 @@ public enum CurrencyNotNullRequest {
     return String.valueOf(value);
   }
 
-  public static CurrencyNotNullRequest fromValue(String value) {
-    for (CurrencyNotNullRequest b : CurrencyNotNullRequest.values()) {
+  public static CurrencyRequest fromValue(String value) {
+    for (CurrencyRequest b : CurrencyRequest.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -59,16 +61,16 @@ public enum CurrencyNotNullRequest {
     return null;
   }
 
-  public static class Adapter extends TypeAdapter<CurrencyNotNullRequest> {
+  public static class Adapter extends TypeAdapter<CurrencyRequest> {
     @Override
-    public void write(final JsonWriter jsonWriter, final CurrencyNotNullRequest enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final CurrencyRequest enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public CurrencyNotNullRequest read(final JsonReader jsonReader) throws IOException {
+    public CurrencyRequest read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return CurrencyNotNullRequest.fromValue(value);
+      return CurrencyRequest.fromValue(value);
     }
   }
 }

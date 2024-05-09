@@ -13,8 +13,6 @@
 
 package org.openapitools.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,356 +22,73 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
-import org.openapitools.client.model.CurrencyNotNullRequest;
+import org.openapitools.client.model.CurrencyResponse;
 import org.threeten.bp.LocalDate;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
+
 
 /**
- * EmploymentNoNullEnumRequest
+ * Model tests for CompensationHistoryResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-09T11:46:25.093658Z[Etc/UTC]")
-public class EmploymentNoNullEnumRequest {
-  public static final String SERIALIZED_NAME_JOB_TITLE = "job_title";
-  @SerializedName(SERIALIZED_NAME_JOB_TITLE)
-  private String jobTitle;
+public class CompensationHistoryResponseTest {
+    private final CompensationHistoryResponse model = new CompensationHistoryResponse();
 
-  public static final String SERIALIZED_NAME_PAY_RATE = "pay_rate";
-  @SerializedName(SERIALIZED_NAME_PAY_RATE)
-  private BigDecimal payRate;
-
-  public static final String SERIALIZED_NAME_PAY_PERIOD = "pay_period";
-  @SerializedName(SERIALIZED_NAME_PAY_PERIOD)
-  private String payPeriod;
-
-  /**
-   * Gets or Sets payFrequency
-   */
-  @JsonAdapter(PayFrequencyEnum.Adapter.class)
-  public enum PayFrequencyEnum {
-    WEEKLY("weekly"),
-    
-    BIWEEKLY("biweekly"),
-    
-    SEMIMONTHLY("semimonthly"),
-    
-    MONTHLY("monthly"),
-    
-    OTHER("other");
-
-    private String value;
-
-    PayFrequencyEnum(String value) {
-      this.value = value;
+    /**
+     * Model tests for CompensationHistoryResponse
+     */
+    @Test
+    public void testCompensationHistoryResponse() {
+        // TODO: test CompensationHistoryResponse
     }
 
-    public String getValue() {
-      return value;
+    /**
+     * Test the property 'payRate'
+     */
+    @Test
+    public void payRateTest() {
+        // TODO: test payRate
     }
 
-    @Override
-    public String toString() {
-      return String.valueOf(value);
+    /**
+     * Test the property 'payPeriod'
+     */
+    @Test
+    public void payPeriodTest() {
+        // TODO: test payPeriod
     }
 
-    public static PayFrequencyEnum fromValue(String value) {
-      for (PayFrequencyEnum b : PayFrequencyEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      return null;
+    /**
+     * Test the property 'payFrequency'
+     */
+    @Test
+    public void payFrequencyTest() {
+        // TODO: test payFrequency
     }
 
-    public static class Adapter extends TypeAdapter<PayFrequencyEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final PayFrequencyEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public PayFrequencyEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return PayFrequencyEnum.fromValue(value);
-      }
-    }
-  }
-
-  public static final String SERIALIZED_NAME_PAY_FREQUENCY = "pay_frequency";
-  @SerializedName(SERIALIZED_NAME_PAY_FREQUENCY)
-  private PayFrequencyEnum payFrequency;
-
-  /**
-   * Gets or Sets employmentType
-   */
-  @JsonAdapter(EmploymentTypeEnum.Adapter.class)
-  public enum EmploymentTypeEnum {
-    FULL_TIME("full_time"),
-    
-    PART_TIME("part_time"),
-    
-    CONTRACTOR("contractor"),
-    
-    OTHER("other");
-
-    private String value;
-
-    EmploymentTypeEnum(String value) {
-      this.value = value;
+    /**
+     * Test the property 'employmentType'
+     */
+    @Test
+    public void employmentTypeTest() {
+        // TODO: test employmentType
     }
 
-    public String getValue() {
-      return value;
+    /**
+     * Test the property 'currency'
+     */
+    @Test
+    public void currencyTest() {
+        // TODO: test currency
     }
 
-    @Override
-    public String toString() {
-      return String.valueOf(value);
+    /**
+     * Test the property 'effectiveDate'
+     */
+    @Test
+    public void effectiveDateTest() {
+        // TODO: test effectiveDate
     }
-
-    public static EmploymentTypeEnum fromValue(String value) {
-      for (EmploymentTypeEnum b : EmploymentTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<EmploymentTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final EmploymentTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public EmploymentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return EmploymentTypeEnum.fromValue(value);
-      }
-    }
-  }
-
-  public static final String SERIALIZED_NAME_EMPLOYMENT_TYPE = "employment_type";
-  @SerializedName(SERIALIZED_NAME_EMPLOYMENT_TYPE)
-  private EmploymentTypeEnum employmentType;
-
-  public static final String SERIALIZED_NAME_CURRENCY = "currency";
-  @SerializedName(SERIALIZED_NAME_CURRENCY)
-  private CurrencyNotNullRequest currency;
-
-  public static final String SERIALIZED_NAME_EFFECTIVE_DATE = "effective_date";
-  @SerializedName(SERIALIZED_NAME_EFFECTIVE_DATE)
-  private LocalDate effectiveDate;
-
-
-  public EmploymentNoNullEnumRequest jobTitle(String jobTitle) {
-    
-    this.jobTitle = jobTitle;
-    return this;
-  }
-
-   /**
-   * Get jobTitle
-   * @return jobTitle
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "Software Developer", required = true, value = "")
-
-  public String getJobTitle() {
-    return jobTitle;
-  }
-
-
-  public void setJobTitle(String jobTitle) {
-    this.jobTitle = jobTitle;
-  }
-
-
-  public EmploymentNoNullEnumRequest payRate(BigDecimal payRate) {
-    
-    this.payRate = payRate;
-    return this;
-  }
-
-   /**
-   * Get payRate
-   * @return payRate
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "85000", required = true, value = "")
-
-  public BigDecimal getPayRate() {
-    return payRate;
-  }
-
-
-  public void setPayRate(BigDecimal payRate) {
-    this.payRate = payRate;
-  }
-
-
-  public EmploymentNoNullEnumRequest payPeriod(String payPeriod) {
-    
-    this.payPeriod = payPeriod;
-    return this;
-  }
-
-   /**
-   * Get payPeriod
-   * @return payPeriod
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "year", required = true, value = "")
-
-  public String getPayPeriod() {
-    return payPeriod;
-  }
-
-
-  public void setPayPeriod(String payPeriod) {
-    this.payPeriod = payPeriod;
-  }
-
-
-  public EmploymentNoNullEnumRequest payFrequency(PayFrequencyEnum payFrequency) {
-    
-    this.payFrequency = payFrequency;
-    return this;
-  }
-
-   /**
-   * Get payFrequency
-   * @return payFrequency
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "semimonthly", required = true, value = "")
-
-  public PayFrequencyEnum getPayFrequency() {
-    return payFrequency;
-  }
-
-
-  public void setPayFrequency(PayFrequencyEnum payFrequency) {
-    this.payFrequency = payFrequency;
-  }
-
-
-  public EmploymentNoNullEnumRequest employmentType(EmploymentTypeEnum employmentType) {
-    
-    this.employmentType = employmentType;
-    return this;
-  }
-
-   /**
-   * Get employmentType
-   * @return employmentType
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "full_time", required = true, value = "")
-
-  public EmploymentTypeEnum getEmploymentType() {
-    return employmentType;
-  }
-
-
-  public void setEmploymentType(EmploymentTypeEnum employmentType) {
-    this.employmentType = employmentType;
-  }
-
-
-  public EmploymentNoNullEnumRequest currency(CurrencyNotNullRequest currency) {
-    
-    this.currency = currency;
-    return this;
-  }
-
-   /**
-   * Get currency
-   * @return currency
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(required = true, value = "")
-
-  public CurrencyNotNullRequest getCurrency() {
-    return currency;
-  }
-
-
-  public void setCurrency(CurrencyNotNullRequest currency) {
-    this.currency = currency;
-  }
-
-
-  public EmploymentNoNullEnumRequest effectiveDate(LocalDate effectiveDate) {
-    
-    this.effectiveDate = effectiveDate;
-    return this;
-  }
-
-   /**
-   * Get effectiveDate
-   * @return effectiveDate
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "Sun Oct 11 00:00:00 UTC 2020", required = true, value = "")
-
-  public LocalDate getEffectiveDate() {
-    return effectiveDate;
-  }
-
-
-  public void setEffectiveDate(LocalDate effectiveDate) {
-    this.effectiveDate = effectiveDate;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    EmploymentNoNullEnumRequest employmentNoNullEnumRequest = (EmploymentNoNullEnumRequest) o;
-    return Objects.equals(this.jobTitle, employmentNoNullEnumRequest.jobTitle) &&
-        Objects.equals(this.payRate, employmentNoNullEnumRequest.payRate) &&
-        Objects.equals(this.payPeriod, employmentNoNullEnumRequest.payPeriod) &&
-        Objects.equals(this.payFrequency, employmentNoNullEnumRequest.payFrequency) &&
-        Objects.equals(this.employmentType, employmentNoNullEnumRequest.employmentType) &&
-        Objects.equals(this.currency, employmentNoNullEnumRequest.currency) &&
-        Objects.equals(this.effectiveDate, employmentNoNullEnumRequest.effectiveDate);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(jobTitle, payRate, payPeriod, payFrequency, employmentType, currency, effectiveDate);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class EmploymentNoNullEnumRequest {\n");
-    sb.append("    jobTitle: ").append(toIndentedString(jobTitle)).append("\n");
-    sb.append("    payRate: ").append(toIndentedString(payRate)).append("\n");
-    sb.append("    payPeriod: ").append(toIndentedString(payPeriod)).append("\n");
-    sb.append("    payFrequency: ").append(toIndentedString(payFrequency)).append("\n");
-    sb.append("    employmentType: ").append(toIndentedString(employmentType)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    effectiveDate: ").append(toIndentedString(effectiveDate)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
 
 }
-

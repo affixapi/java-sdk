@@ -13,22 +13,82 @@
 
 package org.openapitools.client.model;
 
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
+import java.math.BigDecimal;
+import org.openapitools.client.model.CurrencyRequest;
+import org.threeten.bp.LocalDate;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for CurrencyNotNullRequest
+ * Model tests for CompensationHistoryNoNonNullRequest
  */
-public class CurrencyNotNullRequestTest {
+public class CompensationHistoryNoNonNullRequestTest {
+    private final CompensationHistoryNoNonNullRequest model = new CompensationHistoryNoNonNullRequest();
+
     /**
-     * Model tests for CurrencyNotNullRequest
+     * Model tests for CompensationHistoryNoNonNullRequest
      */
     @Test
-    public void testCurrencyNotNullRequest() {
-        // TODO: test CurrencyNotNullRequest
+    public void testCompensationHistoryNoNonNullRequest() {
+        // TODO: test CompensationHistoryNoNonNullRequest
+    }
+
+    /**
+     * Test the property 'payRate'
+     */
+    @Test
+    public void payRateTest() {
+        // TODO: test payRate
+    }
+
+    /**
+     * Test the property 'payPeriod'
+     */
+    @Test
+    public void payPeriodTest() {
+        // TODO: test payPeriod
+    }
+
+    /**
+     * Test the property 'payFrequency'
+     */
+    @Test
+    public void payFrequencyTest() {
+        // TODO: test payFrequency
+    }
+
+    /**
+     * Test the property 'employmentType'
+     */
+    @Test
+    public void employmentTypeTest() {
+        // TODO: test employmentType
+    }
+
+    /**
+     * Test the property 'currency'
+     */
+    @Test
+    public void currencyTest() {
+        // TODO: test currency
+    }
+
+    /**
+     * Test the property 'effectiveDate'
+     */
+    @Test
+    public void effectiveDateTest() {
+        // TODO: test effectiveDate
     }
 
 }

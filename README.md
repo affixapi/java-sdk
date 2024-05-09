@@ -2,7 +2,7 @@
 
 Affix API
 - API version: 2023-03-01
-  - Build date: 2024-05-09T11:46:25.093658Z[Etc/UTC]
+  - Build date: 2024-05-09T13:27:13.502684Z[Etc/UTC]
 
 The affixapi.com API documentation.
 
@@ -246,7 +246,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.affixapi</groupId>
   <artifactId>api</artifactId>
-  <version>1.1.70</version>
+  <version>1.1.71</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -256,7 +256,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.affixapi:api:1.1.70"
+compile "com.affixapi:api:1.1.71"
 ```
 
 ### Others
@@ -269,7 +269,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-1.1.70.jar`
+* `target/api-1.1.71.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -355,18 +355,20 @@ Class | Method | HTTP request | Description
  - [ClientRequest](docs/ClientRequest.md)
  - [ClientResponse](docs/ClientResponse.md)
  - [CompanyResponse](docs/CompanyResponse.md)
+ - [CompensationHistoryNoNonNullRequest](docs/CompensationHistoryNoNonNullRequest.md)
+ - [CompensationHistoryResponse](docs/CompensationHistoryResponse.md)
  - [CreateEmployeeRequest](docs/CreateEmployeeRequest.md)
  - [CreateEmployeeRequestBankAccount](docs/CreateEmployeeRequestBankAccount.md)
  - [CreateEmployeeRequestDependents](docs/CreateEmployeeRequestDependents.md)
  - [CreateEmployeeRequestEmergencyContacts](docs/CreateEmployeeRequestEmergencyContacts.md)
  - [CreateEmployeeRequestManager](docs/CreateEmployeeRequestManager.md)
- - [CurrencyNotNullRequest](docs/CurrencyNotNullRequest.md)
+ - [CurrencyRequest](docs/CurrencyRequest.md)
  - [CurrencyResponse](docs/CurrencyResponse.md)
  - [DisconnectResponse](docs/DisconnectResponse.md)
  - [EmployeeResponse](docs/EmployeeResponse.md)
  - [EmployeeResponseManager](docs/EmployeeResponseManager.md)
- - [EmploymentNoNullEnumRequest](docs/EmploymentNoNullEnumRequest.md)
- - [EmploymentResponse](docs/EmploymentResponse.md)
+ - [EmploymentHistoryNoNonNullRequest](docs/EmploymentHistoryNoNonNullRequest.md)
+ - [EmploymentHistoryResponse](docs/EmploymentHistoryResponse.md)
  - [EmploymentStatusNotNullNotNullable](docs/EmploymentStatusNotNullNotNullable.md)
  - [EmploymentStatusNotNullRequest](docs/EmploymentStatusNotNullRequest.md)
  - [EmploymentStatusResponse](docs/EmploymentStatusResponse.md)

@@ -24,11 +24,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.AddressResponse;
+import org.openapitools.client.model.CompensationHistoryResponse;
 import org.openapitools.client.model.CreateEmployeeRequestBankAccount;
 import org.openapitools.client.model.CreateEmployeeRequestDependents;
 import org.openapitools.client.model.CreateEmployeeRequestEmergencyContacts;
 import org.openapitools.client.model.EmployeeResponseManager;
-import org.openapitools.client.model.EmploymentResponse;
+import org.openapitools.client.model.EmploymentHistoryResponse;
 import org.openapitools.client.model.EmploymentStatusResponse;
 import org.openapitools.client.model.GroupResponse;
 import org.openapitools.client.model.LocationResponse;
@@ -261,11 +262,19 @@ public class EmployeeResponseTest {
     }
 
     /**
-     * Test the property 'employments'
+     * Test the property 'employmentHistory'
      */
     @Test
-    public void employmentsTest() {
-        // TODO: test employments
+    public void employmentHistoryTest() {
+        // TODO: test employmentHistory
+    }
+
+    /**
+     * Test the property 'compensationHistory'
+     */
+    @Test
+    public void compensationHistoryTest() {
+        // TODO: test compensationHistory
     }
 
     /**

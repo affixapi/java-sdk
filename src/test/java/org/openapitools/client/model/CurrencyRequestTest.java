@@ -13,182 +13,22 @@
 
 package org.openapitools.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
+
 
 /**
- * ClientRequest
+ * Model tests for CurrencyRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-09T13:27:13.502684Z[Etc/UTC]")
-public class ClientRequest {
-  public static final String SERIALIZED_NAME_CLIENT_SECRET = "client_secret";
-  @SerializedName(SERIALIZED_NAME_CLIENT_SECRET)
-  private List<String> clientSecret = new ArrayList<String>();
-
-  public static final String SERIALIZED_NAME_REDIRECT_URIS = "redirect_uris";
-  @SerializedName(SERIALIZED_NAME_REDIRECT_URIS)
-  private List<String> redirectUris = new ArrayList<String>();
-
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
-
-  public static final String SERIALIZED_NAME_WEBHOOK_URI = "webhook_uri";
-  @SerializedName(SERIALIZED_NAME_WEBHOOK_URI)
-  private String webhookUri;
-
-
-  public ClientRequest clientSecret(List<String> clientSecret) {
-    
-    this.clientSecret = clientSecret;
-    return this;
-  }
-
-  public ClientRequest addClientSecretItem(String clientSecretItem) {
-    this.clientSecret.add(clientSecretItem);
-    return this;
-  }
-
-   /**
-   * The client secret(s). It is an array datatype to allow for rotation of secrets without downtime for your customers 
-   * @return clientSecret
-  **/
-  @ApiModelProperty(example = "[\"ffffffff-ffffffff-ffffffff-ffffffff\",\"aaaaaaaa-aaaaaaaa-aaaaaaaa-aaaaaaaa\"]", required = true, value = "The client secret(s). It is an array datatype to allow for rotation of secrets without downtime for your customers ")
-
-  public List<String> getClientSecret() {
-    return clientSecret;
-  }
-
-
-  public void setClientSecret(List<String> clientSecret) {
-    this.clientSecret = clientSecret;
-  }
-
-
-  public ClientRequest redirectUris(List<String> redirectUris) {
-    
-    this.redirectUris = redirectUris;
-    return this;
-  }
-
-  public ClientRequest addRedirectUrisItem(String redirectUrisItem) {
-    this.redirectUris.add(redirectUrisItem);
-    return this;
-  }
-
-   /**
-   * Indicates the URI to return the user to after authorization is complete, which is the endpoint on your server to receive the authorization_code.  Must be identical to the redirect URI provided in the original link.  Please email me after signup and I will set both your client secret and redirect_uri (required) when you reach out. 
-   * @return redirectUris
-  **/
-  @ApiModelProperty(example = "[\"https://app.your-company.com\",\"https://dev.app.your-company.com\"]", required = true, value = "Indicates the URI to return the user to after authorization is complete, which is the endpoint on your server to receive the authorization_code.  Must be identical to the redirect URI provided in the original link.  Please email me after signup and I will set both your client secret and redirect_uri (required) when you reach out. ")
-
-  public List<String> getRedirectUris() {
-    return redirectUris;
-  }
-
-
-  public void setRedirectUris(List<String> redirectUris) {
-    this.redirectUris = redirectUris;
-  }
-
-
-  public ClientRequest name(String name) {
-    
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Name of your app that shows up in the Affix Connect application 
-   * @return name
-  **/
-  @ApiModelProperty(example = "Your App", required = true, value = "Name of your app that shows up in the Affix Connect application ")
-
-  public String getName() {
-    return name;
-  }
-
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
-  public ClientRequest webhookUri(String webhookUri) {
-    
-    this.webhookUri = webhookUri;
-    return this;
-  }
-
-   /**
-   * If enabled, webhooks will be sent to this endpoint 
-   * @return webhookUri
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "https://webhooks.your-company.com/aaaaaaaa-aaaaaaaa-aaaaaaaa-aaaaaaaa", value = "If enabled, webhooks will be sent to this endpoint ")
-
-  public String getWebhookUri() {
-    return webhookUri;
-  }
-
-
-  public void setWebhookUri(String webhookUri) {
-    this.webhookUri = webhookUri;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+public class CurrencyRequestTest {
+    /**
+     * Model tests for CurrencyRequest
+     */
+    @Test
+    public void testCurrencyRequest() {
+        // TODO: test CurrencyRequest
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ClientRequest clientRequest = (ClientRequest) o;
-    return Objects.equals(this.clientSecret, clientRequest.clientSecret) &&
-        Objects.equals(this.redirectUris, clientRequest.redirectUris) &&
-        Objects.equals(this.name, clientRequest.name) &&
-        Objects.equals(this.webhookUri, clientRequest.webhookUri);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(clientSecret, redirectUris, name, webhookUri);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ClientRequest {\n");
-    sb.append("    clientSecret: ").append(toIndentedString(clientSecret)).append("\n");
-    sb.append("    redirectUris: ").append(toIndentedString(redirectUris)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    webhookUri: ").append(toIndentedString(webhookUri)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
 
 }
-

@@ -26,11 +26,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.AddressNoNonNullRequest;
+import org.openapitools.client.model.CompensationHistoryNoNonNullRequest;
 import org.openapitools.client.model.CreateEmployeeRequestBankAccount;
 import org.openapitools.client.model.CreateEmployeeRequestDependents;
 import org.openapitools.client.model.CreateEmployeeRequestEmergencyContacts;
 import org.openapitools.client.model.CreateEmployeeRequestManager;
-import org.openapitools.client.model.EmploymentNoNullEnumRequest;
+import org.openapitools.client.model.EmploymentHistoryNoNonNullRequest;
 import org.openapitools.client.model.EmploymentStatusNotNullRequest;
 import org.openapitools.client.model.GroupNoNullEnumRequest;
 import org.openapitools.client.model.LocationNoNonNullRequest;
@@ -39,7 +40,7 @@ import org.threeten.bp.LocalDate;
 /**
  * CreateEmployeeRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-09T11:46:25.093658Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-09T13:27:13.502684Z[Etc/UTC]")
 public class CreateEmployeeRequest {
   public static final String SERIALIZED_NAME_EMPLOYEE_NUMBER = "employee_number";
   @SerializedName(SERIALIZED_NAME_EMPLOYEE_NUMBER)
@@ -339,9 +340,13 @@ public class CreateEmployeeRequest {
   @SerializedName(SERIALIZED_NAME_BANK_ACCOUNT)
   private CreateEmployeeRequestBankAccount bankAccount;
 
-  public static final String SERIALIZED_NAME_EMPLOYMENTS = "employments";
-  @SerializedName(SERIALIZED_NAME_EMPLOYMENTS)
-  private List<EmploymentNoNullEnumRequest> employments = null;
+  public static final String SERIALIZED_NAME_EMPLOYMENT_HISTORY = "employment_history";
+  @SerializedName(SERIALIZED_NAME_EMPLOYMENT_HISTORY)
+  private List<EmploymentHistoryNoNonNullRequest> employmentHistory = null;
+
+  public static final String SERIALIZED_NAME_COMPENSATION_HISTORY = "compensation_history";
+  @SerializedName(SERIALIZED_NAME_COMPENSATION_HISTORY)
+  private List<CompensationHistoryNoNonNullRequest> compensationHistory = null;
 
   public static final String SERIALIZED_NAME_CUSTOM_FIELDS = "custom_fields";
   @SerializedName(SERIALIZED_NAME_CUSTOM_FIELDS)
@@ -887,34 +892,65 @@ public class CreateEmployeeRequest {
   }
 
 
-  public CreateEmployeeRequest employments(List<EmploymentNoNullEnumRequest> employments) {
+  public CreateEmployeeRequest employmentHistory(List<EmploymentHistoryNoNonNullRequest> employmentHistory) {
     
-    this.employments = employments;
+    this.employmentHistory = employmentHistory;
     return this;
   }
 
-  public CreateEmployeeRequest addEmploymentsItem(EmploymentNoNullEnumRequest employmentsItem) {
-    if (this.employments == null) {
-      this.employments = new ArrayList<EmploymentNoNullEnumRequest>();
+  public CreateEmployeeRequest addEmploymentHistoryItem(EmploymentHistoryNoNonNullRequest employmentHistoryItem) {
+    if (this.employmentHistory == null) {
+      this.employmentHistory = new ArrayList<EmploymentHistoryNoNonNullRequest>();
     }
-    this.employments.add(employmentsItem);
+    this.employmentHistory.add(employmentHistoryItem);
     return this;
   }
 
    /**
-   * Get employments
-   * @return employments
+   * Get employmentHistory
+   * @return employmentHistory
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<EmploymentNoNullEnumRequest> getEmployments() {
-    return employments;
+  public List<EmploymentHistoryNoNonNullRequest> getEmploymentHistory() {
+    return employmentHistory;
   }
 
 
-  public void setEmployments(List<EmploymentNoNullEnumRequest> employments) {
-    this.employments = employments;
+  public void setEmploymentHistory(List<EmploymentHistoryNoNonNullRequest> employmentHistory) {
+    this.employmentHistory = employmentHistory;
+  }
+
+
+  public CreateEmployeeRequest compensationHistory(List<CompensationHistoryNoNonNullRequest> compensationHistory) {
+    
+    this.compensationHistory = compensationHistory;
+    return this;
+  }
+
+  public CreateEmployeeRequest addCompensationHistoryItem(CompensationHistoryNoNonNullRequest compensationHistoryItem) {
+    if (this.compensationHistory == null) {
+      this.compensationHistory = new ArrayList<CompensationHistoryNoNonNullRequest>();
+    }
+    this.compensationHistory.add(compensationHistoryItem);
+    return this;
+  }
+
+   /**
+   * Get compensationHistory
+   * @return compensationHistory
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<CompensationHistoryNoNonNullRequest> getCompensationHistory() {
+    return compensationHistory;
+  }
+
+
+  public void setCompensationHistory(List<CompensationHistoryNoNonNullRequest> compensationHistory) {
+    this.compensationHistory = compensationHistory;
   }
 
 
@@ -1066,7 +1102,8 @@ public class CreateEmployeeRequest {
         Objects.equals(this.workLocation, createEmployeeRequest.workLocation) &&
         Objects.equals(this.manager, createEmployeeRequest.manager) &&
         Objects.equals(this.bankAccount, createEmployeeRequest.bankAccount) &&
-        Objects.equals(this.employments, createEmployeeRequest.employments) &&
+        Objects.equals(this.employmentHistory, createEmployeeRequest.employmentHistory) &&
+        Objects.equals(this.compensationHistory, createEmployeeRequest.compensationHistory) &&
         Objects.equals(this.customFields, createEmployeeRequest.customFields) &&
         Objects.equals(this.groups, createEmployeeRequest.groups) &&
         Objects.equals(this.dependents, createEmployeeRequest.dependents) &&
@@ -1075,7 +1112,7 @@ public class CreateEmployeeRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(employeeNumber, firstName, lastName, displayFullName, nationality, jobTitle, workEmail, personalEmail, mobilePhoneNumber, taxId, gender, ethnicity, maritalStatus, dateOfBirth, employmentStatus, employmentType, startDate, terminationDate, avatar, homeLocation, workLocation, manager, bankAccount, employments, customFields, groups, dependents, emergencyContacts);
+    return Objects.hash(employeeNumber, firstName, lastName, displayFullName, nationality, jobTitle, workEmail, personalEmail, mobilePhoneNumber, taxId, gender, ethnicity, maritalStatus, dateOfBirth, employmentStatus, employmentType, startDate, terminationDate, avatar, homeLocation, workLocation, manager, bankAccount, employmentHistory, compensationHistory, customFields, groups, dependents, emergencyContacts);
   }
 
   @Override
@@ -1105,7 +1142,8 @@ public class CreateEmployeeRequest {
     sb.append("    workLocation: ").append(toIndentedString(workLocation)).append("\n");
     sb.append("    manager: ").append(toIndentedString(manager)).append("\n");
     sb.append("    bankAccount: ").append(toIndentedString(bankAccount)).append("\n");
-    sb.append("    employments: ").append(toIndentedString(employments)).append("\n");
+    sb.append("    employmentHistory: ").append(toIndentedString(employmentHistory)).append("\n");
+    sb.append("    compensationHistory: ").append(toIndentedString(compensationHistory)).append("\n");
     sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("    dependents: ").append(toIndentedString(dependents)).append("\n");

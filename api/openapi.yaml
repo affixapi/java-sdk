@@ -2283,26 +2283,49 @@ components:
       - remote_id
       - type
       type: object
-    currency-not-nullRequest:
+    employment-history-no-non-nullRequest:
+      properties:
+        job_title:
+          example: Software Developer
+          type: string
+        effective_date:
+          example: 2020-10-11
+          format: date
+          type: string
+        group_id:
+          example: 4B9bKBpX5tnwjiG93TAqF7ci
+          nullable: true
+          type: string
+        group_remote_id:
+          example: "49"
+          nullable: true
+          type: string
+        group_name:
+          example: Engineering
+          nullable: true
+          type: string
+      required:
+      - effective_date
+      - group_id
+      - group_name
+      - group_remote_id
+      - job_title
+      type: object
+    CurrencyRequest:
       enum:
+      - null
       - usd
       - gbp
       - eur
       nullable: true
       type: string
-    employment-no-null-enumRequest:
+    compensation-history-no-non-nullRequest:
       properties:
-        job_title:
-          example: Software Developer
-          nullable: true
-          type: string
         pay_rate:
           example: 85000
-          nullable: true
           type: number
         pay_period:
           example: year
-          nullable: true
           type: string
         pay_frequency:
           enum:
@@ -2312,7 +2335,6 @@ components:
           - monthly
           - other
           example: semimonthly
-          nullable: true
           type: string
         employment_type:
           enum:
@@ -2321,20 +2343,17 @@ components:
           - contractor
           - other
           example: full_time
-          nullable: true
           type: string
         currency:
-          $ref: '#/components/schemas/currency-not-nullRequest'
+          $ref: '#/components/schemas/CurrencyRequest'
         effective_date:
           example: 2020-10-11
           format: date
-          nullable: true
           type: string
       required:
       - currency
       - effective_date
       - employment_type
-      - job_title
       - pay_frequency
       - pay_period
       - pay_rate
@@ -2498,9 +2517,14 @@ components:
           $ref: '#/components/schemas/CreateEmployeeRequest_manager'
         bank_account:
           $ref: '#/components/schemas/CreateEmployeeRequest_bank_account'
-        employments:
+        employment_history:
           items:
-            $ref: '#/components/schemas/employment-no-null-enumRequest'
+            $ref: '#/components/schemas/employment-history-no-non-nullRequest'
+          nullable: true
+          type: array
+        compensation_history:
+          items:
+            $ref: '#/components/schemas/compensation-history-no-non-nullRequest'
           nullable: true
           type: array
         custom_fields:
@@ -2591,6 +2615,42 @@ components:
       - remote_id
       - type
       type: object
+    employment-historyResponse:
+      example:
+        group_id: 4B9bKBpX5tnwjiG93TAqF7ci
+        group_name: Engineering
+        effective_date: 2020-10-11T00:00:00.000+0000
+        group_remote_id: "49"
+        job_title: Software Developer
+      properties:
+        job_title:
+          example: Software Developer
+          nullable: true
+          type: string
+        effective_date:
+          example: 2020-10-11
+          format: date
+          nullable: true
+          type: string
+        group_id:
+          example: 4B9bKBpX5tnwjiG93TAqF7ci
+          nullable: true
+          type: string
+        group_remote_id:
+          example: "49"
+          nullable: true
+          type: string
+        group_name:
+          example: Engineering
+          nullable: true
+          type: string
+      required:
+      - effective_date
+      - group_id
+      - group_name
+      - group_remote_id
+      - job_title
+      type: object
     CurrencyResponse:
       enum:
       - null
@@ -2599,19 +2659,14 @@ components:
       - eur
       nullable: true
       type: string
-    employmentResponse:
+    compensation-historyResponse:
       example:
         employment_type: full_time
         effective_date: 2020-10-11T00:00:00.000+0000
         pay_period: year
         pay_frequency: semimonthly
-        job_title: Software Developer
         pay_rate: 85000
       properties:
-        job_title:
-          example: Software Developer
-          nullable: true
-          type: string
         pay_rate:
           example: 85000
           nullable: true
@@ -2652,7 +2707,6 @@ components:
       - currency
       - effective_date
       - employment_type
-      - job_title
       - pay_frequency
       - pay_period
       - pay_rate
@@ -2733,6 +2787,17 @@ components:
           administrative_area: AZ
         id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
         employment_status: active
+        employment_history:
+        - group_id: 4B9bKBpX5tnwjiG93TAqF7ci
+          group_name: Engineering
+          effective_date: 2020-10-11T00:00:00.000+0000
+          group_remote_id: "49"
+          job_title: Software Developer
+        - group_id: 4B9bKBpX5tnwjiG93TAqF7ci
+          group_name: Engineering
+          effective_date: 2020-10-11T00:00:00.000+0000
+          group_remote_id: "49"
+          job_title: Software Developer
         first_name: Greg
         job_title: Software developer
         start_date: 2020-10-11T00:00:00.000+0000
@@ -2773,23 +2838,21 @@ components:
           name: engineering
           type: department
         avatar: http://alturl.com/h2h8m
-        employments:
-        - employment_type: full_time
-          effective_date: 2020-10-11T00:00:00.000+0000
-          pay_period: year
-          pay_frequency: semimonthly
-          job_title: Software Developer
-          pay_rate: 85000
-        - employment_type: full_time
-          effective_date: 2020-10-11T00:00:00.000+0000
-          pay_period: year
-          pay_frequency: semimonthly
-          job_title: Software Developer
-          pay_rate: 85000
         tax_id: "1234567890"
         mobile_phone_number: Hirsch
         marital_status: single
         nationality: Irish
+        compensation_history:
+        - employment_type: full_time
+          effective_date: 2020-10-11T00:00:00.000+0000
+          pay_period: year
+          pay_frequency: semimonthly
+          pay_rate: 85000
+        - employment_type: full_time
+          effective_date: 2020-10-11T00:00:00.000+0000
+          pay_period: year
+          pay_frequency: semimonthly
+          pay_rate: 85000
         termination_date: 2021-10-12T00:00:00.000+0000
         employee_number: "2"
         dependents:
@@ -2933,9 +2996,14 @@ components:
           $ref: '#/components/schemas/EmployeeResponse_manager'
         bank_account:
           $ref: '#/components/schemas/CreateEmployeeRequest_bank_account'
-        employments:
+        employment_history:
           items:
-            $ref: '#/components/schemas/employmentResponse'
+            $ref: '#/components/schemas/employment-historyResponse'
+          nullable: true
+          type: array
+        compensation_history:
+          items:
+            $ref: '#/components/schemas/compensation-historyResponse'
           nullable: true
           type: array
         custom_fields:
@@ -2970,15 +3038,16 @@ components:
       required:
       - avatar
       - bank_account
+      - compensation_history
       - custom_fields
       - date_of_birth
       - dependents
       - display_full_name
       - emergency_contacts
       - employee_number
+      - employment_history
       - employment_status
       - employment_type
-      - employments
       - ethnicity
       - first_name
       - gender

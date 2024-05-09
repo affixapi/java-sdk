@@ -26,11 +26,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.AddressResponse;
+import org.openapitools.client.model.CompensationHistoryResponse;
 import org.openapitools.client.model.CreateEmployeeRequestBankAccount;
 import org.openapitools.client.model.CreateEmployeeRequestDependents;
 import org.openapitools.client.model.CreateEmployeeRequestEmergencyContacts;
 import org.openapitools.client.model.EmployeeResponseManager;
-import org.openapitools.client.model.EmploymentResponse;
+import org.openapitools.client.model.EmploymentHistoryResponse;
 import org.openapitools.client.model.EmploymentStatusResponse;
 import org.openapitools.client.model.GroupResponse;
 import org.openapitools.client.model.LocationResponse;
@@ -39,7 +40,7 @@ import org.threeten.bp.LocalDate;
 /**
  * EmployeeResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-09T11:46:25.093658Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-09T13:27:13.502684Z[Etc/UTC]")
 public class EmployeeResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -361,9 +362,13 @@ public class EmployeeResponse {
   @SerializedName(SERIALIZED_NAME_BANK_ACCOUNT)
   private CreateEmployeeRequestBankAccount bankAccount;
 
-  public static final String SERIALIZED_NAME_EMPLOYMENTS = "employments";
-  @SerializedName(SERIALIZED_NAME_EMPLOYMENTS)
-  private List<EmploymentResponse> employments = new ArrayList<EmploymentResponse>();
+  public static final String SERIALIZED_NAME_EMPLOYMENT_HISTORY = "employment_history";
+  @SerializedName(SERIALIZED_NAME_EMPLOYMENT_HISTORY)
+  private List<EmploymentHistoryResponse> employmentHistory = new ArrayList<EmploymentHistoryResponse>();
+
+  public static final String SERIALIZED_NAME_COMPENSATION_HISTORY = "compensation_history";
+  @SerializedName(SERIALIZED_NAME_COMPENSATION_HISTORY)
+  private List<CompensationHistoryResponse> compensationHistory = new ArrayList<CompensationHistoryResponse>();
 
   public static final String SERIALIZED_NAME_CUSTOM_FIELDS = "custom_fields";
   @SerializedName(SERIALIZED_NAME_CUSTOM_FIELDS)
@@ -949,31 +954,59 @@ public class EmployeeResponse {
   }
 
 
-  public EmployeeResponse employments(List<EmploymentResponse> employments) {
+  public EmployeeResponse employmentHistory(List<EmploymentHistoryResponse> employmentHistory) {
     
-    this.employments = employments;
+    this.employmentHistory = employmentHistory;
     return this;
   }
 
-  public EmployeeResponse addEmploymentsItem(EmploymentResponse employmentsItem) {
-    this.employments.add(employmentsItem);
+  public EmployeeResponse addEmploymentHistoryItem(EmploymentHistoryResponse employmentHistoryItem) {
+    this.employmentHistory.add(employmentHistoryItem);
     return this;
   }
 
    /**
-   * Get employments
-   * @return employments
+   * Get employmentHistory
+   * @return employmentHistory
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(required = true, value = "")
 
-  public List<EmploymentResponse> getEmployments() {
-    return employments;
+  public List<EmploymentHistoryResponse> getEmploymentHistory() {
+    return employmentHistory;
   }
 
 
-  public void setEmployments(List<EmploymentResponse> employments) {
-    this.employments = employments;
+  public void setEmploymentHistory(List<EmploymentHistoryResponse> employmentHistory) {
+    this.employmentHistory = employmentHistory;
+  }
+
+
+  public EmployeeResponse compensationHistory(List<CompensationHistoryResponse> compensationHistory) {
+    
+    this.compensationHistory = compensationHistory;
+    return this;
+  }
+
+  public EmployeeResponse addCompensationHistoryItem(CompensationHistoryResponse compensationHistoryItem) {
+    this.compensationHistory.add(compensationHistoryItem);
+    return this;
+  }
+
+   /**
+   * Get compensationHistory
+   * @return compensationHistory
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(required = true, value = "")
+
+  public List<CompensationHistoryResponse> getCompensationHistory() {
+    return compensationHistory;
+  }
+
+
+  public void setCompensationHistory(List<CompensationHistoryResponse> compensationHistory) {
+    this.compensationHistory = compensationHistory;
   }
 
 
@@ -1119,7 +1152,8 @@ public class EmployeeResponse {
         Objects.equals(this.workLocation, employeeResponse.workLocation) &&
         Objects.equals(this.manager, employeeResponse.manager) &&
         Objects.equals(this.bankAccount, employeeResponse.bankAccount) &&
-        Objects.equals(this.employments, employeeResponse.employments) &&
+        Objects.equals(this.employmentHistory, employeeResponse.employmentHistory) &&
+        Objects.equals(this.compensationHistory, employeeResponse.compensationHistory) &&
         Objects.equals(this.customFields, employeeResponse.customFields) &&
         Objects.equals(this.groups, employeeResponse.groups) &&
         Objects.equals(this.dependents, employeeResponse.dependents) &&
@@ -1128,7 +1162,7 @@ public class EmployeeResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, remoteId, employeeNumber, firstName, lastName, displayFullName, nationality, jobTitle, workEmail, personalEmail, mobilePhoneNumber, taxId, gender, ethnicity, maritalStatus, dateOfBirth, employmentStatus, employmentType, startDate, remoteCreatedAt, terminationDate, avatar, homeLocation, workLocation, manager, bankAccount, employments, customFields, groups, dependents, emergencyContacts);
+    return Objects.hash(id, remoteId, employeeNumber, firstName, lastName, displayFullName, nationality, jobTitle, workEmail, personalEmail, mobilePhoneNumber, taxId, gender, ethnicity, maritalStatus, dateOfBirth, employmentStatus, employmentType, startDate, remoteCreatedAt, terminationDate, avatar, homeLocation, workLocation, manager, bankAccount, employmentHistory, compensationHistory, customFields, groups, dependents, emergencyContacts);
   }
 
   @Override
@@ -1161,7 +1195,8 @@ public class EmployeeResponse {
     sb.append("    workLocation: ").append(toIndentedString(workLocation)).append("\n");
     sb.append("    manager: ").append(toIndentedString(manager)).append("\n");
     sb.append("    bankAccount: ").append(toIndentedString(bankAccount)).append("\n");
-    sb.append("    employments: ").append(toIndentedString(employments)).append("\n");
+    sb.append("    employmentHistory: ").append(toIndentedString(employmentHistory)).append("\n");
+    sb.append("    compensationHistory: ").append(toIndentedString(compensationHistory)).append("\n");
     sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("    dependents: ").append(toIndentedString(dependents)).append("\n");

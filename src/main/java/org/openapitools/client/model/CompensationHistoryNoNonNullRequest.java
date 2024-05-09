@@ -23,127 +23,274 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.math.BigDecimal;
+import org.openapitools.client.model.CurrencyRequest;
+import org.threeten.bp.LocalDate;
 
 /**
- * ClientRequest
+ * CompensationHistoryNoNonNullRequest
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-09T13:27:13.502684Z[Etc/UTC]")
-public class ClientRequest {
-  public static final String SERIALIZED_NAME_CLIENT_SECRET = "client_secret";
-  @SerializedName(SERIALIZED_NAME_CLIENT_SECRET)
-  private List<String> clientSecret = new ArrayList<String>();
+public class CompensationHistoryNoNonNullRequest {
+  public static final String SERIALIZED_NAME_PAY_RATE = "pay_rate";
+  @SerializedName(SERIALIZED_NAME_PAY_RATE)
+  private BigDecimal payRate;
 
-  public static final String SERIALIZED_NAME_REDIRECT_URIS = "redirect_uris";
-  @SerializedName(SERIALIZED_NAME_REDIRECT_URIS)
-  private List<String> redirectUris = new ArrayList<String>();
+  public static final String SERIALIZED_NAME_PAY_PERIOD = "pay_period";
+  @SerializedName(SERIALIZED_NAME_PAY_PERIOD)
+  private String payPeriod;
 
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
-
-  public static final String SERIALIZED_NAME_WEBHOOK_URI = "webhook_uri";
-  @SerializedName(SERIALIZED_NAME_WEBHOOK_URI)
-  private String webhookUri;
-
-
-  public ClientRequest clientSecret(List<String> clientSecret) {
+  /**
+   * Gets or Sets payFrequency
+   */
+  @JsonAdapter(PayFrequencyEnum.Adapter.class)
+  public enum PayFrequencyEnum {
+    WEEKLY("weekly"),
     
-    this.clientSecret = clientSecret;
-    return this;
+    BIWEEKLY("biweekly"),
+    
+    SEMIMONTHLY("semimonthly"),
+    
+    MONTHLY("monthly"),
+    
+    OTHER("other");
+
+    private String value;
+
+    PayFrequencyEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static PayFrequencyEnum fromValue(String value) {
+      for (PayFrequencyEnum b : PayFrequencyEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<PayFrequencyEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final PayFrequencyEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public PayFrequencyEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return PayFrequencyEnum.fromValue(value);
+      }
+    }
   }
 
-  public ClientRequest addClientSecretItem(String clientSecretItem) {
-    this.clientSecret.add(clientSecretItem);
+  public static final String SERIALIZED_NAME_PAY_FREQUENCY = "pay_frequency";
+  @SerializedName(SERIALIZED_NAME_PAY_FREQUENCY)
+  private PayFrequencyEnum payFrequency;
+
+  /**
+   * Gets or Sets employmentType
+   */
+  @JsonAdapter(EmploymentTypeEnum.Adapter.class)
+  public enum EmploymentTypeEnum {
+    FULL_TIME("full_time"),
+    
+    PART_TIME("part_time"),
+    
+    CONTRACTOR("contractor"),
+    
+    OTHER("other");
+
+    private String value;
+
+    EmploymentTypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static EmploymentTypeEnum fromValue(String value) {
+      for (EmploymentTypeEnum b : EmploymentTypeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<EmploymentTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final EmploymentTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public EmploymentTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return EmploymentTypeEnum.fromValue(value);
+      }
+    }
+  }
+
+  public static final String SERIALIZED_NAME_EMPLOYMENT_TYPE = "employment_type";
+  @SerializedName(SERIALIZED_NAME_EMPLOYMENT_TYPE)
+  private EmploymentTypeEnum employmentType;
+
+  public static final String SERIALIZED_NAME_CURRENCY = "currency";
+  @SerializedName(SERIALIZED_NAME_CURRENCY)
+  private CurrencyRequest currency;
+
+  public static final String SERIALIZED_NAME_EFFECTIVE_DATE = "effective_date";
+  @SerializedName(SERIALIZED_NAME_EFFECTIVE_DATE)
+  private LocalDate effectiveDate;
+
+
+  public CompensationHistoryNoNonNullRequest payRate(BigDecimal payRate) {
+    
+    this.payRate = payRate;
     return this;
   }
 
    /**
-   * The client secret(s). It is an array datatype to allow for rotation of secrets without downtime for your customers 
-   * @return clientSecret
+   * Get payRate
+   * @return payRate
   **/
-  @ApiModelProperty(example = "[\"ffffffff-ffffffff-ffffffff-ffffffff\",\"aaaaaaaa-aaaaaaaa-aaaaaaaa-aaaaaaaa\"]", required = true, value = "The client secret(s). It is an array datatype to allow for rotation of secrets without downtime for your customers ")
+  @ApiModelProperty(example = "85000", required = true, value = "")
 
-  public List<String> getClientSecret() {
-    return clientSecret;
+  public BigDecimal getPayRate() {
+    return payRate;
   }
 
 
-  public void setClientSecret(List<String> clientSecret) {
-    this.clientSecret = clientSecret;
+  public void setPayRate(BigDecimal payRate) {
+    this.payRate = payRate;
   }
 
 
-  public ClientRequest redirectUris(List<String> redirectUris) {
+  public CompensationHistoryNoNonNullRequest payPeriod(String payPeriod) {
     
-    this.redirectUris = redirectUris;
-    return this;
-  }
-
-  public ClientRequest addRedirectUrisItem(String redirectUrisItem) {
-    this.redirectUris.add(redirectUrisItem);
+    this.payPeriod = payPeriod;
     return this;
   }
 
    /**
-   * Indicates the URI to return the user to after authorization is complete, which is the endpoint on your server to receive the authorization_code.  Must be identical to the redirect URI provided in the original link.  Please email me after signup and I will set both your client secret and redirect_uri (required) when you reach out. 
-   * @return redirectUris
+   * Get payPeriod
+   * @return payPeriod
   **/
-  @ApiModelProperty(example = "[\"https://app.your-company.com\",\"https://dev.app.your-company.com\"]", required = true, value = "Indicates the URI to return the user to after authorization is complete, which is the endpoint on your server to receive the authorization_code.  Must be identical to the redirect URI provided in the original link.  Please email me after signup and I will set both your client secret and redirect_uri (required) when you reach out. ")
+  @ApiModelProperty(example = "year", required = true, value = "")
 
-  public List<String> getRedirectUris() {
-    return redirectUris;
+  public String getPayPeriod() {
+    return payPeriod;
   }
 
 
-  public void setRedirectUris(List<String> redirectUris) {
-    this.redirectUris = redirectUris;
+  public void setPayPeriod(String payPeriod) {
+    this.payPeriod = payPeriod;
   }
 
 
-  public ClientRequest name(String name) {
+  public CompensationHistoryNoNonNullRequest payFrequency(PayFrequencyEnum payFrequency) {
     
-    this.name = name;
+    this.payFrequency = payFrequency;
     return this;
   }
 
    /**
-   * Name of your app that shows up in the Affix Connect application 
-   * @return name
+   * Get payFrequency
+   * @return payFrequency
   **/
-  @ApiModelProperty(example = "Your App", required = true, value = "Name of your app that shows up in the Affix Connect application ")
+  @ApiModelProperty(example = "semimonthly", required = true, value = "")
 
-  public String getName() {
-    return name;
+  public PayFrequencyEnum getPayFrequency() {
+    return payFrequency;
   }
 
 
-  public void setName(String name) {
-    this.name = name;
+  public void setPayFrequency(PayFrequencyEnum payFrequency) {
+    this.payFrequency = payFrequency;
   }
 
 
-  public ClientRequest webhookUri(String webhookUri) {
+  public CompensationHistoryNoNonNullRequest employmentType(EmploymentTypeEnum employmentType) {
     
-    this.webhookUri = webhookUri;
+    this.employmentType = employmentType;
     return this;
   }
 
    /**
-   * If enabled, webhooks will be sent to this endpoint 
-   * @return webhookUri
+   * Get employmentType
+   * @return employmentType
+  **/
+  @ApiModelProperty(example = "full_time", required = true, value = "")
+
+  public EmploymentTypeEnum getEmploymentType() {
+    return employmentType;
+  }
+
+
+  public void setEmploymentType(EmploymentTypeEnum employmentType) {
+    this.employmentType = employmentType;
+  }
+
+
+  public CompensationHistoryNoNonNullRequest currency(CurrencyRequest currency) {
+    
+    this.currency = currency;
+    return this;
+  }
+
+   /**
+   * Get currency
+   * @return currency
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "https://webhooks.your-company.com/aaaaaaaa-aaaaaaaa-aaaaaaaa-aaaaaaaa", value = "If enabled, webhooks will be sent to this endpoint ")
+  @ApiModelProperty(required = true, value = "")
 
-  public String getWebhookUri() {
-    return webhookUri;
+  public CurrencyRequest getCurrency() {
+    return currency;
   }
 
 
-  public void setWebhookUri(String webhookUri) {
-    this.webhookUri = webhookUri;
+  public void setCurrency(CurrencyRequest currency) {
+    this.currency = currency;
+  }
+
+
+  public CompensationHistoryNoNonNullRequest effectiveDate(LocalDate effectiveDate) {
+    
+    this.effectiveDate = effectiveDate;
+    return this;
+  }
+
+   /**
+   * Get effectiveDate
+   * @return effectiveDate
+  **/
+  @ApiModelProperty(example = "Sun Oct 11 00:00:00 UTC 2020", required = true, value = "")
+
+  public LocalDate getEffectiveDate() {
+    return effectiveDate;
+  }
+
+
+  public void setEffectiveDate(LocalDate effectiveDate) {
+    this.effectiveDate = effectiveDate;
   }
 
 
@@ -155,26 +302,30 @@ public class ClientRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ClientRequest clientRequest = (ClientRequest) o;
-    return Objects.equals(this.clientSecret, clientRequest.clientSecret) &&
-        Objects.equals(this.redirectUris, clientRequest.redirectUris) &&
-        Objects.equals(this.name, clientRequest.name) &&
-        Objects.equals(this.webhookUri, clientRequest.webhookUri);
+    CompensationHistoryNoNonNullRequest compensationHistoryNoNonNullRequest = (CompensationHistoryNoNonNullRequest) o;
+    return Objects.equals(this.payRate, compensationHistoryNoNonNullRequest.payRate) &&
+        Objects.equals(this.payPeriod, compensationHistoryNoNonNullRequest.payPeriod) &&
+        Objects.equals(this.payFrequency, compensationHistoryNoNonNullRequest.payFrequency) &&
+        Objects.equals(this.employmentType, compensationHistoryNoNonNullRequest.employmentType) &&
+        Objects.equals(this.currency, compensationHistoryNoNonNullRequest.currency) &&
+        Objects.equals(this.effectiveDate, compensationHistoryNoNonNullRequest.effectiveDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientSecret, redirectUris, name, webhookUri);
+    return Objects.hash(payRate, payPeriod, payFrequency, employmentType, currency, effectiveDate);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ClientRequest {\n");
-    sb.append("    clientSecret: ").append(toIndentedString(clientSecret)).append("\n");
-    sb.append("    redirectUris: ").append(toIndentedString(redirectUris)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    webhookUri: ").append(toIndentedString(webhookUri)).append("\n");
+    sb.append("class CompensationHistoryNoNonNullRequest {\n");
+    sb.append("    payRate: ").append(toIndentedString(payRate)).append("\n");
+    sb.append("    payPeriod: ").append(toIndentedString(payPeriod)).append("\n");
+    sb.append("    payFrequency: ").append(toIndentedString(payFrequency)).append("\n");
+    sb.append("    employmentType: ").append(toIndentedString(employmentType)).append("\n");
+    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    sb.append("    effectiveDate: ").append(toIndentedString(effectiveDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -13,6 +13,8 @@
 
 package org.openapitools.client.model;
 
+import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -21,82 +23,191 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
-import org.openapitools.client.model.CurrencyNotNullRequest;
 import org.threeten.bp.LocalDate;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
-
 
 /**
- * Model tests for EmploymentNoNullEnumRequest
+ * EmploymentHistoryNoNonNullRequest
  */
-public class EmploymentNoNullEnumRequestTest {
-    private final EmploymentNoNullEnumRequest model = new EmploymentNoNullEnumRequest();
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-09T13:27:13.502684Z[Etc/UTC]")
+public class EmploymentHistoryNoNonNullRequest {
+  public static final String SERIALIZED_NAME_JOB_TITLE = "job_title";
+  @SerializedName(SERIALIZED_NAME_JOB_TITLE)
+  private String jobTitle;
 
-    /**
-     * Model tests for EmploymentNoNullEnumRequest
-     */
-    @Test
-    public void testEmploymentNoNullEnumRequest() {
-        // TODO: test EmploymentNoNullEnumRequest
-    }
+  public static final String SERIALIZED_NAME_EFFECTIVE_DATE = "effective_date";
+  @SerializedName(SERIALIZED_NAME_EFFECTIVE_DATE)
+  private LocalDate effectiveDate;
 
-    /**
-     * Test the property 'jobTitle'
-     */
-    @Test
-    public void jobTitleTest() {
-        // TODO: test jobTitle
-    }
+  public static final String SERIALIZED_NAME_GROUP_ID = "group_id";
+  @SerializedName(SERIALIZED_NAME_GROUP_ID)
+  private String groupId;
 
-    /**
-     * Test the property 'payRate'
-     */
-    @Test
-    public void payRateTest() {
-        // TODO: test payRate
-    }
+  public static final String SERIALIZED_NAME_GROUP_REMOTE_ID = "group_remote_id";
+  @SerializedName(SERIALIZED_NAME_GROUP_REMOTE_ID)
+  private String groupRemoteId;
 
-    /**
-     * Test the property 'payPeriod'
-     */
-    @Test
-    public void payPeriodTest() {
-        // TODO: test payPeriod
-    }
+  public static final String SERIALIZED_NAME_GROUP_NAME = "group_name";
+  @SerializedName(SERIALIZED_NAME_GROUP_NAME)
+  private String groupName;
 
-    /**
-     * Test the property 'payFrequency'
-     */
-    @Test
-    public void payFrequencyTest() {
-        // TODO: test payFrequency
-    }
 
-    /**
-     * Test the property 'employmentType'
-     */
-    @Test
-    public void employmentTypeTest() {
-        // TODO: test employmentType
-    }
+  public EmploymentHistoryNoNonNullRequest jobTitle(String jobTitle) {
+    
+    this.jobTitle = jobTitle;
+    return this;
+  }
 
-    /**
-     * Test the property 'currency'
-     */
-    @Test
-    public void currencyTest() {
-        // TODO: test currency
-    }
+   /**
+   * Get jobTitle
+   * @return jobTitle
+  **/
+  @ApiModelProperty(example = "Software Developer", required = true, value = "")
 
-    /**
-     * Test the property 'effectiveDate'
-     */
-    @Test
-    public void effectiveDateTest() {
-        // TODO: test effectiveDate
+  public String getJobTitle() {
+    return jobTitle;
+  }
+
+
+  public void setJobTitle(String jobTitle) {
+    this.jobTitle = jobTitle;
+  }
+
+
+  public EmploymentHistoryNoNonNullRequest effectiveDate(LocalDate effectiveDate) {
+    
+    this.effectiveDate = effectiveDate;
+    return this;
+  }
+
+   /**
+   * Get effectiveDate
+   * @return effectiveDate
+  **/
+  @ApiModelProperty(example = "Sun Oct 11 00:00:00 UTC 2020", required = true, value = "")
+
+  public LocalDate getEffectiveDate() {
+    return effectiveDate;
+  }
+
+
+  public void setEffectiveDate(LocalDate effectiveDate) {
+    this.effectiveDate = effectiveDate;
+  }
+
+
+  public EmploymentHistoryNoNonNullRequest groupId(String groupId) {
+    
+    this.groupId = groupId;
+    return this;
+  }
+
+   /**
+   * Get groupId
+   * @return groupId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "4B9bKBpX5tnwjiG93TAqF7ci", required = true, value = "")
+
+  public String getGroupId() {
+    return groupId;
+  }
+
+
+  public void setGroupId(String groupId) {
+    this.groupId = groupId;
+  }
+
+
+  public EmploymentHistoryNoNonNullRequest groupRemoteId(String groupRemoteId) {
+    
+    this.groupRemoteId = groupRemoteId;
+    return this;
+  }
+
+   /**
+   * Get groupRemoteId
+   * @return groupRemoteId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "49", required = true, value = "")
+
+  public String getGroupRemoteId() {
+    return groupRemoteId;
+  }
+
+
+  public void setGroupRemoteId(String groupRemoteId) {
+    this.groupRemoteId = groupRemoteId;
+  }
+
+
+  public EmploymentHistoryNoNonNullRequest groupName(String groupName) {
+    
+    this.groupName = groupName;
+    return this;
+  }
+
+   /**
+   * Get groupName
+   * @return groupName
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "Engineering", required = true, value = "")
+
+  public String getGroupName() {
+    return groupName;
+  }
+
+
+  public void setGroupName(String groupName) {
+    this.groupName = groupName;
+  }
+
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
     }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    EmploymentHistoryNoNonNullRequest employmentHistoryNoNonNullRequest = (EmploymentHistoryNoNonNullRequest) o;
+    return Objects.equals(this.jobTitle, employmentHistoryNoNonNullRequest.jobTitle) &&
+        Objects.equals(this.effectiveDate, employmentHistoryNoNonNullRequest.effectiveDate) &&
+        Objects.equals(this.groupId, employmentHistoryNoNonNullRequest.groupId) &&
+        Objects.equals(this.groupRemoteId, employmentHistoryNoNonNullRequest.groupRemoteId) &&
+        Objects.equals(this.groupName, employmentHistoryNoNonNullRequest.groupName);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(jobTitle, effectiveDate, groupId, groupRemoteId, groupName);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class EmploymentHistoryNoNonNullRequest {\n");
+    sb.append("    jobTitle: ").append(toIndentedString(jobTitle)).append("\n");
+    sb.append("    effectiveDate: ").append(toIndentedString(effectiveDate)).append("\n");
+    sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+    sb.append("    groupRemoteId: ").append(toIndentedString(groupRemoteId)).append("\n");
+    sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
 
 }
+

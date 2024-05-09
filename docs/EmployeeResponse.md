@@ -33,7 +33,8 @@ Name | Type | Description | Notes
 **workLocation** | [**LocationResponse**](LocationResponse.md) |  | 
 **manager** | [**EmployeeResponseManager**](EmployeeResponseManager.md) |  | 
 **bankAccount** | [**CreateEmployeeRequestBankAccount**](CreateEmployeeRequestBankAccount.md) |  | 
-**employments** | [**List&lt;EmploymentResponse&gt;**](EmploymentResponse.md) |  | 
+**employmentHistory** | [**List&lt;EmploymentHistoryResponse&gt;**](EmploymentHistoryResponse.md) |  | 
+**compensationHistory** | [**List&lt;CompensationHistoryResponse&gt;**](CompensationHistoryResponse.md) |  | 
 **customFields** | **Object** |  | 
 **groups** | [**List&lt;GroupResponse&gt;**](GroupResponse.md) |  | 
 **dependents** | [**List&lt;CreateEmployeeRequestDependents&gt;**](CreateEmployeeRequestDependents.md) |  | 
