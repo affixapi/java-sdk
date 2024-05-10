@@ -13,65 +13,22 @@
 
 package org.openapitools.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
 
-import java.io.IOException;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 
 /**
- * Gets or Sets CurrencyRequest
+ * Model tests for CurrencyNotNullRequest
  */
-@JsonAdapter(CurrencyRequest.Adapter.class)
-public enum CurrencyRequest {
-  
-  NULL("null"),
-  
-  USD("usd"),
-  
-  GBP("gbp"),
-  
-  EUR("eur");
-
-  private String value;
-
-  CurrencyRequest(String value) {
-    this.value = value;
-  }
-
-  public String getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  public static CurrencyRequest fromValue(String value) {
-    for (CurrencyRequest b : CurrencyRequest.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    return null;
-  }
-
-  public static class Adapter extends TypeAdapter<CurrencyRequest> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final CurrencyRequest enumeration) throws IOException {
-      jsonWriter.value(enumeration.getValue());
+public class CurrencyNotNullRequestTest {
+    /**
+     * Model tests for CurrencyNotNullRequest
+     */
+    @Test
+    public void testCurrencyNotNullRequest() {
+        // TODO: test CurrencyNotNullRequest
     }
 
-    @Override
-    public CurrencyRequest read(final JsonReader jsonReader) throws IOException {
-      String value = jsonReader.nextString();
-      return CurrencyRequest.fromValue(value);
-    }
-  }
 }
-

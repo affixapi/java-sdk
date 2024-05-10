@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **payPeriod** | **String** |  | 
 **payFrequency** | [**PayFrequencyEnum**](#PayFrequencyEnum) |  | 
 **employmentType** | [**EmploymentTypeEnum**](#EmploymentTypeEnum) |  | 
-**currency** | **CurrencyRequest** |  | 
+**currency** | **CurrencyNotNullRequest** |  | 
 **effectiveDate** | **LocalDate** |  | 
 
 

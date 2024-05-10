@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
-import org.openapitools.client.model.CurrencyRequest;
+import org.openapitools.client.model.CurrencyNotNullRequest;
 import org.threeten.bp.LocalDate;
 import org.junit.Assert;
 import org.junit.Ignore;

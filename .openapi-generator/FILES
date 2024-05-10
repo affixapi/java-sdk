@@ -19,7 +19,7 @@ docs/CreateEmployeeRequestBankAccount.md
 docs/CreateEmployeeRequestDependents.md
 docs/CreateEmployeeRequestEmergencyContacts.md
 docs/CreateEmployeeRequestManager.md
-docs/CurrencyRequest.md
+docs/CurrencyNotNullRequest.md
 docs/CurrencyResponse.md
 docs/DisconnectResponse.md
 docs/EmployeeResponse.md
@@ -102,7 +102,7 @@ src/main/java/org/openapitools/client/model/CreateEmployeeRequestBankAccount.jav
 src/main/java/org/openapitools/client/model/CreateEmployeeRequestDependents.java
 src/main/java/org/openapitools/client/model/CreateEmployeeRequestEmergencyContacts.java
 src/main/java/org/openapitools/client/model/CreateEmployeeRequestManager.java
-src/main/java/org/openapitools/client/model/CurrencyRequest.java
+src/main/java/org/openapitools/client/model/CurrencyNotNullRequest.java
 src/main/java/org/openapitools/client/model/CurrencyResponse.java
 src/main/java/org/openapitools/client/model/DisconnectResponse.java
 src/main/java/org/openapitools/client/model/EmployeeResponse.java
@@ -157,7 +157,7 @@ src/test/java/org/openapitools/client/model/CreateEmployeeRequestDependentsTest.
 src/test/java/org/openapitools/client/model/CreateEmployeeRequestEmergencyContactsTest.java
 src/test/java/org/openapitools/client/model/CreateEmployeeRequestManagerTest.java
 src/test/java/org/openapitools/client/model/CreateEmployeeRequestTest.java
-src/test/java/org/openapitools/client/model/CurrencyRequestTest.java
+src/test/java/org/openapitools/client/model/CurrencyNotNullRequestTest.java
 src/test/java/org/openapitools/client/model/CurrencyResponseTest.java
 src/test/java/org/openapitools/client/model/DisconnectResponseTest.java
 src/test/java/org/openapitools/client/model/EmployeeResponseManagerTest.java

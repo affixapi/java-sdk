@@ -13,22 +13,63 @@
 
 package org.openapitools.client.model;
 
+import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
 
+import java.io.IOException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 
 /**
- * Model tests for CurrencyRequest
+ * Gets or Sets currency-not-nullRequest
  */
-public class CurrencyRequestTest {
-    /**
-     * Model tests for CurrencyRequest
-     */
-    @Test
-    public void testCurrencyRequest() {
-        // TODO: test CurrencyRequest
+@JsonAdapter(CurrencyNotNullRequest.Adapter.class)
+public enum CurrencyNotNullRequest {
+  
+  USD("usd"),
+  
+  GBP("gbp"),
+  
+  EUR("eur");
+
+  private String value;
+
+  CurrencyNotNullRequest(String value) {
+    this.value = value;
+  }
+
+  public String getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static CurrencyNotNullRequest fromValue(String value) {
+    for (CurrencyNotNullRequest b : CurrencyNotNullRequest.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    return null;
+  }
+
+  public static class Adapter extends TypeAdapter<CurrencyNotNullRequest> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final CurrencyNotNullRequest enumeration) throws IOException {
+      jsonWriter.value(enumeration.getValue());
     }
 
+    @Override
+    public CurrencyNotNullRequest read(final JsonReader jsonReader) throws IOException {
+      String value = jsonReader.nextString();
+      return CurrencyNotNullRequest.fromValue(value);
+    }
+  }
 }
+
