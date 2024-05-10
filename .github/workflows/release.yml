@@ -17,7 +17,7 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 15 # build takes ~1 min, publish takes ~7 min; however can be "pending" for ~5 min. https://central.sonatype.com/publishing
+    timeout-minutes: 20 # build takes ~1 min, publish takes ~7 min; however can be "pending" for ~5 min. https://central.sonatype.com/publishing
     steps:
       - uses: actions/checkout@v4
 
@@ -36,9 +36,10 @@ jobs:
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }} # Substituted with the value stored in the referenced secret
           gpg-passphrase: SIGN_KEY_PASS # Env var that holds the key's passphrase
 
+            # this thing is so slow we are already past the 2ndary rate limit window
       - name: pause to avoid 2ndary rate limits # https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28#about-secondary-rate-limits
         run: |
-          sleep "$(echo $RANDOM % 20 + 1 | bc)"
+          sleep 1
 
       - uses: cycjimmy/semantic-release-action@v4.0.0
         with:

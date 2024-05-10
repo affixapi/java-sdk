@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **employmentType** | [**EmploymentTypeEnum**](#EmploymentTypeEnum) |  | 
 **currency** | **CurrencyResponse** |  | 
 **effectiveDate** | **LocalDate** |  | 
+**notes** | **String** |  | 
 
 
 

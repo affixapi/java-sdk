@@ -81,4 +81,20 @@ public class EmploymentHistoryResponseTest {
         // TODO: test groupName
     }
 
+    /**
+     * Test the property 'managerId'
+     */
+    @Test
+    public void managerIdTest() {
+        // TODO: test managerId
+    }
+
+    /**
+     * Test the property 'managerRemoteId'
+     */
+    @Test
+    public void managerRemoteIdTest() {
+        // TODO: test managerRemoteId
+    }
+
 }

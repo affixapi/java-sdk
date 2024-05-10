@@ -91,4 +91,12 @@ public class CompensationHistoryNoNonNullRequestTest {
         // TODO: test effectiveDate
     }
 
+    /**
+     * Test the property 'notes'
+     */
+    @Test
+    public void notesTest() {
+        // TODO: test notes
+    }
+
 }

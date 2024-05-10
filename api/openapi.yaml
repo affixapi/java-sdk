@@ -2304,12 +2304,20 @@ components:
           example: Engineering
           nullable: true
           type: string
+        manager_id:
+          nullable: true
+          type: string
+        manager_remote_id:
+          nullable: true
+          type: string
       required:
       - effective_date
       - group_id
       - group_name
       - group_remote_id
       - job_title
+      - manager_id
+      - manager_remote_id
       type: object
     currency-not-nullRequest:
       enum:
@@ -2350,10 +2358,14 @@ components:
           example: 2020-10-11
           format: date
           type: string
+        notes:
+          example: Salary Adjustment
+          type: string
       required:
       - currency
       - effective_date
       - employment_type
+      - notes
       - pay_frequency
       - pay_period
       - pay_rate
@@ -2617,8 +2629,10 @@ components:
       type: object
     employment-historyResponse:
       example:
+        manager_remote_id: manager_remote_id
         group_id: 4B9bKBpX5tnwjiG93TAqF7ci
         group_name: Engineering
+        manager_id: manager_id
         effective_date: 2020-10-11T00:00:00.000+0000
         group_remote_id: "49"
         job_title: Software Developer
@@ -2644,12 +2658,20 @@ components:
           example: Engineering
           nullable: true
           type: string
+        manager_id:
+          nullable: true
+          type: string
+        manager_remote_id:
+          nullable: true
+          type: string
       required:
       - effective_date
       - group_id
       - group_name
       - group_remote_id
       - job_title
+      - manager_id
+      - manager_remote_id
       type: object
     CurrencyResponse:
       enum:
@@ -2662,6 +2684,7 @@ components:
     compensation-historyResponse:
       example:
         employment_type: full_time
+        notes: Salary Adjustment
         effective_date: 2020-10-11T00:00:00.000+0000
         pay_period: year
         pay_frequency: semimonthly
@@ -2704,10 +2727,15 @@ components:
           format: date
           nullable: true
           type: string
+        notes:
+          example: Salary Adjustment
+          nullable: true
+          type: string
       required:
       - currency
       - effective_date
       - employment_type
+      - notes
       - pay_frequency
       - pay_period
       - pay_rate
@@ -2789,13 +2817,17 @@ components:
         id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
         employment_status: active
         employment_history:
-        - group_id: 4B9bKBpX5tnwjiG93TAqF7ci
+        - manager_remote_id: manager_remote_id
+          group_id: 4B9bKBpX5tnwjiG93TAqF7ci
           group_name: Engineering
+          manager_id: manager_id
           effective_date: 2020-10-11T00:00:00.000+0000
           group_remote_id: "49"
           job_title: Software Developer
-        - group_id: 4B9bKBpX5tnwjiG93TAqF7ci
+        - manager_remote_id: manager_remote_id
+          group_id: 4B9bKBpX5tnwjiG93TAqF7ci
           group_name: Engineering
+          manager_id: manager_id
           effective_date: 2020-10-11T00:00:00.000+0000
           group_remote_id: "49"
           job_title: Software Developer
@@ -2845,11 +2877,13 @@ components:
         nationality: Irish
         compensation_history:
         - employment_type: full_time
+          notes: Salary Adjustment
           effective_date: 2020-10-11T00:00:00.000+0000
           pay_period: year
           pay_frequency: semimonthly
           pay_rate: 85000
         - employment_type: full_time
+          notes: Salary Adjustment
           effective_date: 2020-10-11T00:00:00.000+0000
           pay_period: year
           pay_frequency: semimonthly

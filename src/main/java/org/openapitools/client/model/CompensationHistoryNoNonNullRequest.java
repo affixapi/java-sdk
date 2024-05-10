@@ -30,7 +30,7 @@ import org.threeten.bp.LocalDate;
 /**
  * CompensationHistoryNoNonNullRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-10T02:04:26.210362Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-10T13:50:21.574019Z[Etc/UTC]")
 public class CompensationHistoryNoNonNullRequest {
   public static final String SERIALIZED_NAME_PAY_RATE = "pay_rate";
   @SerializedName(SERIALIZED_NAME_PAY_RATE)
@@ -161,6 +161,10 @@ public class CompensationHistoryNoNonNullRequest {
   public static final String SERIALIZED_NAME_EFFECTIVE_DATE = "effective_date";
   @SerializedName(SERIALIZED_NAME_EFFECTIVE_DATE)
   private LocalDate effectiveDate;
+
+  public static final String SERIALIZED_NAME_NOTES = "notes";
+  @SerializedName(SERIALIZED_NAME_NOTES)
+  private String notes;
 
 
   public CompensationHistoryNoNonNullRequest payRate(BigDecimal payRate) {
@@ -296,6 +300,28 @@ public class CompensationHistoryNoNonNullRequest {
   }
 
 
+  public CompensationHistoryNoNonNullRequest notes(String notes) {
+    
+    this.notes = notes;
+    return this;
+  }
+
+   /**
+   * Get notes
+   * @return notes
+  **/
+  @ApiModelProperty(example = "Salary Adjustment", required = true, value = "")
+
+  public String getNotes() {
+    return notes;
+  }
+
+
+  public void setNotes(String notes) {
+    this.notes = notes;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -310,12 +336,13 @@ public class CompensationHistoryNoNonNullRequest {
         Objects.equals(this.payFrequency, compensationHistoryNoNonNullRequest.payFrequency) &&
         Objects.equals(this.employmentType, compensationHistoryNoNonNullRequest.employmentType) &&
         Objects.equals(this.currency, compensationHistoryNoNonNullRequest.currency) &&
-        Objects.equals(this.effectiveDate, compensationHistoryNoNonNullRequest.effectiveDate);
+        Objects.equals(this.effectiveDate, compensationHistoryNoNonNullRequest.effectiveDate) &&
+        Objects.equals(this.notes, compensationHistoryNoNonNullRequest.notes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(payRate, payPeriod, payFrequency, employmentType, currency, effectiveDate);
+    return Objects.hash(payRate, payPeriod, payFrequency, employmentType, currency, effectiveDate, notes);
   }
 
   @Override
@@ -328,6 +355,7 @@ public class CompensationHistoryNoNonNullRequest {
     sb.append("    employmentType: ").append(toIndentedString(employmentType)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    effectiveDate: ").append(toIndentedString(effectiveDate)).append("\n");
+    sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

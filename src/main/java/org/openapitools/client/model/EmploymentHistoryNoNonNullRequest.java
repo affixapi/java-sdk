@@ -28,7 +28,7 @@ import org.threeten.bp.LocalDate;
 /**
  * EmploymentHistoryNoNonNullRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-10T02:04:26.210362Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-10T13:50:21.574019Z[Etc/UTC]")
 public class EmploymentHistoryNoNonNullRequest {
   public static final String SERIALIZED_NAME_JOB_TITLE = "job_title";
   @SerializedName(SERIALIZED_NAME_JOB_TITLE)
@@ -49,6 +49,14 @@ public class EmploymentHistoryNoNonNullRequest {
   public static final String SERIALIZED_NAME_GROUP_NAME = "group_name";
   @SerializedName(SERIALIZED_NAME_GROUP_NAME)
   private String groupName;
+
+  public static final String SERIALIZED_NAME_MANAGER_ID = "manager_id";
+  @SerializedName(SERIALIZED_NAME_MANAGER_ID)
+  private String managerId;
+
+  public static final String SERIALIZED_NAME_MANAGER_REMOTE_ID = "manager_remote_id";
+  @SerializedName(SERIALIZED_NAME_MANAGER_REMOTE_ID)
+  private String managerRemoteId;
 
 
   public EmploymentHistoryNoNonNullRequest jobTitle(String jobTitle) {
@@ -164,6 +172,52 @@ public class EmploymentHistoryNoNonNullRequest {
   }
 
 
+  public EmploymentHistoryNoNonNullRequest managerId(String managerId) {
+    
+    this.managerId = managerId;
+    return this;
+  }
+
+   /**
+   * Get managerId
+   * @return managerId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(required = true, value = "")
+
+  public String getManagerId() {
+    return managerId;
+  }
+
+
+  public void setManagerId(String managerId) {
+    this.managerId = managerId;
+  }
+
+
+  public EmploymentHistoryNoNonNullRequest managerRemoteId(String managerRemoteId) {
+    
+    this.managerRemoteId = managerRemoteId;
+    return this;
+  }
+
+   /**
+   * Get managerRemoteId
+   * @return managerRemoteId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(required = true, value = "")
+
+  public String getManagerRemoteId() {
+    return managerRemoteId;
+  }
+
+
+  public void setManagerRemoteId(String managerRemoteId) {
+    this.managerRemoteId = managerRemoteId;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -177,12 +231,14 @@ public class EmploymentHistoryNoNonNullRequest {
         Objects.equals(this.effectiveDate, employmentHistoryNoNonNullRequest.effectiveDate) &&
         Objects.equals(this.groupId, employmentHistoryNoNonNullRequest.groupId) &&
         Objects.equals(this.groupRemoteId, employmentHistoryNoNonNullRequest.groupRemoteId) &&
-        Objects.equals(this.groupName, employmentHistoryNoNonNullRequest.groupName);
+        Objects.equals(this.groupName, employmentHistoryNoNonNullRequest.groupName) &&
+        Objects.equals(this.managerId, employmentHistoryNoNonNullRequest.managerId) &&
+        Objects.equals(this.managerRemoteId, employmentHistoryNoNonNullRequest.managerRemoteId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(jobTitle, effectiveDate, groupId, groupRemoteId, groupName);
+    return Objects.hash(jobTitle, effectiveDate, groupId, groupRemoteId, groupName, managerId, managerRemoteId);
   }
 
   @Override
@@ -194,6 +250,8 @@ public class EmploymentHistoryNoNonNullRequest {
     sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
     sb.append("    groupRemoteId: ").append(toIndentedString(groupRemoteId)).append("\n");
     sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
+    sb.append("    managerId: ").append(toIndentedString(managerId)).append("\n");
+    sb.append("    managerRemoteId: ").append(toIndentedString(managerRemoteId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

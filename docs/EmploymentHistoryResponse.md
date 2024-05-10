@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **groupId** | **String** |  | 
 **groupRemoteId** | **String** |  | 
 **groupName** | **String** |  | 
+**managerId** | **String** |  | 
+**managerRemoteId** | **String** |  | 
 
 
 
