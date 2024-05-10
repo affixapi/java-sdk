@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * CreateEmployeeRequestBankAccount
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-10T13:50:21.574019Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-10T14:02:18.031850Z[Etc/UTC]")
 public class CreateEmployeeRequestBankAccount {
   public static final String SERIALIZED_NAME_ACCOUNT_NUMBER = "account_number";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_NUMBER)
