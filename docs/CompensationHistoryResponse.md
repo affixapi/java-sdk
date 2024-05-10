@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 
 Name | Value
 ---- | -----
+YEAR | &quot;year&quot;
 WEEKLY | &quot;weekly&quot;
 BIWEEKLY | &quot;biweekly&quot;
 SEMIMONTHLY | &quot;semimonthly&quot;
