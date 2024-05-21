@@ -767,7 +767,7 @@ public class XhrVerticallyIntegratedApi {
 
     /**
      * Payslips
-     * Retrieves payslips from a specific payrun.  Supported integrations:   - sageone   - simplepay.ie   - brightpay connect 
+     * Retrieves payslips from a specific payrun.  Supported integrations:   - brain payroll   - brightpay connect   - deel   - gusto   - justworks   - moorepay   - onpay   - oyster   - parolla.ie   - paycircle   - payfit   - pento.io   - quickbooks online   - remote.com   - rippling   - sageone   - shape payroll   - simplepay.ie   - staffology   - xero uk 
      * @param payrunId The id of the payrun. (required)
      * @return List&lt;PayslipResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -789,7 +789,7 @@ public class XhrVerticallyIntegratedApi {
 
     /**
      * Payslips
-     * Retrieves payslips from a specific payrun.  Supported integrations:   - sageone   - simplepay.ie   - brightpay connect 
+     * Retrieves payslips from a specific payrun.  Supported integrations:   - brain payroll   - brightpay connect   - deel   - gusto   - justworks   - moorepay   - onpay   - oyster   - parolla.ie   - paycircle   - payfit   - pento.io   - quickbooks online   - remote.com   - rippling   - sageone   - shape payroll   - simplepay.ie   - staffology   - xero uk 
      * @param payrunId The id of the payrun. (required)
      * @return ApiResponse&lt;List&lt;PayslipResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -812,7 +812,7 @@ public class XhrVerticallyIntegratedApi {
 
     /**
      * Payslips (asynchronously)
-     * Retrieves payslips from a specific payrun.  Supported integrations:   - sageone   - simplepay.ie   - brightpay connect 
+     * Retrieves payslips from a specific payrun.  Supported integrations:   - brain payroll   - brightpay connect   - deel   - gusto   - justworks   - moorepay   - onpay   - oyster   - parolla.ie   - paycircle   - payfit   - pento.io   - quickbooks online   - remote.com   - rippling   - sageone   - shape payroll   - simplepay.ie   - staffology   - xero uk 
      * @param payrunId The id of the payrun. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

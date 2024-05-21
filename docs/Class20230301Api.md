@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 Payslips
 
-Retrieves payslips from a specific payrun.  Supported integrations:   - sageone   - simplepay.ie   - brightpay connect 
+Retrieves payslips from a specific payrun.  Supported integrations:   - brain payroll   - brightpay connect   - deel   - gusto   - justworks   - moorepay   - onpay   - oyster   - parolla.ie   - paycircle   - payfit   - pento.io   - quickbooks online   - remote.com   - rippling   - sageone   - shape payroll   - simplepay.ie   - staffology   - xero uk 
 
 ### Example
 ```java

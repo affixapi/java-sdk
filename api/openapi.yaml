@@ -972,9 +972,26 @@ paths:
         Retrieves payslips from a specific payrun.
 
         Supported integrations:
-          - sageone
-          - simplepay.ie
+          - brain payroll
           - brightpay connect
+          - deel
+          - gusto
+          - justworks
+          - moorepay
+          - onpay
+          - oyster
+          - parolla.ie
+          - paycircle
+          - payfit
+          - pento.io
+          - quickbooks online
+          - remote.com
+          - rippling
+          - sageone
+          - shape payroll
+          - simplepay.ie
+          - staffology
+          - xero uk
       operationId: xhrPayslips20230301
       parameters:
       - description: The id of the payrun.
