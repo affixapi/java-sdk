@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **taxId** | **String** |  |  [optional]
 **gender** | [**GenderEnum**](#GenderEnum) |  |  [optional]
 **ethnicity** | [**EthnicityEnum**](#EthnicityEnum) |  |  [optional]
-**maritalStatus** | [**MaritalStatusEnum**](#MaritalStatusEnum) |  |  [optional]
+**maritalStatus** | [**MaritalStatusEnum**](#MaritalStatusEnum) | &#x60;other&#x60; option can include co-habitating, civil partnership, separated, widowed, etc  |  [optional]
 **dateOfBirth** | **LocalDate** |  |  [optional]
 **employmentStatus** | **EmploymentStatusNotNullRequest** |  |  [optional]
 **employmentType** | [**EmploymentTypeEnum**](#EmploymentTypeEnum) |  |  [optional]
@@ -69,7 +69,9 @@ Name | Value
 ---- | -----
 SINGLE | &quot;single&quot;
 MARRIED | &quot;married&quot;
+DIVORCED | &quot;divorced&quot;
 NOT_SPECIFIED | &quot;not_specified&quot;
+OTHER | &quot;other&quot;
 
 
 
