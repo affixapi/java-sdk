@@ -23,6 +23,7 @@ Name | Value
 ---- | -----
 PAID | &quot;paid&quot;
 PENDING | &quot;pending&quot;
+NULL | &quot;null&quot;
 
 
 
@@ -31,6 +32,10 @@ PENDING | &quot;pending&quot;
 Name | Value
 ---- | -----
 REGULAR | &quot;regular&quot;
+ONE_TIME | &quot;one-time&quot;
+OFF_CYCLE | &quot;off-cycle&quot;
+CORRECTION | &quot;correction&quot;
+REVERSAL | &quot;reversal&quot;
 NULL | &quot;null&quot;
 
 

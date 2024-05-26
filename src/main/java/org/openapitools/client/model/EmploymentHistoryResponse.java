@@ -28,7 +28,7 @@ import org.threeten.bp.LocalDate;
 /**
  * EmploymentHistoryResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-22T12:50:00.801984Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-26T15:42:45.936256Z[Etc/UTC]")
 public class EmploymentHistoryResponse {
   public static final String SERIALIZED_NAME_JOB_TITLE = "job_title";
   @SerializedName(SERIALIZED_NAME_JOB_TITLE)

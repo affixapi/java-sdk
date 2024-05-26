@@ -28,7 +28,7 @@ import org.threeten.bp.LocalDate;
 /**
  * PayrunResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-22T12:50:00.801984Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-26T15:42:45.936256Z[Etc/UTC]")
 public class PayrunResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -45,7 +45,9 @@ public class PayrunResponse {
   public enum RunStateEnum {
     PAID("paid"),
     
-    PENDING("pending");
+    PENDING("pending"),
+    
+    NULL("null");
 
     private String value;
 
@@ -68,7 +70,7 @@ public class PayrunResponse {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return null;
     }
 
     public static class Adapter extends TypeAdapter<RunStateEnum> {
@@ -95,6 +97,14 @@ public class PayrunResponse {
   @JsonAdapter(RunTypeEnum.Adapter.class)
   public enum RunTypeEnum {
     REGULAR("regular"),
+    
+    ONE_TIME("one-time"),
+    
+    OFF_CYCLE("off-cycle"),
+    
+    CORRECTION("correction"),
+    
+    REVERSAL("reversal"),
     
     NULL("null");
 
@@ -207,6 +217,7 @@ public class PayrunResponse {
    * Get runState
    * @return runState
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(example = "paid", required = true, value = "")
 
   public RunStateEnum getRunState() {

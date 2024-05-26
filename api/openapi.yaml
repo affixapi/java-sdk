@@ -3456,11 +3456,17 @@ components:
           enum:
           - paid
           - pending
+          - null
           example: paid
+          nullable: true
           type: string
         run_type:
           enum:
           - regular
+          - one-time
+          - off-cycle
+          - correction
+          - reversal
           - null
           example: regular
           nullable: true
