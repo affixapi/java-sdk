@@ -35,7 +35,7 @@ import org.threeten.bp.LocalDate;
 /**
  * PayslipResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-26T15:42:45.936256Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-26T17:51:14.410974Z[Etc/UTC]")
 public class PayslipResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -263,6 +263,7 @@ public class PayslipResponse {
    * if USD/EUR/GBP, in cent
    * @return grossPay
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(example = "134267", required = true, value = "if USD/EUR/GBP, in cent")
 
   public BigDecimal getGrossPay() {
@@ -285,6 +286,7 @@ public class PayslipResponse {
    * if USD/EUR/GBP, in cent
    * @return netPay
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(example = "86578", required = true, value = "if USD/EUR/GBP, in cent")
 
   public BigDecimal getNetPay() {
@@ -378,6 +380,7 @@ public class PayslipResponse {
    * Get earnings
    * @return earnings
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(example = "[{\"amount\":100234,\"name\":\"SALARY\",\"hours\":80},{\"amount\":834234,\"name\":\"OVERTIME\",\"hours\":8}]", required = true, value = "")
 
   public List<PayslipResponseEarnings> getEarnings() {
@@ -433,6 +436,7 @@ public class PayslipResponse {
    * Get deductions
    * @return deductions
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(example = "[{\"name\":\"Transportation allowance benefit\",\"amount\":3454},{\"name\":\"Private Health Insurance (Employee)\",\"amount\":3454}]", required = true, value = "")
 
   public List<PayslipResponseDeductions> getDeductions() {
@@ -460,6 +464,7 @@ public class PayslipResponse {
    * Get taxes
    * @return taxes
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(example = "[{\"name\":\"PRSI\",\"amount\":725,\"employer_tax\":false},{\"name\":\"PSC (Class S)\",\"amount\":125,\"employer_tax\":false},{\"name\":\"Income Tax\",\"amount\":10025,\"employer_tax\":false},{\"name\":\"Payroll Tax\",\"amount\":10025,\"employer_tax\":true}]", required = true, value = "")
 
   public List<PayslipResponseTaxes> getTaxes() {

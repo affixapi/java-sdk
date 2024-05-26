@@ -3571,10 +3571,12 @@ components:
         gross_pay:
           description: if USD/EUR/GBP, in cent
           example: 134267
+          nullable: true
           type: number
         net_pay:
           description: if USD/EUR/GBP, in cent
           example: 86578
+          nullable: true
           type: number
         start_date:
           example: 2020-01-01
@@ -3598,6 +3600,7 @@ components:
             hours: 8
           items:
             $ref: '#/components/schemas/PayslipResponse_earnings'
+          nullable: true
           type: array
         contributions:
           description: |
@@ -3622,6 +3625,7 @@ components:
             amount: 3454
           items:
             $ref: '#/components/schemas/PayslipResponse_deductions'
+          nullable: true
           type: array
         taxes:
           example:
@@ -3639,6 +3643,7 @@ components:
             employer_tax: true
           items:
             $ref: '#/components/schemas/PayslipResponse_taxes'
+          nullable: true
           type: array
       required:
       - contributions
