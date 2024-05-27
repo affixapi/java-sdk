@@ -30,7 +30,7 @@ import org.threeten.bp.LocalDate;
 /**
  * CompensationHistoryNoNonNullRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-27T00:01:50.038418Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-27T11:34:15.303608Z[Etc/UTC]")
 public class CompensationHistoryNoNonNullRequest {
   public static final String SERIALIZED_NAME_PAY_RATE = "pay_rate";
   @SerializedName(SERIALIZED_NAME_PAY_RATE)
