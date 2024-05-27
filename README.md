@@ -2,7 +2,7 @@
 
 Affix API
 - API version: 2023-03-01
-  - Build date: 2024-05-26T17:51:14.410974Z[Etc/UTC]
+  - Build date: 2024-05-27T00:01:50.038418Z[Etc/UTC]
 
 The affixapi.com API documentation.
 
@@ -246,7 +246,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.affixapi</groupId>
   <artifactId>api</artifactId>
-  <version>1.1.80</version>
+  <version>1.1.81</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -256,7 +256,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.affixapi:api:1.1.80"
+compile "com.affixapi:api:1.1.81"
 ```
 
 ### Others
@@ -269,7 +269,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-1.1.80.jar`
+* `target/api-1.1.81.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -363,6 +363,7 @@ Class | Method | HTTP request | Description
  - [CreateEmployeeRequestEmergencyContacts](docs/CreateEmployeeRequestEmergencyContacts.md)
  - [CreateEmployeeRequestManager](docs/CreateEmployeeRequestManager.md)
  - [CurrencyNotNullRequest](docs/CurrencyNotNullRequest.md)
+ - [CurrencyNotNullResponse](docs/CurrencyNotNullResponse.md)
  - [CurrencyResponse](docs/CurrencyResponse.md)
  - [DisconnectResponse](docs/DisconnectResponse.md)
  - [EmployeeResponse](docs/EmployeeResponse.md)
@@ -386,6 +387,7 @@ Class | Method | HTTP request | Description
  - [ModeRequest](docs/ModeRequest.md)
  - [ModeResponse](docs/ModeResponse.md)
  - [PayrunResponse](docs/PayrunResponse.md)
+ - [PayrunTypeResponse](docs/PayrunTypeResponse.md)
  - [PayslipResponse](docs/PayslipResponse.md)
  - [PayslipResponseContributions](docs/PayslipResponseContributions.md)
  - [PayslipResponseDeductions](docs/PayslipResponseDeductions.md)

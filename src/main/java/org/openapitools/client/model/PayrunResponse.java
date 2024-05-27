@@ -23,12 +23,13 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.openapitools.client.model.PayrunTypeResponse;
 import org.threeten.bp.LocalDate;
 
 /**
  * PayrunResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-26T17:51:14.410974Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-27T00:01:50.038418Z[Etc/UTC]")
 public class PayrunResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -39,10 +40,10 @@ public class PayrunResponse {
   private String remoteId;
 
   /**
-   * Gets or Sets runState
+   * Gets or Sets state
    */
-  @JsonAdapter(RunStateEnum.Adapter.class)
-  public enum RunStateEnum {
+  @JsonAdapter(StateEnum.Adapter.class)
+  public enum StateEnum {
     PAID("paid"),
     
     PENDING("pending"),
@@ -51,7 +52,7 @@ public class PayrunResponse {
 
     private String value;
 
-    RunStateEnum(String value) {
+    StateEnum(String value) {
       this.value = value;
     }
 
@@ -64,8 +65,8 @@ public class PayrunResponse {
       return String.valueOf(value);
     }
 
-    public static RunStateEnum fromValue(String value) {
-      for (RunStateEnum b : RunStateEnum.values()) {
+    public static StateEnum fromValue(String value) {
+      for (StateEnum b : StateEnum.values()) {
         if (b.value.equals(value)) {
           return b;
         }
@@ -73,82 +74,27 @@ public class PayrunResponse {
       return null;
     }
 
-    public static class Adapter extends TypeAdapter<RunStateEnum> {
+    public static class Adapter extends TypeAdapter<StateEnum> {
       @Override
-      public void write(final JsonWriter jsonWriter, final RunStateEnum enumeration) throws IOException {
+      public void write(final JsonWriter jsonWriter, final StateEnum enumeration) throws IOException {
         jsonWriter.value(enumeration.getValue());
       }
 
       @Override
-      public RunStateEnum read(final JsonReader jsonReader) throws IOException {
+      public StateEnum read(final JsonReader jsonReader) throws IOException {
         String value =  jsonReader.nextString();
-        return RunStateEnum.fromValue(value);
+        return StateEnum.fromValue(value);
       }
     }
   }
 
-  public static final String SERIALIZED_NAME_RUN_STATE = "run_state";
-  @SerializedName(SERIALIZED_NAME_RUN_STATE)
-  private RunStateEnum runState;
+  public static final String SERIALIZED_NAME_STATE = "state";
+  @SerializedName(SERIALIZED_NAME_STATE)
+  private StateEnum state;
 
-  /**
-   * Gets or Sets runType
-   */
-  @JsonAdapter(RunTypeEnum.Adapter.class)
-  public enum RunTypeEnum {
-    REGULAR("regular"),
-    
-    ONE_TIME("one-time"),
-    
-    OFF_CYCLE("off-cycle"),
-    
-    CORRECTION("correction"),
-    
-    REVERSAL("reversal"),
-    
-    NULL("null");
-
-    private String value;
-
-    RunTypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static RunTypeEnum fromValue(String value) {
-      for (RunTypeEnum b : RunTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<RunTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final RunTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public RunTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return RunTypeEnum.fromValue(value);
-      }
-    }
-  }
-
-  public static final String SERIALIZED_NAME_RUN_TYPE = "run_type";
-  @SerializedName(SERIALIZED_NAME_RUN_TYPE)
-  private RunTypeEnum runType;
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
+  private PayrunTypeResponse type;
 
   public static final String SERIALIZED_NAME_START_DATE = "start_date";
   @SerializedName(SERIALIZED_NAME_START_DATE)
@@ -207,49 +153,49 @@ public class PayrunResponse {
   }
 
 
-  public PayrunResponse runState(RunStateEnum runState) {
+  public PayrunResponse state(StateEnum state) {
     
-    this.runState = runState;
+    this.state = state;
     return this;
   }
 
    /**
-   * Get runState
-   * @return runState
+   * Get state
+   * @return state
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(example = "paid", required = true, value = "")
 
-  public RunStateEnum getRunState() {
-    return runState;
+  public StateEnum getState() {
+    return state;
   }
 
 
-  public void setRunState(RunStateEnum runState) {
-    this.runState = runState;
+  public void setState(StateEnum state) {
+    this.state = state;
   }
 
 
-  public PayrunResponse runType(RunTypeEnum runType) {
+  public PayrunResponse type(PayrunTypeResponse type) {
     
-    this.runType = runType;
+    this.type = type;
     return this;
   }
 
    /**
-   * Get runType
-   * @return runType
+   * Get type
+   * @return type
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "regular", required = true, value = "")
+  @ApiModelProperty(required = true, value = "")
 
-  public RunTypeEnum getRunType() {
-    return runType;
+  public PayrunTypeResponse getType() {
+    return type;
   }
 
 
-  public void setRunType(RunTypeEnum runType) {
-    this.runType = runType;
+  public void setType(PayrunTypeResponse type) {
+    this.type = type;
   }
 
 
@@ -333,8 +279,8 @@ public class PayrunResponse {
     PayrunResponse payrunResponse = (PayrunResponse) o;
     return Objects.equals(this.id, payrunResponse.id) &&
         Objects.equals(this.remoteId, payrunResponse.remoteId) &&
-        Objects.equals(this.runState, payrunResponse.runState) &&
-        Objects.equals(this.runType, payrunResponse.runType) &&
+        Objects.equals(this.state, payrunResponse.state) &&
+        Objects.equals(this.type, payrunResponse.type) &&
         Objects.equals(this.startDate, payrunResponse.startDate) &&
         Objects.equals(this.endDate, payrunResponse.endDate) &&
         Objects.equals(this.paymentDate, payrunResponse.paymentDate);
@@ -342,7 +288,7 @@ public class PayrunResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, remoteId, runState, runType, startDate, endDate, paymentDate);
+    return Objects.hash(id, remoteId, state, type, startDate, endDate, paymentDate);
   }
 
   @Override
@@ -351,8 +297,8 @@ public class PayrunResponse {
     sb.append("class PayrunResponse {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    remoteId: ").append(toIndentedString(remoteId)).append("\n");
-    sb.append("    runState: ").append(toIndentedString(runState)).append("\n");
-    sb.append("    runType: ").append(toIndentedString(runType)).append("\n");
+    sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
     sb.append("    paymentDate: ").append(toIndentedString(paymentDate)).append("\n");

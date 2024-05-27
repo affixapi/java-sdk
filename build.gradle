@@ -3,7 +3,7 @@ apply plugin: 'eclipse'
 apply plugin: 'java'
 
 group = 'com.affixapi'
-version = '1.1.80'
+version = '1.1.81'
 
 buildscript {
     repositories {

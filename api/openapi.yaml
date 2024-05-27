@@ -2341,6 +2341,7 @@ components:
       - usd
       - gbp
       - eur
+      example: eur
       nullable: true
       type: string
     compensation-history-no-non-nullRequest:
@@ -2701,6 +2702,7 @@ components:
       - usd
       - gbp
       - eur
+      example: eur
       nullable: true
       type: string
     compensation-historyResponse:
@@ -2710,6 +2712,7 @@ components:
         effective_date: 2020-10-11T00:00:00.000+0000
         pay_period: year
         pay_frequency: semimonthly
+        currency: eur
         pay_rate: 85000
       properties:
         pay_rate:
@@ -2903,12 +2906,14 @@ components:
           effective_date: 2020-10-11T00:00:00.000+0000
           pay_period: year
           pay_frequency: semimonthly
+          currency: eur
           pay_rate: 85000
         - employment_type: full_time
           notes: Salary Adjustment
           effective_date: 2020-10-11T00:00:00.000+0000
           pay_period: year
           pay_frequency: semimonthly
+          currency: eur
           pay_rate: 85000
         termination_date: 2021-10-12T00:00:00.000+0000
         employee_number: "2"
@@ -3434,13 +3439,24 @@ components:
       items:
         $ref: '#/components/schemas/locationResponse'
       type: array
+    payrun-typeResponse:
+      enum:
+      - regular
+      - one-time
+      - off-cycle
+      - correction
+      - reversal
+      - null
+      example: regular
+      nullable: true
+      type: string
     PayrunResponse:
       example:
         end_date: 2020-01-31T00:00:00.000+0000
         remote_id: "19202938"
-        run_state: paid
         id: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
-        run_type: regular
+        state: paid
+        type: regular
         payment_date: 2020-01-27T00:00:00.000+0000
         start_date: 2020-01-01T00:00:00.000+0000
       properties:
@@ -3452,7 +3468,7 @@ components:
           description: the remote system-assigned id of the payrun
           example: "19202938"
           type: string
-        run_state:
+        state:
           enum:
           - paid
           - pending
@@ -3460,17 +3476,8 @@ components:
           example: paid
           nullable: true
           type: string
-        run_type:
-          enum:
-          - regular
-          - one-time
-          - off-cycle
-          - correction
-          - reversal
-          - null
-          example: regular
-          nullable: true
-          type: string
+        type:
+          $ref: '#/components/schemas/payrun-typeResponse'
         start_date:
           description: Payrun period start date
           example: 2020-01-01
@@ -3494,18 +3501,28 @@ components:
       - id
       - payment_date
       - remote_id
-      - run_state
-      - run_type
       - start_date
+      - state
+      - type
       type: object
     Payruns20230301Response:
       items:
         $ref: '#/components/schemas/PayrunResponse'
       type: array
+    currency-not-nullResponse:
+      enum:
+      - usd
+      - gbp
+      - eur
+      example: eur
+      nullable: true
+      type: string
     PayslipResponse:
       example:
         end_date: 2020-01-31T00:00:00.000+0000
+        employee_remote_id: "19202938"
         remote_id: "19202938"
+        payrun_type: regular
         taxes:
         - name: PRSI
           amount: 725
@@ -3533,6 +3550,7 @@ components:
         - amount: 834234
           name: OVERTIME
           hours: 8
+        payrun_remote_id: "19202938"
         contributions:
         - name: Private Health Insurance (Employer)
           amount: 13454
@@ -3550,24 +3568,29 @@ components:
         id:
           description: The Affix-assigned id of the payslip
           example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          nullable: true
           type: string
         remote_id:
           description: the remote system-assigned id of the payrun
           example: "19202938"
+          nullable: true
           type: string
         employee_id:
           example: d2f972d0-2526-434b-9409-4c3b468e08f0
           type: string
+        employee_remote_id:
+          example: "19202938"
+          type: string
         payrun_id:
           example: 35347df1-95e7-46e2-93cc-66f1191edca5
           type: string
-        currency:
-          enum:
-          - usd
-          - eur
-          - gbp
-          example: eur
+        payrun_remote_id:
+          example: "19202938"
           type: string
+        payrun_type:
+          $ref: '#/components/schemas/payrun-typeResponse'
+        currency:
+          $ref: '#/components/schemas/currency-not-nullResponse'
         gross_pay:
           description: if USD/EUR/GBP, in cent
           example: 134267
@@ -3651,12 +3674,15 @@ components:
       - deductions
       - earnings
       - employee_id
+      - employee_remote_id
       - end_date
       - gross_pay
       - id
       - net_pay
       - payment_date
       - payrun_id
+      - payrun_remote_id
+      - payrun_type
       - remote_id
       - start_date
       - taxes

@@ -40,7 +40,7 @@ import org.threeten.bp.LocalDate;
 /**
  * CreateEmployeeRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-26T17:51:14.410974Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-27T00:01:50.038418Z[Etc/UTC]")
 public class CreateEmployeeRequest {
   public static final String SERIALIZED_NAME_EMPLOYEE_NUMBER = "employee_number";
   @SerializedName(SERIALIZED_NAME_EMPLOYEE_NUMBER)

@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.openapitools.client.model.PayrunTypeResponse;
 import org.threeten.bp.LocalDate;
 import org.junit.Assert;
 import org.junit.Ignore;
@@ -58,19 +59,19 @@ public class PayrunResponseTest {
     }
 
     /**
-     * Test the property 'runState'
+     * Test the property 'state'
      */
     @Test
-    public void runStateTest() {
-        // TODO: test runState
+    public void stateTest() {
+        // TODO: test state
     }
 
     /**
-     * Test the property 'runType'
+     * Test the property 'type'
      */
     @Test
-    public void runTypeTest() {
-        // TODO: test runType
+    public void typeTest() {
+        // TODO: test type
     }
 
     /**

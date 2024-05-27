@@ -20,6 +20,7 @@ docs/CreateEmployeeRequestDependents.md
 docs/CreateEmployeeRequestEmergencyContacts.md
 docs/CreateEmployeeRequestManager.md
 docs/CurrencyNotNullRequest.md
+docs/CurrencyNotNullResponse.md
 docs/CurrencyResponse.md
 docs/DisconnectResponse.md
 docs/EmployeeResponse.md
@@ -44,6 +45,7 @@ docs/MessageResponse.md
 docs/ModeRequest.md
 docs/ModeResponse.md
 docs/PayrunResponse.md
+docs/PayrunTypeResponse.md
 docs/PayslipResponse.md
 docs/PayslipResponseContributions.md
 docs/PayslipResponseDeductions.md
@@ -103,6 +105,7 @@ src/main/java/org/openapitools/client/model/CreateEmployeeRequestDependents.java
 src/main/java/org/openapitools/client/model/CreateEmployeeRequestEmergencyContacts.java
 src/main/java/org/openapitools/client/model/CreateEmployeeRequestManager.java
 src/main/java/org/openapitools/client/model/CurrencyNotNullRequest.java
+src/main/java/org/openapitools/client/model/CurrencyNotNullResponse.java
 src/main/java/org/openapitools/client/model/CurrencyResponse.java
 src/main/java/org/openapitools/client/model/DisconnectResponse.java
 src/main/java/org/openapitools/client/model/EmployeeResponse.java
@@ -126,6 +129,7 @@ src/main/java/org/openapitools/client/model/MessageResponse.java
 src/main/java/org/openapitools/client/model/ModeRequest.java
 src/main/java/org/openapitools/client/model/ModeResponse.java
 src/main/java/org/openapitools/client/model/PayrunResponse.java
+src/main/java/org/openapitools/client/model/PayrunTypeResponse.java
 src/main/java/org/openapitools/client/model/PayslipResponse.java
 src/main/java/org/openapitools/client/model/PayslipResponseContributions.java
 src/main/java/org/openapitools/client/model/PayslipResponseDeductions.java
@@ -158,6 +162,7 @@ src/test/java/org/openapitools/client/model/CreateEmployeeRequestEmergencyContac
 src/test/java/org/openapitools/client/model/CreateEmployeeRequestManagerTest.java
 src/test/java/org/openapitools/client/model/CreateEmployeeRequestTest.java
 src/test/java/org/openapitools/client/model/CurrencyNotNullRequestTest.java
+src/test/java/org/openapitools/client/model/CurrencyNotNullResponseTest.java
 src/test/java/org/openapitools/client/model/CurrencyResponseTest.java
 src/test/java/org/openapitools/client/model/DisconnectResponseTest.java
 src/test/java/org/openapitools/client/model/EmployeeResponseManagerTest.java
@@ -181,6 +186,7 @@ src/test/java/org/openapitools/client/model/MessageResponseTest.java
 src/test/java/org/openapitools/client/model/ModeRequestTest.java
 src/test/java/org/openapitools/client/model/ModeResponseTest.java
 src/test/java/org/openapitools/client/model/PayrunResponseTest.java
+src/test/java/org/openapitools/client/model/PayrunTypeResponseTest.java
 src/test/java/org/openapitools/client/model/PayslipResponseContributionsTest.java
 src/test/java/org/openapitools/client/model/PayslipResponseDeductionsTest.java
 src/test/java/org/openapitools/client/model/PayslipResponseEarningsTest.java

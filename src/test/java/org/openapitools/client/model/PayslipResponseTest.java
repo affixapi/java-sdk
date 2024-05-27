@@ -24,6 +24,8 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.client.model.CurrencyNotNullResponse;
+import org.openapitools.client.model.PayrunTypeResponse;
 import org.openapitools.client.model.PayslipResponseContributions;
 import org.openapitools.client.model.PayslipResponseDeductions;
 import org.openapitools.client.model.PayslipResponseEarnings;
@@ -73,11 +75,35 @@ public class PayslipResponseTest {
     }
 
     /**
+     * Test the property 'employeeRemoteId'
+     */
+    @Test
+    public void employeeRemoteIdTest() {
+        // TODO: test employeeRemoteId
+    }
+
+    /**
      * Test the property 'payrunId'
      */
     @Test
     public void payrunIdTest() {
         // TODO: test payrunId
+    }
+
+    /**
+     * Test the property 'payrunRemoteId'
+     */
+    @Test
+    public void payrunRemoteIdTest() {
+        // TODO: test payrunRemoteId
+    }
+
+    /**
+     * Test the property 'payrunType'
+     */
+    @Test
+    public void payrunTypeTest() {
+        // TODO: test payrunType
     }
 
     /**

@@ -26,6 +26,8 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.client.model.CurrencyNotNullResponse;
+import org.openapitools.client.model.PayrunTypeResponse;
 import org.openapitools.client.model.PayslipResponseContributions;
 import org.openapitools.client.model.PayslipResponseDeductions;
 import org.openapitools.client.model.PayslipResponseEarnings;
@@ -35,7 +37,7 @@ import org.threeten.bp.LocalDate;
 /**
  * PayslipResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-26T17:51:14.410974Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-27T00:01:50.038418Z[Etc/UTC]")
 public class PayslipResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -49,62 +51,25 @@ public class PayslipResponse {
   @SerializedName(SERIALIZED_NAME_EMPLOYEE_ID)
   private String employeeId;
 
+  public static final String SERIALIZED_NAME_EMPLOYEE_REMOTE_ID = "employee_remote_id";
+  @SerializedName(SERIALIZED_NAME_EMPLOYEE_REMOTE_ID)
+  private String employeeRemoteId;
+
   public static final String SERIALIZED_NAME_PAYRUN_ID = "payrun_id";
   @SerializedName(SERIALIZED_NAME_PAYRUN_ID)
   private String payrunId;
 
-  /**
-   * Gets or Sets currency
-   */
-  @JsonAdapter(CurrencyEnum.Adapter.class)
-  public enum CurrencyEnum {
-    USD("usd"),
-    
-    EUR("eur"),
-    
-    GBP("gbp");
+  public static final String SERIALIZED_NAME_PAYRUN_REMOTE_ID = "payrun_remote_id";
+  @SerializedName(SERIALIZED_NAME_PAYRUN_REMOTE_ID)
+  private String payrunRemoteId;
 
-    private String value;
-
-    CurrencyEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static CurrencyEnum fromValue(String value) {
-      for (CurrencyEnum b : CurrencyEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<CurrencyEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final CurrencyEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public CurrencyEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return CurrencyEnum.fromValue(value);
-      }
-    }
-  }
+  public static final String SERIALIZED_NAME_PAYRUN_TYPE = "payrun_type";
+  @SerializedName(SERIALIZED_NAME_PAYRUN_TYPE)
+  private PayrunTypeResponse payrunType;
 
   public static final String SERIALIZED_NAME_CURRENCY = "currency";
   @SerializedName(SERIALIZED_NAME_CURRENCY)
-  private CurrencyEnum currency;
+  private CurrencyNotNullResponse currency;
 
   public static final String SERIALIZED_NAME_GROSS_PAY = "gross_pay";
   @SerializedName(SERIALIZED_NAME_GROSS_PAY)
@@ -153,6 +118,7 @@ public class PayslipResponse {
    * The Affix-assigned id of the payslip
    * @return id
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(example = "cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw", required = true, value = "The Affix-assigned id of the payslip")
 
   public String getId() {
@@ -175,6 +141,7 @@ public class PayslipResponse {
    * the remote system-assigned id of the payrun
    * @return remoteId
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(example = "19202938", required = true, value = "the remote system-assigned id of the payrun")
 
   public String getRemoteId() {
@@ -209,6 +176,28 @@ public class PayslipResponse {
   }
 
 
+  public PayslipResponse employeeRemoteId(String employeeRemoteId) {
+    
+    this.employeeRemoteId = employeeRemoteId;
+    return this;
+  }
+
+   /**
+   * Get employeeRemoteId
+   * @return employeeRemoteId
+  **/
+  @ApiModelProperty(example = "19202938", required = true, value = "")
+
+  public String getEmployeeRemoteId() {
+    return employeeRemoteId;
+  }
+
+
+  public void setEmployeeRemoteId(String employeeRemoteId) {
+    this.employeeRemoteId = employeeRemoteId;
+  }
+
+
   public PayslipResponse payrunId(String payrunId) {
     
     this.payrunId = payrunId;
@@ -231,7 +220,52 @@ public class PayslipResponse {
   }
 
 
-  public PayslipResponse currency(CurrencyEnum currency) {
+  public PayslipResponse payrunRemoteId(String payrunRemoteId) {
+    
+    this.payrunRemoteId = payrunRemoteId;
+    return this;
+  }
+
+   /**
+   * Get payrunRemoteId
+   * @return payrunRemoteId
+  **/
+  @ApiModelProperty(example = "19202938", required = true, value = "")
+
+  public String getPayrunRemoteId() {
+    return payrunRemoteId;
+  }
+
+
+  public void setPayrunRemoteId(String payrunRemoteId) {
+    this.payrunRemoteId = payrunRemoteId;
+  }
+
+
+  public PayslipResponse payrunType(PayrunTypeResponse payrunType) {
+    
+    this.payrunType = payrunType;
+    return this;
+  }
+
+   /**
+   * Get payrunType
+   * @return payrunType
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(required = true, value = "")
+
+  public PayrunTypeResponse getPayrunType() {
+    return payrunType;
+  }
+
+
+  public void setPayrunType(PayrunTypeResponse payrunType) {
+    this.payrunType = payrunType;
+  }
+
+
+  public PayslipResponse currency(CurrencyNotNullResponse currency) {
     
     this.currency = currency;
     return this;
@@ -241,14 +275,15 @@ public class PayslipResponse {
    * Get currency
    * @return currency
   **/
-  @ApiModelProperty(example = "eur", required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(required = true, value = "")
 
-  public CurrencyEnum getCurrency() {
+  public CurrencyNotNullResponse getCurrency() {
     return currency;
   }
 
 
-  public void setCurrency(CurrencyEnum currency) {
+  public void setCurrency(CurrencyNotNullResponse currency) {
     this.currency = currency;
   }
 
@@ -489,7 +524,10 @@ public class PayslipResponse {
     return Objects.equals(this.id, payslipResponse.id) &&
         Objects.equals(this.remoteId, payslipResponse.remoteId) &&
         Objects.equals(this.employeeId, payslipResponse.employeeId) &&
+        Objects.equals(this.employeeRemoteId, payslipResponse.employeeRemoteId) &&
         Objects.equals(this.payrunId, payslipResponse.payrunId) &&
+        Objects.equals(this.payrunRemoteId, payslipResponse.payrunRemoteId) &&
+        Objects.equals(this.payrunType, payslipResponse.payrunType) &&
         Objects.equals(this.currency, payslipResponse.currency) &&
         Objects.equals(this.grossPay, payslipResponse.grossPay) &&
         Objects.equals(this.netPay, payslipResponse.netPay) &&
@@ -504,7 +542,7 @@ public class PayslipResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, remoteId, employeeId, payrunId, currency, grossPay, netPay, startDate, endDate, paymentDate, earnings, contributions, deductions, taxes);
+    return Objects.hash(id, remoteId, employeeId, employeeRemoteId, payrunId, payrunRemoteId, payrunType, currency, grossPay, netPay, startDate, endDate, paymentDate, earnings, contributions, deductions, taxes);
   }
 
   @Override
@@ -514,7 +552,10 @@ public class PayslipResponse {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    remoteId: ").append(toIndentedString(remoteId)).append("\n");
     sb.append("    employeeId: ").append(toIndentedString(employeeId)).append("\n");
+    sb.append("    employeeRemoteId: ").append(toIndentedString(employeeRemoteId)).append("\n");
     sb.append("    payrunId: ").append(toIndentedString(payrunId)).append("\n");
+    sb.append("    payrunRemoteId: ").append(toIndentedString(payrunRemoteId)).append("\n");
+    sb.append("    payrunType: ").append(toIndentedString(payrunType)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    grossPay: ").append(toIndentedString(grossPay)).append("\n");
     sb.append("    netPay: ").append(toIndentedString(netPay)).append("\n");
