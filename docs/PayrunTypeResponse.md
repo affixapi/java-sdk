@@ -7,9 +7,9 @@
 
 * `REGULAR` (value: `"regular"`)
 
-* `ONE_TIME` (value: `"one-time"`)
+* `ONE_TIME` (value: `"one_time"`)
 
-* `OFF_CYCLE` (value: `"off-cycle"`)
+* `OFF_CYCLE` (value: `"off_cycle"`)
 
 * `CORRECTION` (value: `"correction"`)
 

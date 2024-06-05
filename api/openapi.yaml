@@ -3442,8 +3442,8 @@ components:
     payrun-typeResponse:
       enum:
       - regular
-      - one-time
-      - off-cycle
+      - one_time
+      - off_cycle
       - correction
       - reversal
       - null

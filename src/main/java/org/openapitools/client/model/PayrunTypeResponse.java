@@ -31,9 +31,9 @@ public enum PayrunTypeResponse {
   
   REGULAR("regular"),
   
-  ONE_TIME("one-time"),
+  ONE_TIME("one_time"),
   
-  OFF_CYCLE("off-cycle"),
+  OFF_CYCLE("off_cycle"),
   
   CORRECTION("correction"),
   
