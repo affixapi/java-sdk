@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * CreateEmployeeRequestEmergencyContacts
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-05T11:30:57.537516Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-05T11:59:07.948720Z[Etc/UTC]")
 public class CreateEmployeeRequestEmergencyContacts {
   public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
