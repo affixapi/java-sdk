@@ -99,8 +99,6 @@ public enum ProviderResponse {
   
   REMOTE_COM("remote.com"),
   
-  RIPPLING("rippling"),
-  
   SAGEONE("sageone"),
   
   SHAPE_PAYROLL("shape payroll"),
