@@ -2124,10 +2124,12 @@ components:
         id:
           description: The Affix-assigned id of the abscence
           example: cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw
+          nullable: true
           type: string
         remote_id:
           description: the remote system-assigned id of the abscence
           example: "19202938"
+          nullable: true
           type: string
         legal_name:
           example: Affix

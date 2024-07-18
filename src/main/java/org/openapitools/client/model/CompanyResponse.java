@@ -28,7 +28,7 @@ import org.openapitools.client.model.AddressResponse;
 /**
  * CompanyResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T21:21:43.999395Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-18T08:30:31.039722Z[Etc/UTC]")
 public class CompanyResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -65,6 +65,7 @@ public class CompanyResponse {
    * The Affix-assigned id of the abscence
    * @return id
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(example = "cD0yMDIxLTAxLTA2KzAzJTNBMjQlM0E1My40MzQzMjYlMkIwMCUzQTAw", required = true, value = "The Affix-assigned id of the abscence")
 
   public String getId() {
@@ -87,6 +88,7 @@ public class CompanyResponse {
    * the remote system-assigned id of the abscence
    * @return remoteId
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(example = "19202938", required = true, value = "the remote system-assigned id of the abscence")
 
   public String getRemoteId() {
