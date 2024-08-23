@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * InlineResponse400
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-18T00:37:10.692230Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-08-23T09:16:53.355666Z[Etc/UTC]")
 public class InlineResponse400 {
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
