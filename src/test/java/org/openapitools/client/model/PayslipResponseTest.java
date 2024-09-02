@@ -29,6 +29,7 @@ import org.openapitools.client.model.PayrunTypeResponse;
 import org.openapitools.client.model.PayslipResponseContributions;
 import org.openapitools.client.model.PayslipResponseDeductions;
 import org.openapitools.client.model.PayslipResponseEarnings;
+import org.openapitools.client.model.PayslipResponseReimbursements;
 import org.openapitools.client.model.PayslipResponseTaxes;
 import org.threeten.bp.LocalDate;
 import org.junit.Assert;
@@ -184,6 +185,14 @@ public class PayslipResponseTest {
     @Test
     public void taxesTest() {
         // TODO: test taxes
+    }
+
+    /**
+     * Test the property 'reimbursements'
+     */
+    @Test
+    public void reimbursementsTest() {
+        // TODO: test reimbursements
     }
 
 }

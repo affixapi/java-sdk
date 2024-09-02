@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **contributions** | [**List&lt;PayslipResponseContributions&gt;**](PayslipResponseContributions.md) | Items paid by the employer that are not included in gross pay, such as employer-paid portion of private health insurance  | 
 **deductions** | [**List&lt;PayslipResponseDeductions&gt;**](PayslipResponseDeductions.md) |  | 
 **taxes** | [**List&lt;PayslipResponseTaxes&gt;**](PayslipResponseTaxes.md) |  | 
+**reimbursements** | [**List&lt;PayslipResponseReimbursements&gt;**](PayslipResponseReimbursements.md) |  | 
 
 
 

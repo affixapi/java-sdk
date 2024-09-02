@@ -24,301 +24,62 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
-import org.openapitools.client.model.CurrencyNotNullRequest;
-import org.threeten.bp.LocalDate;
 
 /**
- * CompensationHistoryNoNonNullRequest
+ * PayslipResponseReimbursements
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-02T02:11:20.348496Z[Etc/UTC]")
-public class CompensationHistoryNoNonNullRequest {
-  public static final String SERIALIZED_NAME_PAY_RATE = "pay_rate";
-  @SerializedName(SERIALIZED_NAME_PAY_RATE)
-  private BigDecimal payRate;
+public class PayslipResponseReimbursements {
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
 
-  public static final String SERIALIZED_NAME_PAY_PERIOD = "pay_period";
-  @SerializedName(SERIALIZED_NAME_PAY_PERIOD)
-  private String payPeriod;
+  public static final String SERIALIZED_NAME_AMOUNT = "amount";
+  @SerializedName(SERIALIZED_NAME_AMOUNT)
+  private BigDecimal amount;
 
-  /**
-   * Gets or Sets payFrequency
-   */
-  @JsonAdapter(PayFrequencyEnum.Adapter.class)
-  public enum PayFrequencyEnum {
-    YEAR("year"),
+
+  public PayslipResponseReimbursements name(String name) {
     
-    WEEKLY("weekly"),
-    
-    BIWEEKLY("biweekly"),
-    
-    SEMIMONTHLY("semimonthly"),
-    
-    MONTHLY("monthly"),
-    
-    OTHER("other");
-
-    private String value;
-
-    PayFrequencyEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static PayFrequencyEnum fromValue(String value) {
-      for (PayFrequencyEnum b : PayFrequencyEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<PayFrequencyEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final PayFrequencyEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public PayFrequencyEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return PayFrequencyEnum.fromValue(value);
-      }
-    }
-  }
-
-  public static final String SERIALIZED_NAME_PAY_FREQUENCY = "pay_frequency";
-  @SerializedName(SERIALIZED_NAME_PAY_FREQUENCY)
-  private PayFrequencyEnum payFrequency;
-
-  /**
-   * Gets or Sets employmentType
-   */
-  @JsonAdapter(EmploymentTypeEnum.Adapter.class)
-  public enum EmploymentTypeEnum {
-    FULL_TIME("full_time"),
-    
-    PART_TIME("part_time"),
-    
-    CONTRACTOR("contractor"),
-    
-    OTHER("other");
-
-    private String value;
-
-    EmploymentTypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static EmploymentTypeEnum fromValue(String value) {
-      for (EmploymentTypeEnum b : EmploymentTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<EmploymentTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final EmploymentTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public EmploymentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return EmploymentTypeEnum.fromValue(value);
-      }
-    }
-  }
-
-  public static final String SERIALIZED_NAME_EMPLOYMENT_TYPE = "employment_type";
-  @SerializedName(SERIALIZED_NAME_EMPLOYMENT_TYPE)
-  private EmploymentTypeEnum employmentType;
-
-  public static final String SERIALIZED_NAME_CURRENCY = "currency";
-  @SerializedName(SERIALIZED_NAME_CURRENCY)
-  private CurrencyNotNullRequest currency;
-
-  public static final String SERIALIZED_NAME_EFFECTIVE_DATE = "effective_date";
-  @SerializedName(SERIALIZED_NAME_EFFECTIVE_DATE)
-  private LocalDate effectiveDate;
-
-  public static final String SERIALIZED_NAME_NOTES = "notes";
-  @SerializedName(SERIALIZED_NAME_NOTES)
-  private String notes;
-
-
-  public CompensationHistoryNoNonNullRequest payRate(BigDecimal payRate) {
-    
-    this.payRate = payRate;
+    this.name = name;
     return this;
   }
 
    /**
-   * Get payRate
-   * @return payRate
+   * Get name
+   * @return name
   **/
-  @ApiModelProperty(example = "85000", required = true, value = "")
+  @ApiModelProperty(example = "Slack seat", required = true, value = "")
 
-  public BigDecimal getPayRate() {
-    return payRate;
+  public String getName() {
+    return name;
   }
 
 
-  public void setPayRate(BigDecimal payRate) {
-    this.payRate = payRate;
+  public void setName(String name) {
+    this.name = name;
   }
 
 
-  public CompensationHistoryNoNonNullRequest payPeriod(String payPeriod) {
+  public PayslipResponseReimbursements amount(BigDecimal amount) {
     
-    this.payPeriod = payPeriod;
+    this.amount = amount;
     return this;
   }
 
    /**
-   * Get payPeriod
-   * @return payPeriod
+   * if USD/EUR/GBP, in cent
+   * @return amount
   **/
-  @ApiModelProperty(example = "year", required = true, value = "")
+  @ApiModelProperty(example = "10025", required = true, value = "if USD/EUR/GBP, in cent")
 
-  public String getPayPeriod() {
-    return payPeriod;
+  public BigDecimal getAmount() {
+    return amount;
   }
 
 
-  public void setPayPeriod(String payPeriod) {
-    this.payPeriod = payPeriod;
-  }
-
-
-  public CompensationHistoryNoNonNullRequest payFrequency(PayFrequencyEnum payFrequency) {
-    
-    this.payFrequency = payFrequency;
-    return this;
-  }
-
-   /**
-   * Get payFrequency
-   * @return payFrequency
-  **/
-  @ApiModelProperty(example = "semimonthly", required = true, value = "")
-
-  public PayFrequencyEnum getPayFrequency() {
-    return payFrequency;
-  }
-
-
-  public void setPayFrequency(PayFrequencyEnum payFrequency) {
-    this.payFrequency = payFrequency;
-  }
-
-
-  public CompensationHistoryNoNonNullRequest employmentType(EmploymentTypeEnum employmentType) {
-    
-    this.employmentType = employmentType;
-    return this;
-  }
-
-   /**
-   * Get employmentType
-   * @return employmentType
-  **/
-  @ApiModelProperty(example = "full_time", required = true, value = "")
-
-  public EmploymentTypeEnum getEmploymentType() {
-    return employmentType;
-  }
-
-
-  public void setEmploymentType(EmploymentTypeEnum employmentType) {
-    this.employmentType = employmentType;
-  }
-
-
-  public CompensationHistoryNoNonNullRequest currency(CurrencyNotNullRequest currency) {
-    
-    this.currency = currency;
-    return this;
-  }
-
-   /**
-   * Get currency
-   * @return currency
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(required = true, value = "")
-
-  public CurrencyNotNullRequest getCurrency() {
-    return currency;
-  }
-
-
-  public void setCurrency(CurrencyNotNullRequest currency) {
-    this.currency = currency;
-  }
-
-
-  public CompensationHistoryNoNonNullRequest effectiveDate(LocalDate effectiveDate) {
-    
-    this.effectiveDate = effectiveDate;
-    return this;
-  }
-
-   /**
-   * Get effectiveDate
-   * @return effectiveDate
-  **/
-  @ApiModelProperty(example = "Sun Oct 11 00:00:00 UTC 2020", required = true, value = "")
-
-  public LocalDate getEffectiveDate() {
-    return effectiveDate;
-  }
-
-
-  public void setEffectiveDate(LocalDate effectiveDate) {
-    this.effectiveDate = effectiveDate;
-  }
-
-
-  public CompensationHistoryNoNonNullRequest notes(String notes) {
-    
-    this.notes = notes;
-    return this;
-  }
-
-   /**
-   * Get notes
-   * @return notes
-  **/
-  @ApiModelProperty(example = "Salary Adjustment", required = true, value = "")
-
-  public String getNotes() {
-    return notes;
-  }
-
-
-  public void setNotes(String notes) {
-    this.notes = notes;
+  public void setAmount(BigDecimal amount) {
+    this.amount = amount;
   }
 
 
@@ -330,32 +91,22 @@ public class CompensationHistoryNoNonNullRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CompensationHistoryNoNonNullRequest compensationHistoryNoNonNullRequest = (CompensationHistoryNoNonNullRequest) o;
-    return Objects.equals(this.payRate, compensationHistoryNoNonNullRequest.payRate) &&
-        Objects.equals(this.payPeriod, compensationHistoryNoNonNullRequest.payPeriod) &&
-        Objects.equals(this.payFrequency, compensationHistoryNoNonNullRequest.payFrequency) &&
-        Objects.equals(this.employmentType, compensationHistoryNoNonNullRequest.employmentType) &&
-        Objects.equals(this.currency, compensationHistoryNoNonNullRequest.currency) &&
-        Objects.equals(this.effectiveDate, compensationHistoryNoNonNullRequest.effectiveDate) &&
-        Objects.equals(this.notes, compensationHistoryNoNonNullRequest.notes);
+    PayslipResponseReimbursements payslipResponseReimbursements = (PayslipResponseReimbursements) o;
+    return Objects.equals(this.name, payslipResponseReimbursements.name) &&
+        Objects.equals(this.amount, payslipResponseReimbursements.amount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(payRate, payPeriod, payFrequency, employmentType, currency, effectiveDate, notes);
+    return Objects.hash(name, amount);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CompensationHistoryNoNonNullRequest {\n");
-    sb.append("    payRate: ").append(toIndentedString(payRate)).append("\n");
-    sb.append("    payPeriod: ").append(toIndentedString(payPeriod)).append("\n");
-    sb.append("    payFrequency: ").append(toIndentedString(payFrequency)).append("\n");
-    sb.append("    employmentType: ").append(toIndentedString(employmentType)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    effectiveDate: ").append(toIndentedString(effectiveDate)).append("\n");
-    sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
+    sb.append("class PayslipResponseReimbursements {\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

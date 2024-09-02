@@ -3533,6 +3533,9 @@ components:
         - name: Payroll Tax
           amount: 10025
           employer_tax: true
+        reimbursements:
+        - name: Slack seat
+          amount: 725
         gross_pay: 134267
         deductions:
         - name: Transportation allowance benefit
@@ -3665,6 +3668,14 @@ components:
             $ref: '#/components/schemas/PayslipResponse_taxes'
           nullable: true
           type: array
+        reimbursements:
+          example:
+          - name: Slack seat
+            amount: 725
+          items:
+            $ref: '#/components/schemas/PayslipResponse_reimbursements'
+          nullable: true
+          type: array
       required:
       - contributions
       - currency
@@ -3680,6 +3691,7 @@ components:
       - payrun_id
       - payrun_remote_id
       - payrun_type
+      - reimbursements
       - remote_id
       - start_date
       - taxes
@@ -3938,6 +3950,19 @@ components:
       required:
       - amount
       - employer_tax
+      - name
+      type: object
+    PayslipResponse_reimbursements:
+      properties:
+        name:
+          example: Slack seat
+          type: string
+        amount:
+          description: if USD/EUR/GBP, in cent
+          example: 10025
+          type: number
+      required:
+      - amount
       - name
       type: object
   securitySchemes:

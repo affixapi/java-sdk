@@ -31,13 +31,14 @@ import org.openapitools.client.model.PayrunTypeResponse;
 import org.openapitools.client.model.PayslipResponseContributions;
 import org.openapitools.client.model.PayslipResponseDeductions;
 import org.openapitools.client.model.PayslipResponseEarnings;
+import org.openapitools.client.model.PayslipResponseReimbursements;
 import org.openapitools.client.model.PayslipResponseTaxes;
 import org.threeten.bp.LocalDate;
 
 /**
  * PayslipResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-02T01:01:49.959289Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-02T02:11:20.348496Z[Etc/UTC]")
 public class PayslipResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -106,6 +107,10 @@ public class PayslipResponse {
   public static final String SERIALIZED_NAME_TAXES = "taxes";
   @SerializedName(SERIALIZED_NAME_TAXES)
   private List<PayslipResponseTaxes> taxes = new ArrayList<PayslipResponseTaxes>();
+
+  public static final String SERIALIZED_NAME_REIMBURSEMENTS = "reimbursements";
+  @SerializedName(SERIALIZED_NAME_REIMBURSEMENTS)
+  private List<PayslipResponseReimbursements> reimbursements = new ArrayList<PayslipResponseReimbursements>();
 
 
   public PayslipResponse id(String id) {
@@ -512,6 +517,34 @@ public class PayslipResponse {
   }
 
 
+  public PayslipResponse reimbursements(List<PayslipResponseReimbursements> reimbursements) {
+    
+    this.reimbursements = reimbursements;
+    return this;
+  }
+
+  public PayslipResponse addReimbursementsItem(PayslipResponseReimbursements reimbursementsItem) {
+    this.reimbursements.add(reimbursementsItem);
+    return this;
+  }
+
+   /**
+   * Get reimbursements
+   * @return reimbursements
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "[{\"name\":\"Slack seat\",\"amount\":725}]", required = true, value = "")
+
+  public List<PayslipResponseReimbursements> getReimbursements() {
+    return reimbursements;
+  }
+
+
+  public void setReimbursements(List<PayslipResponseReimbursements> reimbursements) {
+    this.reimbursements = reimbursements;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -537,12 +570,13 @@ public class PayslipResponse {
         Objects.equals(this.earnings, payslipResponse.earnings) &&
         Objects.equals(this.contributions, payslipResponse.contributions) &&
         Objects.equals(this.deductions, payslipResponse.deductions) &&
-        Objects.equals(this.taxes, payslipResponse.taxes);
+        Objects.equals(this.taxes, payslipResponse.taxes) &&
+        Objects.equals(this.reimbursements, payslipResponse.reimbursements);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, remoteId, employeeId, employeeRemoteId, payrunId, payrunRemoteId, payrunType, currency, grossPay, netPay, startDate, endDate, paymentDate, earnings, contributions, deductions, taxes);
+    return Objects.hash(id, remoteId, employeeId, employeeRemoteId, payrunId, payrunRemoteId, payrunType, currency, grossPay, netPay, startDate, endDate, paymentDate, earnings, contributions, deductions, taxes, reimbursements);
   }
 
   @Override
@@ -566,6 +600,7 @@ public class PayslipResponse {
     sb.append("    contributions: ").append(toIndentedString(contributions)).append("\n");
     sb.append("    deductions: ").append(toIndentedString(deductions)).append("\n");
     sb.append("    taxes: ").append(toIndentedString(taxes)).append("\n");
+    sb.append("    reimbursements: ").append(toIndentedString(reimbursements)).append("\n");
     sb.append("}");
     return sb.toString();
   }
