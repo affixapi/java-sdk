@@ -30,7 +30,7 @@ import org.threeten.bp.LocalDate;
 /**
  * CompensationHistoryResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-05T09:47:11.267637Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-05T18:13:19.560299Z[Etc/UTC]")
 public class CompensationHistoryResponse {
   public static final String SERIALIZED_NAME_PAY_RATE = "pay_rate";
   @SerializedName(SERIALIZED_NAME_PAY_RATE)
