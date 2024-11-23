@@ -30,7 +30,7 @@ import org.threeten.bp.LocalDate;
 /**
  * TimeOffBalanceResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-15T01:08:07.655461Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-23T06:08:23.369875Z[Etc/UTC]")
 public class TimeOffBalanceResponse {
   public static final String SERIALIZED_NAME_EMPLOYEE_ID = "employee_id";
   @SerializedName(SERIALIZED_NAME_EMPLOYEE_ID)
