@@ -55,6 +55,7 @@ LV | &quot;LV&quot;
 NL | &quot;NL&quot;
 NO | &quot;NO&quot;
 PL | &quot;PL&quot;
+PT | &quot;PT&quot;
 RO | &quot;RO&quot;
 RU | &quot;RU&quot;
 SE | &quot;SE&quot;
