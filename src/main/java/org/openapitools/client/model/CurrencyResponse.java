@@ -35,7 +35,11 @@ public enum CurrencyResponse {
   
   GBP("gbp"),
   
-  EUR("eur");
+  EUR("eur"),
+  
+  SEK("sek"),
+  
+  CAD("cad");
 
   private String value;
 

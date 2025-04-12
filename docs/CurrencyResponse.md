@@ -13,5 +13,9 @@
 
 * `EUR` (value: `"eur"`)
 
+* `SEK` (value: `"sek"`)
+
+* `CAD` (value: `"cad"`)
+
 
 
