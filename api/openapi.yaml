@@ -1528,6 +1528,7 @@ components:
       - gusto
       - itrent
       - justworks
+      - kontek.se
       - onpay
       - oysterhr
       - paycircle
@@ -1576,6 +1577,7 @@ components:
       - gusto
       - itrent
       - justworks
+      - kontek.se
       - onpay
       - oysterhr
       - paycircle
@@ -1631,6 +1633,7 @@ components:
         - itrent
         - justworks
         - moorepay
+        - kontek.se
         - onpay
         - oysterhr
         - parolla.ie

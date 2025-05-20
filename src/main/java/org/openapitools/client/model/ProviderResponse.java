@@ -87,6 +87,8 @@ public enum ProviderResponse {
   
   JUSTWORKS("justworks"),
   
+  KONTEK_SE("kontek.se"),
+  
   ONPAY("onpay"),
   
   OYSTERHR("oysterhr"),

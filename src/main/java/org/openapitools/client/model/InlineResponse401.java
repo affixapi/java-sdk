@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * InlineResponse401
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-12T00:36:07.341716714Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T19:56:46.016786714Z[Etc/UTC]")
 public class InlineResponse401 {
   /**
    * The type of error

@@ -63,6 +63,8 @@
 
 * `JUSTWORKS` (value: `"justworks"`)
 
+* `KONTEK_SE` (value: `"kontek.se"`)
+
 * `ONPAY` (value: `"onpay"`)
 
 * `OYSTERHR` (value: `"oysterhr"`)
