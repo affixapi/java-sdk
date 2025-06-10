@@ -99,6 +99,8 @@ public enum ProviderResponse {
   
   PEOPLEHR("peoplehr"),
   
+  QUICKBOOKS_ONLINE("quickbooks online"),
+  
   REMOTE_COM("remote.com"),
   
   SAGEONE("sageone"),
@@ -107,7 +109,7 @@ public enum ProviderResponse {
   
   SIMPLEPAY_IE("simplepay.ie"),
   
-  QUICKBOOKS_ONLINE("quickbooks online"),
+  TALENOX("talenox"),
   
   ZOHO("zoho");
 

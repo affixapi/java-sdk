@@ -75,6 +75,8 @@
 
 * `PEOPLEHR` (value: `"peoplehr"`)
 
+* `QUICKBOOKS_ONLINE` (value: `"quickbooks online"`)
+
 * `REMOTE_COM` (value: `"remote.com"`)
 
 * `SAGEONE` (value: `"sageone"`)
@@ -83,7 +85,7 @@
 
 * `SIMPLEPAY_IE` (value: `"simplepay.ie"`)
 
-* `QUICKBOOKS_ONLINE` (value: `"quickbooks online"`)
+* `TALENOX` (value: `"talenox"`)
 
 * `ZOHO` (value: `"zoho"`)
 

@@ -1534,11 +1534,12 @@ components:
       - paycircle
       - pento.io
       - peoplehr
+      - quickbooks online
       - remote.com
       - sageone
       - shape payroll
       - simplepay.ie
-      - quickbooks online
+      - talenox
       - zoho
       type: string
     ModeResponse:
@@ -1583,11 +1584,12 @@ components:
       - paycircle
       - pento.io
       - peoplehr
+      - quickbooks online
       - remote.com
       - sageone
       - shape payroll
       - simplepay.ie
-      - quickbooks online
+      - talenox
       - zoho
       type: string
     ProvidersResponse:
@@ -1632,8 +1634,8 @@ components:
         - hibob
         - itrent
         - justworks
-        - moorepay
         - kontek.se
+        - moorepay
         - onpay
         - oysterhr
         - parolla.ie
@@ -1645,6 +1647,7 @@ components:
         - sageone
         - shape payroll
         - simplepay.ie
+        - talenox
         - xero uk
         - zoho
       items:
