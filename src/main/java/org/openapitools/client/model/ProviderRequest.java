@@ -103,6 +103,8 @@ public enum ProviderRequest {
   
   REMOTE_COM("remote.com"),
   
+  RUNA("runa"),
+  
   SAGEONE("sageone"),
   
   SHAPE_PAYROLL("shape payroll"),
@@ -110,6 +112,8 @@ public enum ProviderRequest {
   SIMPLEPAY_IE("simplepay.ie"),
   
   TALENOX("talenox"),
+  
+  UNITY("unity"),
   
   ZOHO("zoho");
 

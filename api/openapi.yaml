@@ -1536,10 +1536,12 @@ components:
       - peoplehr
       - quickbooks online
       - remote.com
+      - runa
       - sageone
       - shape payroll
       - simplepay.ie
       - talenox
+      - unity
       - zoho
       type: string
     ModeResponse:
@@ -1586,10 +1588,12 @@ components:
       - peoplehr
       - quickbooks online
       - remote.com
+      - runa
       - sageone
       - shape payroll
       - simplepay.ie
       - talenox
+      - unity
       - zoho
       type: string
     ProvidersResponse:
@@ -1644,10 +1648,12 @@ components:
         - personio.de
         - quickbooks online
         - remote.com
+        - runa
         - sageone
         - shape payroll
         - simplepay.ie
         - talenox
+        - unity
         - xero uk
         - zoho
       items:
