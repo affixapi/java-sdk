@@ -75,7 +75,11 @@ public enum ProviderRequest {
   
   BRIGHTPAY_CONNECT("brightpay connect"),
   
+  BUK("buk"),
+  
   EMPLOYMENT_HERO("employment hero"),
+  
+  EPE("epe"),
   
   FACTORIALHR("factorialhr"),
   
@@ -115,7 +119,9 @@ public enum ProviderRequest {
   
   UNITY("unity"),
   
-  ZOHO("zoho");
+  ZOHO("zoho"),
+  
+  ZUCCHETTI("zucchetti");
 
   private String value;
 
