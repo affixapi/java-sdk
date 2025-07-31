@@ -85,11 +85,15 @@ public enum ProviderRequest {
   
   FOURTHHR("fourthhr"),
   
+  GREYTHR("greythr"),
+  
   GUSTO("gusto"),
   
   ITRENT("itrent"),
   
   JUSTWORKS("justworks"),
+  
+  KEYPAY("keypay"),
   
   KONTEK_SE("kontek.se"),
   
@@ -116,6 +120,8 @@ public enum ProviderRequest {
   SIMPLEPAY_IE("simplepay.ie"),
   
   TALENOX("talenox"),
+  
+  TALENTOZ("talentoz"),
   
   UNITY("unity"),
   

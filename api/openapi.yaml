@@ -1527,9 +1527,11 @@ components:
       - epe
       - factorialhr
       - fourthhr
+      - greythr
       - gusto
       - itrent
       - justworks
+      - keypay
       - kontek.se
       - onpay
       - oysterhr
@@ -1543,6 +1545,7 @@ components:
       - shape payroll
       - simplepay.ie
       - talenox
+      - talentoz
       - unity
       - zoho
       - zucchetti
@@ -1582,9 +1585,11 @@ components:
       - epe
       - factorialhr
       - fourthhr
+      - greythr
       - gusto
       - itrent
       - justworks
+      - keypay
       - kontek.se
       - onpay
       - oysterhr
@@ -1598,6 +1603,7 @@ components:
       - shape payroll
       - simplepay.ie
       - talenox
+      - talentoz
       - unity
       - zoho
       - zucchetti
@@ -1642,10 +1648,12 @@ components:
         - epe
         - factorialhr
         - fourthhr
+        - greythr
         - gusto
         - hibob
         - itrent
         - justworks
+        - keypay
         - kontek.se
         - moorepay
         - onpay
@@ -1661,6 +1669,7 @@ components:
         - shape payroll
         - simplepay.ie
         - talenox
+        - talentoz
         - unity
         - xero uk
         - zoho
