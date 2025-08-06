@@ -32,7 +32,7 @@ import org.openapitools.client.model.ScopesResponse;
 /**
  * IntrospectResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-31T00:30:14.747641306Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-06T17:59:50.233437298Z[Etc/UTC]")
 public class IntrospectResponse {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)

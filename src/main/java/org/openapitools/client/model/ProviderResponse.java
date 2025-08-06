@@ -119,6 +119,8 @@ public enum ProviderResponse {
   
   SIMPLEPAY_IE("simplepay.ie"),
   
+  SUNFISH("sunfish"),
+  
   TALENOX("talenox"),
   
   TALENTOZ("talentoz"),

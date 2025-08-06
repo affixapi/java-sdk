@@ -95,6 +95,8 @@
 
 * `SIMPLEPAY_IE` (value: `"simplepay.ie"`)
 
+* `SUNFISH` (value: `"sunfish"`)
+
 * `TALENOX` (value: `"talenox"`)
 
 * `TALENTOZ` (value: `"talentoz"`)
